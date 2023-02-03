@@ -1,4 +1,49 @@
-.test-main {
-  font-size: 100px;
-  color: red;
+main{
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+.main-content {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding:42px 0;
+  border: solid 1px blue;
+}
+.item{
+  min-width: 200px;
+  width: 25%;
+  height:250px;
+  border: solid 1px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.item:hover{
+  opacity: .8;
+  transition: .8s;
+  cursor: pointer;
+}
+.response{
+ background-color:  #b494c5;
+}
+.p-response{
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.drag-drop{
+  background-color:  #caf08f;
+}
+.frogy{
+  background-color:  #f0e882;
 }
