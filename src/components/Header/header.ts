@@ -1,17 +1,67 @@
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/header/logo-black.png";
+//import logo from "../../assets/img/logo.png";
+//import { AboutContent,AboutOn } from "./about";
 export function Header ():void {
   const Header = document.querySelector('header') as HTMLBodyElement;
+  Header.className = "black-header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
+  <div class="black-header">
+    <div class="black-header-cont">
+      
+      <div class="black-header-btn-cont-left">
+        <div class="black-logo-box">
+            <img class="black-logo" src="${logo}" alt="logo">
+          </div>
+        <div class="black-header-btn discription">COURSES</div>
+        
+        <div class="black-header-btn about">ABOUT</div>
+      </div>
+      <div class="black-header-btn-cont-right">
+        <div class="black-header-btn">SIGN IN</div>
+        <div class="black-header-btn">SIGN UP</div>
+        <div class="black-header-btn">EN</div>
+      </div>
+      
+    </div>
+    <div class="line-header"></div>
+  </div>
+`;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*`
     <header class="header">
       <div class="header-cont">
         <div class="logo-box">
           <img class="logo" src="${logo}" alt="logo">
         </div>
         <div class="header-btn-cont-left">
-          <div class="header-btn">Курсы</div>
-          <div class="header-btn">Категории</div>
-          <div class="header-btn">О нас</div>
+          <div class="header-btn discription">Описание</div>
+          
+          <div class="header-btn about">О нас</div>
         </div>
         <div class="header-btn-cont-right">
           <div class="header-btn">Вход</div>
@@ -20,5 +70,8 @@ export function Header ():void {
         </div>
       </div>
     </header>
-  `
+  `;
+  AboutContent();
+  AboutOn();
 }
+*/
