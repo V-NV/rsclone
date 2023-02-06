@@ -1,4 +1,3 @@
-//import logo from "../../../assets/img/logo.png";
 export function Main():void {
   const main = document.querySelector('main') as HTMLElement;
   //main.className = "present-main-wrap";

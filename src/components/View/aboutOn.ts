@@ -1,4 +1,20 @@
+import { AboutPage } from "../About/about";
+
 export function AboutOn() {
+  const about = document.querySelector('.about') as HTMLElement;
+    about.addEventListener('click',() => {
+      AboutPage();
+    }
+)}
+
+
+
+
+
+
+
+
+/*export function AboutOn() {
     const about = document.querySelector('.about') as HTMLElement;
       about.addEventListener('mouseover',() => {
       const mv = document.querySelector('.header-about') as HTMLElement;
@@ -6,6 +22,12 @@ export function AboutOn() {
     });
       AboutOff();
     }
+    
+    
+    
+    
+    
+    /*
     function AboutOff() {
       const about = document.querySelector('.about') as HTMLElement;
         about.addEventListener('mouseout',() => {
@@ -28,4 +50,4 @@ export function AboutOn() {
     `;
     ModalAbout.style.display = "none";
     about.insertAdjacentElement('beforeend', ModalAbout);
-    }
+    }*/

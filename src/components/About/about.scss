@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Holtwood';
+     src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+   }
+   @font-face {
+    font-family: 'Kanit';
+     src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+   }
+.about-main-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #262626;
+    max-width: 100%;
+    height: 1366px;
+    margin-top: -1px;
+}
+.about-main-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1600px;
+    height: 1320px;
+    background-color: #262626;
+  }
+  .about-us-cont{
+      max-width: 1450px;
+      height: 360px;
+      font-family: 'Holtwood';
+      font-weight: 400;
+      color: #FFFBD3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 93px;
+}
+.p-about-us{
+    max-width: 306px;
+    height: 80px;
+    font-size: 48px;
+    margin: 0px;
+}
+.about-us-text{
+    max-width: 1440px;
+    height: 235px;
+    font-family: 'Kanit';
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 54px;
+    line-height: 57px;
+
+}
+.about-why-cont{
+    max-width: 1450px;
+    height: 360px;
+    font-family: 'Holtwood';
+    font-weight: 400;
+    color: #FFFBD3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 73px;
+}
+.p-about-why{
+  max-width: 1090px;
+  height: 80px;
+  font-size: 48px;
+  margin: 0;
+}
+.about-why-text{
+  max-width: 1440px;
+  height: 404px;
+  font-family: 'Kanit';
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 56px;
+  margin-bottom: 0px;
+}
+.about-mission{
+    max-width: 1440px;
+    height: 404px;
+    font-family: 'Kanit';
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    margin-top: 4px;
+    line-height: 58px;
+}
+.about-free-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    height: 300px;
+    margin-top: 192px;
+    margin-bottom: 0px;
+}
+.about-free{
+    max-width: 340px;
+    height: 80px;
+    font-family: 'Holtwood';
+    font-size: 48px;
+    font-weight: 400;
+    color: #FFFBD3;
+    margin: 0px;
+    margin-top: 47px;
+}
+.about-bottom{
+    max-width: 1440px;
+    height: 60px;
+    font-family: 'Kanit';
+    font-weight: 400;
+    font-size: 48px;
+    color: #FFFBD3;
+    margin-top: 28px;
+}

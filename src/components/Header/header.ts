@@ -1,4 +1,6 @@
 import logo from "../../assets/img/header/logo-black.png";
+import { AboutOn } from "../View/aboutOn";
+import { CoursesOn } from "../View/coursesOn";
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header ():void {
@@ -27,6 +29,8 @@ export function Header ():void {
     <div class="line-header"></div>
   </div>
 `;
+AboutOn();
+CoursesOn();
 }
   
   
