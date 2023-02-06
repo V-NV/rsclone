@@ -1,6 +1,7 @@
 import logo from "../../assets/img/header/logo-black.png";
 import { AboutOn } from "../View/aboutOn";
 import { CoursesOn } from "../View/coursesOn";
+import { SignUpOn } from "../View/signupOn";
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header ():void {
@@ -20,9 +21,9 @@ export function Header ():void {
         <div class="black-header-btn about">ABOUT</div>
       </div>
       <div class="black-header-btn-cont-right">
-        <div class="black-header-btn">SIGN IN</div>
-        <div class="black-header-btn">SIGN UP</div>
-        <div class="black-header-btn">EN</div>
+        <div class="black-header-btn signin">SIGN IN</div>
+        <div class="black-header-btn signup">SIGN UP</div>
+        <div class="black-header-btn lang">EN</div>
       </div>
       
     </div>
@@ -31,6 +32,7 @@ export function Header ():void {
 `;
 AboutOn();
 CoursesOn();
+SignUpOn();
 }
   
   
