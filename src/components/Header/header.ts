@@ -2,6 +2,7 @@ import logo from "../../assets/img/header/logo-black.png";
 import { AboutOn } from "../View/aboutOn";
 import { CoursesOn } from "../View/coursesOn";
 import { SignUpOn } from "../View/signupOn";
+import { SignInOn } from "../View/signinOn";
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header ():void {
@@ -33,6 +34,7 @@ export function Header ():void {
 AboutOn();
 CoursesOn();
 SignUpOn();
+SignInOn();
 }
   
   

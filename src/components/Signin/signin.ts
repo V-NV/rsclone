@@ -1,21 +1,13 @@
-import { SignInOnForm } from "../View/signinOn";
-
-export function SignUp():void {
+export function SignIn():void {
     const main = document.querySelector('main') as HTMLElement;
     main.innerHTML = "";
-    main.innerHTML +=`<section class="signup-main-wrap">
-    <div class="signup-main-cont">
-       <div class="signup-img"></div>
-       <div class="signup-form-cont">
-          <div class="signup-form-box">
+    main.innerHTML +=`<section class="signin-main-wrap">
+    <div class="signin-main-cont">
+       <div class="signin-img"></div>
+       <div class="signin-form-cont">
+          <div class="signin-form-box">
             <form class="form" id="form">
-             
-              <div class="form-control">
-                <label for="username"> Your name</label>
-                <input type="text" id="username" placeholder="Enter name" autocomplete="off"/>
-                <small>Error</small>
-              </div>
-            
+                           
               <div class="form-control">
                 <label for="email"> Email</label>
                 <input type="text" id="email" placeholder="Enter Email" autocomplete="off"/>
@@ -29,21 +21,19 @@ export function SignUp():void {
               </div>
             
             
-            <button type="submit" class="form-button" id="form-button">   Sign Up</button>
+            <button type="submit" class="form-button" id="form-button">   Sign In</button>
         </form>
-            <p class="signup-signin">Already have an account?<a class="p-link-signin">   Sign In</a></p>
+            <p class="signin-signup">Forgot<a class="p-link-signin">   Password?</a></p>
           
           </div>
        </div>
     </div>
-</section>`;
-FormSignUp();
-SignInOnForm();
+</section>;`;
+FormSignIn();
 }
 
-function FormSignUp(): void {
+function FormSignIn(): void {
     const form = document.getElementById("form") as HTMLFormElement;
-    const username = document.getElementById("username") as HTMLInputElement;
     const email = document.getElementById("email") as HTMLInputElement;
     const password = document.getElementById("password") as HTMLInputElement;
    
@@ -64,16 +54,7 @@ function FormSignUp(): void {
         (small as HTMLInputElement).innerHTML = message;
       }
     };
-    function checkUser(username: HTMLInputElement) {
-      if (
-        username.value.toLowerCase().length >= 3 
-         ) {
-        Validate(username, "success");
-      } else {
-        Validate(username, "error", "Name length min 3 symbols");
-      }
-    }
-   
+       
     function checkEmail(email: HTMLInputElement) {
       if (eml.test(email.value.toLowerCase())) {
         Validate(email, "success");
@@ -104,7 +85,7 @@ function FormSignUp(): void {
         } else {
           Validate(item, "success");
           count += 1;
-          if (+count === 3) {
+          if (+count === 2) {
 
             /**-----------Aleksey form export to server---------*/
             setTimeout(() => console.log('Validate Ok'), 2000);
@@ -121,11 +102,9 @@ function FormSignUp(): void {
     form.addEventListener("submit", function (e: Event) {
       e.preventDefault();
       checkRequired([
-        username,
         email,
         password,
       ]);
-      checkUser(username);
       checkEmail(email);
       checkPassword(password);
      });

@@ -6,7 +6,7 @@
     font-family: 'Kanit';
      src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
 }
-.signup-main-wrap{
+.signin-main-wrap{
     position: relative;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
     height: 1400px;
     margin-top: -2px;
 }
-.signup-main-cont{
+.signin-main-cont{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,32 +23,33 @@
     height: 1300px;
     background-color: #262626;
   }
-  .signup-img{
-      width: 202px;
-      height: 252px;
-      background-image: url('./assets/img/Sign/SignUp.png');
+  .signin-img{
+      width: 211px;
+      height: 241px;
+      background-image: url('./assets/img/Sign/SignIn.png');
+      background-position: center;
+      background-repeat: no-repeat;
       margin-top: 63px;
   }
- .signup-form-cont{
+ .signin-form-cont{
      display: flex;
      align-items: center;
      justify-content: center;
      width: 794px;
-     height: 758px;
+     height: 603px;
      background-color: #FFFBD3;
-     margin-top: 30px;
      border-radius: 15px;
      box-shadow: 35px 35px 35px 35px rgba(0, 0, 0, 0.5);
-     margin-top: 60px;
+     margin-top: 71px;
  }
-.signup-form-box{
+.signin-form-box{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 692px;
-    height: 618px;
+    height: 465px;
 }
-.signup-signin{
+.signin-signup{
   font-family: "Kanit";
   font-size: 24px;
   font-weight: 400;
@@ -56,7 +57,7 @@
   margin-top: 34px;
   opacity: .8;
 }
-.signup-signin:hover{
+.signin-signup:hover{
    opacity: .8;
   }
 .p-link-signin{
