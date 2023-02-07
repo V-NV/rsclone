@@ -1,3 +1,5 @@
+import { javascriptOn } from "../View/javascriptOn";
+
 export function Main():void {
   const main = document.querySelector('main') as HTMLElement;
   //main.className = "present-main-wrap";
@@ -81,6 +83,7 @@ export function Main():void {
               </div>
           </div>    
 </section>`;
+javascriptOn();
 }
   
   
