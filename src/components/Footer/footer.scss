@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Holtwood';
+     src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+   }
+   @font-face {
+    font-family: 'Kanit';
+     src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+   }
+.footer-black-wrap{
+    display: flex;
+    justify-content: center;
+    background-color: #262626;
+    max-width: 100%;
+    height: 279px;
+    margin-top: 50px;
+    }
+    .footer-cont{
+        width: 100%;
+        height: 191px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        background-color: #FFFBD3;
+    }
+    .footer-up{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 216px;
+        font-family: 'Kanit';
+        font-size: 32px;
+    }
+    .footer-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin-top: 48px;
+        width: 100%;
+    }
+    .git-name-cont{
+        display: flex;
+        flex-direction: row;
+    }
+    .git-name-box{
+        display: flex;
+        flex-direction: row;
+        margin-left: 14px;
+    }
+    .git-name-box2{
+        display: flex;
+        flex-direction: row;
+        margin-left: 24px;
+    }
+    .git-name-box3{
+        display: flex;
+        flex-direction: row;
+        margin-left: 16px;
+    }
+    .git-logo{
+        width: 29px;
+        height: 28px;
+        background-image: url('./assets/img/header/Vector.png');
+        background-position: center;
+        margin: auto;
+    }
+    .git-name1,
+    .git-name2,
+    .git-name3
+    {
+        margin-left: 10px;
+        text-decoration: none;
+    }
+    .rss-logo{
+        width: 176px;
+        height: 65px;
+        background-image: url('./assets/img/header/rsslogo.png');
+        margin-top: 25px;
+        margin-right: 15px;
+    }
+    .footer-year{
+        text-align: center;
+    }
+    
+    
+    .a-footer{
+        text-decoration: none;
+        color: #262626;
+        transition: 0.7s;
+    }
+    .a-footer:hover{
+        text-decoration: none;
+        cursor: pointer;
+        color: #262626;
+        opacity: .7;
+        transition: 0.7s;
+    }
+    a{
+        text-decoration: none;
+        color: #262626;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+footer{
+  margin-top: 60px;
+  width: 100%;
+  flex: 0 0 auto;
+  position: fixed;
+  bottom: 0;    
+  left: 0;
+}
+.foot-down{
+   position: fixed;
+   bottom: 0px;
+   width: 100%; 
+}
+.footer-container {
+    max-width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgb(137, 130, 238);
+}
+  
+.footer-data {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+  
+.copyright {
+    color: #fff;
+    padding-right: 20px;
+}
+  
+.github-username {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+    transition: .3s;
+    color: #fff;
+}
+  
+.github-username:hover {
+    color: #bdae82; 
+}
+.logo-name{
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 130px;
+}
+.footer-logo-box{
+    width: 150px;
+    height: 52px;
+    display: flex;
+}
+.footer-logo-box:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}*/
