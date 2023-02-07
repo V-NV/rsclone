@@ -117,3 +117,29 @@
     color: #FFFBD3;
     margin-top: 28px;
 }
+
+@media (max-width: 1599px) {
+    .p-about-us{
+        font-size: 3vw;
+    }
+    .about-us-text{
+        font-size: 3vw;
+    }
+    .p-about-why{
+      font-size: 3vw;
+    }
+    .about-why-text{
+      font-size: 3vw;
+    }
+    .about-mission{
+        font-size: 3vw;
+    }
+
+
+    .about-free{
+        font-size: 3vw;
+    }
+    .about-bottom{
+        font-size: 3vw;
+    }
+}
