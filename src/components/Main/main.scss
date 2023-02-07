@@ -30,7 +30,7 @@
   background-color: #FFFBD3;
   margin-top: 57px;
   border-radius: 16px;
-  box-shadow: 35px 35px 35px rgba(0, 0, 0, 0.5);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
 }
 .present-left-up-box{
     width: 54%;
@@ -195,8 +195,8 @@
 
 .review {
   font-family: Holtwood;
-  font-size:48px;
-  width: 282px;
+  font-size: 48px;
+  max-width: 282px;
   height: 70px;
   color: #FFFBD3;
 
@@ -269,105 +269,40 @@
 }
 
 
+@media (max-width: 1599px) {
+  .durov-p-1{
+    font-size: 3vw;
+    margin-top: 4.0625vw;
+    line-height: 1.5625vw;
+  }
+  .durov-p-2{
+    font-size: 2vw;
+    line-height: 2.375vw;
+    margin-top: 0.75vw;
+  }
+  .durov-p-3{
+    font-size: 2vw;
+    line-height: 7.1875vw;
+  }
+  
+  .buterin-p-1{
+    font-size: 3vw;
+    margin-top: 4.0625vw;
+    line-height: 1.5625vw;
+    padding: 0px;
+  }
+  .buterin-p-2{
+    font-size: 2vw;
+    line-height: 2.375vw;
+    margin-top: 0.75vw;
+  }
+  .buterin-p-3{
+    font-size: 2vw;
+    line-height: 7.1875vw;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*main{
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  margin-bottom: 100px;
-  background-image: url('./assets/img/basic-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin-top: -27px;
+  .review {
+    font-size: 3vw;
+    margin: 2.1875vw 0;
+  }
 }
-.main-content {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 12px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding:42px 0;
-}
-.item{
-  min-width: 200px;
-  width: 25%;
-  height:250px;
-  border: solid 1px red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  transition: 0.8s;
-}
-.item:hover{
-  opacity: .8;
-  transition: .8s;
-  cursor: pointer;
-}
-.response{
- background-color:  #b494c5;
-}
-.p-response{
-  color: blue;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-.drag-drop{
-  background-color:  #caf08f;
-}
-.frogy{
-  background-color:  #f0e882;
-}
-/*--------page-present-------*/
-/*.page-discr{
-  position: relative;
-  max-width: 1920px;
-  height:2754px;
-  background-color: black;
-}
-.discr-header{
-  display: flex;
-  flex-direction: row;
-  width:1680px;
-  height: 150px;
-  margin: 0 auto;
-}
-.logo-box-discr{
-  width: 150px;
-  height: 150px;
-}
-.course-discr{
-  font-family: fantasy;
-font-size: 24px;
-line-height: 39px;
-line-height: 100%;
-vertical-align: Top
-}
-*/
