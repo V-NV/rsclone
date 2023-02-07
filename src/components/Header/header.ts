@@ -1,6 +1,7 @@
 import logo from "../../assets/img/header/logo-black.png";
 import { AboutOn } from "../View/aboutOn";
 import { CoursesOn } from "../View/coursesOn";
+import { logoOn } from "../View/logoOn";
 import { SignUpOn } from "../View/signupOn";
 import { SignInOn } from "../View/signinOn";
 //import logo from "../../assets/img/logo.png";
@@ -28,11 +29,12 @@ export function Header ():void {
       </div>
       
     </div>
-    <div class="line-header"></div>
+    <hr>
   </div>
 `;
 AboutOn();
 CoursesOn();
+logoOn();
 SignUpOn();
 SignInOn();
 }
