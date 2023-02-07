@@ -204,18 +204,20 @@
 }
 
 .durov-img-box{
-  height: 338px;
-  width: 338px;
+  width: 21.125vw;
   background-image: url('./assets/img/header/Durov.png');
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .buterin-img-box{
-  height: 338px;
-  width: 338px;
+  width: 21.125vw;
   background-image: url('./assets/img/header/Buterin.png');
   background-position: center;
   margin-left: 10px;
   margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .durov-text-box{
   font-family: 'Kanit';
@@ -225,9 +227,9 @@
   margin-left: 32px;
   max-width: 1000px;
 }
+
 .durov-p-1{
   font-size: 48px;
-  margin: 0px;
   margin-top: 65px;
   line-height: 25px;
   padding: 0px;
@@ -235,13 +237,11 @@
 .durov-p-2{
   font-size: 32px;
   line-height: 38px;
-  margin: 0px;
   margin-top: 12px;
 }
 .durov-p-3{
   font-size: 32px;
   line-height: 115px;
-  margin: 0px;
 }
 
 .buterin-text-box{
@@ -254,7 +254,6 @@
 }
 .buterin-p-1{
   font-size: 48px;
-  margin: 0px;
   margin-top: 65px;
   line-height: 25px;
   padding: 0px;
@@ -262,13 +261,11 @@
 .buterin-p-2{
   font-size: 32px;
   line-height: 38px;
-  margin: 0px;
   margin-top: 12px;
 }
 .buterin-p-3{
   font-size: 32px;
   line-height: 115px;
-  margin: 0px;
 }
 
 
