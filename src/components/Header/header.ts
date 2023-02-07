@@ -29,7 +29,7 @@ export function Header ():void {
       </div>
       
     </div>
-    <div class="line-header"></div>
+    <hr>
   </div>
 `;
 AboutOn();

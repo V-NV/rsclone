@@ -2,8 +2,9 @@ export function Main():void {
   const main = document.querySelector('main') as HTMLElement;
   //main.className = "present-main-wrap";
   main.innerHTML = "";
-  main.innerHTML +=` <section class="present-main-wrap">
-  <div class="present-main-cont">
+  main.innerHTML +=` 
+  <section class="present-main-wrap">
+    <div class="present-main-cont">
       
       <div class="present-up-block">
           <div class="present-left-up-box">
@@ -54,11 +55,11 @@ export function Main():void {
      </div>
 </section>  
   <!--ggggggggggggggggggggggggggggggggg--> 
+
 <section class="present-bottom-wrap">
 
       <div class="present-bottom-block">
-           <div class="present-bottom-course-box">REVIEWS</div>
-              <div class="present-bottom-cont">
+          <div class="review">REVIEW</div>
                    <div class="durov-cont">
                      <div class="durov-img-box">
                      </div>
@@ -77,8 +78,6 @@ export function Main():void {
                       <div class="buterin-img-box">
                       </div>
                    </div>
-
-              </div>
           </div>    
 </section>`;
 }
