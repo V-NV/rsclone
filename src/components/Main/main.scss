@@ -6,6 +6,12 @@
   font-family: 'Kanit';
    src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .present-main-wrap{
   position: relative;
   display: flex;
@@ -44,20 +50,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 0px;
-    margin: 0px;
 }
 .present-up-p{
   font-family: Kanit;
   font-size: 28px;
-  line-height: 0px;
-  margin-top: 0px;
  }
  .present-up-p2{
   font-family: Kanit;
   font-size: 36px;
-  line-height: 0px;
-  margin-top: 8px;
 }
 .present-up-button{
   width: 408px;

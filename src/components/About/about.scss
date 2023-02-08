@@ -18,25 +18,20 @@
     text-align: center;
     background-color: #262626;
     max-width: 1440px;
+    color: #FFFBD3;
+    padding: 0 15px;
   }
 
-  .about-us-cont{
-      font-family: 'Holtwood';
-      font-weight: 400;
-      color: #FFFBD3;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-}
-.p-about-us{
+.about-title{
+    font-family: 'Holtwood';
     font-size: 48px;
+    margin: 30px 0;
+    color:#FFFBD3
 }
 .about-us-text{
     font-family: 'Kanit';
     font-size: 48px;
     font-weight: 400;
-    text-align: center;
-    line-height: 57px;
 }
 .about-why-cont{
     font-family: 'Holtwood';
@@ -48,7 +43,6 @@
 }
 .p-about-why{
   font-size: 48px;
-  margin: 0;
 }
 .about-why-text{
   font-family: 'Kanit';
@@ -61,7 +55,6 @@
     font-size: 48px;
     font-weight: 400;
     text-align: center;
-    line-height: 58px;
 }
 .about-free-box{
     display: flex;
@@ -72,13 +65,11 @@
     font-family: 'Holtwood';
     font-size: 48px;
     font-weight: 400;
-    color: #FFFBD3;
 }
 .about-bottom{
     font-family: 'Kanit';
     font-weight: 400;
     font-size: 48px;
-    color: #FFFBD3;
 }
 
 .team-container {
@@ -90,8 +81,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     font-family: 'Kanit';
+    margin-bottom: 15px;
 }
 
 .member-img {
@@ -125,6 +116,7 @@
 }
 
 
+
 @media (max-width: 1599px) {
     .p-about-us{
         font-size: 3vw;
@@ -142,12 +134,20 @@
         font-size: 3vw;
     }
 
+    .about-title{
+        font-size: 3vw;
+        margin: 1.875vw 0;
+    }
 
     .about-free{
         font-size: 3vw;
     }
     .about-bottom{
         font-size: 3vw;
+    }
+
+    .team-container {
+        flex-wrap: wrap;
     }
 
     .member {
