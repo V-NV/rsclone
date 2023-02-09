@@ -14,33 +14,29 @@
 }
 
 .present-main-wrap{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  background-color: #262626;
-  height: 530px;
+  width: 100%;
+  margin: 50px 0;
 }
+
 .present-main-cont{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 1440px;
-  height: 500px;
-  background-color: #262626;
+  margin: 0 auto;
 }
+
 .present-up-block{
   display: flex;
-  flex-direction: row;
-  width: 1114px;
+  justify-content: space-between;
+  max-width: 1114px;
   height: 394px;
   background-color: #FFFBD3;
   margin-top: 57px;
   border-radius: 16px;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 40px;
 }
+
 .present-left-up-box{
-    width: 54%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,12 +76,12 @@
   transition: 0.7s;
 }
 .present-right-up-box{
-  width: 44%;
+  width: 100%;
   height: 300px;
-  background-image: url("./assets/img/header/intro-img.png");
+  background-image: url("./assets/img/Main/intro-img.png");
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 49px;
+  background-size: contain;
 }
 
 /*-**---------------------------------------------*/
@@ -123,8 +119,6 @@
   text-transform: uppercase;
 
   padding: 0 45px;
-
-  cursor: pointer;
 }
 
 .card-title {
@@ -144,6 +138,7 @@
   padding-top: 50%;
   padding-bottom: 30%;
   background-color: #FFFBD3;
+  cursor: pointer;
 }
 
 .card-1__img {
@@ -185,7 +180,6 @@
   display: flex;
   justify-content: space-between;
   color: #FFFBD3;
-
 }
 
 .present-bottom-course-box {
@@ -203,8 +197,6 @@
   width: 21.125vw;
   background-image: url('./assets/img/header/Buterin.png');
   background-position: center;
-  margin-left: 10px;
-  margin-top: 10px;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -219,7 +211,6 @@
 
 .durov-p-1{
   font-size: 48px;
-  margin-top: 65px;
   line-height: 25px;
   padding: 0px;
 }
@@ -238,14 +229,11 @@
   font-size: 32px;
   color: #FFFBD3;
   max-width: 1000px;
-  margin-top: 10px;
-  margin-left: 32px;
 }
 .buterin-p-1{
   font-size: 48px;
   margin-top: 65px;
   line-height: 25px;
-  padding: 0px;
 }
 .buterin-p-2{
   font-size: 32px;
@@ -265,6 +253,14 @@
 
   .card-title {
     font-size: 3.25vw;
+  }
+
+  .cards-grid {
+    margin: 0 -2.8125vw;
+  }
+  
+  .item {
+    padding: 0 2.8125vw;
   }
   
   .card-sub {

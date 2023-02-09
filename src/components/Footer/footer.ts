@@ -35,7 +35,7 @@ export function Footer():void {
                </a>
              </div>
              <div class="footer-year">© 2023, Homo coderus, Inc</div>
-</section> 
+    </section> 
     `;
 }
     
