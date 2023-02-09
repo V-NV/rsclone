@@ -24,44 +24,41 @@ export function Main():void {
       </div>
 </section>
 <!--ggggggggggggggggggggggggggggggggg--> 
-<section class="present-midle-wrap">
+<section class="courses">
 
-    <div class="present-midle-block">
-         <div class="present-midle-course-box">COURSES</div>
-            <div class="present-midle-lang-cont">
-               
-              <div class="present-midle-html-box">
-                    <div class="pres-midle-img-box1"></div>
-                    <div class="pres-midle-rect">
-                       <p class="pres-p-html1">HTML</p>
-                       <p class="pres-p-html2">11 hours</p>
-                    </div>  
-
-               </div>
-               <div class="present-midle-css-box">
-                  <div class="pres-midle-img-box2"></div>
-                  <div class="pres-midle-rect">
-                      <p class="pres-p-css1">CSS</p>
-                      <p class="pres-p-css2">8 hours</p>
-                  </div>    
-   
-               </div>
-               <div class="present-midle-js-box">
-                  <div class="pres-midle-img-box3"></div>
-                  <div class="pres-midle-rect">
-                      <p class="pres-p-js1">JAVASCRIPT</p>
-                      <p class="pres-p-js2">25 hours</p>
-                  </div>    
-              </div>
-          </div> 
-     </div>
+  <div class="courses-container">
+    <div class="section-title">Courses</div>
+      <div class="cards-grid">
+        <li class="item">
+          <div class="card-1 card">
+            <div class="card-1__img card__img"></div>
+            <p class="card-title">html</p>
+            <p class="card-sub">11 hours</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="card-2 card">
+            <div class="card-2__img card__img"></div>
+            <p class="card-title">css</p>
+            <p class="card-sub">8 hours</p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="card-3 card">
+            <div class="card-3__img card__img"></div>
+            <p class="card-title">javascript</p>
+            <p class="card-sub">6 hours</p>
+          </div>
+        </li>
+      </div>
+  </div>
 </section>  
   <!--ggggggggggggggggggggggggggggggggg--> 
 
 <section class="present-bottom-wrap">
 
       <div class="present-bottom-block">
-          <div class="review">REVIEW</div>
+          <div class="section-title">Review</div>
                    <div class="durov-cont">
                      <div class="durov-img-box">
                      </div>
