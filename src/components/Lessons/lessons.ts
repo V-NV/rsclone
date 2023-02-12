@@ -1,5 +1,5 @@
 import Home from "../../assets/img/Lessons/home.png";
-import jsTasks from "./../Courses/javascriptTasks/jsTasks"
+import jsTasks from "../courses/jsTasks/jsTasks"
 
 export function Lessons():void {
     const main = document.querySelector('main') as HTMLElement;
@@ -21,7 +21,7 @@ export function Lessons():void {
            <div class="courses-lesson-cont">
                <div class="courses-btn-lesson-up lesson-btn">Lesson</div>
                <div class="courses-lesson-text-box"> 
-                ${jsTasks[0].task}
+                
           </div>
          </div>
       
