@@ -11,7 +11,9 @@ export class AuthService {
   async getAll(): Promise<Auth[]> {
     return this.AuthModel.find().exec();
   }
-
+  async email(email: string) {
+    return this.AuthModel.deleteOne({ email: email }).exec();
+  }
   async register(authDto: AuthDto) {
     const newRegister = new this.AuthModel(authDto);
     return newRegister.save();

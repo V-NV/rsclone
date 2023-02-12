@@ -17,12 +17,18 @@ export class AuthController {
     return dto;
   }
 
+  // @Get(':email')
+  // async email(@Param('email') email: string) {
+  //   return this.authService.email(email);
+  // }
+
   @Get('allUsers')
   async getUsers() {
     return this.authService.getAll();
   }
-  @Delete(':id')
-  async deleteUser(@Param('id') id: string) {
-    return this.authService.deleteUser(id);
+
+  @Delete(':email')
+  async deleteUser(@Param('email') email: string) {
+    return this.authService.email(email);
   }
 }
