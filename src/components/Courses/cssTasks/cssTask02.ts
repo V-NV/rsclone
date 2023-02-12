@@ -1,4 +1,4 @@
-export const cssTask02 = `
+const cssTask02 = `
 </li></ol></nav><div><h1>CSS: Using CSS in HTML</h1><p>CSS is not directly related to HTML. You need to tell the browser where to download and interpret the styles from. There are three ways to do this:</p>
 
   <ol>
@@ -21,3 +21,5 @@ export const cssTask02 = `
   </div>
   <h2>Instructions</h2><p>Add the <code>&lt;p&gt;&lt;/p&gt;</code> tag to the editor and use the <code>style</code> attribute to set the font size to 12 pixels</p>
   `
+
+  export default cssTask02;

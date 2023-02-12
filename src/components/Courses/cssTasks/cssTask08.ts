@@ -1,4 +1,4 @@
-export const cssTask08 = `
+const cssTask08 = `
 </li></ol></nav><div><h1>CSS: Cascade</h1><p>We already know that CSS stands for &quot;Cascading Style Sheets&quot;. It&#39;s fairly clear what style sheet means at this point, but what does cascading mean? The point is that you can specify styles for an element in more than one place.</p>
 
   <p>Imagine a cascade of waterfalls. They flow into each other, accumulating more and more water. Eventually, the entire cascade will end up in one body of water. In CSS, the word cascade means the same action, only instead of waterfalls, it&#39;s CSS properties that flow over. In other words, cascading is CSS&#39;s ability to overlay properties on top of each other as well as to extend properties in selectors.</p>
@@ -40,3 +40,5 @@ export const cssTask08 = `
   
   <p>Note how the styles are applied at the same time. Write the styles in the <code>&lt;style&gt;</code> tag</p>
   `
+
+  export default cssTask08;

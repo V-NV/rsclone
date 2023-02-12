@@ -1,4 +1,4 @@
-export const cssTask07 = `
+const cssTask07 = `
 </li></ol></nav><div><h1>CSS: Selectors</h1><p>We&#39;ve seen tag and class selectors in tutorials before. A selector is a description of what a particular CSS style should be applied to. They can be quite complex, indicating not just the specific element, but where it&#39;s located or which tag it&#39;s in. Remember the class selector. It applies to any element whose class we have specified.</p>
 
   <pre><code>&lt;p class=&quot;text-bold&quot;&gt;Bold text inside a paragraph&lt;/p&gt;
@@ -41,3 +41,5 @@ export const cssTask07 = `
   <li>Set the bold class to have bold text</li>
   </ul>
   `
+
+  export default cssTask07;

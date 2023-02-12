@@ -1,4 +1,4 @@
-export const cssTask06 = `
+const cssTask06 = `
 </li></ol></nav><div><h1>CSS: Classes</h1><p>The main solution for styling a particular part of the page is to use classes. They allow us to set a style we need only for the elements that have the required class satisfied, rather than all of them.</p>
 
   <p>To specify a style for a class in CSS, we use the selector \`.name-class&#39;. Note the dot, this is how the browser understands that this style is specified for the class.</p>
@@ -22,3 +22,5 @@ export const cssTask06 = `
   <p>Since there can be many classes with the same name on the page, this rule will work for all elements where the class attribute is <code >paragraph</code></p>
   <h2>Instructions</h2><p>In the editor, add a paragraph with the class set to news and specify a text color of <code >#553333</code> for it. Add styles with the <code >&lt;style&gt;</code> tag.</p>
 `
+
+export default cssTask06;

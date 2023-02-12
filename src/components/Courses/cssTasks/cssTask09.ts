@@ -1,4 +1,4 @@
-export const cssTask09 = `
+const cssTask09 = `
 </li></ol></nav><div><h1>CSS: Priority</h1><ul>
   <li>
   Priority selectors
@@ -110,3 +110,5 @@ export const cssTask09 = `
   
   <p>Write the styles in the <code>&lt;style&gt;</code> tag.</p>
   `
+
+  export default cssTask09;

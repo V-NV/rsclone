@@ -1,13 +1,13 @@
-import { cssTask01 } from "./cssTask01"
-import { cssTask02 } from "./cssTask02"
-import { cssTask03 } from "./cssTask03"
-import { cssTask04 } from "./cssTask04"
-import { cssTask05 } from "./cssTask05"
-import { cssTask06 } from "./cssTask06"
-import { cssTask07 } from "./cssTask07"
-import { cssTask08 } from "./cssTask08"
-import { cssTask09 } from "./cssTask09"
-import { cssTask10 } from "./cssTask10"
+import cssTask01 from "./cssTask01"
+import cssTask02 from "./cssTask02"
+import cssTask03 from "./cssTask03"
+import cssTask04 from "./cssTask04"
+import cssTask05 from "./cssTask05"
+import cssTask06 from "./cssTask06"
+import cssTask07 from "./cssTask07"
+import cssTask08 from "./cssTask08"
+import cssTask09 from "./cssTask09"
+import cssTask10 from "./cssTask10"
 
 export const cssTasks = [
       {

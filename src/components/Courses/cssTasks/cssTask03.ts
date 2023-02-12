@@ -1,4 +1,4 @@
-export const cssTask03 = `
+const cssTask03 = `
 </li></ol></nav><div><h1>CSS: Style inheritance</h1><p>When you use styles in CSS, it often affects not only the element for which the style is specified but also the tags attached to it. Such styles are called <strong>inherited</strong> styles. The <code>font-size</code> style from the last lesson is inherited - it will apply to all nested tags.</p>
 
   <pre><code>&lt;div style=&quot;font-size: 20px;&quot;&gt;
@@ -32,3 +32,5 @@ export const cssTask03 = `
   </div>
   <h2>Instructions</h2><p>Add the <code >&lt;div&gt;&lt;/div&gt;</code> tag to the editor and, using the attributes, set the font size to 20 pixels. Inside the <code>&lt;div&gt;</code> tag, enclose a paragraph with a font size of 10 pixels</p>
   `
+
+  export default cssTask03;

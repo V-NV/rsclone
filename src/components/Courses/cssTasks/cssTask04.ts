@@ -1,4 +1,4 @@
-export const cssTask04 = `
+const cssTask04 = `
 </li></ol></nav><div><h1>CSS: Tag style</h1><p>The main problem with using attributes to define styles is that they are overloaded. Often, HTML markup contains very many elements, and when you add styles, there ends up being much more code, which is bad for reading the markup.</p>
 
   <p>The second problem is fixing the styles. To do this, you must first find the desired element in the code, and then edit its styles. There may be 10, 20, or 100 such elements on the page. And for tags with the same name, you have to write styles for each element separately.</p>
@@ -64,3 +64,5 @@ export const cssTask04 = `
   </code></pre>
   <h2>Instructions</h2><p>Add a paragraph to the editor and, using the <code >style</code> tag, set the font size to 10 pixels</p>
   `
+
+  export default cssTask04;

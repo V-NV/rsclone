@@ -1,4 +1,4 @@
-export const cssTask10 = `
+const cssTask10 = `
 </li></ol></nav><div><h1>CSS: Colors</h1><p>Coloring a section of text is a common way to get a user&#39;s attention on a page. Various advertising banners are constantly trying to tell us about an incredible discount, or an offer that ends today. In the same way, highlighting can indicate important information that must be read.</p>
 
   <p>Using CSS, you can set the color of the text for the whole page or for a small area. This is determined by the selector you choose. The color itself is set using the property <code>color</code>, the value of which is, naturally, a color.</p>
@@ -27,3 +27,5 @@ export const cssTask10 = `
   </code></pre>
   <h2>Instructions</h2><p>In the editor, add a <code>&lt;span&gt;</code> element with the class set to <code>violet</code>, and set its color to <code>#9400d3</code>. Use the <code>&lt;style&gt;</code> tag to include styles.</p>
   `
+
+  export default cssTask10;

@@ -1,4 +1,4 @@
-export const cssTask01 = `
+const cssTask01 = `
 </li></ol></nav><div><h1>CSS: Introduction in CSS</h1>
 
   <p>The HTML markup language course covered various elements that have a default style - indented paragraphs, color-coded links, different-sized headings, etc. As a developer, you can change this styles or add entirely new ones. Want to add a background to the text? Resize elements? Create an animation? You can do all this with CSS (Cascading Style Sheets), the language that defines how HTML elements will look in the browser.</p>
@@ -31,3 +31,5 @@ export const cssTask01 = `
   <pre><code>&lt;p style=&quot;font-size: 25px;&quot;&gt;The first style change with CSS&lt;/p&gt;
   </code></pre>
   `;
+
+  export default cssTask01;
