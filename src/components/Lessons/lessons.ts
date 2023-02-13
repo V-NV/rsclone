@@ -1,10 +1,11 @@
 import Home from "../../assets/img/Lessons/home.png";
+import { IdeHtml } from "./ide/idehtml";
 
-export function Lessons():void {
-    const main = document.querySelector('main') as HTMLElement;
-    
-    main.innerHTML = "";
-    main.innerHTML +=`<section class="courses-main-wrap">
+export function Lessons(): void {
+  const main = document.querySelector("main") as HTMLElement;
+
+  main.innerHTML = "";
+  main.innerHTML += `<section class="courses-main-wrap">
     <div class="courses-main-cont">
         <div class="courses-home">
           <div class="courses-images">
@@ -66,4 +67,5 @@ Note that if you type hello, woRld! instead of Hello, World!, it will count as d
       
     </div>
   </section>`;
+  IdeHtml();
 }
