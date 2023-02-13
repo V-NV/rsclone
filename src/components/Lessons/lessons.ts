@@ -1,5 +1,5 @@
 import Home from "../../assets/img/Lessons/home.png";
-import jsTasks from "../courses/jsTasks/jsTasks"
+import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 export function Lessons():void {
     const main = document.querySelector('main') as HTMLElement;

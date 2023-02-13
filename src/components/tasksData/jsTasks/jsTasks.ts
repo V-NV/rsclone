@@ -12,52 +12,52 @@ import jsTask10 from "./jsTask10";
 const jsTasks = 
 [
   {
-    id: 1,
+    taskNum: 1,
     title: 'JavaScript: Hello, World!',
     task: jsTask01,
   },
   {
-    id: 2,
+    taskNum: 2,
     title: 'JavaScript: Comments',
     task: jsTask02,
   },
   {
-    id: 3,
+    taskNum: 3,
     title: 'JavaScript: Statements',
     task: jsTask03,
   },
   {
-    id: 4,
+    taskNum: 4,
     title: 'JavaScript: How do we verify your solutions?',
     task: jsTask04,
   },
   {
-    id: 5,
+    taskNum: 5,
     title: 'JavaScript: Syntax errors',
     task: jsTask05,
   },
   {
-    id: 6,
+    taskNum: 6,
     title: 'JavaScript: Arithmetic operations',
     task: jsTask06,
   },
   {
-    id: 7,
+    taskNum: 7,
     title: 'JavaScript: Operators',
     task: jsTask07,
   },
   {
-    id: 8,
+    taskNum: 8,
     title: 'JavaScript: Commutative operations',
     task: jsTask08,
   },
   {
-    id: 9,
+    taskNum: 9,
     title: 'JavaScript: Composition of operations',
     task: jsTask09,
   },
   {
-    id: 10,
+    taskNum: 10,
     title: 'JavaScript: Operator precedence',
     task: jsTask10,
   }

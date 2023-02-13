@@ -1,15 +1,18 @@
 import home from "../../assets/img/CourseTemplate/home.png"
 import watch from "../../assets/img/CourseTemplate/watch.png"
 import student from "../../assets/img/CourseTemplate/student1.png"
-import students from "../../assets/img/CourseTemplate/studentnew.png"
+import students from "../../assets/img/CourseTemplate/students.png"
 // import { LessonsOn } from "../View/lessonsOn"
 
 const CourseTemplate = (
-    props: { id: number, title: string, task: string }[],
     gif: string,
-    logo: string
+    logo: string,
+    courseInfo: { introTitle: string, introText: string, hours: number, students: number, lessons: number},
+    jsTasks: { taskNum: number, title: string, task: string }[]
     ) => {
     return `
+    <section class="main-wrap">
+    <div class="main-cont">
       <div class="home">
         <p><img src="${home}" alt="home">&nbsp&nbsp&nbsp&#10230&nbsp&nbsp&nbspJavaScript</p>
       </div>
@@ -21,20 +24,16 @@ const CourseTemplate = (
                     Free course
                 </div>
                 <div class="parag">
-                    JavaScript: Perfect for beginners
+                    ${courseInfo.introTitle}
                 </div>
                 <div class="text">
-                    Programming learning is an interesting and exciting process.
-                    The syntax of the language is the simplest and shortest path,
-                    without which it is impossible to start. This free online JavaScript 
-                    course will introduce you to the basic concepts of the language. 
-                    Learn the basics and write your first JS programs.
+                    ${courseInfo.introText}
                 </div>
                 <div class="icon-box">
                     <p class="icon-string">
-                    <img class="img" src="${watch}" alt="watch"> 6 hours &nbsp&nbsp&nbsp
-                    <img class="img" src="${student}" alt="students"> 982 students &nbsp&nbsp&nbsp
-                    <img class="img" src="${students}">10 lessons with practice in the browser
+                    <img class="img" src="${watch}" alt="watch"> ${courseInfo.hours} hours &nbsp&nbsp&nbsp
+                    <img class="img" src="${student}" alt="students">  ${courseInfo.students} students &nbsp&nbsp&nbsp
+                    <img class="img" src="${students}"> ${courseInfo.lessons} lessons with practice in the browser
                     </p>
                 </div>
                 <div class="button-box">
@@ -50,8 +49,8 @@ const CourseTemplate = (
         </div>
         <div class="basics-cont">
             <ul class="tasks-container">
-                ${props.map((item) => {
-                    return `<li id=${item.id}><p class="task-item">${item.id}. ${item.title}</p></li>`
+                ${jsTasks.map((item) => {
+                    return `<li id=${item.taskNum}><p class="task-item">${item.taskNum}. ${item.title}</p></li>`
                 })
                 }
             </ul>
@@ -61,7 +60,9 @@ const CourseTemplate = (
             server-side development. You will learn JS from scratch, from the very beginning.
             </div>
         </div>
-`
+        </div> 
+        </section>;
+    `
 }
 
 export default CourseTemplate;
