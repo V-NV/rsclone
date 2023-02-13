@@ -17,12 +17,12 @@ export class AuthController {
     return dto;
   }
 
-  // @Get(':email')
-  // async email(@Param('email') email: string) {
-  //   return this.authService.email(email);
-  // }
+  @Get(':email')
+  async email(@Param('email') email: string) {
+    return this.authService.email(email);
+  }
 
-  @Get('allUsers')
+  @Get()
   async getUsers() {
     return this.authService.getAll();
   }

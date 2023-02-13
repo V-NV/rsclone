@@ -6,7 +6,7 @@ import { UserPostService } from './user-post.service';
 export class UserPostController {
   constructor(private userPostService: UserPostService) {}
 
-  @Get('getAllPosts')
+  @Get()
   async getAllPosts() {
     return this.userPostService.getAllPosts();
   }
