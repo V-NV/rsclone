@@ -3,12 +3,15 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "esnext",
+    //"module": "esnext", // deleted
     "target": "ES2021",
     "allowJs": true,
+    "checkJs": false, // added
+    "module":"CommonJS",
+    "resolveJsonModule": true, //added
     "strict": true,
     "moduleResolution": "node"
   },
   "files": ["src/index.ts"],
-  "include": ["src/assets/**/*"]
+  "include": ["src"]
 }
