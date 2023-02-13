@@ -1,4 +1,5 @@
 import Home from "../../assets/img/Lessons/home.png";
+import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 export function Lessons():void {
     const main = document.querySelector('main') as HTMLElement;
@@ -20,19 +21,7 @@ export function Lessons():void {
            <div class="courses-lesson-cont">
                <div class="courses-btn-lesson-up lesson-btn">Lesson</div>
                <div class="courses-lesson-text-box"> 
-                JavaScript: Hello, World!
-As is tradition, we'll start by writing a 'Hello, World!' program. The program will print the following text:
-Hello world!
-
-To print something, you need to give computer a special command. In JavaScript, we use console.log().
-Instructions
-Copy the exact code from the instructions into the editor and run it by clicking “Run”.
-console.log('Hello, World!');
-Note that if you type hello, woRld! instead of Hello, World!, it will count as different text, because upper and lowercase letters are different symbols in JavaScript. Letter size is called case, and any programmer will tell you that case is important. This rule affects almost everything in coding, so make sure you get used to paying close attention to the case at all times.
-Instructions
-Copy the exact code from the instructions into the editor and run it by clicking “Run”.
-console.log('Hello, World!');
-Note that if you type hello, woRld! instead of Hello, World!, it will count as different text, because upper and lowercase letters are different symbols in JavaScript. Letter size is called case, and any programmer will tell you that case is important. This rule affects almost everything in coding, so make sure you get used to paying close attention to the case at all times.
+                
           </div>
          </div>
       
