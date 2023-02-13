@@ -1,8 +1,8 @@
-import { JavaScript } from "../pages/javascript";
+import { javascriptPage } from "../pages/javascriptPage";
 
 export function javascriptOn() {
-  const javascript = document.querySelector('.card-3') as HTMLElement;
+  const javascript = document.querySelector('#js') as HTMLElement;
     javascript.addEventListener('click',() => {
-      JavaScript();
+      javascriptPage();
     }
 )}

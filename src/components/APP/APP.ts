@@ -1,12 +1,12 @@
 import "../View/view";
 import "../Main/Main";
-import "../Header/header";
-import "../Footer/footer";
+import "../Header/Header";
+import "../Footer/Footer";
 
 import { View } from "../View/view";
-import { Header } from "../Header/header";
+import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
-import { Footer } from "../Footer/footer";
+import { Footer } from "../Footer/Footer";
 
 const App = ()=>{
 View();
@@ -15,10 +15,3 @@ Main();
 Footer();
 }
 App ();
-//Footer();
-/*import palm from "../../assets/img/palm.jpg";
-
-console.log("From App");
-
-const img = <HTMLImageElement>document.querySelector(".test-img");
-img.src = palm;*/

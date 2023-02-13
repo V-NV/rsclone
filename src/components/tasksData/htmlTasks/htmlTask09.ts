@@ -1,3 +1,4 @@
+const htmlTask09 = `
 </li></ol></nav><div><h1>HTML: Lists</h1><ul>
   <li>
   <a href="#marked-list">Marked list</a>
@@ -81,3 +82,6 @@
   &lt;/ol&gt;
   </code></pre>
   <h2>Instructions</h2><p>Create a numbered list of 5 items</p>
+  `
+
+  export default htmlTask09;

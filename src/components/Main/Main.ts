@@ -1,104 +1,106 @@
 import { javascriptOn } from "../View/javascriptOn";
+import { cssOn } from "../View/cssOn";
+import { htmlOn } from "../View/htmlOn";
+
 
 export function Main():void {
   const main = document.querySelector('main') as HTMLElement;
-  //main.className = "present-main-wrap";
   main.innerHTML = "";
   main.innerHTML +=` 
-  <section class="present-main-wrap">
-    <div class="present-main-cont">
-      
-      <div class="present-up-block">
-          <div class="present-left-up-box">
-             <div class="present-up-p-box">
-                <p class="present-up-p">Learn to Programming for Free</p>
-                <p class="present-up-p2" >Learn HTML, CSS and JavaScript</p>
-             </div>
-                <div class="present-up-button">TRY NOW!</div>
+    <section class="present-main-wrap">
+      <div class="present-main-cont">
+        
+        <div class="present-up-block">
+            <div class="present-left-up-box">
+              <div class="present-up-p-box">
+                  <p class="present-up-p">Learn to Programming for Free</p>
+                  <p class="present-up-p2">Learn HTML, CSS and JavaScript</p>
+              </div>
+                  <div class="present-up-button">TRY NOW!</div>
 
-          </div>
-          <div class="present-right-up-box">
+            </div>
+            <div class="present-right-up-box">
 
-          </div>
+            </div>
 
-      </div>
-</section>
-<!--ggggggggggggggggggggggggggggggggg--> 
-<section class="courses">
-
-  <div class="courses-container">
-    <div class="section-title">Courses</div>
-      <div class="cards-grid">
-        <li class="item">
-          <div class="card-1 card">
-            <div class="card-1__img card__img"></div>
-            <p class="card-title">html</p>
-            <p class="card-sub">11 hours</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="card-2 card">
-            <div class="card-2__img card__img"></div>
-            <p class="card-title">css</p>
-            <p class="card-sub">8 hours</p>
-          </div>
-        </li>
-        <li class="item">
-          <div class="card-3 card">
-            <div class="card-3__img card__img"></div>
-            <p class="card-title">javascript</p>
-            <p class="card-sub">6 hours</p>
-          </div>
-        </li>
-      </div>
-  </div>
-</section>  
+        </div>
+  </section>
   <!--ggggggggggggggggggggggggggggggggg--> 
+  <section class="courses">
 
-<section class="present-bottom-wrap">
+    <div class="courses-container">
+      <div class="section-title">Courses</div>
+        <div class="cards-grid">
+          <li class="item" id="html">
+            <div class="card-1 card">
+              <div class="card-1__img card__img"></div>
+              <p class="card-title">html</p>
+              <p class="card-sub">11 hours</p>
+            </div>
+          </li>
+          <li class="item" id="css">
+            <div class="card-2 card">
+              <div class="card-2__img card__img"></div>
+              <p class="card-title">css</p>
+              <p class="card-sub">8 hours</p>
+            </div>
+          </li>
+          <li class="item" id="js">
+            <div class="card-3 card">
+              <div class="card-3__img card__img"></div>
+              <p class="card-title">javascript</p>
+              <p class="card-sub">6 hours</p>
+            </div>
+          </li>
+        </div>
+    </div>
+  </section>  
+    <!--ggggggggggggggggggggggggggggggggg--> 
 
-      <div class="present-bottom-block">
-          <div class="section-title">Review</div>
-                   <div class="durov-cont">
-                     <div class="durov-img-box">
-                     </div>
-                     <div class="durov-text-box">
-                         <p class="durov-p-1">Pavel Durov:</p>
-                         <p class="durov-p-2">Very good courses. I learned so fast HTML and a bit JavaScript. Thank you guys, Nikolay especially. Alexey can you call me on the week? Need to talk about some deal.</p>
-                         <p class="durov-p-3">Pavel completed course: HTML</p>
-                     </div>
-                  </div>
-                   <div class="buterin-cont">
-                      <div class="buterin-text-box">
-                         <p class="buterin-p-1">Vitalik Buterin:</p>
-                         <p class="buterin-p-2">OMG this is better than my silly project named “Ethereum”. Can you visit me in Canada because i have business offer for you. My number +12064512559 CALL ME NOW.</p>
-                         <p class="buterin-p-3">Vitalik completed course: JavaScript.</p>
+  <section class="present-bottom-wrap">
+
+        <div class="present-bottom-block">
+            <div class="section-title">Review</div>
+                    <div class="durov-cont">
+                      <div class="durov-img-box">
                       </div>
-                      <div class="buterin-img-box">
+                      <div class="durov-text-box">
+                          <p class="durov-p-1">Pavel Durov:</p>
+                          <p class="durov-p-2">Very good courses. I learned so fast HTML and a bit JavaScript. Thank you guys, Nikolay especially. Alexey can you call me on the week? Need to talk about some deal.</p>
+                          <p class="durov-p-3">Pavel completed course: HTML</p>
                       </div>
-                   </div>
-          </div>    
+                    </div>
+                    <div class="buterin-cont">
+                        <div class="buterin-text-box">
+                          <p class="buterin-p-1">Vitalik Buterin:</p>
+                          <p class="buterin-p-2">OMG this is better than my silly project named “Ethereum”. Can you visit me in Canada because i have business offer for you. My number +12064512559 CALL ME NOW.</p>
+                          <p class="buterin-p-3">Vitalik completed course: JavaScript.</p>
+                        </div>
+                        <div class="buterin-img-box">
+                        </div>
+                    </div>
+            </div>    
 </section>`;
+
 javascriptOn();
+cssOn();
+htmlOn();
+
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /*`
   <section class="main-content">
       <div class="item response">

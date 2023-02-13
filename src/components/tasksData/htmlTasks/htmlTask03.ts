@@ -1,3 +1,4 @@
+const htmlTask03 = `
 </li></ol></nav><div><h1>HTML: Text in HTML</h1><p>Within a browser or other program that can process HTML, the text is rendered based on the specified tags. Without them, the browser will not understand how to properly display the text.</p>
 
   <p>Let&#39;s look at an example of text and try to output it both with tags and without them.</p>
@@ -45,3 +46,6 @@
   </div>
   
   <p>Each paragraph must be inside a separate tag</p>
+  `
+
+  export default htmlTask03;
