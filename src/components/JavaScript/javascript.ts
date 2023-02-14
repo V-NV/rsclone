@@ -2,7 +2,7 @@ import home from "../../assets/img/JS/home.png";
 import watch from "../../assets/img/JS/watch.png";
 import student from "../../assets/img/JS/student1.png";
 import students from "../../assets/img/JS/studentnew.png";
-// import { LessonsOn } from "../View/lessonsOn";
+import { LessonsOn } from "../View/lessonsOn";
 //import { IdeHtmlOn } from "../View/idehtmlOn";
 //import { idecssOn } from "../View/idecssOn";
 
@@ -85,5 +85,5 @@ export function JavaScript():void {
         </div>
     </div>
   </section>`;
-  //LessonsOn();
+  LessonsOn();
 }
