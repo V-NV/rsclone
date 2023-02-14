@@ -15,4 +15,9 @@ export const cssPage = ():void => {
     const main = document.querySelector('main') as HTMLElement;
     main.innerHTML = "";
     main.innerHTML += CourseTemplate(CSSGif, CSSLogo, courseInfo, cssTasks);
+    BtnContId();
+}
+function BtnContId() {
+  const a = document.querySelector('ul') as HTMLElement;
+  a.id = 'css';
 }

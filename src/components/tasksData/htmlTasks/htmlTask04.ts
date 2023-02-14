@@ -1,4 +1,4 @@
-const htmlTask04 = `
+const HtmlTask04 = `
 </li></ol></nav><div><h1>HTML: Tag nesting</h1><p>Tag nesting is an important concept in HTML. You can place more than just text between HTML tags as it was before, you can also place other tags. This allows you to create a complex layout in which areas are separated from each other, e.g., the menu is separated from the header, the advertising block is separated from the main content, etc.</p>
 
   <p>Some elements in HTML require some tags to be nested into other. For example, lists:</p>
@@ -45,4 +45,4 @@ const htmlTask04 = `
   <h2>Instructions</h2><p>Create a bullet list of three items. You learned about this type of list in this lesson</p>
   `
 
-  export default htmlTask04;
+  export default HtmlTask04;

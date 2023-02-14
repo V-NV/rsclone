@@ -1,4 +1,4 @@
-const htmlTask10 = `
+const HtmlTask10 = `
 </li></ol></nav><div><h1>HTML: Nested lists</h1><p>When making a to-do list, it may be necessary to break items down into several additional sub-items. For example, in the to-do list, the item &quot;Go to the store&quot; may contain a shopping list.</p>
 
   <p><em>Nested lists</em> are used to create this structure. This allows you to insert a new list as a list item, rather than just text, creating a complex structure:</p>
@@ -56,4 +56,4 @@ const htmlTask10 = `
   </div>
 `
 
-export default htmlTask10;
+export default HtmlTask10;

@@ -1,4 +1,4 @@
-const htmlTask07 = `
+const HtmlTask07 = `
 </li></ol></nav><div><h1>HTML: Text layout</h1><ul>
   <li>
   <a>Bold lettering</a>
@@ -62,4 +62,4 @@ const htmlTask07 = `
   <p>in which make the word &quot;courses&quot; bold (physical markup) and highlight the combination &quot;by programming&quot; in italics (logical markup). Don&#39;t forget to wrap the phrase in a paragraph</p>
   `
 
-  export default htmlTask07;
+  export default HtmlTask07;

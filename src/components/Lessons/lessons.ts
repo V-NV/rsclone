@@ -1,8 +1,10 @@
 import Home from "../../assets/img/Lessons/home.png";
 import { IdeHtml } from "./ide/idehtml";
-import jsTasks from "../tasksData/jsTasks/jsTasks";
+import { IdeCss } from "./ide/idecss";
+import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
+//import jsTasks from "../tasksData/jsTasks/jsTasks";
 
-export function Lessons(): void {
+export function Lessons(num:number, ide:string): void {
   const main = document.querySelector("main") as HTMLElement;
 
   main.innerHTML = "";
@@ -11,11 +13,11 @@ export function Lessons(): void {
         <div class="courses-home">
           <div class="courses-images">
             <img src="${Home}" alt="home">&nbsp&nbsp&nbsp&#10230&nbsp&nbsp&nbsp
-               <span class="courses-name">JavaScript</span class="courses-level-name">&nbsp&nbsp&nbsp&#10230&nbsp&nbsp&nbsp
-               Hellow, world!
+               <span class="courses-name">JavaScript</span>&nbsp&nbsp&nbsp&#10230&nbsp&nbsp&nbsp
+               <span class="courses-level-name">Hellow, world!</span>
           </div>
           <div class="courses-images">           
-            <span class="courses-level-number">1</span> / <span class="courses-level-total">10</span>
+            <span class="courses-level-number">${num}</span> / <span class="courses-level-total">10</span>
           </div>
         </div>
         <div class="courses-work-container">
@@ -56,5 +58,34 @@ export function Lessons(): void {
       
     </div>
   </section>`;
-  IdeHtml();
+  LessonText(num);  
+  Ide(ide);
+  CourseName(ide);  
+  LevelName(num);
 }
+function LessonText(num:number) {
+  const TextBox = document.querySelector('.courses-lesson-text-box') as HTMLElement;
+  TextBox.innerHTML = '';
+  TextBox.innerHTML = HtmlTasks[num-1].task;
+}
+
+function Ide (ide:string) {
+  if (ide == "html") {
+    IdeHtml();
+  }
+  if (ide == "css") {
+  IdeCss();
+  }
+   }
+   function CourseName (name:string) {
+    const CourseNam = document.querySelector('.courses-name') as HTMLElement;
+    CourseNam.textContent =  name.toUpperCase();
+   }
+
+
+function LevelName(num:number) {
+const LevelNam = document.querySelector('.courses-level-name') as HTMLElement;
+LevelNam.textContent =  HtmlTasks[num-1].title;
+}
+
+

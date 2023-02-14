@@ -1,4 +1,4 @@
-const htmlTask01 = `
+const HtmlTask01 = `
 </li></ol></nav><div><h1>HTML: The basics of HTML</h1><p>Every day we look at dozens of web pages and read texts on them that are rendered as though they were in a magazine. These pages are hypertext - a system of web pages that can be navigated using links. A language, HTML, exists to implement this system.</p>
 
     <p>HTML stands for HyperText Markup Language. By its function, HTML is a set of rules by which the browser distinguishes headings from lists, tables from pictures, and so on. HTML appeared in 1993 and was intended to standardize the rules for displaying text within web pages.</p>
@@ -26,4 +26,4 @@ const htmlTask01 = `
     <pre><code>&lt;h1&gt;Hello, World!&lt;/h1&gt;
     </code></pre>
 `
-    export default htmlTask01;
+    export default HtmlTask01;

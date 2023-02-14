@@ -1,4 +1,4 @@
-const htmlTask02 = `
+const HtmlTask02 = `
 </li></ol></nav><div><h1>HTML: Tags</h1><p>In order for the browser to determine the type of element that needs to be displayed on the page, there are special constructions in HTML, called tags. You can use tags to create a paragraph, a title, or a text section, and also to  quickly change them.</p>
 
   <p>One of the main tags is the paragraph tag. It separates sections of text from each other, allowing users to read the information on the page more comfortably.</p>
@@ -31,4 +31,4 @@ const htmlTask02 = `
   <p>Using CSS, you can change these styles and add new ones. There is a separate course on this site for learning this language.</p>
   <h2>Instructions</h2><p>Wrap the phrase <em>The quick brown fox jumps over the lazy dog</em> <code>&lt;p&gt;</code> into the <p> tag and paste in the editor.</p>
   `
-  export default htmlTask02;
+  export default HtmlTask02;
