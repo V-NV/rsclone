@@ -1,12 +1,12 @@
-import { IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class DataHtmlDto {
+  @IsNumber()
+  taskNum: number;
   @IsString()
-  course: string;
+  title: string;
   @IsString()
-  inner_test: string;
+  task: string;
   @IsString()
   solution: string;
-  @IsString()
-  text_solution: string;
 }

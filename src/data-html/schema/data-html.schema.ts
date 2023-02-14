@@ -5,17 +5,14 @@ export type DataHTMLDocument = DataHTML & Document;
 
 @Schema()
 export class DataHTML {
+  @Prop({ unique: true })
+  taskNum: number;
   @Prop()
-  course: string;
-
+  title: string;
   @Prop()
-  inner_test: string;
-
+  task: string;
   @Prop()
   solution: string;
-
-  @Prop()
-  text_solution: string;
 }
 
 export const DataHTMLSchema = SchemaFactory.createForClass(DataHTML);
