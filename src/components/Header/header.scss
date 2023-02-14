@@ -2,48 +2,57 @@
   font-family: 'Holtwood';
    src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
  }
-body{
+
+body {
   margin: 0;
   background-color: #262626;
 }
-.black-header-wrap{
-    display: flex;
-    justify-content: center;
-    background-color: #262626;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-.black-header{
-  width: 100%;
+
+.header-wrap {
+  display: flex;
+  justify-content: center;
   background-color: #262626;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
   margin: 20px 0;
 }
-.black-header-cont{
+
+.header-cont{
   display: flex;
   justify-content: space-between;
 }
 
-.black-logo-box{
+.logo-box{
   max-width: 166px;
+  max-height: 166px;
+  margin: 20px 0;
 }
-.black-logo{
+
+.logo{
   width: 100%;
   cursor: pointer;
 }
-.black-header-btn-cont-left{
+
+.header-btn-cont-left{
     max-width: 470px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.black-header-btn-cont-right{
+
+.header-btn-cont-right{
     max-width: 360px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
-.black-header-btn{
+
+.header-btn{
   font-size: 24px;
   color: #FFFBD3;
   cursor: pointer;
@@ -51,11 +60,13 @@ body{
   transition: 0.7s;
   margin-left: 20px;
 }
-.black-header-btn:hover{
+
+.header-btn:hover{
   transition: 0.7s;
   color: #9ca5ae;
 }
-.black-header-about{
+
+.header-about{
   position: absolute;
   flex-direction: column;
   justify-content: flex-start;
@@ -67,10 +78,12 @@ body{
   opacity: .99;
   border-radius: 20px;
 }
-.black-p-about{
-font-size: 20px;
-color: #3e57ac;
+
+.p-about{
+  font-size: 20px;
+  color: #3e57ac;
 }
+
 .line-header{
   height: 0px;
   min-width: 306px;
@@ -89,15 +102,16 @@ hr {
 
 
 @media (max-width: 1599px) {
-  .black-logo-box{
+  .logo-box{
     width: 10.375vw;
+    margin: 1.25vw 0;
   }
 
-  .black-header-btn {
+  .header-btn {
     font-size: 1.5vw;
   }
 
-  .black-header-wrap{
+  .header-wrap{
     padding: 0 15px;
 }
 }
