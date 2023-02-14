@@ -132,31 +132,36 @@
 
 .card {
   background-color: #793691;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
 }
 
 .card__img {
   padding-top: 50%;
   padding-bottom: 30%;
   background-color: #FFFBD3;
-  cursor: pointer;
 }
 
 .card-1__img {
-  background-image: url(./assets/img/Main/html.png);
+  background-image: url(./assets/img/html/html-logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
 }
 
 .card-2__img {
-  background-image: url(./assets/img/Main/css.png);
+  background-image: url(./assets/img/css/css-logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
 }
 
 .card-3__img {
-  background-image: url(./assets/img/Main/JavaScript.png);
+  background-image: url(./assets/img/js/js-logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
@@ -188,18 +193,22 @@
 
 .durov-img-box{
   width: 21.125vw;
-  background-image: url('./assets/img/header/Durov.png');
+  background-image: url('./assets/img/Main/Durov.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .buterin-img-box{
-  width: 21.125vw;
-  background-image: url('./assets/img/header/Buterin.png');
+  width: 340px;
+  height: 340px;
+  background-image: url('./assets/img/Main/Buterin.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  border-radius: 500px;
 }
+
 .durov-text-box{
   font-family: 'Kanit';
   font-weight: 400;
@@ -297,6 +306,11 @@
   .buterin-p-3{
     font-size: 2vw;
     line-height: 7.1875vw;
+  }
+
+  .buterin-img-box{
+    width: 21.25vw;
+    height: 21.25vw;
   }
 
   .review {

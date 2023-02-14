@@ -1,6 +1,6 @@
-import CourseTemplate from '../pages/CourseTemplate';
-import JSGif from '../../assets/img/JS/js-intro.gif';
-import JSLogo from '../../assets/img/JS/JSlogo.png';
+import CourseTemplate from './CourseTemplate';
+import JSGif from '../../assets/img/js/js-intro.gif';
+import JSLogo from '../../assets/img/js/js-logo.png';
 import jsTasks from '../tasksData/jsTasks/jsTasks';
 
 const courseInfo = {
@@ -15,7 +15,7 @@ const courseInfo = {
   lessons: 10
 }
 
-export const JavaScript = ():void => {
+export const javascriptPage = ():void => {
     const main = document.querySelector('main') as HTMLElement;
     main.innerHTML = "";
     main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);

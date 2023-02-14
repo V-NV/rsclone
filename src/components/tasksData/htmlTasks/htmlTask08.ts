@@ -1,3 +1,4 @@
+const htmlTask08 = `
 </li></ol></nav><div><h1>HTML: Headings</h1><p>The larger the text, the more often it is divided into logical sections. For example, the basic markup of a report, diploma or essay consists of three main parts:</p>
 
   <ol>
@@ -63,3 +64,5 @@
   &lt;h2&gt;Chapter 2&lt;/h2&gt;
   </code></pre>
   <h2>Instructions</h2><p>Add a first and second level header with arbitrary text in the editor</p>
+  `
+  export default htmlTask08;

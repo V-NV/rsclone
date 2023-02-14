@@ -1,3 +1,4 @@
+const htmlTask06 = `
 </li></ol></nav><div><h1>HTML: Paragraphs</h1><p>Paragraphs are the main way to divide a large text into small logical blocks. These blocks are automatically &quot;indented&quot; from each other. Such text is much easier to read and does not scare users.</p>
 
   <p>Paragraphs are mostly found within large text. For example, any lesson on Hexlet or Code Basics is broken up into paragraphs for easy reading, just like this one.</p>
@@ -17,3 +18,5 @@
     <p>Second paragraph</p>
   </div>
   <h2 >Instructions</h2><p>Wrap the phrase <em>Hello, World</em> in a paragraph tag</p>
+  `
+  export default htmlTask06;
