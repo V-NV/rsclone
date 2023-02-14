@@ -1,7 +1,7 @@
 import CodeMirror from "codemirror";
 import "../../../../node_modules/codemirror/lib/codemirror.css";
 import "../../../../node_modules/codemirror/theme/dracula.css";
-import "../../../../node_modules/codemirror/mode/javascript/javascript.js";
+import "../../../../node_modules/codemirror/mode/xml/xml.js";
 
 export function IdeHtml() {
   const main = document.querySelector(
@@ -19,7 +19,7 @@ export function IdeHtml() {
   const htmlEditor = CodeMirror(WindowIdeHtml, {
     lineNumbers: true,
     tabSize: 4,
-    mode: "javascript",
+    mode: "xml",
     theme: "dracula",
   });
 
@@ -27,7 +27,7 @@ export function IdeHtml() {
   BtnRun.addEventListener("click", () => {
     const htmlCode = htmlEditor.getValue();
     const previewWindow = document.querySelector(
-      "#preview-window"
+      ".courses-editor-code-result"
     ) as HTMLElement;
     previewWindow.innerHTML = htmlCode;
   });

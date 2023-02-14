@@ -1,7 +1,12 @@
 import CodeMirror from "codemirror";
+import "../../../../node_modules/codemirror/lib/codemirror.css";
+import "../../../../node_modules/codemirror/theme/dracula.css";
+import "../../../../node_modules/codemirror/mode/css/css.js";
 
 export function IdeCss() {
-  const main = document.querySelector("main") as HTMLElement;
+  const main = document.querySelector(
+    ".courses-editor-code-cont"
+  ) as HTMLElement;
   main.innerHTML = "";
   main.innerHTML += `
                 <div class="editor">
@@ -10,22 +15,20 @@ export function IdeCss() {
                      </div>
                 </div>
     `;
-  const WindowIdeCss = document.querySelector(
-    ".editor .code .html-code"
-  ) as HTMLElement;
-  const cssEditor = CodeMirror(WindowIdeCss, {
+  const WindowIdeCss = document.querySelector(".html-code") as HTMLDivElement;
+  const CssEditor = CodeMirror(WindowIdeCss, {
     lineNumbers: true,
     tabSize: 4,
     mode: "css",
     theme: "dracula",
   });
 
-  const BtnRun = document.querySelector(".btn-run") as HTMLElement;
+  const BtnRun = document.querySelector(".btn-run") as HTMLButtonElement;
   BtnRun.addEventListener("click", () => {
-    const cssCode = "<Style>" + cssEditor.getValue() + "</style>";
+    const CssCode = CssEditor.getValue();
     const previewWindow = document.querySelector(
-      "#preview-window"
+      ".courses-editor-code-result"
     ) as HTMLElement;
-    previewWindow.innerHTML = cssCode;
+    previewWindow.innerHTML = CssCode;
   });
 }
