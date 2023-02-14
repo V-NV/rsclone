@@ -1,4 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { DataHtmlService } from './data-html.service';
 import { DataHtmlDto } from './dto/data-html.dto';
 
@@ -10,7 +19,7 @@ export class DataHtmlController {
   async getAllDataHtml() {
     return this.dataHtmlService.getAllDataHtml();
   }
-
+  @UsePipes(new ValidationPipe())
   @Post('data-html-post')
   async postDataHtml(@Body() dto: DataHtmlDto) {
     return this.dataHtmlService.postDataHtml(dto);
