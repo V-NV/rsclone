@@ -11,7 +11,7 @@ export function IdeHtml() {
   main.innerHTML += `
                 <div class="editor">
                      <div class="code">
-                         <div class="html-code"></div>
+                         <div class="html-code" id="code"></div>
                      </div>
                 </div>
     `;
@@ -30,5 +30,14 @@ export function IdeHtml() {
       ".courses-editor-code-result"
     ) as HTMLElement;
     previewWindow.innerHTML = htmlCode;
+  });
+
+const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
+const previewWindow = document.querySelector(".courses-editor-code-result") as HTMLElement;
+const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+  BtnReset.addEventListener("click", () => {
+    //const htmlCode = htmlEditor.setValue('');
+    previewWindow.textContent = ''
+    HtmlMessage.textContent = "";
   });
 }

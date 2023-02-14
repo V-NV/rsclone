@@ -2,7 +2,6 @@ import Home from "../../assets/img/Lessons/home.png";
 import { IdeHtml } from "./ide/idehtml";
 import { IdeCss } from "./ide/idecss";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
-//import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 export function Lessons(num:number, ide:string): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -39,29 +38,29 @@ export function Lessons(num:number, ide:string): void {
                           This will be code editor
                   </div>
                   <div class="courses-editor-code-result">
-                    This will be code result 
+                    This will be code result. 
 
                   </div>
                   <div class="courses-editor-message">
-                    This will be message about true or false code entering
+                    This will be message.
                   </div>
                   <div class="courses-editor-btn-box-bottom">
                        <div class="editor-btn-bottom btn-reset">RESET</div>
                        <div class="editor-btn-bottom btn-run">RUN</div>
-                       <div class="editor-btn-bottom btn-next">NEXT</div> 
+                       <button class="editor-btn-bottom btn-next" id="btn-next">NEXT</button> 
                   </div>
 
            </div>
 
            </div>
-       
-      
-    </div>
+     </div>
   </section>`;
   LessonText(num);  
   Ide(ide);
   CourseName(ide);  
   LevelName(num);
+  checkSolution(num);
+  BtnNext(num);
 }
 function LessonText(num:number) {
   const TextBox = document.querySelector('.courses-lesson-text-box') as HTMLElement;
@@ -82,10 +81,48 @@ function Ide (ide:string) {
     CourseNam.textContent =  name.toUpperCase();
    }
 
-
 function LevelName(num:number) {
 const LevelNam = document.querySelector('.courses-level-name') as HTMLElement;
-LevelNam.textContent =  HtmlTasks[num-1].title;
+LevelNam.textContent =  HtmlTasks[num-1].title.slice(4);
 }
 
+function checkSolution(num:number) {
+  const solutions = document.querySelector('#code') as HTMLElement;
+  // const result = document.querySelector('.courses-editor-code-result') as HTMLElement;
+  const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+  const Run = document.querySelector('.btn-run') as HTMLElement;
+
+  Run.addEventListener('click', () => {
+    console.log(HtmlTasks[num-1].solution,solutions.textContent)
+const g = HtmlTasks[num-1].solution || "";
+const j = solutions.textContent || "";
+
+if(j.indexOf(g)){
+HtmlMessage.style.color = 'green';
+HtmlMessage.textContent = "Well Done";
+}
+else{
+HtmlMessage.style.color = 'red';
+HtmlMessage.textContent = "It`s wrong solution try again";
+   }
+ })
+}
+
+function BtnNext(num:number) {
+  const Next = document.querySelector('#btn-next') as HTMLButtonElement;
+  //const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+  Next.addEventListener('click', () => {
+    if(num < 10) {
+      const count: number = num + 1;
+      Lessons(count, 'html');
+    }/*
+    if(num == 10) {
+      Next.setAttribute('disabled', true);
+      Next.hovered = 
+      
+      HtmlMessage.textContent = 'Это кинэц'; 
+    }*/
+  })
+
+}
 
