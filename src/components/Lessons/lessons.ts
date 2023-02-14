@@ -1,11 +1,12 @@
 import Home from "../../assets/img/Lessons/home.png";
+import { IdeHtml } from "./ide/idehtml";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
 
-export function Lessons():void {
-    const main = document.querySelector('main') as HTMLElement;
-    
-    main.innerHTML = "";
-    main.innerHTML +=`<section class="courses-main-wrap">
+export function Lessons(): void {
+  const main = document.querySelector("main") as HTMLElement;
+
+  main.innerHTML = "";
+  main.innerHTML += `<section class="courses-main-wrap">
     <div class="courses-main-cont">
         <div class="courses-home">
           <div class="courses-images">
@@ -55,4 +56,5 @@ export function Lessons():void {
       
     </div>
   </section>`;
+  IdeHtml();
 }

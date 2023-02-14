@@ -37,6 +37,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@types/codemirror": "^5.60.7",
+    "codemirror": "^5.65.11",
     "normalize.css": "^8.0.1"
   }
 }
