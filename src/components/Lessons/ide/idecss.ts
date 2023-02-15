@@ -46,7 +46,7 @@ export function IdeCss() {
     const Run = document.querySelector('.btn-run') as HTMLElement;
   
     Run.addEventListener('click', () => {
-     // console.log(Tasks[num-1].solution,solutions.textContent)
+  
   const g = Tasks[CurrienNum-1].solution || "";
   const j = CssEditor.getValue();
   

@@ -170,6 +170,7 @@
     height: 265px;
     padding: 15px;
     padding-left: 40px;
+    overflow-y: auto;
 }
 .courses-editor-message{
     border:solid 1px #f3faf7;
@@ -262,6 +263,7 @@ ul{
 }
 code{
     font-size: .9em;
+    color: yellowgreen;
 }
 .do-it{
     color: pink;

@@ -14,17 +14,19 @@ const HtmlTasks = [
         taskNum: 1,
         title: 'HTML: The basics of HTML',
         task: HtmlTask01,
-        solution: '<h1>Hello, World!</h1>'
+        solution: '<h1>Hello,World!</h1>'
       },
       {
         taskNum: 2,
         title: 'HTML: Tags',
         task: HtmlTask02,
+        solution: '<p>Thequickbrownfoxjumpsoverthelazydog</p>',
       },
       {
         taskNum: 3,
         title: 'HTML: Text in HTML',
         task: HtmlTask03,
+        solution:"<p>Itisveryinteresting.</p><p>Andsofarit'ssimpleenough.</p>",
       },
       {
         taskNum: 4,
