@@ -52,7 +52,6 @@ job.
 &lt;/p&gt;
 </code>
 </pre>
-  
   <div>
     <p>We believe that a true programmer must understand how a computer works and be able to think like a computer. They should see a problem, not an assignment. They must be able to analyze and reason at the level of the problem and above, not just at a code level.</p>
   <br>
@@ -66,7 +65,6 @@ job.
   <h2>Instructions</h2>
   <br>
   <p>Format this text</p>
-  
   <div>
   <br>
     <p style="color:pink;">It is very interesting.</p>
@@ -75,6 +73,6 @@ job.
   </div>
   <br>
   <p>Each sentence must be inside a separate tag</p>
-  `
+  `;
 
-  export default HtmlTask03;
+export default HtmlTask03;
