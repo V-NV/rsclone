@@ -253,8 +253,21 @@
 .CodeMirror{
     height: 390px;
 }
+/**********************text-lesson************************/
 pre{
     color:yellowgreen;
+}
+ul{
+    margin-left: 30px;
+}
+code{
+    font-size: .9em;
+}
+.do-it{
+    color: pink;
+}
+.html-code{
+    font-size: .8em;
 }
 @media screen and (max-width:1000px){
 .courses-main-wrap{

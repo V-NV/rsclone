@@ -3,6 +3,7 @@ import htmlGif from '../../assets/img/html/html-intro.gif';
 import htmlLogo from '../../assets/img/html/html-logo.png';
 import htmlTasks from '../tasksData/htmlTasks/htmlTasks';
 import { Lessons } from '../Lessons/lessons';
+
 const courseInfo = {
   introTitle: `HTML: Perfect for Beginners`,
   introText: `To standardize the output of text within browser was created an HTML standard. It defines the rules for formatting text data for correct output. This course is devoted to the fundamentals of HTML markup, working with typography, media documents, and forms layout`,

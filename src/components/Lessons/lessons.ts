@@ -2,10 +2,14 @@ import Home from "../../assets/img/Lessons/home.png";
 import { IdeHtml } from "./ide/idehtml";
 import { IdeCss } from "./ide/idecss";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
+import cssTasks from "../tasksData/cssTasks/cssTasks";
 
+export let CurrienNum = 1; 
+let CurrientIde = '';
 export function Lessons(num:number, ide:string): void {
   const main = document.querySelector("main") as HTMLElement;
-
+  CurrientIde = ide;
+  CurrienNum = num;
   main.innerHTML = "";
   main.innerHTML += `<section class="courses-main-wrap">
     <div class="courses-main-cont">
@@ -55,20 +59,31 @@ export function Lessons(num:number, ide:string): void {
            </div>
      </div>
   </section>`;
+  SetIde(ide);
   LessonText(num);  
   Ide(ide);
   CourseName(ide);  
   LevelName(num);
-  checkSolution(num);
+  //checkSolution(num);
   BtnPrev(num);
   Prev_btn_OnOff(num);
   BtnNext(num);
   Next_btn_OnOff(num);
 }
+export let Tasks = HtmlTasks;
+function SetIde(ide:string){
+  if(ide == "html") { 
+    Tasks = HtmlTasks;
+  }
+  if(ide == "css") { 
+    Tasks = cssTasks;
+  }
+}
+
 function LessonText(num:number) {
   const TextBox = document.querySelector('.courses-lesson-text-box') as HTMLElement;
   TextBox.innerHTML = '';
-  TextBox.innerHTML = HtmlTasks[num-1].task;
+  TextBox.innerHTML = Tasks[num-1].task;
 }
 
 function Ide (ide:string) {
@@ -86,38 +101,38 @@ function Ide (ide:string) {
 
 function LevelName(num:number) {
 const LevelNam = document.querySelector('.courses-level-name') as HTMLElement;
-LevelNam.textContent =  HtmlTasks[num-1].title.slice(5);
+LevelNam.textContent =  Tasks[num-1].title.slice(5);
 }
 
-function checkSolution(num:number) {
+/*function checkSolution(num:number) {
   const solutions = document.querySelector('#code') as HTMLElement;
   // const result = document.querySelector('.courses-editor-code-result') as HTMLElement;
-  const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+  const Message = document.querySelector(".courses-editor-message") as HTMLElement;
   const Run = document.querySelector('.btn-run') as HTMLElement;
 
   Run.addEventListener('click', () => {
-    console.log(HtmlTasks[num-1].solution,solutions.textContent)
-const g = HtmlTasks[num-1].solution || "";
+   // console.log(Tasks[num-1].solution,solutions.textContent)
+const g = Tasks[num-1].solution || "";
 const j = solutions.textContent || "";
 
 if(j.indexOf(g)){
-HtmlMessage.style.color = 'green';
-HtmlMessage.textContent = "Well Done";
+Message.style.color = 'green';
+Message.textContent = "Well Done";
 }
 else{
-HtmlMessage.style.color = 'red';
-HtmlMessage.textContent = "It`s wrong solution try again";
+Message.style.color = 'red';
+Message.textContent = "It`s wrong solution try again";
    }
  })
-}
+}*/
 
 function BtnNext(num:number) {
   const Next = document.querySelector('#btn-next') as HTMLButtonElement;
- // const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+ // const Message = document.querySelector(".courses-editor-message") as HTMLElement;
   Next.addEventListener('click', () => {
    if(num < 10) {
      const count: number = num + 1;
-      Lessons(count, 'html');
+      Lessons(count, CurrientIde);
     }
   })
 }
@@ -129,7 +144,7 @@ function BtnNext(num:number) {
       (document.getElementById('btn-next') as HTMLButtonElement).style.opacity = "1";
     }
     else{
-      (document.querySelector('#btn-next') as HTMLButtonElement).disabled = false;
+      (document.getElementById('btn-next') as HTMLButtonElement).disabled = false;
       (document.getElementById('btn-next') as HTMLButtonElement).style.backgroundColor = "#914c36";
       (document.getElementById('btn-next') as HTMLButtonElement).style.cursor = "pointer";
     }
@@ -140,7 +155,7 @@ function BtnPrev(num:number) {
    Prev.addEventListener('click', () => {
    if(num > 1) {
      const count: number = num - 1;
-      Lessons(count, 'html');
+      Lessons(count, CurrientIde);
     }
   })
 }

@@ -1,7 +1,14 @@
 import CodeMirror from "codemirror";
 import "../../../../node_modules/codemirror/lib/codemirror.css";
 import "../../../../node_modules/codemirror/theme/dracula.css";
-import "../../../../node_modules/codemirror/mode/css/css.js";
+//import "../../../../node_modules/codemirror/mode/smarty/smarty";
+import "../../../../node_modules/codemirror/mode/xml/xml.js";
+import "../../../../node_modules//codemirror/mode/javascript/javascript.js";
+import "../../../../node_modules//codemirror/mode/css/css.js";
+import "../../../../node_modules//codemirror/mode/htmlmixed/htmlmixed.js";
+
+import { Tasks } from "../lessons";
+import { CurrienNum } from "../lessons";
 
 export function IdeCss() {
   const main = document.querySelector(
@@ -19,8 +26,9 @@ export function IdeCss() {
   const CssEditor = CodeMirror(WindowIdeCss, {
     lineNumbers: true,
     tabSize: 4,
-    mode: "css",
+    mode: "htmlmixed",
     theme: "dracula",
+    //maxHighlightLength:1,  // ограничение длинны подсветки
   });
 
   const BtnRun = document.querySelector(".btn-run") as HTMLButtonElement;
@@ -31,4 +39,27 @@ export function IdeCss() {
     ) as HTMLElement;
     previewWindow.innerHTML = CssCode;
   });
+
+  //function checkSolution(num:number) {
+    //const solutions = document.querySelector('#code') as HTMLElement;
+    const Message = document.querySelector(".courses-editor-message") as HTMLElement;
+    const Run = document.querySelector('.btn-run') as HTMLElement;
+  
+    Run.addEventListener('click', () => {
+     // console.log(Tasks[num-1].solution,solutions.textContent)
+  const g = Tasks[CurrienNum-1].solution || "";
+  const j = CssEditor.getValue();
+  
+  if(j.indexOf(g)){
+  Message.style.color = 'green';
+  Message.textContent = "Well Done";
+  }
+  else{
+  Message.style.color = 'red';
+  Message.textContent = "It`s wrong solution try again";
+     }
+   })
+  //}
+
+
 }

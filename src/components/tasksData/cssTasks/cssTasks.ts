@@ -14,6 +14,7 @@ const cssTasks = [
         taskNum: 1,
         title: 'CSS: Introduction in CSS',
         task: cssTask01,
+        solution: 'jhjgfj',
       },
       {
         taskNum: 2,

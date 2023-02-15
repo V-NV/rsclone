@@ -2,6 +2,7 @@ import CourseTemplate from '../pages/CourseTemplate';
 import CSSGif from '../../assets/img/css/css-intro.gif';
 import CSSLogo from '../../assets/img/css/css-logo.png';
 import cssTasks from '../tasksData/cssTasks/cssTasks';
+import { Lessons } from '../Lessons/lessons';
 
 const courseInfo = {
   introTitle: `CSS: Free Online Learning for Beginners`,
@@ -16,8 +17,19 @@ export const cssPage = ():void => {
     main.innerHTML = "";
     main.innerHTML += CourseTemplate(CSSGif, CSSLogo, courseInfo, cssTasks);
     BtnContId();
+    ChangeLesson();
 }
 function BtnContId() {
   const a = document.querySelector('ul') as HTMLElement;
   a.id = 'css';
+}
+
+function ChangeLesson() {
+  const Less = document.querySelectorAll('li');
+
+  for(const el of Less) {
+    el.addEventListener('click',()=>{
+      Lessons(+el.id,'css')
+    })
+  }
 }
