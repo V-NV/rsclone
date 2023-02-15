@@ -36,8 +36,8 @@ const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
 const previewWindow = document.querySelector(".courses-editor-code-result") as HTMLElement;
 const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
   BtnReset.addEventListener("click", () => {
-    //const htmlCode = htmlEditor.setValue('');
-    previewWindow.textContent = ''
-    HtmlMessage.textContent = "";
+    htmlEditor.setValue('');
+    previewWindow.textContent = "";
+    HtmlMessage.textContent = ""; 
   });
 }

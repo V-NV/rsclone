@@ -29,8 +29,8 @@ export function Lessons(num:number, ide:string): void {
       
            <div class="courses-editor-cont">
               <div class="courses-editor-button-box">
-                  <div class="courses-btn-editor-up editor-btn">Editor</div>
-                  <div class="courses-btn-editor-up output-btn">Output</div>
+                  <div class="courses-btn-editor-up btn-reset">RESET</div>
+                  
               </div>
               <div class="courses-editor-code-container">
 
@@ -45,7 +45,7 @@ export function Lessons(num:number, ide:string): void {
                     This will be message.
                   </div>
                   <div class="courses-editor-btn-box-bottom">
-                       <div class="editor-btn-bottom btn-reset">RESET</div>
+                       <div class="editor-btn-bottom btn-prev" id="btn-prev">PREV</div>
                        <div class="editor-btn-bottom btn-run">RUN</div>
                        <button class="editor-btn-bottom btn-next" id="btn-next">NEXT</button> 
                   </div>
@@ -60,7 +60,10 @@ export function Lessons(num:number, ide:string): void {
   CourseName(ide);  
   LevelName(num);
   checkSolution(num);
+  BtnPrev(num);
+  Prev_btn_OnOff(num);
   BtnNext(num);
+  Next_btn_OnOff(num);
 }
 function LessonText(num:number) {
   const TextBox = document.querySelector('.courses-lesson-text-box') as HTMLElement;
@@ -83,7 +86,7 @@ function Ide (ide:string) {
 
 function LevelName(num:number) {
 const LevelNam = document.querySelector('.courses-level-name') as HTMLElement;
-LevelNam.textContent =  HtmlTasks[num-1].title.slice(4);
+LevelNam.textContent =  HtmlTasks[num-1].title.slice(5);
 }
 
 function checkSolution(num:number) {
@@ -110,19 +113,50 @@ HtmlMessage.textContent = "It`s wrong solution try again";
 
 function BtnNext(num:number) {
   const Next = document.querySelector('#btn-next') as HTMLButtonElement;
-  //const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
+ // const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
   Next.addEventListener('click', () => {
-    if(num < 10) {
-      const count: number = num + 1;
+   if(num < 10) {
+     const count: number = num + 1;
       Lessons(count, 'html');
-    }/*
-    if(num == 10) {
-      Next.setAttribute('disabled', true);
-      Next.hovered = 
-      
-      HtmlMessage.textContent = 'Это кинэц'; 
-    }*/
+    }
   })
-
 }
+  function Next_btn_OnOff(num:number){
+    if(num == 10){
+      (document.getElementById('btn-next') as HTMLButtonElement).disabled = true;
+      (document.getElementById('btn-next') as HTMLButtonElement).style.backgroundColor = "grey";
+      (document.getElementById('btn-next') as HTMLButtonElement).style.cursor = "default";
+      (document.getElementById('btn-next') as HTMLButtonElement).style.opacity = "1";
+    }
+    else{
+      (document.querySelector('#btn-next') as HTMLButtonElement).disabled = false;
+      (document.getElementById('btn-next') as HTMLButtonElement).style.backgroundColor = "#914c36";
+      (document.getElementById('btn-next') as HTMLButtonElement).style.cursor = "pointer";
+    }
+}
+
+function BtnPrev(num:number) {
+  const Prev = document.querySelector('#btn-prev') as HTMLButtonElement;
+   Prev.addEventListener('click', () => {
+   if(num > 1) {
+     const count: number = num - 1;
+      Lessons(count, 'html');
+    }
+  })
+}
+  function Prev_btn_OnOff(num:number){
+    if(num == 1){
+      (document.getElementById('btn-prev') as HTMLButtonElement).disabled = true;
+      (document.getElementById('btn-prev') as HTMLButtonElement).style.backgroundColor = "grey";
+      (document.getElementById('btn-prev') as HTMLButtonElement).style.cursor = "default";
+      (document.getElementById('btn-prev') as HTMLButtonElement).style.opacity = "1";
+    }
+    else{
+      (document.getElementById('btn-prev') as HTMLButtonElement).disabled = false;
+      (document.getElementById('btn-prev') as HTMLButtonElement).style.backgroundColor = "#914c36";
+      (document.getElementById('btn-prev') as HTMLButtonElement).style.cursor = "pointer";
+    }
+}
+
+
 
