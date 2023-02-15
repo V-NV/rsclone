@@ -19,4 +19,9 @@ export const javascriptPage = ():void => {
     const main = document.querySelector('main') as HTMLElement;
     main.innerHTML = "";
     main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);
+    BtnContId();
+}
+function BtnContId() {
+  const a = document.querySelector('ul') as HTMLElement;
+  a.id = 'js';
 }

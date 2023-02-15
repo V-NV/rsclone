@@ -1,4 +1,4 @@
-const htmlTask05 = `
+const HtmlTask05 = `
 </li></ol></nav><div><h1>HTML: HTML Attributes</h1><p>Page markup information can have many subtleties and nuances. For example, you can specify the type of element, but you can also pass additional information to be processed by the browser. Mouse over the text below:</p>
 
   <div>
@@ -34,4 +34,4 @@ const htmlTask05 = `
   <h2>Instructions</h2><p>Create a paragraph with any text and a tooltip. Add the class <code>hexlet</code> to it.</p>
 `
 
-export default htmlTask05;
+export default HtmlTask05;

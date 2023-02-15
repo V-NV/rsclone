@@ -8,7 +8,7 @@ const CourseTemplate = (
     gif: string,
     logo: string,
     courseInfo: { introTitle: string, introText: string, hours: number, students: number, lessons: number},
-    jsTasks: { taskNum: number, title: string, task: string }[]
+    Tasks: { taskNum: number, title: string, task: string }[]
     ) => {
     return `
     <section class="main-wrap">
@@ -49,7 +49,7 @@ const CourseTemplate = (
         </div>
         <div class="basics-cont">
             <ul class="tasks-container">
-                ${jsTasks.map((item) => {
+                ${Tasks.map((item) => {
                     return `<li id=${item.taskNum}><p class="task-item">${item.taskNum}. ${item.title}</p></li>`
                 })
                 }
@@ -64,5 +64,7 @@ const CourseTemplate = (
         </section>;
     `
 }
+
+
 
 export default CourseTemplate;
