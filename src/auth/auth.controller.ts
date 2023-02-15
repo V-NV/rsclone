@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -19,22 +20,22 @@ export class AuthController {
   @UsePipes(new ValidationPipe())
   @Post('register')
   async register(@Body() dto: AuthDto) {
-    return this.authService.register(dto);
+    const user = await this.authService.findUser(dto.email);
+    if (user) {
+      throw new BadRequestException('Пользователь уже зарегистрирован');
+    }
+    return this.authService.registerUser(dto);
   }
 
   @Post('login')
-  async login(@Body() dto: AuthDto) {
-    return dto;
+  async login(@Body() { email, password }: AuthDto) {
+    const user = await this.authService.validateUser(email, password);
+    return this.authService.loginUser(user.email);
   }
-
-  // @Delete('byEmail/:email')
-  // async email(@Param('email') email: string) {
-  //   return this.authService.deleteByEmail(email);
-  // }
 
   @Get()
   async getUsers() {
-    return this.authService.getAll();
+    return this.authService.getAllUsers();
   }
 
   @Delete(':id')
