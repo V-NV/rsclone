@@ -1,157 +1,155 @@
 @font-face {
-    font-family: 'Holtwood';
-     src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
-   }
-   @font-face {
-    font-family: 'Kanit';
-    src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
-   }
-.about-main-wrap{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: #262626;
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
 }
-.about-main-cont{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #262626;
-    max-width: 1440px;
-    color: #FFFBD3;
-    padding: 0 15px;
-  }
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+.about-main-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
+}
+.about-main-cont {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #262626;
+  max-width: 1440px;
+  color: #fffbd3;
+  padding: 0 15px;
+}
 
-.about-title{
-    font-family: 'Holtwood';
-    font-size: 48px;
-    margin: 30px 0;
-    color:#FFFBD3
+.about-title {
+  font-family: "Holtwood";
+  font-size: 48px;
+  margin: 30px 0;
+  color: #fffbd3;
 }
-.about-us-text{
-    font-family: 'Kanit';
-    font-size: 48px;
-    font-weight: 400;
+.about-us-text {
+  font-family: "Kanit";
+  font-size: 48px;
+  font-weight: 400;
 }
-.about-why-cont{
-    font-family: 'Holtwood';
-    font-weight: 400;
-    color: #FFFBD3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-why-cont {
+  font-family: "Holtwood";
+  font-weight: 400;
+  color: #fffbd3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.p-about-why{
+.p-about-why {
   font-size: 48px;
 }
-.about-why-text{
-  font-family: 'Kanit';
+.about-why-text {
+  font-family: "Kanit";
   font-size: 48px;
   font-weight: 400;
   text-align: center;
 }
-.about-mission{
-    font-family: 'Kanit';
-    font-size: 48px;
-    font-weight: 400;
-    text-align: center;
+.about-mission {
+  font-family: "Kanit";
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
 }
-.about-free-box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-free-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.about-free{
-    font-family: 'Holtwood';
-    font-size: 48px;
-    font-weight: 400;
+.about-free {
+  font-family: "Holtwood";
+  font-size: 48px;
+  font-weight: 400;
 }
-.about-bottom{
-    font-family: 'Kanit';
-    font-weight: 400;
-    font-size: 48px;
+.about-bottom {
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 48px;
 }
 
 .team-container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .member-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Kanit';
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Kanit";
+  margin-bottom: 15px;
 }
 
 .member-img {
-    width: 350px;
-    height: 350px;
+  width: 350px;
+  height: 350px;
 
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .member-name {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .member-sub {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .member_01 {
-    background: url("./assets/img/about/member_01.jpg");
-    background-size: contain;
+  background: url("./assets/img/about/member_01.jpg");
+  background-size: contain;
 }
 
 .member_02 {
-    background: url("./assets/img/about/member_02.jpg");
-    background-size: contain;
+  background: url("./assets/img/about/member_02.jpg");
+  background-size: contain;
 }
 
 .member_03 {
-    background: url("./assets/img/about/member_03.jpg");
-    background-size: contain;
+  background: url("./assets/img/about/member_03.jpg");
+  background-size: contain;
 }
 
-
-
 @media (max-width: 1599px) {
-    .p-about-us{
-        font-size: 3vw;
-    }
-    .about-us-text{
-        font-size: 3vw;
-    }
-    .p-about-why{
-      font-size: 3vw;
-    }
-    .about-why-text{
-      font-size: 3vw;
-    }
-    .about-mission{
-        font-size: 3vw;
-    }
+  .p-about-us {
+    font-size: 3vw;
+  }
+  .about-us-text {
+    font-size: 3vw;
+  }
+  .p-about-why {
+    font-size: 3vw;
+  }
+  .about-why-text {
+    font-size: 3vw;
+  }
+  .about-mission {
+    font-size: 3vw;
+  }
 
-    .about-title{
-        font-size: 3vw;
-        margin: 1.875vw 0;
-    }
+  .about-title {
+    font-size: 3vw;
+    margin: 1.875vw 0;
+  }
 
-    .about-free{
-        font-size: 3vw;
-    }
-    .about-bottom{
-        font-size: 3vw;
-    }
+  .about-free {
+    font-size: 3vw;
+  }
+  .about-bottom {
+    font-size: 3vw;
+  }
 
-    .team-container {
-        flex-wrap: wrap;
-    }
+  .team-container {
+    flex-wrap: wrap;
+  }
 
-    .member {
-        width: 21.875vw;
-        height: 21.875vw;
-    }
+  .member {
+    width: 21.875vw;
+    height: 21.875vw;
+  }
 }

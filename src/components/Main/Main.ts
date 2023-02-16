@@ -2,11 +2,10 @@ import { javascriptOn } from "../View/javascriptOn";
 import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
 
-
-export function Main():void {
-  const main = document.querySelector('main') as HTMLElement;
+export function Main(): void {
+  const main = document.querySelector("main") as HTMLElement;
   main.innerHTML = "";
-  main.innerHTML +=` 
+  main.innerHTML += ` 
     <section class="present-main-wrap">
       <div class="present-main-cont">
         
@@ -82,26 +81,12 @@ export function Main():void {
             </div>    
 </section>`;
 
-javascriptOn();
-cssOn();
-htmlOn();
-
+  javascriptOn();
+  cssOn();
+  htmlOn();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*`
+/*`
   <section class="main-content">
       <div class="item response">
         <p class="p-response">Проверь свои знания</p>

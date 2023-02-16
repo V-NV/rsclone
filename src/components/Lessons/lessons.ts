@@ -4,9 +4,9 @@ import { IdeCss } from "./ide/idecss";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import cssTasks from "../tasksData/cssTasks/cssTasks";
 
-export let CurrienNum = 1; 
-let CurrientIde = '';
-export function Lessons(num:number, ide:string): void {
+export let CurrienNum = 1;
+let CurrientIde = "";
+export function Lessons(num: number, ide: string): void {
   const main = document.querySelector("main") as HTMLElement;
   CurrientIde = ide;
   CurrienNum = num;
@@ -60,9 +60,9 @@ export function Lessons(num:number, ide:string): void {
      </div>
   </section>`;
   SetIde(ide);
-  LessonText(num);  
+  LessonText(num);
   Ide(ide);
-  CourseName(ide);  
+  CourseName(ide);
   LevelName(num);
   //checkSolution(num);
   BtnPrev(num);
@@ -71,37 +71,39 @@ export function Lessons(num:number, ide:string): void {
   Next_btn_OnOff(num);
 }
 export let Tasks = HtmlTasks;
-function SetIde(ide:string){
-  if(ide == "html") { 
+function SetIde(ide: string) {
+  if (ide == "html") {
     Tasks = HtmlTasks;
   }
-  if(ide == "css") { 
+  if (ide == "css") {
     Tasks = cssTasks;
   }
 }
 
-function LessonText(num:number) {
-  const TextBox = document.querySelector('.courses-lesson-text-box') as HTMLElement;
-  TextBox.innerHTML = '';
-  TextBox.innerHTML = Tasks[num-1].task;
+function LessonText(num: number) {
+  const TextBox = document.querySelector(
+    ".courses-lesson-text-box"
+  ) as HTMLElement;
+  TextBox.innerHTML = "";
+  TextBox.innerHTML = Tasks[num - 1].task;
 }
 
-function Ide (ide:string) {
+function Ide(ide: string) {
   if (ide == "html") {
     IdeHtml();
   }
   if (ide == "css") {
-  IdeCss();
+    IdeCss();
   }
-   }
-   function CourseName (name:string) {
-    const CourseNam = document.querySelector('.courses-name') as HTMLElement;
-    CourseNam.textContent =  name.toUpperCase();
-   }
+}
+function CourseName(name: string) {
+  const CourseNam = document.querySelector(".courses-name") as HTMLElement;
+  CourseNam.textContent = name.toUpperCase();
+}
 
-function LevelName(num:number) {
-const LevelNam = document.querySelector('.courses-level-name') as HTMLElement;
-LevelNam.textContent =  Tasks[num-1].title.slice(5);
+function LevelName(num: number) {
+  const LevelNam = document.querySelector(".courses-level-name") as HTMLElement;
+  LevelNam.textContent = Tasks[num - 1].title.slice(5);
 }
 
 /*function checkSolution(num:number) {
@@ -126,52 +128,61 @@ Message.textContent = "It`s wrong solution try again";
  })
 }*/
 
-function BtnNext(num:number) {
-  const Next = document.querySelector('#btn-next') as HTMLButtonElement;
- // const Message = document.querySelector(".courses-editor-message") as HTMLElement;
-  Next.addEventListener('click', () => {
-   if(num < 10) {
-     const count: number = num + 1;
+function BtnNext(num: number) {
+  const Next = document.querySelector("#btn-next") as HTMLButtonElement;
+  // const Message = document.querySelector(".courses-editor-message") as HTMLElement;
+  Next.addEventListener("click", () => {
+    if (num < 10) {
+      const count: number = num + 1;
       Lessons(count, CurrientIde);
     }
-  })
+  });
 }
-  function Next_btn_OnOff(num:number){
-    if(num == 10){
-      (document.getElementById('btn-next') as HTMLButtonElement).disabled = true;
-      (document.getElementById('btn-next') as HTMLButtonElement).style.backgroundColor = "grey";
-      (document.getElementById('btn-next') as HTMLButtonElement).style.cursor = "default";
-      (document.getElementById('btn-next') as HTMLButtonElement).style.opacity = "1";
-    }
-    else{
-      (document.getElementById('btn-next') as HTMLButtonElement).disabled = false;
-      (document.getElementById('btn-next') as HTMLButtonElement).style.backgroundColor = "#914c36";
-      (document.getElementById('btn-next') as HTMLButtonElement).style.cursor = "pointer";
-    }
+function Next_btn_OnOff(num: number) {
+  if (num == 10) {
+    (document.getElementById("btn-next") as HTMLButtonElement).disabled = true;
+    (
+      document.getElementById("btn-next") as HTMLButtonElement
+    ).style.backgroundColor = "grey";
+    (document.getElementById("btn-next") as HTMLButtonElement).style.cursor =
+      "default";
+    (document.getElementById("btn-next") as HTMLButtonElement).style.opacity =
+      "1";
+  } else {
+    (document.getElementById("btn-next") as HTMLButtonElement).disabled = false;
+    (
+      document.getElementById("btn-next") as HTMLButtonElement
+    ).style.backgroundColor = "#914c36";
+    (document.getElementById("btn-next") as HTMLButtonElement).style.cursor =
+      "pointer";
+  }
 }
 
-function BtnPrev(num:number) {
-  const Prev = document.querySelector('#btn-prev') as HTMLButtonElement;
-   Prev.addEventListener('click', () => {
-   if(num > 1) {
-     const count: number = num - 1;
+function BtnPrev(num: number) {
+  const Prev = document.querySelector("#btn-prev") as HTMLButtonElement;
+  Prev.addEventListener("click", () => {
+    if (num > 1) {
+      const count: number = num - 1;
       Lessons(count, CurrientIde);
     }
-  })
+  });
 }
-  function Prev_btn_OnOff(num:number){
-    if(num == 1){
-      (document.getElementById('btn-prev') as HTMLButtonElement).disabled = true;
-      (document.getElementById('btn-prev') as HTMLButtonElement).style.backgroundColor = "grey";
-      (document.getElementById('btn-prev') as HTMLButtonElement).style.cursor = "default";
-      (document.getElementById('btn-prev') as HTMLButtonElement).style.opacity = "1";
-    }
-    else{
-      (document.getElementById('btn-prev') as HTMLButtonElement).disabled = false;
-      (document.getElementById('btn-prev') as HTMLButtonElement).style.backgroundColor = "#914c36";
-      (document.getElementById('btn-prev') as HTMLButtonElement).style.cursor = "pointer";
-    }
+function Prev_btn_OnOff(num: number) {
+  if (num == 1) {
+    (document.getElementById("btn-prev") as HTMLButtonElement).disabled = true;
+    (
+      document.getElementById("btn-prev") as HTMLButtonElement
+    ).style.backgroundColor = "grey";
+    (document.getElementById("btn-prev") as HTMLButtonElement).style.cursor =
+      "default";
+    (document.getElementById("btn-prev") as HTMLButtonElement).style.opacity =
+      "1";
+  } else {
+    (document.getElementById("btn-prev") as HTMLButtonElement).disabled = false;
+    (
+      document.getElementById("btn-prev") as HTMLButtonElement
+    ).style.backgroundColor = "#914c36";
+    (document.getElementById("btn-prev") as HTMLButtonElement).style.cursor =
+      "pointer";
+  }
 }
-
-
-

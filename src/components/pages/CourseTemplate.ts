@@ -1,16 +1,22 @@
-import home from "../../assets/img/CourseTemplate/home.png"
-import watch from "../../assets/img/CourseTemplate/watch.png"
-import student from "../../assets/img/CourseTemplate/student1.png"
-import students from "../../assets/img/CourseTemplate/students.png"
+import home from "../../assets/img/CourseTemplate/home.png";
+import watch from "../../assets/img/CourseTemplate/watch.png";
+import student from "../../assets/img/CourseTemplate/student1.png";
+import students from "../../assets/img/CourseTemplate/students.png";
 // import { LessonsOn } from "../View/lessonsOn"
 
 const CourseTemplate = (
-    gif: string,
-    logo: string,
-    courseInfo: { introTitle: string, introText: string, hours: number, students: number, lessons: number},
-    Tasks: { taskNum: number, title: string, task: string }[]
-    ) => {
-    return `
+  gif: string,
+  logo: string,
+  courseInfo: {
+    introTitle: string;
+    introText: string;
+    hours: number;
+    students: number;
+    lessons: number;
+  },
+  Tasks: { taskNum: number; title: string; task: string }[]
+) => {
+  return `
     <section class="main-wrap">
     <div class="main-cont">
       <div class="home">
@@ -31,9 +37,15 @@ const CourseTemplate = (
                 </div>
                 <div class="icon-box">
                     <p class="icon-string">
-                    <img class="img" src="${watch}" alt="watch"> ${courseInfo.hours} hours &nbsp&nbsp&nbsp
-                    <img class="img" src="${student}" alt="students">  ${courseInfo.students} students &nbsp&nbsp&nbsp
-                    <img class="img" src="${students}"> ${courseInfo.lessons} lessons with practice in the browser
+                    <img class="img" src="${watch}" alt="watch"> ${
+    courseInfo.hours
+  } hours &nbsp&nbsp&nbsp
+                    <img class="img" src="${student}" alt="students">  ${
+    courseInfo.students
+  } students &nbsp&nbsp&nbsp
+                    <img class="img" src="${students}"> ${
+    courseInfo.lessons
+  } lessons with practice in the browser
                     </p>
                 </div>
                 <div class="button-box">
@@ -50,9 +62,8 @@ const CourseTemplate = (
         <div class="basics-cont">
             <ul class="tasks-container">
                 ${Tasks.map((item) => {
-                    return `<li id=${item.taskNum}><p class="task-item">${item.taskNum}. ${item.title}</p></li>`
-                })
-                }
+                  return `<li id=${item.taskNum}><p class="task-item">${item.taskNum}. ${item.title}</p></li>`;
+                })}
             </ul>
             <div class="tasks-sub">
             JavaScript is one of the most popular programming languages in the world.
@@ -62,9 +73,7 @@ const CourseTemplate = (
         </div>
         </div> 
         </section>;
-    `
-}
-
-
+    `;
+};
 
 export default CourseTemplate;

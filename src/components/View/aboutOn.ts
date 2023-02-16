@@ -1,18 +1,11 @@
 import { AboutPage } from "../About/about";
 
 export function AboutOn() {
-  const about = document.querySelector('.about') as HTMLElement;
-    about.addEventListener('click',() => {
-      AboutPage();
-    }
-)}
-
-
-
-
-
-
-
+  const about = document.querySelector(".about") as HTMLElement;
+  about.addEventListener("click", () => {
+    AboutPage();
+  });
+}
 
 /*export function AboutOn() {
     const about = document.querySelector('.about') as HTMLElement;

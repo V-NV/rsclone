@@ -1,121 +1,119 @@
 @font-face {
-    font-family: 'Holtwood';
-     src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
-   }
-   @font-face {
-    font-family: 'Kanit';
-     src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
-   }
-.footer-black-wrap{
-    display: flex;
-    justify-content: center;
-    background-color: #262626;
-    height: 279px;
-    margin-top: 50px;
-    }
-    .footer-cont{
-        width: 100%;
-        max-height: 191px;
-        display: flex;
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+.footer-black-wrap {
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
+  height: 279px;
+  margin-top: 50px;
+}
+.footer-cont {
+  width: 100%;
+  max-height: 191px;
+  display: flex;
 
-        justify-content: start;
-        background-color: #FFFBD3;
-    }
-    .footer-up{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 216px;
-        font-family: 'Kanit';
-        font-size: 32px;
-    }
-    .footer-content{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 1440px;
-        margin-top: 48px;
-        width: 100%;
-    }
-    .git-name-cont{
-        display: flex;
-    }
-    .git-name-box{
-        display: flex;
-        margin-left: 14px;
-    }
-    .git-name-box2{
-        display: flex;
-        margin-left: 24px;
-    }
-    .git-name-box3{
-        display: flex;
-        flex-direction: row;
-        margin-left: 16px;
-    }
-    .git-logo{
-        width: 29px;
-        height: 28px;
-        background-image: url('./assets/img/header/Vector.png');
-        background-position: center;
+  justify-content: start;
+  background-color: #fffbd3;
+}
+.footer-up {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 216px;
+  font-family: "Kanit";
+  font-size: 32px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-top: 48px;
+  width: 100%;
+}
+.git-name-cont {
+  display: flex;
+}
+.git-name-box {
+  display: flex;
+  margin-left: 14px;
+}
+.git-name-box2 {
+  display: flex;
+  margin-left: 24px;
+}
+.git-name-box3 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 16px;
+}
+.git-logo {
+  width: 29px;
+  height: 28px;
+  background-image: url("./assets/img/header/Vector.png");
+  background-position: center;
 
-        background-size: contain;
-    }
+  background-size: contain;
+}
 
-    p {
-        margin: 0;
-    }
+p {
+  margin: 0;
+}
 
-    .git-name1,
-    .git-name2,
-    .git-name3
-    {
-        margin-left: 10px;
-        text-decoration: none;
-    }
-    .rss-logo{
-        width: 176px;
-        height: 65px;
-        background-image: url('./assets/img/header/rsslogo.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .footer-year{
-        text-align: center;
-    }
-    
-    
-    .a-footer{
-        text-decoration: none;
-        color: #262626;
-        transition: 0.7s;
-    }
-    .a-footer:hover{
-        text-decoration: none;
-        cursor: pointer;
-        color: #262626;
-        opacity: .7;
-        transition: 0.7s;
-    }
-    a{
-        text-decoration: none;
-        color: #262626;
-    }
+.git-name1,
+.git-name2,
+.git-name3 {
+  margin-left: 10px;
+  text-decoration: none;
+}
+.rss-logo {
+  width: 176px;
+  height: 65px;
+  background-image: url("./assets/img/header/rsslogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.footer-year {
+  text-align: center;
+}
+
+.a-footer {
+  text-decoration: none;
+  color: #262626;
+  transition: 0.7s;
+}
+.a-footer:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #262626;
+  opacity: 0.7;
+  transition: 0.7s;
+}
+a {
+  text-decoration: none;
+  color: #262626;
+}
 
 @media (max-width: 1599px) {
-    .rss-logo{
-        width: 11vw;
-        background-image: url('./assets/img/header/rsslogo.png');
-    }
+  .rss-logo {
+    width: 11vw;
+    background-image: url("./assets/img/header/rsslogo.png");
+  }
 
-    .footer-up{
-        font-size: 2vw;
-    }
+  .footer-up {
+    font-size: 2vw;
+  }
 
-    .git-logo{
-        width: 1.8125vw;
-        height: 1.75vw;
-    }
+  .git-logo {
+    width: 1.8125vw;
+    height: 1.75vw;
+  }
 }

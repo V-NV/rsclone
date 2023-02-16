@@ -34,33 +34,34 @@ export function IdeHtml() {
     ) as HTMLElement;
     previewWindow.innerHTML = htmlCode;
   });
-  const Message = document.querySelector(".courses-editor-message") as HTMLElement;
-  const Run = document.querySelector('.btn-run') as HTMLElement;
+  const Message = document.querySelector(
+    ".courses-editor-message"
+  ) as HTMLElement;
+  const Run = document.querySelector(".btn-run") as HTMLElement;
 
-  Run.addEventListener('click', () => {
-
-const g = Tasks[CurrienNum-1].solution || "";
-const j = htmlEditor.getValue().replace(/\s/g,'')//replace(/ /g,'');
-console.log(j)
-if(j.indexOf(g) !== -1){
-Message.style.color = 'green';
-Message.textContent = "Well Done";
-}
-else{
-Message.style.color = 'red';
-Message.textContent = "It`s wrong solution try again";
-   }
- })
-
-
-  
-const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
-const previewWindow = document.querySelector(".courses-editor-code-result") as HTMLElement;
-const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
-  BtnReset.addEventListener("click", () => {
-    htmlEditor.setValue('');
-    previewWindow.textContent = "";
-    HtmlMessage.textContent = ""; 
+  Run.addEventListener("click", () => {
+    const g = Tasks[CurrienNum - 1].solution || "";
+    const j = htmlEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
+    console.log(j);
+    if (j.indexOf(g) !== -1) {
+      Message.style.color = "green";
+      Message.textContent = "Well Done";
+    } else {
+      Message.style.color = "red";
+      Message.textContent = "It`s wrong solution try again";
+    }
   });
 
+  const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
+  const previewWindow = document.querySelector(
+    ".courses-editor-code-result"
+  ) as HTMLElement;
+  const HtmlMessage = document.querySelector(
+    ".courses-editor-message"
+  ) as HTMLElement;
+  BtnReset.addEventListener("click", () => {
+    htmlEditor.setValue("");
+    previewWindow.textContent = "";
+    HtmlMessage.textContent = "";
+  });
 }

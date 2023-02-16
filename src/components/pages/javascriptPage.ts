@@ -1,7 +1,7 @@
-import CourseTemplate from './CourseTemplate';
-import JSGif from '../../assets/img/js/js-intro.gif';
-import JSLogo from '../../assets/img/js/js-logo.png';
-import jsTasks from '../tasksData/jsTasks/jsTasks';
+import CourseTemplate from "./CourseTemplate";
+import JSGif from "../../assets/img/js/js-intro.gif";
+import JSLogo from "../../assets/img/js/js-logo.png";
+import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 const courseInfo = {
   introTitle: `JavaScript: Perfect for beginners`,
@@ -12,16 +12,16 @@ const courseInfo = {
   Learn the basics and write your first JS programs.`,
   hours: 10,
   students: 985,
-  lessons: 10
-}
+  lessons: 10,
+};
 
-export const javascriptPage = ():void => {
-    const main = document.querySelector('main') as HTMLElement;
-    main.innerHTML = "";
-    main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);
-    BtnContId();
-}
+export const javascriptPage = (): void => {
+  const main = document.querySelector("main") as HTMLElement;
+  main.innerHTML = "";
+  main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);
+  BtnContId();
+};
 function BtnContId() {
-  const a = document.querySelector('ul') as HTMLElement;
-  a.id = 'js';
+  const a = document.querySelector("ul") as HTMLElement;
+  a.id = "js";
 }

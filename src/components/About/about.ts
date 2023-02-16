@@ -1,8 +1,8 @@
-export function AboutPage():void {
-    const main = document.querySelector('main') as HTMLElement;
-    //main.className = "present-main-wrap";
-    main.innerHTML = "";
-    main.innerHTML +=` 
+export function AboutPage(): void {
+  const main = document.querySelector("main") as HTMLElement;
+  //main.className = "present-main-wrap";
+  main.innerHTML = "";
+  main.innerHTML += ` 
     <section class="about-main-wrap">
       <div class="about-main-cont">
 

@@ -41,41 +41,42 @@ export function IdeCss() {
   });
 
   //function checkSolution(num:number) {
-    //const solutions = document.querySelector('#code') as HTMLElement;
-    const Message = document.querySelector(".courses-editor-message") as HTMLElement;
-    const Run = document.querySelector('.btn-run') as HTMLElement;
-  
-    Run.addEventListener('click', () => {
-  
-      const g = Tasks[CurrienNum-1].solution || "";
-      const j = CssEditor.getValue().replace(/\s/g,'')//replace(/ /g,'');
-      console.log(j)
-      
-      const kuku = document.querySelector('#cecr') as HTMLElement;
-      
-      const uuu = kuku.children[0]
-      //const ttt = kuku.childNodes[0]?.st
-      console.log(uuu.getAttribute('style'));
-      
-      if(j.indexOf(g) !== -1){
-      Message.style.color = 'green';
+  //const solutions = document.querySelector('#code') as HTMLElement;
+  const Message = document.querySelector(
+    ".courses-editor-message"
+  ) as HTMLElement;
+  const Run = document.querySelector(".btn-run") as HTMLElement;
+
+  Run.addEventListener("click", () => {
+    const g = Tasks[CurrienNum - 1].solution || "";
+    const j = CssEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
+    console.log(j);
+
+    const kuku = document.querySelector("#cecr") as HTMLElement;
+
+    const uuu = kuku.children[0];
+    //const ttt = kuku.childNodes[0]?.st
+    console.log(uuu.getAttribute("style"));
+
+    if (j.indexOf(g) !== -1) {
+      Message.style.color = "green";
       Message.textContent = "Well Done";
-      }
-      else{
-      Message.style.color = 'red';
+    } else {
+      Message.style.color = "red";
       Message.textContent = "It`s wrong solution try again";
-         }
-       })
-      
-      
-        
-      const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
-      const previewWindow = document.querySelector(".courses-editor-code-result") as HTMLElement;
-      const HtmlMessage = document.querySelector(".courses-editor-message") as HTMLElement;
-        BtnReset.addEventListener("click", () => {
-          CssEditor.setValue('');
-          previewWindow.textContent = "";
-          HtmlMessage.textContent = ""; 
-        });
-      
-      }
+    }
+  });
+
+  const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
+  const previewWindow = document.querySelector(
+    ".courses-editor-code-result"
+  ) as HTMLElement;
+  const HtmlMessage = document.querySelector(
+    ".courses-editor-message"
+  ) as HTMLElement;
+  BtnReset.addEventListener("click", () => {
+    CssEditor.setValue("");
+    previewWindow.textContent = "";
+    HtmlMessage.textContent = "";
+  });
+}

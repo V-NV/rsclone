@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Holtwood';
-   src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
- }
- @font-face {
-  font-family: 'Kanit';
-   src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
- }
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
 
 * {
   margin: 0;
@@ -13,22 +13,22 @@
   box-sizing: border-box;
 }
 
-.present-main-wrap{
+.present-main-wrap {
   width: 100%;
   margin: 50px 0;
 }
 
-.present-main-cont{
+.present-main-cont {
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.present-up-block{
+.present-up-block {
   display: flex;
   justify-content: space-between;
   max-width: 1114px;
   height: 394px;
-  background-color: #FFFBD3;
+  background-color: #fffbd3;
   margin-top: 57px;
   border-radius: 16px;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
@@ -36,31 +36,31 @@
   padding: 40px;
 }
 
-.present-left-up-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.present-left-up-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.present-up-p-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.present-up-p-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.present-up-p{
+.present-up-p {
   font-family: Kanit;
   font-size: 28px;
- }
- .present-up-p2{
+}
+.present-up-p2 {
   font-family: Kanit;
   font-size: 36px;
 }
-.present-up-button{
+.present-up-button {
   width: 408px;
   height: 82px;
   background-color: #262626;
-  color: #FFFBD3;
+  color: #fffbd3;
   border-radius: 40px;
   text-align: center;
   font-family: Kanit;
@@ -70,12 +70,12 @@
   margin-left: 57px;
   transition: 0.7s;
 }
-.present-up-button:hover{
-  opacity: .7;
+.present-up-button:hover {
+  opacity: 0.7;
   cursor: pointer;
   transition: 0.7s;
 }
-.present-right-up-box{
+.present-right-up-box {
   width: 100%;
   height: 300px;
   background-image: url("./assets/img/Main/intro-img.png");
@@ -91,7 +91,7 @@
   font-size: 48px;
   max-width: 282px;
   height: 70px;
-  color: #FFFBD3;
+  color: #fffbd3;
   text-transform: uppercase;
 
   margin: 35px 0;
@@ -114,7 +114,7 @@
 .item {
   width: 33.3333%;
   text-align: center;
-  color: #FFFBD3;
+  color: #fffbd3;
   font-family: "Kanit";
   text-transform: uppercase;
 
@@ -143,7 +143,7 @@
 .card__img {
   padding-top: 50%;
   padding-bottom: 30%;
-  background-color: #FFFBD3;
+  background-color: #fffbd3;
 }
 
 .card-1__img {
@@ -167,93 +167,90 @@
   background-size: 60%;
 }
 
-
-
-
-.present-bottom-wrap{
+.present-bottom-wrap {
   max-width: 1440px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
-.present-bottom-block{
+.present-bottom-block {
   width: 100%;
   background-color: #262626;
 }
 
-.durov-cont,.buterin-cont{
+.durov-cont,
+.buterin-cont {
   display: flex;
   justify-content: space-between;
-  color: #FFFBD3;
+  color: #fffbd3;
 }
 
 .present-bottom-course-box {
   margin: 30px 0;
 }
 
-.durov-img-box{
+.durov-img-box {
   width: 21.125vw;
-  background-image: url('./assets/img/Main/Durov.png');
+  background-image: url("./assets/img/Main/Durov.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.buterin-img-box{
+.buterin-img-box {
   width: 340px;
   height: 340px;
-  background-image: url('./assets/img/Main/Buterin.png');
+  background-image: url("./assets/img/Main/Buterin.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 500px;
 }
 
-.durov-text-box{
-  font-family: 'Kanit';
+.durov-text-box {
+  font-family: "Kanit";
   font-weight: 400;
   font-size: 32px;
-  color: #FFFBD3;
+  color: #fffbd3;
   margin-left: 32px;
   max-width: 1000px;
 }
 
-.durov-p-1{
+.durov-p-1 {
   font-size: 48px;
   line-height: 25px;
   padding: 0px;
 }
-.durov-p-2{
+.durov-p-2 {
   font-size: 32px;
   line-height: 38px;
   margin-top: 12px;
 }
-.durov-p-3{
+.durov-p-3 {
   font-size: 32px;
   line-height: 115px;
 }
 
-.buterin-text-box{
-  font-family: 'Kanit';
+.buterin-text-box {
+  font-family: "Kanit";
   font-size: 32px;
-  color: #FFFBD3;
+  color: #fffbd3;
   max-width: 1000px;
 }
-.buterin-p-1{
+.buterin-p-1 {
   font-size: 48px;
   margin-top: 65px;
   line-height: 25px;
 }
-.buterin-p-2{
+.buterin-p-2 {
   font-size: 32px;
   line-height: 38px;
   margin-top: 12px;
 }
-.buterin-p-3{
+.buterin-p-3 {
   font-size: 32px;
   line-height: 115px;
 }
-
 
 @media (max-width: 1599px) {
   .courses__title {
@@ -267,48 +264,48 @@
   .cards-grid {
     margin: 0 -2.8125vw;
   }
-  
+
   .item {
     padding: 0 2.8125vw;
   }
-  
+
   .card-sub {
     font-size: 2vw;
     padding-bottom: 1.25vw;
   }
 
-  .durov-p-1{
+  .durov-p-1 {
     font-size: 3vw;
     margin-top: 4.0625vw;
     line-height: 1.5625vw;
   }
-  .durov-p-2{
+  .durov-p-2 {
     font-size: 2vw;
     line-height: 2.375vw;
     margin-top: 0.75vw;
   }
-  .durov-p-3{
+  .durov-p-3 {
     font-size: 2vw;
     line-height: 7.1875vw;
   }
-  
-  .buterin-p-1{
+
+  .buterin-p-1 {
     font-size: 3vw;
     margin-top: 4.0625vw;
     line-height: 1.5625vw;
     padding: 0px;
   }
-  .buterin-p-2{
+  .buterin-p-2 {
     font-size: 2vw;
     line-height: 2.375vw;
     margin-top: 0.75vw;
   }
-  .buterin-p-3{
+  .buterin-p-3 {
     font-size: 2vw;
     line-height: 7.1875vw;
   }
 
-  .buterin-img-box{
+  .buterin-img-box {
     width: 21.25vw;
     height: 21.25vw;
   }

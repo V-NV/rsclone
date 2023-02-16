@@ -1,9 +1,9 @@
 //import rss from "../../assets/img/rss.svg";
-export function Footer():void {
-    const footer = document.querySelector('footer') as HTMLElement;
-    
-    footer.innerHTML = "";
-    footer.innerHTML +=`
+export function Footer(): void {
+  const footer = document.querySelector("footer") as HTMLElement;
+
+  footer.innerHTML = "";
+  footer.innerHTML += `
     <section class="footer-black-wrap">   
     <div class="footer-cont">
        <div class="footer-up">
@@ -38,22 +38,8 @@ export function Footer():void {
     </section> 
     `;
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*`
+
+/*`
       <div class="footer-container">
         <div class="footer-data">
            <p class="copyright">©</p>

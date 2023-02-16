@@ -6,8 +6,8 @@ import { SignUpOn } from "../View/signupOn";
 import { SignInOn } from "../View/signinOn";
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
-export function Header ():void {
-  const Header = document.querySelector('header') as HTMLBodyElement;
+export function Header(): void {
+  const Header = document.querySelector("header") as HTMLBodyElement;
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
@@ -32,37 +32,14 @@ export function Header ():void {
     <hr>
   </div>
 `;
-AboutOn();
-CoursesOn();
-logoOn();
-SignUpOn();
-SignInOn();
+  AboutOn();
+  CoursesOn();
+  logoOn();
+  SignUpOn();
+  SignInOn();
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /*`
+
+/*`
     <header class="header">
       <div class="header-cont">
         <div class="logo-box">

@@ -8,10 +8,10 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 
-const App = ()=>{
-View();
-Header();
-Main();
-Footer();
-}
-App ();
+const App = () => {
+  View();
+  Header();
+  Main();
+  Footer();
+};
+App();
