@@ -39,7 +39,7 @@ const HtmlTasks = [
     taskNum: 5,
     title: "HTML: HTML Attributes",
     task: HtmlTask05,
-    solution: '<ptitle="Mycooltooltip">IlikeHTML</p>',
+    solution: '<ptitle="Mycooltooltip">IlikeHTML!</p>',
   },
   {
     taskNum: 6,
@@ -51,7 +51,7 @@ const HtmlTasks = [
     taskNum: 7,
     title: "HTML: Text layout",
     task: HtmlTask07,
-    solution: "<p>Homocoderus-<li>programming</li><b>courses</b></p>",
+    solution: "<p>Homocoderus-<i>programming</i><b>courses</b></p>",
   },
   {
     taskNum: 8,
@@ -70,6 +70,8 @@ const HtmlTasks = [
     taskNum: 10,
     title: "HTML: Nested lists",
     task: HtmlTask10,
+    // solution:
+    //   "<ol><li>TheJavaScriptprofession<ul><li>Frontend</li><li>Backend</li></ul></li><li>ThePHPProfession</li></ol>",
   },
 ];
 
