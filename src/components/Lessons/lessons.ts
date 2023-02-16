@@ -41,7 +41,7 @@ export function Lessons(num:number, ide:string): void {
                   <div class="courses-editor-code-cont">
                           This will be code editor
                   </div>
-                  <div class="courses-editor-code-result">
+                  <div class="courses-editor-code-result" id="cecr">
                     This will be code result. 
 
                   </div>
