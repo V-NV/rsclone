@@ -19,12 +19,14 @@ export class UserPostController {
   async getAllPosts() {
     return this.userPostService.getAllPosts();
   }
+
   @UsePipes(new ValidationPipe())
   @Post('postNewPost')
   async postNewPost(@Body() dto: UserPostDto) {
     return this.userPostService.createUserPost(dto);
   }
 
+  //TODO Сделать гварда для админа
   @Delete(':id')
   async deleteUser(@Param('id') id: string) {
     return this.userPostService.deleteUserPost(id);

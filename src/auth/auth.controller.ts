@@ -5,6 +5,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   UseGuards,
   UsePipes,
@@ -13,8 +14,9 @@ import {
 import { JwtService } from '@nestjs/jwt';
 
 import { AuthService } from './auth.service';
+import { Roles } from './decorators/role.decorator';
 import { AuthDto } from './dto/auth.dto';
-import { AuthJwtGuard } from './guards/auth-jwt.guard';
+import { RoleGuard } from './guards/roles.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -40,34 +42,28 @@ export class AuthController {
     const access = await this.authService.loginUser(users);
 
     const refresh = await this.authService.refreshToken(users._id);
-    // const det = this.jwtService.decode(access.accessToken);
 
-    // const verify = this.jwtService.verifyAsync(access.accessToken);
-    // console.log(verify);
     return { username: users.name, ...access, ...refresh };
-    // return det;
   }
 
-  @UseGuards(AuthJwtGuard)
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
   @Get()
   async getUsers() {
     return this.authService.getAllUsers();
   }
 
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
   @Delete(':id')
   async deleteUser(@Param('id') id: string) {
     return this.authService.deleteUser(id);
   }
-}
 
-// interface test {
-//   user: {
-//     _id: string;
-//     email: string;
-//     name: string;
-//     password: string;
-//     createdAt: string;
-//     updatedAt: string;
-//   };
-//   iat: number;
-// }
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
+  @Patch(':email')
+  async getRole(@Param('email') email: string, @Body() role: string) {
+    return this.authService.getRole(email, role);
+  }
+}

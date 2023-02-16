@@ -30,6 +30,7 @@ export class AuthService {
       email: authDto.email,
       name: authDto.name,
       password: await hash(authDto.password, salt),
+      role: 'User',
     });
     return newRegisterUser.save();
   }
@@ -65,5 +66,8 @@ export class AuthService {
         },
       ),
     };
+  }
+  async getRole(email: string, role) {
+    return await this.AuthModel.findOneAndUpdate({ email }, role);
   }
 }

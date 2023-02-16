@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConnect } from './configs/mongoDB.config';
-import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 // import { getMongoDBConfig } from './configs/mongoDB.config';
 import { UserPostModule } from './user-post/user-post.module';
@@ -24,7 +23,6 @@ import { DataJsModule } from './data-js/data-js.module';
       inject: [ConfigService],
     }),
     // MongooseModule.forRoot(DB_URL),
-    UsersModule,
     AuthModule,
     UserPostModule,
     DataHtmlModule,

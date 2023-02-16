@@ -19,12 +19,14 @@ export class DataCssController {
   async getAllDataHtml() {
     return this.dataCSSService.getAllDataCss();
   }
+  //TODO Сделать гварда для админа
   @UsePipes(new ValidationPipe())
   @Post('data-css-post')
   async postDataHtml(@Body() dto: DataHtmlDto) {
     return this.dataCSSService.postDataCss(dto);
   }
 
+  //TODO Сделать гварда для админа
   @Delete(':id')
   async deleteDataHtml(@Param('id') id: string) {
     return this.dataCSSService.deleteDataCss(id);

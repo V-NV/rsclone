@@ -18,9 +18,9 @@ export class RoleGuard implements CanActivate {
     const req = context.switchToHttp().getRequest();
 
     try {
-      const requiredRoles = this.reflector.getAllAndOverride<string[]>(
+      const requiredRoles = this.reflector.get<string[]>(
         ROLES_KEY,
-        [context.getHandler(), context.getClass()],
+        context.getHandler(),
       );
 
       if (!requiredRoles) {
@@ -35,12 +35,16 @@ export class RoleGuard implements CanActivate {
         throw new UnauthorizedException({ message: 'Ошибка авторизации' });
       }
 
-      const user = this.jwtService.verify(token);
+      const userCrypt = this.jwtService.verify(token);
 
-      req.user = user;
-      return user.roles.some((role) => requiredRoles.includes(role.value));
+      req.user = userCrypt;
+      const access = userCrypt.user.role.includes(requiredRoles);
+      if (access === false) {
+        throw new UnauthorizedException({ message: 'Недостаточно прав' });
+      }
+      return access;
     } catch (error) {
-      throw new UnauthorizedException({ message: 'Ошибка авторизации' });
+      throw new UnauthorizedException({ message: error.message });
     }
   }
 }
