@@ -5,12 +5,14 @@ import { AuthDto } from './dto/auth.dto';
 import { Auth, AuthDocument } from './schemas/auth.schemas';
 import { compare, genSalt, hash } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectModel(Auth.name) private AuthModel: Model<AuthDocument>,
     private readonly jwtService: JwtService,
+    private readonly configService: ConfigService,
   ) {}
 
   async getAllUsers(): Promise<Auth[]> {
@@ -32,10 +34,7 @@ export class AuthService {
     return newRegisterUser.save();
   }
 
-  async validateUser(
-    email: string,
-    password: string,
-  ): Promise<Pick<Auth, 'email'>> {
+  async validateUser(email: string, password: string) {
     const user = await this.findUser(email);
     if (!user) {
       throw new UnauthorizedException('Пользователь не зарегистрирован');
@@ -44,17 +43,27 @@ export class AuthService {
     if (!correctPass) {
       throw new UnauthorizedException('Неверный пароль');
     }
-    return { email: user.email };
+    return user;
   }
 
   async deleteUser(id: string) {
     return await this.AuthModel.findByIdAndRemove(id);
   }
 
-  async loginUser(email: string) {
-    const encryptedDate = { email };
+  async loginUser(user: AuthDto) {
     return {
-      accessToken: await this.jwtService.signAsync(encryptedDate),
+      accessToken: await this.jwtService.signAsync({ user }),
+    };
+  }
+  async refreshToken(userID: string) {
+    return {
+      refreshToken: await this.jwtService.signAsync(
+        { userID },
+        {
+          secret: this.configService.get('JWT_SECRET'),
+          expiresIn: '30d',
+        },
+      ),
     };
   }
 }

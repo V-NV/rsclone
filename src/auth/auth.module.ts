@@ -5,10 +5,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { getConfigJWT } from 'src/configs/jwt.config';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { AuthJwtGuard } from './guards/auth-jwt.guard';
 import { Auth, AuthSchema } from './schemas/auth.schemas';
 
 @Module({
-  providers: [AuthService],
+  providers: [AuthService, ConfigService, AuthJwtGuard],
   controllers: [AuthController],
   imports: [
     MongooseModule.forFeature([
@@ -23,5 +24,6 @@ import { Auth, AuthSchema } from './schemas/auth.schemas';
       useFactory: getConfigJWT,
     }),
   ],
+  exports: [AuthJwtGuard],
 })
 export class AuthModule {}
