@@ -42,7 +42,7 @@ export function IdeHtml() {
   Run.addEventListener("click", () => {
     const g = Tasks[CurrienNum - 1].solution || "";
     const j = htmlEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
-    console.log(j);
+    //console.log(j);
     if (j.indexOf(g) !== -1) {
       Message.style.color = "green";
       Message.textContent = "Well Done";

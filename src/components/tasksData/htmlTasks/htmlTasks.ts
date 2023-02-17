@@ -15,6 +15,7 @@ const HtmlTasks = [
     title: "HTML: The basics of HTML",
     task: HtmlTask01,
     solution: "<h1>Hello,World!</h1>",
+    solution2:"",
   },
   {
     taskNum: 2,
