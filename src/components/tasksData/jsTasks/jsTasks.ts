@@ -14,51 +14,62 @@ const jsTasks = [
     taskNum: 1,
     title: "JavaScript: Hello, World!",
     task: jsTask01,
+    solution:'',
+    solution2:'',
   },
   {
     taskNum: 2,
     title: "JavaScript: Comments",
     task: jsTask02,
+    solution:'',
   },
   {
     taskNum: 3,
     title: "JavaScript: Statements",
     task: jsTask03,
+    solution:'',  
   },
   {
     taskNum: 4,
     title: "JavaScript: How do we verify your solutions?",
     task: jsTask04,
+    solution:'',
   },
   {
     taskNum: 5,
     title: "JavaScript: Syntax errors",
     task: jsTask05,
+    solution:'',  
   },
   {
     taskNum: 6,
     title: "JavaScript: Arithmetic operations",
     task: jsTask06,
+    solution:'',
   },
   {
     taskNum: 7,
     title: "JavaScript: Operators",
     task: jsTask07,
+    solution:'',  
   },
   {
     taskNum: 8,
     title: "JavaScript: Commutative operations",
     task: jsTask08,
+    solution:'',
   },
   {
     taskNum: 9,
     title: "JavaScript: Composition of operations",
     task: jsTask09,
+    solution:'',
   },
   {
     taskNum: 10,
     title: "JavaScript: Operator precedence",
     task: jsTask10,
+    solution:'',
   },
 ];
 
