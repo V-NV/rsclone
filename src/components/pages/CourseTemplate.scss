@@ -9,14 +9,12 @@
 }
 
 .main-wrap {
-  background-color: #262626;
   box-sizing: border-box;
 }
 
 .main-cont {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #262626;
   font-family: "Kanit";
 }
 
@@ -49,7 +47,7 @@
     background-position: 10px;
     background-color: transparent;
     border: none;
-    color: #fffbd3;
+    color: var(--color-text);
     cursor: default;
   }
 }
@@ -70,7 +68,7 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px;
-  background-color: #fffbd3;
+  background-color: var(--color-text);
   font-family: "Kanit";
   font-weight: 400;
   margin-top: 43px;
@@ -81,20 +79,24 @@
 .header {
   font-size: 32px;
   margin-top: 0.563vw;
+  color: var(--color-bg);
 }
 
 .parag {
   font-size: 32px;
   margin-top: 16px;
+  color: var(--color-bg);
 }
 
 .text {
   font-size: 24px;
   margin-top: 16px;
+  color: var(--color-bg);
 }
 
 .icon-box {
   margin-top: 10px;
+  color: var(--color-bg);
 }
 
 .button-box {
@@ -128,7 +130,7 @@
 
 .tasks-title {
   font-size: 52px;
-  color: #fffbd3;
+  color: var(--color-text);
   margin: 30px 0;
 }
 
@@ -148,9 +150,9 @@
 
 .task-item {
   width: 670px;
-  background-color: #fffbd3;
+  background-color: var(--color-text);
+  color: var(--color-bg);
   font-size: 24px;
-  color: #262626;
   border: solid 1.5px rgba(63, 63, 63, 0.2);
   padding: 20px 0 20px 25px;
   border-radius: 10px;
@@ -167,7 +169,7 @@
 .tasks-sub {
   padding-left: 60px;
   font-size: 32px;
-  color: #fffbd3;
+  color: var(--color-text);
 }
 
 @media (max-width: 1599px) {

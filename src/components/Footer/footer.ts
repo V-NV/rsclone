@@ -1,4 +1,6 @@
 //import rss from "../../assets/img/rss.svg";
+import { initTheme, changeTheme, themeOn } from "../View/themeOn";
+
 export function Footer(): void {
   const footer = document.querySelector("footer") as HTMLElement;
 
@@ -38,6 +40,7 @@ export function Footer(): void {
     </section> 
     `;
 }
+initTheme();
 
 /*`
       <div class="footer-container">
