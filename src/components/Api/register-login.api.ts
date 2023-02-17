@@ -26,6 +26,6 @@ export const loginUser = async (body: TLoginUser): Promise<IToken> => {
   });
   resp.status === 401
     ? await resp.json().then((item) => console.error(item.message))
-    : console.log("Пользователь зарегистрирован");
+    : console.log("Use is login");
   return resp.status === 201 ? { ...(await resp.json()) } : false;
 };
