@@ -5,11 +5,14 @@ import htmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import { Lessons } from "../Lessons/lessons";
 
 const courseInfo = {
+  pathTitle: `HTML`,
   introTitle: `HTML: Perfect for Beginners`,
   introText: `To standardize the output of text within browser was created an HTML standard. It defines the rules for formatting text data for correct output. This course is devoted to the fundamentals of HTML markup, working with typography, media documents, and forms layout`,
   hours: 11,
   students: 20951,
   lessons: 10,
+  tasksTitle: `HTML Basics`,
+  tasksDescription: `In first module, we will review the fundamental concepts of HTML: tag, attribute, and nesting of tags, and will learn the core features of marking up text with paragraphs.`,
 };
 
 export const htmlPage = (): void => {

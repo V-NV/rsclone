@@ -4,6 +4,7 @@ import JSLogo from "../../assets/img/js/js-logo.png";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 const courseInfo = {
+  pathTitle: `JavaScript`,
   introTitle: `JavaScript: Perfect for beginners`,
   introText: `Programming learning is an interesting and exciting process.
   The syntax of the language is the simplest and shortest path,
@@ -13,6 +14,8 @@ const courseInfo = {
   hours: 10,
   students: 985,
   lessons: 10,
+  tasksTitle: `JavaScript Basics`,
+  tasksDescription: `JavaScript is one of the most popular programming languages in the world. It is used to build interactive web pages, mobile applications, and in server-side development. You will learn JS from scratch, from the very beginning. The first module provides a launching pad for writing meaningful programs. We will find out how to write your first JS code.`,
 };
 
 export const javascriptPage = (): void => {

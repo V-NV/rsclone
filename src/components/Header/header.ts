@@ -26,6 +26,7 @@ export function Header(): void {
         <div class="header-btn signin">SIGN IN</div>
         <div class="header-btn signup">SIGN UP</div>
         <div class="header-btn lang">EN</div>
+        <div class="theme"></div>
       </div>
       
     </div>

@@ -20,12 +20,38 @@
   font-family: "Kanit";
 }
 
+.path-container {
+  background-color: transparent;
+  border: none;
+  display: inline;
+  cursor: pointer;
+}
+
 .home {
+  display: inline-block;
   font-family: "Kanit";
   font-weight: 400;
   font-size: 32px;
-  color: #fffbd3;
   margin-top: 100px;
+  object-fit: contain;
+
+  .home-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pathTitle {
+    transform: translateY(-5px);
+    padding-left: 70px;
+    margin: 0 0 0 10px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fffbd3;
+    cursor: default;
+  }
 }
 
 .gif-cont {
@@ -132,6 +158,9 @@
   &:hover {
     transform: translateY(-5px);
     cursor: pointer;
+  }
+  &:focus {
+    outline-color: rgba(0, 0, 0, 0.5);
   }
 }
 

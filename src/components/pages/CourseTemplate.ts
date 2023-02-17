@@ -2,17 +2,21 @@ import home from "../../assets/img/CourseTemplate/home.png";
 import watch from "../../assets/img/CourseTemplate/watch.png";
 import student from "../../assets/img/CourseTemplate/student1.png";
 import students from "../../assets/img/CourseTemplate/students.png";
+import arrow from "../../assets/icons/arrow.svg";
 // import { LessonsOn } from "../View/lessonsOn"
 
 const CourseTemplate = (
   gif: string,
   logo: string,
   courseInfo: {
+    pathTitle: string;
     introTitle: string;
     introText: string;
     hours: number;
     students: number;
     lessons: number;
+    tasksTitle: string;
+    tasksDescription: string;
   },
   Tasks: { taskNum: number; title: string; task: string }[]
 ) => {
@@ -20,7 +24,11 @@ const CourseTemplate = (
     <section class="main-wrap">
     <div class="main-cont">
       <div class="home">
-        <p><img src="${home}" alt="home">&nbsp&nbsp&nbsp&#10230&nbsp&nbsp&nbspJavaScript</p>
+        <div><img class="home-png" src="${home}" alt="home">
+        <button class="pathTitle" style="background-image: url('${arrow}')">${
+    courseInfo.pathTitle
+  }</button>
+        </div>
       </div>
       <div class="gif-cont" style="background-image: url('${gif}')"></div> 
 
@@ -39,10 +47,10 @@ const CourseTemplate = (
                     <p class="icon-string">
                     <img class="img" src="${watch}" alt="watch"> ${
     courseInfo.hours
-  } hours &nbsp&nbsp&nbsp
+  } hours
                     <img class="img" src="${student}" alt="students">  ${
     courseInfo.students
-  } students &nbsp&nbsp&nbsp
+  } students
                     <img class="img" src="${students}"> ${
     courseInfo.lessons
   } lessons with practice in the browser
@@ -57,18 +65,18 @@ const CourseTemplate = (
             </div>
         </div>
         <div class="tasks-title">
-            <p>JavaScript basics</p>
+            <p>${courseInfo.tasksTitle}</p>
         </div>
         <div class="basics-cont">
             <ul class="tasks-container">
                 ${Tasks.map((item) => {
-                  return `<li id=${item.taskNum}><p class="task-item">${item.taskNum}. ${item.title}</p></li>`;
+                  return `<li id=${item.taskNum}>
+                  <button class="task-item">${item.taskNum}. ${item.title}</button>
+                  </li>`;
                 })}
             </ul>
             <div class="tasks-sub">
-            JavaScript is one of the most popular programming languages in the world.
-            It is used to build interactive web pages, mobile applications, and in 
-            server-side development. You will learn JS from scratch, from the very beginning.
+            ${courseInfo.tasksDescription}
             </div>
         </div>
         </div> 
