@@ -1,3 +1,12 @@
+import { IRegisterData } from "../../types/api.interface";
+import { registerUser } from "../Api/register-login.api";
+import { Main } from "../Main/Main";
+import {
+  checkRequired,
+  checkUser,
+  checkEmail,
+  checkPassword,
+} from "../Service/auth.login.service";
 import { SignInOnForm } from "../View/signinOn";
 
 export function SignUp(): void {
@@ -47,73 +56,20 @@ function FormSignUp(): void {
   const email = document.getElementById("email") as HTMLInputElement;
   const password = document.getElementById("password") as HTMLInputElement;
 
-  const eml =
-    // eslint-disable-next-line no-useless-escape
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-  const Validate = (
-    item: HTMLElement,
-    messageType: "success" | "error",
-    message?: string
-  ) => {
-    const formControl = item.parentElement as HTMLDivElement;
-    formControl.className =
-      messageType === "error" ? "form-control error" : "form-control success";
-    if (messageType === "error" && !!message) {
-      const small = formControl.querySelector("small");
-      (small as HTMLInputElement).innerHTML = message;
-    }
-  };
-  function checkUser(username: HTMLInputElement) {
-    if (username.value.toLowerCase().length >= 3) {
-      Validate(username, "success");
-    } else {
-      Validate(username, "error", "Name length min 3 symbols");
-    }
-  }
-
-  function checkEmail(email: HTMLInputElement) {
-    if (eml.test(email.value.toLowerCase())) {
-      Validate(email, "success");
-    } else {
-      Validate(email, "error", "Example: email@email.en");
-    }
-  }
-
-  function checkPassword(password: HTMLInputElement) {
-    if (password.value.toLowerCase().length >= 6) {
-      Validate(password, "success");
-    } else {
-      Validate(password, "error", "Password length min 6 symbols");
-    }
-  }
-
-  const checkRequired = (items: HTMLInputElement[]) => {
-    let count = 0;
-    items.forEach((item: HTMLInputElement) => {
-      if (item.value.trim() === "") {
-        Validate(item, "error", captializedNameOFInput(item) + " is required");
-      } else {
-        Validate(item, "success");
-        count += 1;
-        if (+count === 3) {
-          /**-----------Aleksey form export to server---------*/
-          setTimeout(() => console.log("Validate Ok"), 2000);
-          /**-----------Aleksey form export to server---------*/
-        }
-      }
-    });
-  };
-
-  const captializedNameOFInput = (item: HTMLInputElement) => {
-    return item.id[0].toUpperCase() + item.id.slice(1);
-  };
-
-  form.addEventListener("submit", function (e: Event) {
+  form.addEventListener("submit", async function (e: Event) {
+    let body: IRegisterData = { name: "", email: "", password: "" };
+    let created = false;
     e.preventDefault();
     checkRequired([username, email, password]);
-    checkUser(username);
-    checkEmail(email);
-    checkPassword(password);
+    checkUser(username) && checkEmail(email) && checkPassword(password)
+      ? ((body = {
+          name: username.value,
+          email: email.value,
+          password: password.value,
+        }),
+        (created = await registerUser(body)))
+      : console.log("no validate");
+
+    created ? setTimeout(Main, 2000) : null;
   });
 }
