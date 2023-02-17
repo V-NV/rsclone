@@ -15,6 +15,7 @@ const HtmlTasks = [
     title: "HTML: The basics of HTML",
     task: HtmlTask01,
     solution: "<h1>Hello,World!</h1>",
+    solution2:'',
   },
   {
     taskNum: 2,
@@ -70,8 +71,8 @@ const HtmlTasks = [
     taskNum: 10,
     title: "HTML: Nested lists",
     task: HtmlTask10,
-    // solution:
-    //   "<ol><li>TheJavaScriptprofession<ul><li>Frontend</li><li>Backend</li></ul></li><li>ThePHPProfession</li></ol>",
+    solution:
+       "<ol><li>TheJavaScriptprofession<ul><li>Frontend</li><li>Backend</li></ul></li><li>ThePHPProfession</li></ol>",
   },
 ];
 

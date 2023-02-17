@@ -1,14 +1,17 @@
 import Home from "../../assets/img/Lessons/home.png";
 import { IdeHtml } from "./ide/idehtml";
 import { IdeCss } from "./ide/idecss";
+import { Idejs } from "./ide/idejs";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import cssTasks from "../tasksData/cssTasks/cssTasks";
+import jsTasks from "../tasksData/jsTasks/jsTasks";
 
 export let CurrienNum = 1;
 let CurrientIde = "";
 export function Lessons(num: number, ide: string): void {
   const main = document.querySelector("main") as HTMLElement;
-  CurrientIde = ide;
+  const poi = ide;
+  CurrientIde = poi;
   CurrienNum = num;
   main.innerHTML = "";
   main.innerHTML += `<section class="courses-main-wrap">
@@ -63,20 +66,23 @@ export function Lessons(num: number, ide: string): void {
   LessonText(num);
   Ide(ide);
   CourseName(ide);
-  LevelName(num);
+  LevelName(num,ide);
   //checkSolution(num);
   BtnPrev(num);
   Prev_btn_OnOff(num);
   BtnNext(num);
   Next_btn_OnOff(num);
 }
-export let Tasks = HtmlTasks;
+export let Tasks = jsTasks;
 function SetIde(ide: string) {
   if (ide == "html") {
     Tasks = HtmlTasks;
   }
   if (ide == "css") {
     Tasks = cssTasks;
+  }
+  if (ide == "js") {
+    Tasks == jsTasks;
   }
 }
 
@@ -95,15 +101,24 @@ function Ide(ide: string) {
   if (ide == "css") {
     IdeCss();
   }
+  if (ide == "js") {
+    Idejs();
+  }
 }
 function CourseName(name: string) {
   const CourseNam = document.querySelector(".courses-name") as HTMLElement;
   CourseNam.textContent = name.toUpperCase();
 }
 
-function LevelName(num: number) {
+function LevelName(num: number, ide:string) {
   const LevelNam = document.querySelector(".courses-level-name") as HTMLElement;
+  if(ide == 'js') {
+    LevelNam.textContent = Tasks[num - 1].title.slice(11);
+  }
+  else
+  {
   LevelNam.textContent = Tasks[num - 1].title.slice(5);
+  }
 }
 
 /*function checkSolution(num:number) {

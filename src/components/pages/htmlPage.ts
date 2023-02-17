@@ -24,7 +24,7 @@ function BtnContId() {
   a.id = "html";
 }
 function ChangeLesson() {
-  const Less = document.querySelectorAll("li");
+  const Less = Array.from(document.querySelectorAll("li"));
 
   for (const el of Less) {
     el.addEventListener("click", () => {
