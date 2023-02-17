@@ -1,3 +1,6 @@
+import { IRegisterData } from "../../types/api.interface";
+import { registerUser } from "../Api/register.api";
+import { Main } from "../Main/Main";
 import { SignInOnForm } from "../View/signinOn";
 
 export function SignUp(): void {
@@ -67,24 +70,30 @@ function FormSignUp(): void {
   function checkUser(username: HTMLInputElement) {
     if (username.value.toLowerCase().length >= 3) {
       Validate(username, "success");
+      return true;
     } else {
       Validate(username, "error", "Name length min 3 symbols");
+      return false;
     }
   }
 
   function checkEmail(email: HTMLInputElement) {
     if (eml.test(email.value.toLowerCase())) {
       Validate(email, "success");
+      return true;
     } else {
       Validate(email, "error", "Example: email@email.en");
+      return false;
     }
   }
 
   function checkPassword(password: HTMLInputElement) {
     if (password.value.toLowerCase().length >= 6) {
       Validate(password, "success");
+      return true;
     } else {
       Validate(password, "error", "Password length min 6 symbols");
+      return false;
     }
   }
 
@@ -109,11 +118,20 @@ function FormSignUp(): void {
     return item.id[0].toUpperCase() + item.id.slice(1);
   };
 
-  form.addEventListener("submit", function (e: Event) {
+  form.addEventListener("submit", async function (e: Event) {
+    let body: IRegisterData = { name: "", email: "", password: "" };
+    let created = false;
     e.preventDefault();
     checkRequired([username, email, password]);
-    checkUser(username);
-    checkEmail(email);
-    checkPassword(password);
+    checkUser(username) && checkEmail(email) && checkPassword(password)
+      ? ((body = {
+          name: username.value,
+          email: email.value,
+          password: password.value,
+        }),
+        (created = await registerUser(body)))
+      : console.log("no validate");
+
+    created ? setTimeout(Main, 2000) : null;
   });
 }
