@@ -1,3 +1,7 @@
+import { IToken, TLoginUser } from "../../types/api.interface";
+import { loginUser } from "../Api/register-login.api";
+import { Main } from "../Main/Main";
+
 export function SignIn(): void {
   const main = document.querySelector("main") as HTMLElement;
   main.innerHTML = "";
@@ -22,16 +26,14 @@ export function SignIn(): void {
             
             
             <button type="submit" class="form-button" id="form-button">   Sign In</button>
-        </form>
-            <p class="signin-signup">Forgot<a class="p-link-signin">   Password?</a></p>
-          
+        </form>       
           </div>
        </div>
     </div>
 </section>;`;
   FormSignIn();
 }
-
+// <p class="signin-signup">Forgot<a class="p-link-signin">   Password?</a></p>
 function FormSignIn(): void {
   const form = document.getElementById("form") as HTMLFormElement;
   const email = document.getElementById("email") as HTMLInputElement;
@@ -58,16 +60,20 @@ function FormSignIn(): void {
   function checkEmail(email: HTMLInputElement) {
     if (eml.test(email.value.toLowerCase())) {
       Validate(email, "success");
+      return true;
     } else {
       Validate(email, "error", "Example: email@email.en");
+      return false;
     }
   }
 
   function checkPassword(password: HTMLInputElement) {
     if (password.value.toLowerCase().length >= 6) {
       Validate(password, "success");
+      return true;
     } else {
       Validate(password, "error", "Password length min 6 symbols");
+      return false;
     }
   }
 
@@ -92,10 +98,18 @@ function FormSignIn(): void {
     return item.id[0].toUpperCase() + item.id.slice(1);
   };
 
-  form.addEventListener("submit", function (e: Event) {
+  form.addEventListener("submit", async function (e: Event) {
+    let body: TLoginUser = { email: "", password: "" };
+    let created: IToken | boolean = false;
     e.preventDefault();
     checkRequired([email, password]);
-    checkEmail(email);
-    checkPassword(password);
+    checkEmail(email) && checkPassword(password)
+      ? ((body = {
+          email: email.value,
+          password: password.value,
+        }),
+        (created = await loginUser(body)))
+      : console.log("no validate");
+    created ? setTimeout(Main, 2000) : null;
   });
 }

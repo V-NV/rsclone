@@ -1,5 +1,5 @@
 import { IRegisterData } from "../../types/api.interface";
-import { registerUser } from "../Api/register.api";
+import { registerUser } from "../Api/register-login.api";
 import { Main } from "../Main/Main";
 import { SignInOnForm } from "../View/signinOn";
 
