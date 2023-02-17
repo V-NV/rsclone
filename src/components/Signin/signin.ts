@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { IToken, TLoginUser } from "../../types/api.interface";
 import { loginUser } from "../Api/register-login.api";
 import { Main } from "../Main/Main";
@@ -100,7 +101,7 @@ function FormSignIn(): void {
 
   form.addEventListener("submit", async function (e: Event) {
     let body: TLoginUser = { email: "", password: "" };
-    let created: IToken | boolean = false;
+    let created: IToken = { username: "", accessToken: "", refreshToken: "" };
     e.preventDefault();
     checkRequired([email, password]);
     checkEmail(email) && checkPassword(password)
@@ -108,8 +109,11 @@ function FormSignIn(): void {
           email: email.value,
           password: password.value,
         }),
-        (created = await loginUser(body)))
+        (created = await loginUser(body)),
+        Cookies.set("username", created.username),
+        Cookies.set("user_session", created.accessToken))
       : console.log("no validate");
+
     created ? setTimeout(Main, 2000) : null;
   });
 }
