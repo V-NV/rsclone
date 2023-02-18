@@ -48,23 +48,52 @@ export function IdeCss() {
   const Run = document.querySelector(".btn-run") as HTMLElement;
 
   Run.addEventListener("click", () => {
-    const g = Tasks[CurrienNum - 1].solution || "";
-    const j = CssEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
-    console.log(j);
+   
+    const Sol1 = Tasks[CurrienNum - 1].solution || "";//solution
+    const Sol2 = Tasks[CurrienNum - 1].solution2 || "";//solution2 
 
-    const kuku = document.querySelector("#cecr") as HTMLElement;
+    const Val = CssEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
+    console.log(Val,'Val');
 
-    const uuu = kuku.children[0];
+    //const Search = document.querySelector("#cecr") as HTMLElement;
+
+    //const Val = CssEditor.getValue().replace(/\s/g, "");// вся строка с экрана
+    //const SS = Search.children[0].getAttribute("style");//style attribute
+    //const CS = Search.children[0].className.replace(/\s/g, "");//class name
+    //const AllSty = window.getComputedStyle(Search).parentRule;
+    //console.log(StyleSearch.style.cssText,'csstext')
     //const ttt = kuku.childNodes[0]?.st
-    console.log(uuu.getAttribute("style"));
 
-    if (j.indexOf(g) !== -1) {
+    
+    //console.log(AllSty,'все стили')
+    
+    
+    /*if(SS !== null) 
+    {SS == SS.replace(/\s/g, "")
+      console.log(SS.replace(/\s/g, ""), 'атрибут инлайн стиля')}
+*/
+    //console.log(CS, 'хз');
+   
+    console.log(Sol1,'solution');
+    console.log(Sol2,'solution2'); 
+
+    if (Val.toLowerCase().includes(Sol1.toLocaleLowerCase()) || 
+    Val.toLocaleLowerCase().includes(Sol2.toLocaleLowerCase())) 
+    
+    {
       Message.style.color = "green";
       Message.textContent = "Well Done";
     } else {
       Message.style.color = "red";
       Message.textContent = "It`s wrong solution try again";
     }
+    /*if (j.indexOf(g) !== -1) {
+      Message.style.color = "green";
+      Message.textContent = "Well Done";
+    } else {
+      Message.style.color = "red";
+      Message.textContent = "It`s wrong solution try again";
+    }*/
   });
 
   const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
