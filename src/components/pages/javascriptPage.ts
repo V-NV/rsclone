@@ -2,6 +2,7 @@ import CourseTemplate from "./CourseTemplate";
 import JSGif from "../../assets/img/js/js-intro.gif";
 import JSLogo from "../../assets/img/js/js-logo.png";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
+import { Lessons } from "../Lessons/lessons";
 
 const courseInfo = {
   introTitle: `JavaScript: Perfect for beginners`,
@@ -20,8 +21,18 @@ export const javascriptPage = (): void => {
   main.innerHTML = "";
   main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);
   BtnContId();
+  ChangeLesson();
 };
 function BtnContId() {
   const a = document.querySelector("ul") as HTMLElement;
   a.id = "js";
+}
+function ChangeLesson() {
+  const sjs = Array.from(document.querySelectorAll("li"));
+
+  for (const el of sjs) {
+    el.addEventListener("click", () => {
+      Lessons(+el.id, "js");
+    });
+  }
 }

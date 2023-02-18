@@ -71,8 +71,8 @@ const HtmlTasks = [
     taskNum: 10,
     title: "HTML: Nested lists",
     task: HtmlTask10,
-    // solution:
-    //   "<ol><li>TheJavaScriptprofession<ul><li>Frontend</li><li>Backend</li></ul></li><li>ThePHPProfession</li></ol>",
+    solution:
+       "<ol><li>TheJavaScriptprofession<ul><li>Frontend</li><li>Backend</li></ul></li><li>ThePHPProfession</li></ol>",
   },
 ];
 
