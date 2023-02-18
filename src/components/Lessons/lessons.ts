@@ -82,7 +82,7 @@ function SetIde(ide: string) {
     Tasks = cssTasks;
   }
   if (ide == "js") {
-    Tasks == jsTasks;
+    Tasks = jsTasks;
   }
 }
 
