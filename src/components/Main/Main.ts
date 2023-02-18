@@ -1,6 +1,7 @@
 import { javascriptOn } from "../View/javascriptOn";
 import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
+import { initTheme } from "../View/initTheme";
 
 export function Main(): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -84,6 +85,7 @@ export function Main(): void {
   javascriptOn();
   cssOn();
   htmlOn();
+  initTheme();
 }
 
 /*`

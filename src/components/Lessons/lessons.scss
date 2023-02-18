@@ -10,7 +10,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #262626;
   width: 1600px;
   max-width: 100%;
   height: 1300px;
@@ -24,22 +23,56 @@
   width: 1440px;
   max-width: 100%;
   height: 1290px;
-  background-color: #262626;
+
   font-family: "Kanit";
 }
 .courses-home {
   width: 98%;
-  max-width: 1440px;
-  height: 70px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   font-family: "Kanit";
   font-weight: 400;
   font-size: 32px;
-  color: #fffbd3;
+  color: var(--color-text);
   margin-top: 68px;
 }
+
+.home {
+  display: inline-block;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 100px;
+  object-fit: contain;
+
+  & button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: var(--color-text);
+      transform: translateY(10px);
+    }
+  }
+}
+
+.pathItem {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+
+  & svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--color-text);
+    transform: translateY(15px);
+    margin: 0 10px;
+  }
+}
+
 .courses-work-container {
   width: 99%;
   max-width: 1440px;
@@ -59,14 +92,14 @@
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  background-color: #fffbd3;
+  background-color: var(--color-text);
 }
 .courses-btn-lesson-up {
   width: 152px;
   height: 46px;
   background-color: #262626;
   border-radius: 15px;
-  color: #fffbd3;
+  background-color: var(--color-text);
   font-family: "Kanit";
   font-size: 32px;
   text-align: center;
@@ -87,7 +120,7 @@
   margin-top: 20px;
   font-family: "Kanit";
   font-size: calc(14px + 0.8vw);
-  color: #fffbd3;
+  background-color: var(--color-bg);
   box-sizing: border-box;
   text-align: justify;
   padding: 4%;

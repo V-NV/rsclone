@@ -5,11 +5,14 @@ import cssTasks from "../tasksData/cssTasks/cssTasks";
 import { Lessons } from "../Lessons/lessons";
 
 const courseInfo = {
+  pathTitle: `CSS`,
   introTitle: `CSS: Free Online Learning for Beginners`,
   introText: `Cascading Style Sheets (CSS) allow you to lay out web pages according to given rules. Text styles, block layouts, and animations are all specified via Cascading Style Sheets`,
   hours: 8,
   students: 1430,
   lessons: 10,
+  tasksTitle: `CSS basics`,
+  tasksDescription: `Cascading Style Sheets (CSS) allow you to lay out web pages according to given rules. Text styles, block layouts, and animations are all specified via Cascading Style Sheets.`,
 };
 
 export const cssPage = (): void => {

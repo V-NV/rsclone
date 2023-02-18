@@ -10,15 +10,13 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #262626;
 }
 .about-main-cont {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #262626;
   max-width: 1440px;
-  color: #fffbd3;
+  color: var(--color-text);
   padding: 0 15px;
 }
 
@@ -26,7 +24,7 @@
   font-family: "Holtwood";
   font-size: 48px;
   margin: 30px 0;
-  color: #fffbd3;
+  color: var(--color-text);
 }
 .about-us-text {
   font-family: "Kanit";
@@ -36,7 +34,7 @@
 .about-why-cont {
   font-family: "Holtwood";
   font-weight: 400;
-  color: #fffbd3;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: center;

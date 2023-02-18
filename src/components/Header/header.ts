@@ -4,6 +4,7 @@ import { CoursesOn } from "../View/coursesOn";
 import { logoOn } from "../View/logoOn";
 import { SignUpOn } from "../View/signupOn";
 import { SignInOn } from "../View/signinOn";
+
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header(): void {
@@ -26,6 +27,7 @@ export function Header(): void {
         <div class="header-btn signin">SIGN IN</div>
         <div class="header-btn signup">SIGN UP</div>
         <div class="header-btn lang">EN</div>
+        <div class="header-btn theme"></div>
       </div>
       
     </div>
