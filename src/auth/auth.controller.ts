@@ -4,6 +4,7 @@ import {
   Controller,
   Delete,
   Get,
+  Headers,
   Param,
   Patch,
   Post,
@@ -16,6 +17,7 @@ import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { Roles } from './decorators/role.decorator';
 import { AuthDto } from './dto/auth.dto';
+import { AuthJwtGuard } from './guards/auth-jwt.guard';
 import { RoleGuard } from './guards/roles.guard';
 
 @Controller('auth')
@@ -65,5 +67,14 @@ export class AuthController {
   @Patch(':email')
   async getRole(@Param('email') email: string, @Body() role: string) {
     return this.authService.getRole(email, role);
+  }
+  @UseGuards(AuthJwtGuard)
+  @Post('login-user')
+  async userIsLogin(@Headers('Authorization') authorization: string) {
+    const token = authorization.split(' ')[1];
+    const user = this.jwtService.verify(token);
+    const foundUser = this.authService.findUser(user.user.email);
+
+    return foundUser ? true : false;
   }
 }

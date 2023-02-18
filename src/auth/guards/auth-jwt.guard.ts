@@ -26,12 +26,6 @@ export class AuthJwtGuard implements CanActivate {
 
       const user = this.jwtService.verify(token);
 
-      // if (user.user.role !== 'Admin') {
-      //   throw new UnauthorizedException({
-      //     message: 'У вас не достаточно прав',
-      //   });
-      // }
-
       req.user = user;
       return true;
     } catch (error) {
