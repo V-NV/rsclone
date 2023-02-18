@@ -12,9 +12,9 @@ const cssTask04 = `
   <br>
 <pre>
 <code>
-&lt;div style=&quot;font-size: 20px;&quot;&gt;
-  This text will have a font size of 20 pixels
- &lt;p&gt;
+&lt;div style=&quot;font-size: 40px;&quot;&gt;
+  This text will have a font size of 40 pixels
+&lt;p style=&quot;font-size: 20px;&quot&gt;
   The enclosed paragraph will also have a font 
   size of 20 pixels
  &lt;/p&gt;

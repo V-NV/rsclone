@@ -112,31 +112,35 @@ const cssTask09 = `
   <p>In this example, all paragraphs with the <code>paragraph</code> class will have red text, but if the <code>color-primary</code> class is also set, the color will be blue. Why does this happen? These selectors also have their own priorities. In complex selectors, both the number of occurrences of a particular selector and the total weight are counted.</p>
   
   <p>To determine the priority, you can use a table where each selector is given a &quot;weight&quot;:</p>
-  
+  <br>
   <ul>
   <li>Tag selector: <strong>1</strong></li>
   <li>Class selector: <strong>10</strong></li>
   <li>ID selector: <strong>100</strong></li>
   <li>Style in tag attribute: <strong>1000</strong></li>
   </ul>
-  
+  <br>
   <p>To find out which selector will have the greater weight, you have to add up all the values obtained using this table.</p>
-  
+  <br>
   <ul>
   <li>The <code>.paragraph</code> selector consists of one class, so its weight is 10</li>
   <li>The selector <code>.paragraph.color-primary</code> consists of two classes. Its weight is 20.</li>
   </ul>
-  
+  <br>
   <p>Thus, the properties in the <code>.paragraph.color-primary</code> selector will have a higher priority than those inside the <code>.paragraph</code> selector.</p>
   
   <p>This table doesn&#39;t tell the whole story, but it can be used in the early stages of learning CSS. With practice, you will learn how to determine the priority of selectors on your own</p>
-  <h2>Instructions</h2><p>Add a paragraph to the editor with the class set to the <code>border</code> and the id as <code>no-border</code>. Set the following rules:</p>
-  
+  <br>
+  <h2>Instructions</h2>
+  <br>
+  <p>Add a paragraph to the editor with the class set to the <code>border</code> and the id as <code>no-border</code>. Set the following rules:</p>
+  <br>
   <ul>
-  <li>For the <code>border</code> class, set a solid border of any color with a thickness of 1px. This can be done like this: <code>border: 1px solid #000;</code>.</li>
+  <li>For the <code>border</code> class, set a solid border of any color with a thickness of 1px. This can be done like this: <code>border: border:solid 1px #00ff11;</code>.</li>
   <li>For the id <code>no-border</code>, cancel the frame. Use the <code>none</code> value for the <code>border-style</code> rule.</li>
+  <li>Text inside paragraph <span style="color:pink;">Priority of selectors</span>
   </ul>
-  
+  <br>
   <p>Specify styles for the <code>.border</code> selector first, and the <code>#no-border</code> selector second.</p>
   
   <p>Write the styles in the <code>&lt;style&gt;</code> tag.</p>

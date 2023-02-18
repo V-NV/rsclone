@@ -70,15 +70,15 @@ const cssTasks = [
     taskNum: 9,
     title: "CSS: Priority",
     task: cssTask09,
-    solution: '',
-    solution2: '',
+    solution: '<pclass="border"id="no-border">Priorityofselectors</p><style>.border{border:solid1px#00ff11;}#no-border{border:none;}</style>',
+    solution2: '<style>.border{border:solid1px#00ff11;}#no-border{border:none;}</style><pclass="border"id="no-border">Priorityofselectors</p>',
   },
   {
     taskNum: 10,
     title: "CSS: Colors",
     task: cssTask10,
-    solution: '',
-    solution2: '',
+    solution: '<p>Paragraph<spanclass="violet">Span</span></p><style>.violet{color:#9400d3;}</style>',
+    solution2: '<style>.violet{color:#9400d3;}</style><p>Paragraph<spanclass="violet">Span</span></p>',
   },
 ];
 

@@ -8,9 +8,12 @@ const cssTask05 = `
   <br>
   <p>Using the <code>&lt;style&gt;</code> tag, we&#39;ve learned to change styles for all elements at once, for example:</p>
   <br>
-  <pre><code>h1 {
-    font-size: 35px;
-  }
+  <pre><code>
+&lt;style&gt;  
+    h1 {
+      font-size: 35px;
+    }
+&lt;/style&gt;
   </code></pre>
   
   <p>But this option is convenient only for setting the initial/main values for our web page. Different parts of it may need different header styles for the same level. We&#39;ll learn how to solve this problem using CSS selectors and HTML attributes in future lessons. The main thing to remember is that almost all elements have a default style, which can be both a benefit and a nuisance when designing a page</p>
