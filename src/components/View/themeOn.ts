@@ -1,58 +1,13 @@
-export const initTheme = () => {
-  window.onload = () => {
-    const body = document.querySelector("body") as HTMLElement;
-    const theme = document.querySelector(".theme") as HTMLElement;
-    const rsLogo = document.querySelector(".rss-logo") as HTMLElement;
-    const introImg = document.querySelector(
-      ".present-right-up-box"
-    ) as HTMLElement;
-    if (localStorage.getItem("theme") === "light") {
-      body.classList.remove("dark");
-      body.classList.add("light");
-      theme.classList.add("light");
-      introImg.classList.add("light");
-      rsLogo.classList.add("light");
-    } else {
-      body.classList.add("dark");
-      body.classList.remove("light");
-      theme.classList.remove("light");
-      introImg.classList.remove("light");
-      rsLogo.classList.remove("light");
-    }
-  };
-};
-initTheme();
-
-export const changeTheme = () => {
-  const body = document.querySelector("body") as HTMLElement;
-  const theme = document.querySelector(".theme") as HTMLElement;
-  const rsLogo = document.querySelector(".rss-logo") as HTMLElement;
-  const introImg = document.querySelector(
-    ".present-right-up-box"
-  ) as HTMLElement;
-  if (localStorage.getItem("theme") === "light") {
-    body.classList.remove("dark");
-    body.classList.add("light");
-    theme.classList.add("light");
-    introImg.classList.add("light");
-    rsLogo.classList.add("light");
-  } else {
-    body.classList.add("dark");
-    body.classList.remove("light");
-    theme.classList.remove("light");
-    introImg.classList.remove("light");
-    rsLogo.classList.remove("light");
-  }
-};
+import { changeTheme } from "./changeTheme";
 
 export function themeOn() {
   const theme = document.querySelector(".theme") as HTMLElement;
   theme.addEventListener("click", (event) => {
     event.preventDefault;
     if (localStorage.getItem("theme") === "light") {
-      localStorage.removeItem("theme");
+      localStorage.setItem("theme", "dark");
       changeTheme();
-    } else {
+    } else if (localStorage.getItem("theme") === "dark") {
       localStorage.setItem("theme", "light");
       changeTheme();
     }
