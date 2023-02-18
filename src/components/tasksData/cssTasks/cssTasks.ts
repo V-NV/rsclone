@@ -63,8 +63,8 @@ const cssTasks = [
     taskNum: 8,
     title: "CSS: Cascade",
     task: cssTask08,
-    solution: '',
-    solution2: '',
+    solution: '<pclass="cascade">CSSstylecascading</p><style>.cascade{font-size:25px;}p{letter-spacing:15px;}</style>',
+    solution2: '<style>.cascade{font-size:25px;}p{letter-spacing:15px;}</style><pclass="cascade">CSSstylecascading</p>',
   },
   {
     taskNum: 9,

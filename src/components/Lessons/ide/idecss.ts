@@ -55,10 +55,10 @@ export function IdeCss() {
     const Val = CssEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
     console.log(Val,'Val');
 
-    const Search = document.querySelector("#cecr") as HTMLElement;
+    //const Search = document.querySelector("#cecr") as HTMLElement;
 
     //const Val = CssEditor.getValue().replace(/\s/g, "");// вся строка с экрана
-    const SS = Search.children[0].getAttribute("style");//style attribute
+    //const SS = Search.children[0].getAttribute("style");//style attribute
     //const CS = Search.children[0].className.replace(/\s/g, "");//class name
     //const AllSty = window.getComputedStyle(Search).parentRule;
     //console.log(StyleSearch.style.cssText,'csstext')
@@ -68,10 +68,10 @@ export function IdeCss() {
     //console.log(AllSty,'все стили')
     
     
-    if(SS !== null) 
+    /*if(SS !== null) 
     {SS == SS.replace(/\s/g, "")
       console.log(SS.replace(/\s/g, ""), 'атрибут инлайн стиля')}
-
+*/
     //console.log(CS, 'хз');
    
     console.log(Sol1,'solution');
