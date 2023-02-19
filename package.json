@@ -40,6 +40,8 @@
     "@types/codemirror": "^5.60.7",
     "@types/js-cookie": "^3.0.2",
     "codemirror": "^5.65.11",
+    "codemirror-console": "^3.0.4",
+    "codemirror-console-ui": "^3.0.4",
     "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1"
   }
