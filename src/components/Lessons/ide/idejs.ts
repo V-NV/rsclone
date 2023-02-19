@@ -7,8 +7,8 @@ import "../../../../node_modules//codemirror/mode/javascript/javascript.js";
 //import "../../../../node_modules//codemirror/mode/css/css.js";
 //import "../../../../node_modules//codemirror/mode/htmlmixed/htmlmixed.js";
 
-import { Tasks } from "../lessons";
-import { CurrienNum } from "../lessons";
+//import { Tasks } from "../lessons";
+//import { CurrienNum } from "../lessons";
 
 export function Idejs() {
   const main = document.querySelector(
@@ -37,28 +37,80 @@ export function Idejs() {
     const previewWindow = document.querySelector(
       ".courses-editor-code-result"
     ) as HTMLElement;
-    previewWindow.innerHTML = JsCode;
-  });
+    
+  let clear = "";
+ 
+  if(JsCode){
+       clear = JsCode.replace(/console.log/ig, "")
+      
+     }
+  
+let expr:string;
+const res = 1;
+
+while (typeof eval(clear) == 'string' || typeof eval(clear) == 'number') {
+  expr = clear;
+  if (expr == null) break;
+
+  try {
+    previewWindow.innerHTML = eval(expr);
+    if (isNaN(res)) {
+      throw new Error("Результат неопределён");
+    }
+
+    break;
+  } catch (e) {
+    console.error ('edata');
+  }
+}
+})
+}
+
+  
+
+//alert( res );
+
+/*
+  const res = function R(){
+if(isNaN(eval(clear)) && (eval(clear)) !== null){
+    if(typeof eval(clear) == 'string' || typeof eval(clear) == 'number'){
+    return eval(clear)
+  }
+  
+  else{
+    clear = 'unca';
+    return clear
+    }
+  }
+  else return 'ogo'
+}
+  previewWindow.innerHTML = res();
+  });*/
 
   //function checkSolution(num:number) {
   //const solutions = document.querySelector('#code') as HTMLElement;
-  const Message = document.querySelector(
+  /*const Message = document.querySelector(
     ".courses-editor-message"
-  ) as HTMLElement;
-  const Run = document.querySelector(".btn-run") as HTMLElement;
+  ) as HTMLElement;*/
+ /* const Run = document.querySelector(".btn-run") as HTMLElement;
 
   Run.addEventListener("click", () => {
 
-    const g = Tasks[CurrienNum - 1].solution || "";
-    const j = JsEditor.getValue().replace(/\s/g, ""); //replace(/ /g,'');
-    console.log(j);
+    
+
+
+  })
+}*/
+
+
+
 
     //const kuku = document.querySelector("#cecr") as HTMLElement;
 
     //const uuu = kuku.children[0];
     //const ttt = kuku.childNodes[0]?.st
    // console.log(uuu.getAttribute("style"));
-
+/*
     if (j.indexOf(g) !== -1) {
       Message.style.color = "green";
       Message.textContent = "Well Done";
@@ -66,8 +118,8 @@ export function Idejs() {
       Message.style.color = "red";
       Message.textContent = "It`s wrong solution try again";
     }
-  });
-
+  });*/
+/*
   const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
   const previewWindow = document.querySelector(
     ".courses-editor-code-result"
@@ -80,4 +132,4 @@ export function Idejs() {
     previewWindow.textContent = "";
     HtmlMessage.textContent = "";
   });
-}
+  }*/
