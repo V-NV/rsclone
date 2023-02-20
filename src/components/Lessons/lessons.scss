@@ -26,35 +26,26 @@
 
   font-family: "Kanit";
 }
+
 .courses-home {
-  width: 98%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   font-family: "Kanit";
   font-weight: 400;
   font-size: 32px;
   color: var(--color-text);
-  margin-top: 68px;
+
+  margin-top: 50px;
 }
 
-.home {
-  display: inline-block;
-  font-family: "Kanit";
-  font-weight: 400;
-  font-size: 32px;
-  margin-top: 100px;
-  object-fit: contain;
+.path {
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
 
-  & button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    svg {
-      width: 50px;
-      height: 50px;
-      fill: var(--color-text);
-      transform: translateY(10px);
-    }
+  .home-icon {
+    transform: translateY(-5px);
   }
 }
 
@@ -63,12 +54,14 @@
   border: none;
   color: var(--color-text);
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   & svg {
     width: 50px;
     height: 50px;
     fill: var(--color-text);
-    transform: translateY(15px);
+    // transform: translateY(15px);
     margin: 0 10px;
   }
 }
@@ -97,9 +90,9 @@
 .courses-btn-lesson-up {
   width: 152px;
   height: 46px;
-  background-color: #262626;
+  background-color: var(--color-bg);
   border-radius: 15px;
-  background-color: var(--color-text);
+  color: var(--color-text);
   font-family: "Kanit";
   font-size: 32px;
   text-align: center;
@@ -114,13 +107,13 @@
   width: 92%;
   max-width: 100%;
   height: 768px;
-  background-color: #262626;
   border-radius: 5px;
   overflow-y: auto;
   margin-top: 20px;
   font-family: "Kanit";
   font-size: calc(14px + 0.8vw);
   background-color: var(--color-bg);
+  color: var(--color-text);
   box-sizing: border-box;
   text-align: justify;
   padding: 4%;
@@ -136,7 +129,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  background-color: #fffbd3;
+  background-color: var(--color-text);
 }
 .courses-editor-button-box {
   width: 320px;
@@ -151,7 +144,7 @@
   height: 46px;
   background-color: #262626;
   border-radius: 15px;
-  color: #fffbd3;
+  color: var(--color-text);
   font-family: "Kanit";
   font-size: 32px;
   text-align: center;
@@ -294,7 +287,8 @@ ul {
 }
 code {
   font-size: 20px;
-  color: yellowgreen;
+  font-weight: 900;
+  color: rgb(255, 42, 42);
 }
 .do-it {
   color: pink;
