@@ -28,13 +28,15 @@ const jsTasks = [
     taskNum: 3,
     title: "JavaScript: Statements",
     task: jsTask03,
-    solution:'',  
+    solution:'Stannis',
+    solution2:'Renly',  
   },
   {
     taskNum: 4,
     title: "JavaScript: How do we verify your solutions?",
     task: jsTask04,
-    solution:'',
+    solution:'9780262531962',
+    solution2:'9780262531962',
   },
   {
     taskNum: 5,

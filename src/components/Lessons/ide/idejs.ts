@@ -64,10 +64,12 @@ import { CurrienNum } from "../lessons";
      catch(e){const Message = document.querySelector(
       ".courses-editor-message"
     ) as HTMLElement;
-    Message.innerHTML = `<p style="color:red;">Error try again</p>`
+    Message.innerHTML = `<p style="color:red;">syntax error</p>`
+    
      }
      checkSolution(JsCode);
   });
+  
 }
 function checkSolution(JsCode:string) {
   //const solutions = document.querySelector('#code') as HTMLElement;
@@ -76,18 +78,29 @@ function checkSolution(JsCode:string) {
 
     const Sol1 = Tasks[CurrienNum - 1].solution || "";//solution
     const Sol2 = Tasks[CurrienNum - 1].solution2 || "";//solution2 
-    let TexeResult = "";
+   
+    let TextResult = "";
       for (const p of Result){
-        TexeResult += `${" " + p.textContent + " "}`;
+        TextResult += `${" " + p.textContent + " "}`;
       }
-
-    if (JsCode.includes(Sol1) && TexeResult.includes(`${" " + Sol2 + " "}`)) {
+ //console.log(Sol1,TextResult)
+    if (JsCode.includes(Sol1) && TextResult.includes(`${" " + Sol2 + " "}`)) {
       Message.style.color = "green";
       Message.textContent = "Well Done";
-    } else {
+    } else { 
       Message.style.color = "red";
       Message.textContent = "It`s wrong solution try again";
+    
+    let brakOpen = 0;
+    let breakClouse = 0;
+for(let i = 0; i<=JsCode.length; i++) {
+  if(JsCode[i] == '('){brakOpen++}
+  if(JsCode[i] == ')'){breakClouse++}
+}
+    if(breakClouse !== brakOpen){
+      Message.textContent = "Syntax Error";
     }
+}
 }
       
   
