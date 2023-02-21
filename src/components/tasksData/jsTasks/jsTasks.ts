@@ -14,14 +14,15 @@ const jsTasks = [
     taskNum: 1,
     title: "JavaScript: Hello, World!",
     task: jsTask01,
-    solution:'',
-    solution2:'',
+    solution:'console.log(',
+    solution2:'Hello, World!',
   },
   {
     taskNum: 2,
     title: "JavaScript: Comments",
     task: jsTask02,
-    solution:'',
+    solution:'//',
+    solution2:'Visible',
   },
   {
     taskNum: 3,

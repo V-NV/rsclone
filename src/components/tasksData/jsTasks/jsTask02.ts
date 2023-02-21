@@ -25,7 +25,10 @@ console.log(&#39;I am the King&#39;);
 <p><a href="https://replit.com/@hexlet/helloworld" target="_blank">https://replit.com/@hexlet/helloworld</a></p>
 
 <p>Such comments usually clarify the purpose of pieces of code.</p>
-<h2>Instructions</h2><p>Create a single line comment with the following text: <code>You know nothing, Jon Snow!</code>.</p>
+<br>
+<h2>Instructions</h2>
+<br>
+<p>Create a single line comment with the following text: <code>Random text</code> and print these text<span style="color:pink;"> Visible</span> use <code>console.log()</code></p>
 `
 
 export default jsTask02;
