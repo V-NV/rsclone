@@ -98,7 +98,14 @@ for(let i = 0; i<=JsCode.length; i++) {
   if(JsCode[i] == ')'){breakClouse++}
 }
     if(breakClouse !== brakOpen){
-      Message.textContent = "Syntax Error";
+      Message.textContent = "SyntaxError: missing ')' or '('";
+    }
+    let q = 0;
+  for(let i = 0; i<=JsCode.length; i++) {
+  if(JsCode[i] == "'"){q++}
+  }
+    if(q % 2 !== 0){
+      Message.textContent = "SyntaxError: missing ' ";
     }
 }
 }
