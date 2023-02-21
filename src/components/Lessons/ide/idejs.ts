@@ -1,14 +1,8 @@
-import CodeMirror from "codemirror";
-import "../../../../node_modules/codemirror/lib/codemirror.css";
-import "../../../../node_modules/codemirror/theme/dracula.css";
-//import "../../../../node_modules/codemirror/mode/smarty/smarty";
-//import "../../../../node_modules/codemirror/mode/xml/xml.js";
-import "../../../../node_modules//codemirror/mode/javascript/javascript.js";
-//import "../../../../node_modules//codemirror/mode/css/css.js";
-//import "../../../../node_modules//codemirror/mode/htmlmixed/htmlmixed.js";
+/* eslint-disable prefer-rest-params */
 
-//import { Tasks } from "../lessons";
-//import { CurrienNum } from "../lessons";
+import CodeMirror from "codemirror";
+import "codemirror/addon/lint/lint";
+import "codemirror/addon/lint/javascript-lint";
 
 export function Idejs() {
   const main = document.querySelector(
@@ -30,43 +24,57 @@ export function Idejs() {
     theme: "dracula",
     //maxHighlightLength:1,  // ограничение длинны подсветки
   });
-
+  const originalLog = console.log.bind(console);
   const BtnRun = document.querySelector(".btn-run") as HTMLButtonElement;
   BtnRun.addEventListener("click", () => {
     const JsCode = JsEditor.getValue();
-    const previewWindow = document.querySelector(
-      ".courses-editor-code-result"
-    ) as HTMLElement;
-    
-  let clear = "";
- 
-  if(JsCode){
-       clear = JsCode.replace(/console.log/ig, "")
-      
-     }
-  
-let expr:string;
-const res = 1;
+    // const previewWindow = document.querySelector(
+    //   ".courses-editor-code-result"
+    // ) as HTMLElement;
 
-while (typeof eval(clear) == 'string' || typeof eval(clear) == 'number') {
-  expr = clear;
-  if (expr == null) break;
+    console.log = function () {
+      // eslint-disable-next-line prefer-rest-params
+      const previewWindow = document.querySelector(
+        ".courses-editor-code-result"
+      ) as HTMLElement;
+      const test = [...arguments];
+      test.forEach((element) => {
+        previewWindow.innerHTML += element;
+      });
 
-  try {
-    previewWindow.innerHTML = eval(expr);
-    if (isNaN(res)) {
-      throw new Error("Результат неопределён");
-    }
+      // eslint-disable-next-line prefer-rest-params
+      return originalLog(...arguments);
+    };
 
-    break;
-  } catch (e) {
-    console.error ('edata');
-  }
+    const test = new Function(JsCode);
+    test();
+    // eval(JsCode);
+    // let clear = "";
+
+    // if (JsCode) {
+    //   clear = JsCode.replace(/console.log/gi, "");
+    // }
+
+    // let expr: string;
+    // const res = 1;
+
+    // while (typeof eval(clear) == "string" || typeof eval(clear) == "number") {
+    //   expr = clear;
+    //   if (expr == null) break;
+
+    //   try {
+    //     previewWindow.innerHTML = eval(expr);
+    //     if (isNaN(res)) {
+    //       throw new Error("Результат неопределён");
+    //     }
+
+    //     break;
+    //   } catch (e) {
+    //     console.error("edata");
+    //   }
+    // }
+  });
 }
-})
-}
-
-  
 
 //alert( res );
 
@@ -87,12 +95,12 @@ if(isNaN(eval(clear)) && (eval(clear)) !== null){
   previewWindow.innerHTML = res();
   });*/
 
-  //function checkSolution(num:number) {
-  //const solutions = document.querySelector('#code') as HTMLElement;
-  /*const Message = document.querySelector(
+//function checkSolution(num:number) {
+//const solutions = document.querySelector('#code') as HTMLElement;
+/*const Message = document.querySelector(
     ".courses-editor-message"
   ) as HTMLElement;*/
- /* const Run = document.querySelector(".btn-run") as HTMLElement;
+/* const Run = document.querySelector(".btn-run") as HTMLElement;
 
   Run.addEventListener("click", () => {
 
@@ -102,14 +110,11 @@ if(isNaN(eval(clear)) && (eval(clear)) !== null){
   })
 }*/
 
+//const kuku = document.querySelector("#cecr") as HTMLElement;
 
-
-
-    //const kuku = document.querySelector("#cecr") as HTMLElement;
-
-    //const uuu = kuku.children[0];
-    //const ttt = kuku.childNodes[0]?.st
-   // console.log(uuu.getAttribute("style"));
+//const uuu = kuku.children[0];
+//const ttt = kuku.childNodes[0]?.st
+// console.log(uuu.getAttribute("style"));
 /*
     if (j.indexOf(g) !== -1) {
       Message.style.color = "green";
