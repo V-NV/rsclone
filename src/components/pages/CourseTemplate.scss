@@ -26,13 +26,12 @@
 }
 
 .home {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-family: "Kanit";
   font-weight: 400;
   font-size: 32px;
   margin-top: 100px;
-  object-fit: contain;
-
   & button {
     background-color: transparent;
     border: none;
@@ -41,18 +40,20 @@
       width: 50px;
       height: 50px;
       fill: var(--color-text);
+      margin: 0 10px 0 0;
     }
   }
 
   .pathTitle {
+    display: flex;
     margin: 0 0 0 10px;
     border: none;
     color: var(--color-text);
     cursor: pointer;
 
-    svg {
-      transform: translateY(15px);
-      margin: 0 10px;
+    & span {
+      display: block;
+      transform: translateY(5px);
     }
   }
 }
@@ -101,9 +102,28 @@
   color: var(--color-bg);
 }
 
-.icon-box {
+.stats-box {
+  display: flex;
+  align-items: center;
   margin-top: 10px;
   color: var(--color-bg);
+
+  & svg g path {
+    fill: var(--color-bg);
+    width: 30px;
+  }
+
+  & svg {
+    fill: var(--color-bg);
+    width: 30px;
+    margin-right: 10px;
+  }
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
 }
 
 .button-box {

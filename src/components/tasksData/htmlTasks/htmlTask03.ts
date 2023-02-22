@@ -67,9 +67,9 @@ job.
   <p>Format this text</p>
   <div>
   <br>
-    <p style="color:pink;">It is very interesting.</p>
+    <p>It is very interesting.</p>
   <br>
-    <p style="color:pink;">And so far it's simple enough.</p>
+    <p>And so far it's simple enough.</p>
   </div>
   <br>
   <p>Each sentence must be inside a separate tag</p>
