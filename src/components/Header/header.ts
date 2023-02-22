@@ -4,14 +4,15 @@ import { CoursesOn } from "../View/coursesOn";
 import { logoOn } from "../View/logoOn";
 import { SignUpOn } from "../View/signupOn";
 import { SignInOn } from "../View/signinOn";
-import { getUserIsLogin } from "../Api/register-login.api";
+import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
 import { getLogout } from "../View/logout";
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
-export async function Header() {
+export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
+
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
@@ -28,12 +29,13 @@ export async function Header() {
       </div>
       <div class="header-btn-cont-right">
       ${
-        (await getUserIsLogin())
+        Cookies.get("username")
           ? `<div class="header-btn">${Cookies.get("username")}</div>
-          <div class="header-btn logout">Logout</div>`
+      <div class="header-btn logout">Logout</div>`
           : `<div class="header-btn signin">SIGN IN</div>
       <div class="header-btn signup">SIGN UP</div>`
       }
+
         <div class="header-btn lang">EN</div>
         <div class="header-btn theme"></div>
       </div>
@@ -48,8 +50,27 @@ export async function Header() {
   SignUpOn();
   SignInOn();
   getLogout();
+  getUserLogin();
 }
 
+// const checkLogin = () => {
+//   getUserLogin();
+//   if (webStorage.user_storage.user_login) {
+//     const headerButton = document?.querySelector(".header-btn-cont-right");
+//     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+//     headerButton!.innerHTML = "";
+//     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+//     headerButton!.innerHTML = `<div class="header-btn">${webStorage.user_storage.username}</div>
+//     <div class="header-btn logout">Logout</div>`;
+//   }
+// };
+// ${
+//   (await getUserIsLogin())
+// ? `<div class="header-btn">${Cookies.get("username")}</div>
+// <div class="header-btn logout">Logout</div>`
+//     : `<div class="header-btn signin">SIGN IN</div>
+// <div class="header-btn signup">SIGN UP</div>`
+// }
 /*`
     <header class="header">
       <div class="header-cont">

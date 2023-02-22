@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
+import webStorage from "../Storage/webStorage";
 
 const TEST_URL = "http://localhost:7000";
 
@@ -33,11 +34,24 @@ export const loginUser = async (body: TLoginUser): Promise<IToken> => {
 
 export const getUserIsLogin = async () => {
   const user = Cookies.get("user_session");
-  const resp = await fetch(`${TEST_URL}/auth/login-user`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${user}`,
-    },
-  });
-  return resp.status === 201 ? true : false;
+  try {
+    const resp = await fetch(`${TEST_URL}/auth/login-user`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${user}`,
+      },
+    });
+    return resp.status === 201 ? true : false;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const getUserLogin = async () => {
+  const user = await getUserIsLogin();
+  if (user) {
+    webStorage.user_storage.user_session = `${Cookies.get("user_session")}`;
+    webStorage.user_storage.username = `${Cookies.get("username")}`;
+    webStorage.user_storage.user_login = true;
+  }
 };
