@@ -24,7 +24,7 @@ export function Main(): void {
             </div>
 
         </div>
-  </section>
+    </section>
   <!--ggggggggggggggggggggggggggggggggg--> 
   <section class="courses">
 
@@ -57,29 +57,27 @@ export function Main(): void {
   </section>  
     <!--ggggggggggggggggggggggggggggggggg--> 
 
-  <section class="present-bottom-wrap">
-
-        <div class="present-bottom-block">
+  <section class="review-container">
             <div class="section-title">Review</div>
-                    <div class="durov-cont">
-                      <div class="durov-img-box">
-                      </div>
-                      <div class="durov-text-box">
-                          <p class="durov-p-1">Pavel Durov:</p>
-                          <p class="durov-p-2">Very good courses. I learned so fast HTML and a bit JavaScript. Thank you guys, Nikolay especially. Alexey can you call me on the week? Need to talk about some deal.</p>
-                          <p class="durov-p-3">Pavel completed course: HTML</p>
-                      </div>
-                    </div>
-                    <div class="buterin-cont">
-                        <div class="buterin-text-box">
-                          <p class="buterin-p-1">Vitalik Buterin:</p>
-                          <p class="buterin-p-2">OMG this is better than my silly project named “Ethereum”. Can you visit me in Canada because i have business offer for you. My number +12064512559 CALL ME NOW.</p>
-                          <p class="buterin-p-3">Vitalik completed course: JavaScript.</p>
-                        </div>
-                        <div class="buterin-img-box">
-                        </div>
-                    </div>
-            </div>    
+              <div class="review-item">
+                <div class="review-img"></div>
+                <div class="review-text-wrap">
+                  <p class="review-name">Pavel Durov</p>
+                  <p class="review-text">Very good courses. I learned so fast HTML and a bit JavaScript. Thank you guys, Nikolay especially. Alexey can you call me on the week? Need to talk about some deal.
+                  <br><br>
+                  Pavel completed course: HTML</p>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="review-text-wrap">
+                  <p class="review-name">Elon Mask</p>
+                  <p class="review-text">Hello guys. How can I sign up in your project? Need to learn something.
+                  <br><br>
+                  Pavel completed course: HTML</p>
+
+                </div>
+                <div class="review-img"></div>
+              </div>
 </section>`;
 
   javascriptOn();

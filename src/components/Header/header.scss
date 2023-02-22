@@ -136,6 +136,12 @@ hr {
 }
 
 @media (max-width: 1599px) {
+  .theme {
+    width: 3.125vw;
+    height: 3.125vw;
+    margin: 0 0 0 1.875vw;
+  }
+
   .logo-box {
     width: 10.375vw;
     margin: 1.25vw 0;

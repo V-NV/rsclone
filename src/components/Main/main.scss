@@ -7,6 +7,10 @@
   src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
 }
 
+main {
+  padding: 0 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +23,6 @@
 }
 
 .present-main-cont {
-  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -27,7 +30,6 @@
   display: flex;
   justify-content: space-between;
   max-width: 1114px;
-  height: 394px;
   background-color: var(--color-text);
   margin-top: 57px;
   border-radius: 16px;
@@ -77,7 +79,6 @@
 }
 .present-right-up-box {
   width: 100%;
-  height: 300px;
   background-image: url("./assets/img/Main/intro-img.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -94,7 +95,6 @@
   font-family: Holtwood;
   font-size: 48px;
   max-width: 282px;
-  height: 70px;
   color: var(--color-text);
   text-transform: uppercase;
 
@@ -174,93 +174,74 @@
   background-size: 60%;
 }
 
-.present-bottom-wrap {
+.review-container {
   max-width: 1440px;
-  display: flex;
-  justify-content: center;
   margin: 0 auto;
 }
-.present-bottom-block {
-  width: 100%;
-}
 
-.durov-cont,
-.buterin-cont {
+.review-item {
   display: flex;
   justify-content: space-between;
-  color: var(--color-bg);
 }
 
-.present-bottom-course-box {
-  margin: 30px 0;
-}
-
-.durov-img-box {
-  width: 21.125vw;
+.review-img {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
   background-image: url("./assets/img/Main/Durov.png");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.buterin-img-box {
-  width: 340px;
-  height: 340px;
-  background-image: url("./assets/img/Main/Buterin.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border-radius: 500px;
+.review-text-wrap {
+  height: auto;
+  margin: 40px 30px 0 30px;
 }
 
-.durov-text-box {
+.review-name {
   font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--color-text);
+}
+
+.review-text {
+  font-family: "Kanit";
+  font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  color: var(--color-text);
-  margin-left: 32px;
-  max-width: 1000px;
-}
+  line-height: 120%;
 
-.durov-p-1 {
-  font-size: 48px;
-  line-height: 25px;
-  padding: 0px;
-}
-.durov-p-2 {
-  font-size: 32px;
-  line-height: 38px;
-  margin-top: 12px;
-}
-.durov-p-3 {
-  font-size: 32px;
-  line-height: 115px;
-}
-
-.buterin-text-box {
-  font-family: "Kanit";
-  font-size: 32px;
   color: var(--color-text);
-  max-width: 1000px;
-}
-.buterin-p-1 {
-  font-size: 48px;
-  margin-top: 65px;
-  line-height: 25px;
-}
-.buterin-p-2 {
-  font-size: 32px;
-  line-height: 38px;
-  margin-top: 12px;
-}
-.buterin-p-3 {
-  font-size: 32px;
-  line-height: 115px;
 }
 
 @media (max-width: 1599px) {
+  .section-title {
+    font-size: 3vw;
+    max-width: 17.625vw;
+
+    margin: 2.1875vw 0;
+  }
+
   .courses__title {
     font-size: 3vw;
+  }
+
+  .present-up-p {
+    font-size: 1.75vw;
+  }
+  .present-up-p2 {
+    font-size: 2.25vw;
+  }
+
+  .present-up-button {
+    width: 25.5vw;
+    height: 5.125vw;
+    font-size: 3vw;
+    line-height: 5vw;
+    margin-top: 4.875vw;
+    margin-left: 3.5625vw;
   }
 
   .card-title {
@@ -280,44 +261,16 @@
     padding-bottom: 1.25vw;
   }
 
-  .durov-p-1 {
+  .review-name {
     font-size: 3vw;
-    margin-top: 4.0625vw;
-    line-height: 1.5625vw;
-  }
-  .durov-p-2 {
-    font-size: 2vw;
-    line-height: 2.375vw;
-    margin-top: 0.75vw;
-  }
-  .durov-p-3 {
-    font-size: 2vw;
-    line-height: 7.1875vw;
   }
 
-  .buterin-p-1 {
-    font-size: 3vw;
-    margin-top: 4.0625vw;
-    line-height: 1.5625vw;
-    padding: 0px;
-  }
-  .buterin-p-2 {
-    font-size: 2vw;
-    line-height: 2.375vw;
-    margin-top: 0.75vw;
-  }
-  .buterin-p-3 {
-    font-size: 2vw;
-    line-height: 7.1875vw;
+  .review-img {
+    width: 18.75vw;
+    height: 18.75vw;
   }
 
-  .buterin-img-box {
-    width: 21.25vw;
-    height: 21.25vw;
-  }
-
-  .review {
-    font-size: 3vw;
-    margin: 2.1875vw 0;
+  .review-text {
+    font-size: 2vw;
   }
 }
