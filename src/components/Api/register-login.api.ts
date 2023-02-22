@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
 
 const TEST_URL = "http://localhost:7000";
@@ -28,4 +29,15 @@ export const loginUser = async (body: TLoginUser): Promise<IToken> => {
     ? await resp.json().then((item) => console.error(item.message))
     : console.log("Use is login");
   return resp.status === 201 ? { ...(await resp.json()) } : false;
+};
+
+export const getUserIsLogin = async () => {
+  const user = Cookies.get("user_session");
+  const resp = await fetch(`${TEST_URL}/auth/login-user`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${user}`,
+    },
+  });
+  return resp.status === 201 ? true : false;
 };
