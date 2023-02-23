@@ -1,8 +1,9 @@
 import Cookies from "js-cookie";
 import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
-import webStorage from "../Storage/webStorage";
+import { webStorage } from "../Storage/webStorage";
+import { getLogout } from "../View/logout";
 
-const TEST_URL = "http://localhost:7000";
+export const TEST_URL = "http://localhost:7000";
 
 export const registerUser = async (body: IRegisterData): Promise<boolean> => {
   const resp = await fetch(`${TEST_URL}/auth/register`, {
@@ -34,24 +35,32 @@ export const loginUser = async (body: TLoginUser): Promise<IToken> => {
 
 export const getUserIsLogin = async () => {
   const user = Cookies.get("user_session");
-  try {
-    const resp = await fetch(`${TEST_URL}/auth/login-user`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${user}`,
-      },
-    });
-    return resp.status === 201 ? true : false;
-  } catch (error) {
-    return false;
+  if (user) {
+    try {
+      const resp = await fetch(`${TEST_URL}/auth/login-user`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${user}`,
+        },
+      });
+      return resp.status === 201 ? true : false;
+    } catch (error) {
+      getLogout();
+      console.error("Сеть не доступна");
+      return false;
+    }
   }
 };
 
 export const getUserLogin = async () => {
-  const user = await getUserIsLogin();
-  if (user) {
-    webStorage.user_storage.user_session = `${Cookies.get("user_session")}`;
-    webStorage.user_storage.username = `${Cookies.get("username")}`;
-    webStorage.user_storage.user_login = true;
+  try {
+    const user = await getUserIsLogin();
+    if (user) {
+      webStorage.user_storage.user_session = `${Cookies.get("user_session")}`;
+      webStorage.user_storage.username = `${Cookies.get("username")}`;
+      webStorage.user_storage.user_login = true;
+    }
+  } catch (error) {
+    console.log("Сеть не доступна");
   }
 };
