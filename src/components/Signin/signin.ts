@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import { IToken, TLoginUser } from "../../types/api.interface";
 import { loginUser } from "../Api/register-login.api";
-import { Main } from "../Main/Main";
+// import { Main } from "../Main/Main";
 import {
   checkRequired,
   checkEmail,
@@ -60,6 +60,6 @@ function FormSignIn(): void {
         Cookies.set("user_session", created.accessToken))
       : console.log("no validate");
 
-    created ? setTimeout(Main, 2000) : null;
+    created ? setTimeout(() => location.reload(), 2000) : null;
   });
 }
