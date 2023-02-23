@@ -2,6 +2,7 @@ import { javascriptOn } from "../View/javascriptOn";
 import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
 import { initTheme } from "../View/initTheme";
+import { SignUp } from "../Signup/signup";
 
 export function Main(): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -25,7 +26,7 @@ export function Main(): void {
 
         </div>
     </section>
-  <!--ggggggggggggggggggggggggggggggggg--> 
+   
   <section class="courses">
 
     <div class="courses-container">
@@ -55,7 +56,6 @@ export function Main(): void {
         </div>
     </div>
   </section>  
-    <!--ggggggggggggggggggggggggggggggggg--> 
 
   <section class="review-container">
             <div class="section-title">Review</div>
@@ -84,6 +84,13 @@ export function Main(): void {
   cssOn();
   htmlOn();
   initTheme();
+  TryNow();
+}
+function TryNow():void {
+  const BtnTry = document.querySelector('.present-up-button') as HTMLDivElement;
+  BtnTry.addEventListener('click',()=>{
+    SignUp();
+  })
 }
 
 /*`
