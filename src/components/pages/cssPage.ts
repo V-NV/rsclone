@@ -3,6 +3,7 @@ import CSSGif from "../../assets/img/css/css-intro.gif";
 import CSSLogo from "../../assets/img/css/css-logo.png";
 import cssTasks from "../tasksData/cssTasks/cssTasks";
 import { Lessons } from "../Lessons/lessons";
+import { Main } from "../Main/Main";
 
 const courseInfo = {
   pathTitle: `CSS`,
@@ -21,6 +22,7 @@ export const cssPage = (): void => {
   main.innerHTML += CourseTemplate(CSSGif, CSSLogo, courseInfo, cssTasks);
   BtnContId();
   ChangeLesson();
+  ToHome();
 };
 function BtnContId() {
   const a = document.querySelector("ul") as HTMLElement;
@@ -35,4 +37,10 @@ function ChangeLesson() {
       Lessons(+el.id, "css");
     });
   }
+}
+function ToHome():void {
+  const BtnHome = document.querySelector('.btnh') as HTMLElement;
+  BtnHome.addEventListener('click',()=>{
+    Main();
+  })
 }

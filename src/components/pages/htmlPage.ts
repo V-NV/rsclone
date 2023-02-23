@@ -3,7 +3,7 @@ import htmlGif from "../../assets/img/html/html-intro.gif";
 import htmlLogo from "../../assets/img/html/html-logo.png";
 import htmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import { Lessons } from "../Lessons/lessons";
-
+import { Main } from "../Main/Main";
 const courseInfo = {
   pathTitle: `HTML`,
   introTitle: `HTML: Perfect for Beginners`,
@@ -21,6 +21,7 @@ export const htmlPage = (): void => {
   main.innerHTML += CourseTemplate(htmlGif, htmlLogo, courseInfo, htmlTasks);
   BtnContId();
   ChangeLesson();
+  ToHome();
 };
 function BtnContId() {
   const a = document.querySelector("ul") as HTMLElement;
@@ -34,4 +35,12 @@ function ChangeLesson() {
       Lessons(+el.id, "html");
     });
   }
+
+}
+
+function ToHome():void {
+  const BtnHome = document.querySelector('.btnh') as HTMLElement;
+  BtnHome.addEventListener('click',()=>{
+    Main();
+  })
 }

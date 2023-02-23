@@ -3,6 +3,7 @@ import JSGif from "../../assets/img/js/js-intro.gif";
 import JSLogo from "../../assets/img/js/js-logo.png";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
 import { Lessons } from "../Lessons/lessons";
+import { Main } from "../Main/Main";
 
 const courseInfo = {
   pathTitle: `JavaScript`,
@@ -25,6 +26,7 @@ export const javascriptPage = (): void => {
   main.innerHTML += CourseTemplate(JSGif, JSLogo, courseInfo, jsTasks);
   BtnContId();
   ChangeLesson();
+  ToHome();
 };
 function BtnContId() {
   const a = document.querySelector("ul") as HTMLElement;
@@ -38,4 +40,10 @@ function ChangeLesson() {
       Lessons(+el.id, "js");
     });
   }
+}
+function ToHome():void {
+  const BtnHome = document.querySelector('.btnh') as HTMLElement;
+  BtnHome.addEventListener('click',()=>{
+    Main();
+  })
 }

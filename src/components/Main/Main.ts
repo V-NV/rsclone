@@ -2,6 +2,7 @@ import { javascriptOn } from "../View/javascriptOn";
 import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
 import { initTheme } from "../View/initTheme";
+import { SignUp } from "../Signup/signup";
 import { ReviewTemplate } from "./ReviewTemplate";
 
 export function Main(): void {
@@ -26,7 +27,7 @@ export function Main(): void {
 
         </div>
     </section>
-  <!--ggggggggggggggggggggggggggggggggg--> 
+   
   <section class="courses">
 
     <div class="courses-container">
@@ -56,7 +57,6 @@ export function Main(): void {
         </div>
     </div>
   </section>  
-    <!--ggggggggggggggggggggggggggggggggg--> 
 
   <section class="review-container">
   </section>`;
@@ -65,8 +65,16 @@ export function Main(): void {
   cssOn();
   htmlOn();
   initTheme();
+  TryNow();
   ReviewTemplate();
 }
+function TryNow():void {
+  const BtnTry = document.querySelector('.present-up-button') as HTMLDivElement;
+  BtnTry.addEventListener('click',()=>{
+    SignUp();
+  })
+}
+
 
 /*`
   <section class="main-content">
