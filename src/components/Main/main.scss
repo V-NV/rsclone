@@ -179,23 +179,51 @@ main {
   margin: 0 auto;
 }
 
+.review-items-container_scrollbar {
+  max-height: 950px;
+  overflow-y: scroll;
+}
+
+.review-items-container::-webkit-scrollbar {
+  width: 18px;
+  height: 0px;
+  background-color: var(--color-text);
+  border-radius: 15px;
+}
+
+.review-items-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg);
+  border: 5px solid var(--color-text);
+  border-radius: 5em;
+  // box-shadow: inset 1px 1px 5px #f3faf7;
+}
+
+.review-items-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(48, 48, 48, 0.6);
+}
+
 .review-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .review-img {
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
   width: 300px;
   height: 300px;
   flex-shrink: 0;
-  background-image: url("./assets/img/Main/Durov.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .review-text-wrap {
   height: auto;
-  margin: 40px 30px 0 30px;
+  margin: 10px 30px 0 30px;
 }
 
 .review-name {
@@ -226,6 +254,14 @@ main {
 
   .courses__title {
     font-size: 3vw;
+  }
+
+  .present-up-block {
+    padding: 2.5vw;
+  }
+
+  .present-main-wrap {
+    margin: 3.125vw 0;
   }
 
   .present-up-p {
@@ -261,16 +297,35 @@ main {
     padding-bottom: 1.25vw;
   }
 
+  .review-items-container {
+    max-height: 40.625vw;
+    overflow-y: scroll;
+  }
+
   .review-name {
     font-size: 3vw;
   }
 
   .review-img {
+    img {
+      width: 18.75vw;
+      height: 18.75vw;
+    }
     width: 18.75vw;
     height: 18.75vw;
   }
 
   .review-text {
     font-size: 2vw;
+  }
+
+  .review-text-wrap {
+    height: auto;
+    margin: 0.625vw 1.875vw 0 1.875vw;
+  }
+
+  .review-items-container_scrollbar {
+    max-height: 59.375vw;
+    overflow-y: scroll;
   }
 }

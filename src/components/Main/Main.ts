@@ -2,6 +2,7 @@ import { javascriptOn } from "../View/javascriptOn";
 import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
 import { initTheme } from "../View/initTheme";
+import { ReviewTemplate } from "./ReviewTemplate";
 
 export function Main(): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -58,32 +59,13 @@ export function Main(): void {
     <!--ggggggggggggggggggggggggggggggggg--> 
 
   <section class="review-container">
-            <div class="section-title">Review</div>
-              <div class="review-item">
-                <div class="review-img"></div>
-                <div class="review-text-wrap">
-                  <p class="review-name">Pavel Durov</p>
-                  <p class="review-text">Very good courses. I learned so fast HTML and a bit JavaScript. Thank you guys, Nikolay especially. Alexey can you call me on the week? Need to talk about some deal.
-                  <br><br>
-                  Pavel completed course: HTML</p>
-                </div>
-              </div>
-              <div class="review-item">
-                <div class="review-text-wrap">
-                  <p class="review-name">Elon Mask</p>
-                  <p class="review-text">Hello guys. How can I sign up in your project? Need to learn something.
-                  <br><br>
-                  Pavel completed course: HTML</p>
-
-                </div>
-                <div class="review-img"></div>
-              </div>
-</section>`;
+  </section>`;
 
   javascriptOn();
   cssOn();
   htmlOn();
   initTheme();
+  ReviewTemplate();
 }
 
 /*`
