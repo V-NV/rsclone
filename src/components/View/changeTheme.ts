@@ -9,14 +9,14 @@ export const changeTheme = () => {
   if (localStorage.getItem("theme") === "light") {
     body.classList.remove("dark");
     body.classList.add("light");
-    theme.classList.add("light");
-    introImg.classList.add("light");
-    rsLogo.classList.add("light");
+    theme?.classList.add("light");
+    introImg?.classList.add("light");
+    rsLogo?.classList.add("light");
   } else {
     body.classList.add("dark");
     body.classList.remove("light");
-    theme.classList.remove("light");
-    introImg.classList.remove("light");
-    rsLogo.classList.remove("light");
+    theme?.classList.remove("light");
+    introImg?.classList.remove("light");
+    rsLogo?.classList.remove("light");
   }
 };
