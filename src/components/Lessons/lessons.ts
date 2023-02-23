@@ -1,6 +1,7 @@
 import { IdeHtml } from "./ide/idehtml";
 import { IdeCss } from "./ide/idecss";
 import { Idejs } from "./ide/idejs";
+import { Main } from "../Main/Main";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import cssTasks from "../tasksData/cssTasks/cssTasks";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
@@ -76,6 +77,7 @@ export function Lessons(num: number, ide: string): void {
            </div>
      </div>
   </section>`;
+  ToHome();
   SetIde(ide);
   LessonText(num);
   Ide(ide);
@@ -86,7 +88,9 @@ export function Lessons(num: number, ide: string): void {
   Prev_btn_OnOff(num);
   BtnNext(num);
   Next_btn_OnOff(num);
+  
 }
+
 export let Tasks = jsTasks;
 function SetIde(ide: string) {
   if (ide == "html") {
@@ -212,4 +216,10 @@ function Prev_btn_OnOff(num: number) {
     (document.getElementById("btn-prev") as HTMLButtonElement).style.cursor =
       "pointer";
   }
+}
+function ToHome():void {
+  const BtnHome = document.querySelector('.home-icon') as HTMLElement;
+  BtnHome.addEventListener('click',()=>{
+    Main();
+  })
 }
