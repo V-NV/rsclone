@@ -2,6 +2,9 @@ import { IdeHtml } from "./ide/idehtml";
 import { IdeCss } from "./ide/idecss";
 import { Idejs } from "./ide/idejs";
 import { Main } from "../Main/Main";
+import { javascriptPage } from "../pages/javascriptPage";
+import { cssPage } from "../pages/cssPage";
+import { htmlPage } from "../pages/htmlPage";
 import HtmlTasks from "../tasksData/htmlTasks/htmlTasks";
 import cssTasks from "../tasksData/cssTasks/cssTasks";
 import jsTasks from "../tasksData/jsTasks/jsTasks";
@@ -78,6 +81,7 @@ export function Lessons(num: number, ide: string): void {
      </div>
   </section>`;
   ToHome();
+  ToParentPage();
   SetIde(ide);
   LessonText(num);
   Ide(ide);
@@ -221,5 +225,13 @@ function ToHome():void {
   const BtnHome = document.querySelector('.home-icon') as HTMLElement;
   BtnHome.addEventListener('click',()=>{
     Main();
+  })
+}
+function ToParentPage():void {
+  const BtnParent = document.querySelector('.courses-name') as HTMLElement;
+  BtnParent.addEventListener('click',()=>{
+    if(BtnParent.textContent == "HTML"){htmlPage();}
+    if(BtnParent.textContent == "CSS"){cssPage();}
+    if(BtnParent.textContent == "JS"){javascriptPage();}
   })
 }
