@@ -1,6 +1,6 @@
 //import rss from "../../assets/img/rss.svg";
 
-export function Footer(): void {
+export async function Footer() {
   const footer = document.querySelector("footer") as HTMLElement;
 
   footer.innerHTML = "";

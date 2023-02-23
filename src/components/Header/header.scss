@@ -3,16 +3,6 @@
   src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
 }
 
-body.dark {
-  --color-bg: #262626;
-  --color-text: #fffbd3;
-}
-
-body.light {
-  --color-bg: #fffbd3;
-  --color-text: #262626;
-}
-
 body {
   margin: 0;
   background-color: var(--color-bg);

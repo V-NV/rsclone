@@ -9,8 +9,13 @@ export interface IUserPost {
   imgUrl: string;
   title: string;
   post: string;
+  createdAt: string;
+  updatedAt: string;
+  _id: string;
 }
-
+export interface IWebStorageUserData {
+  userPost: IUserPost[] | undefined;
+}
 export interface IGetRegisterData extends IRegisterData {
   _id: string;
   createdAt: string;
@@ -22,4 +27,13 @@ export interface IToken {
   username: string;
   accessToken: string;
   refreshToken: string;
+}
+
+export interface IWebStorage {
+  user_storage: {
+    username: string;
+    user_session: string;
+    user_login: boolean;
+  };
+  userPost?: IWebStorageUserData | undefined;
 }
