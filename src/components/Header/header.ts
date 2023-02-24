@@ -4,7 +4,7 @@ import { CoursesOn } from "../View/coursesOn";
 import { logoOn } from "../View/logoOn";
 import { SignUpOn } from "../View/signupOn";
 import { SignInOn } from "../View/signinOn";
-import { getUserLogin } from "../Api/register-login.api";
+// import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
 import { getLogout } from "../View/logout";
 
@@ -50,7 +50,7 @@ export function Header() {
   SignUpOn();
   SignInOn();
   getLogout();
-  getUserLogin();
+  // getUserLogin();
 }
 
 // const checkLogin = () => {
