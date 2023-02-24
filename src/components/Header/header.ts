@@ -7,29 +7,11 @@ import { logoOn } from "../View/logoOn";
 import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
 import { getLogout } from "../View/logout";
-import { AboutPage } from "../About/about";
+/*import { AboutPage } from "../About/about";
 import { Main } from "../Main/Main";
 import { SignIn } from "../Signin/signin";
-import { SignUp } from "../Signup/signup";
-
-window.addEventListener('hashchange',()=>{
-  const hash = window.location.hash.slice(1);
-  console.log('hashchange', hash);
-  if(hash == 'about') {
-    AboutPage();
-  }
-  if(hash == '/') {
-    Main();
-  }
-  if(hash == 'signin') {
-    SignIn();
-  }
-  if(hash == 'signup') {
-    SignUp();
-  }
-  
-  
-})
+import { SignUp } from "../Signup/signup";*/
+import { Root } from "../Routing/root";
 
 
 //import logo from "../../assets/img/logo.png";
@@ -49,7 +31,7 @@ export function Header() {
         </div>
        <a href="/"><div class="header-btn discription">COURSES</div></a>
 
-       <a href="#about/"><div class="header-btn about">ABOUT</div></a>
+       <a href="#about"><div class="header-btn about">ABOUT</div></a>
       </div>
       <div class="header-btn-cont-right">
       ${
@@ -75,7 +57,7 @@ export function Header() {
   //SignInOn();
   getLogout();
   getUserLogin();
- 
+  Root();
       
 }/*
 function SetHref(){
