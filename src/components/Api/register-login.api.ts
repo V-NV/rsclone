@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
-import { webStorage } from "../Storage/webStorage";
+// import { webStorage } from "../Storage/webStorage";
 import { getLogout } from "../View/logout";
 
 export const TEST_URL = "http://localhost:7000";
@@ -52,15 +52,15 @@ export const getUserIsLogin = async () => {
   }
 };
 
-export const getUserLogin = async () => {
-  try {
-    const user = await getUserIsLogin();
-    if (user) {
-      webStorage.user_storage.user_session = `${Cookies.get("user_session")}`;
-      webStorage.user_storage.username = `${Cookies.get("username")}`;
-      webStorage.user_storage.user_login = true;
-    }
-  } catch (error) {
-    console.log("Сеть не доступна");
-  }
-};
+// export const getUserLogin = async () => {
+//   try {
+//     const user = await getUserIsLogin();
+//     if (user) {
+//       webStorage.user_storage.user_session = `${Cookies.get("user_session")}`;
+//       webStorage.user_storage.username = `${Cookies.get("username")}`;
+//       webStorage.user_storage.user_login = true;
+//     }
+//   } catch (error) {
+//     console.log("Сеть не доступна");
+//   }
+// };
