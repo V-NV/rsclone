@@ -82,7 +82,7 @@ const CourseTemplate = (
         <div class="basics-cont">
             <ul class="tasks-container">
                 ${Tasks.map((item) => {
-                  return `<li id=${item.taskNum}>
+                  return `<a href="#${courseInfo.tasksTitle.split(' ')[0].toLocaleLowerCase() + '/' + item.taskNum}"><li id=${item.taskNum}>
                   <button class="task-item">${item.taskNum}. ${item.title}</button>
                   </li>`;
                 })}

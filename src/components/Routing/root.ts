@@ -5,6 +5,7 @@ import { SignUp } from "../Signup/signup";
 import { htmlPage } from "../pages/htmlPage";
 import { cssPage } from "../pages/cssPage";
 import { javascriptPage } from "../pages/javascriptPage";
+import { Lessons } from "../Lessons/lessons";
 
 
 enum Page{
@@ -42,9 +43,18 @@ window.addEventListener('hashchange',()=>{
       if(hash == Page.Js) {
         javascriptPage();
       }
+      for (let i = 0; i < 10; i += 1) {
+         if(hash == `html/${i}`) {
+            Lessons(i, "html");
+         }
+         if(hash == `css/${i}`) {
+            Lessons(i, "css");
+         }
+         if(hash == `javascript/${i}`) {
+            Lessons(i, "js");
+         }
 
 
-
-  
+      }  
   })
 }
