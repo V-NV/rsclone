@@ -5,9 +5,12 @@ import {
   Get,
   Param,
   Post,
+  UseGuards,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import { Roles } from 'src/auth/decorators/role.decorator';
+import { RoleGuard } from 'src/auth/guards/roles.guard';
 import { DataHtmlDto } from 'src/data-html/dto/data-html.dto';
 import { DataJsService } from './data-js.service';
 
@@ -19,13 +22,15 @@ export class DataJsController {
   async getAllDataHtml() {
     return this.dataJSService.getAllDataJS();
   }
-  //TODO Сделать гварда для админа
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
   @UsePipes(new ValidationPipe())
   @Post('data-js-post')
   async postDataHtml(@Body() dto: DataHtmlDto) {
     return this.dataJSService.postDataJS(dto);
   }
-  //TODO Сделать гварда для админа
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
   @Delete(':id')
   async deleteDataHtml(@Param('id') id: string) {
     return this.dataJSService.deleteDataJS(id);

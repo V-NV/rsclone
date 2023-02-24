@@ -9,7 +9,9 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import { Roles } from 'src/auth/decorators/role.decorator';
 import { AuthJwtGuard } from 'src/auth/guards/auth-jwt.guard';
+import { RoleGuard } from 'src/auth/guards/roles.guard';
 import { UserPostDto } from './dto/user-post.dto';
 import { UserPostService } from './user-post.service';
 
@@ -28,7 +30,8 @@ export class UserPostController {
     return this.userPostService.createUserPost(dto);
   }
 
-  //TODO Сделать гварда для админа
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
   @Delete(':id')
   async deleteUser(@Param('id') id: string) {
     return this.userPostService.deleteUserPost(id);
