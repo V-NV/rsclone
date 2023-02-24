@@ -1,0 +1,26 @@
+.modal-container {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+}
+
+.modal-active {
+  display: flex;
+  position: fixed;
+}
+
+.modal-button {
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: #fffbd3;
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+}
