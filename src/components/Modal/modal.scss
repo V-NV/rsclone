@@ -1,26 +1,70 @@
 .modal-container {
-  position: fixed;
   display: none;
-  width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   top: 0px;
+  z-index: 1;
+  transition: ease-in-out 0.2s;
+}
+
+.modal-form {
+  position: fixed;
+  transform: translate(-50%, -60%);
+  z-index: 3;
 }
 
 .modal-active {
-  display: flex;
-  position: fixed;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
 }
 
 .modal-button {
-  z-index: 1;
+  z-index: 5;
   cursor: pointer;
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  background-color: #fffbd3;
+  background-color: #bf34f1;
   position: fixed;
   right: 50px;
   bottom: 100px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);
+  & svg {
+    transform: translate(35%, 55%);
+
+    width: 60%;
+    fill: var(--color-bg);
+  }
+}
+
+.modal-bg {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+
+  &.active {
+    display: block;
+  }
+}
+
+.form-modal {
+  & h3 {
+    cursor: default;
+    text-align: center;
+    font-size: 32px;
+    color: #262626;
+    font-family: Kanit;
+    margin-bottom: 15px;
+  }
 }
