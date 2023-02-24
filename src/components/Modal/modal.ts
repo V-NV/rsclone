@@ -1,7 +1,6 @@
 import Cookies from "js-cookie";
-import { getUserPost, setNewUserPost } from "../Api/user-post.api";
-import { DataTest, ReviewTemplate } from "../Main/ReviewTemplate";
-import { webStorage } from "../Storage/webStorage";
+import { setNewUserPost } from "../Api/user-post.api";
+import { getUpdateStorage } from "../Storage/webStorage";
 
 export const Modal = () => {
   const modal = document.querySelector(".modal") as HTMLElement;
@@ -64,11 +63,7 @@ export const setModalListener = () => {
       setTimeout(async () => {
         setModal();
         (imgUrl.value = ""), (title.value = ""), (post.value = "");
-        const { userPost } = await getUserPost();
-        webStorage.userPost = userPost;
-        webStorage.userPost === undefined
-          ? ReviewTemplate(DataTest)
-          : ReviewTemplate(webStorage.userPost);
+        await getUpdateStorage();
       }, 2000);
     } else {
       console.log("Пользователь не зарегистрирован");

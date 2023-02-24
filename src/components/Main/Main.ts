@@ -4,7 +4,6 @@ import { htmlOn } from "../View/htmlOn";
 import { initTheme } from "../View/initTheme";
 import { SignUp } from "../Signup/signup";
 import { DataTest, ReviewTemplate } from "./ReviewTemplate";
-import { webStorage } from "../Storage/webStorage";
 
 export function Main(): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -67,9 +66,7 @@ export function Main(): void {
   htmlOn();
   initTheme();
   TryNow();
-  webStorage.userPost === undefined
-    ? ReviewTemplate(DataTest)
-    : ReviewTemplate(webStorage.userPost);
+  ReviewTemplate(DataTest);
 }
 function TryNow(): void {
   const BtnTry = document.querySelector(".present-up-button") as HTMLDivElement;
