@@ -28,7 +28,7 @@ export function Main(): void {
         </div>
     </section>
    
-  <section class="courses">
+
 
     <div class="courses-container">
       <div class="section-title">Courses</div>
@@ -56,7 +56,7 @@ export function Main(): void {
           </li>
         </div>
     </div>
-  </section>  
+
 
   <section class="review-container">
   </section>`;
@@ -68,13 +68,12 @@ export function Main(): void {
   TryNow();
   ReviewTemplate();
 }
-function TryNow():void {
-  const BtnTry = document.querySelector('.present-up-button') as HTMLDivElement;
-  BtnTry.addEventListener('click',()=>{
+function TryNow(): void {
+  const BtnTry = document.querySelector(".present-up-button") as HTMLDivElement;
+  BtnTry.addEventListener("click", () => {
     SignUp();
-  })
+  });
 }
-
 
 /*`
   <section class="main-content">
