@@ -1,12 +1,36 @@
 import logo from "../../assets/img/header/logo-black.png";
-import { AboutOn } from "../View/aboutOn";
-import { CoursesOn } from "../View/coursesOn";
+//import { AboutOn } from "../View/aboutOn";
+//import { CoursesOn } from "../View/coursesOn";
 import { logoOn } from "../View/logoOn";
-import { SignUpOn } from "../View/signupOn";
-import { SignInOn } from "../View/signinOn";
+//import { SignUpOn } from "../View/signupOn";
+//import { SignInOn } from "../View/signinOn";
 import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
 import { getLogout } from "../View/logout";
+import { AboutPage } from "../About/about";
+import { Main } from "../Main/Main";
+import { SignIn } from "../Signin/signin";
+import { SignUp } from "../Signup/signup";
+
+window.addEventListener('hashchange',()=>{
+  const hash = window.location.hash.slice(1);
+  console.log('hashchange', hash);
+  if(hash == 'about') {
+    AboutPage();
+  }
+  if(hash == '/') {
+    Main();
+  }
+  if(hash == 'signin') {
+    SignIn();
+  }
+  if(hash == 'signup') {
+    SignUp();
+  }
+  
+  
+})
+
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
@@ -19,21 +43,21 @@ export function Header() {
   <div class="header">
     <div class="header-cont">
       
-      <div class="header-btn-cont-left">
-        <div class="logo-box">
+      <div class="header-btn-cont-left" id="app">
+        <div class="logo-box" id="ptn">
             <img class="logo" src="${logo}" alt="logo">
-          </div>
-        <div class="header-btn discription">COURSES</div>
-        
-        <div class="header-btn about">ABOUT</div>
+        </div>
+       <a href="/"><div class="header-btn discription">COURSES</div></a>
+
+       <a href="#about/"><div class="header-btn about">ABOUT</div></a>
       </div>
       <div class="header-btn-cont-right">
       ${
         Cookies.get("username")
           ? `<div class="header-btn">${Cookies.get("username")}</div>
-      <div class="header-btn logout">Logout</div>`
-          : `<div class="header-btn signin">SIGN IN</div>
-      <div class="header-btn signup">SIGN UP</div>`
+          <div class="header-btn logout">Logout</div>`
+          : `<a href="#signin"><div class="header-btn signin">SIGN IN</div></a>
+          <a href="#signup"><div class="header-btn signup">SIGN UP</div></a>`
       }
 
         <div class="header-btn lang">EN</div>
@@ -44,14 +68,42 @@ export function Header() {
     <hr>
   </div>
 `;
-  AboutOn();
-  CoursesOn();
+  //AboutOn();
+  //CoursesOn();
   logoOn();
-  SignUpOn();
-  SignInOn();
+  //SignUpOn();
+  //SignInOn();
   getLogout();
   getUserLogin();
-}
+ 
+      
+}/*
+function SetHref(){
+  const Cour = document.querySelector('.discription') as HTMLElement;
+  const Abou = document.querySelector('.about') as HTMLElement;
+  Cour.addEventListener('click',()=>{
+    Cour.href = 'course';
+  })
+  Abou.addEventListener('click',()=>{
+    document.location.href = '1'
+  })
+}*/
+/*
+enum Page{
+  CoursesOn = 'courses',
+  AboutOn = 'about',
+  SignInOn = 'signin',
+  SignUpOn = 'signup',
+
+}*/
+
+
+   
+     
+
+   
+/*
+
 
 // const checkLogin = () => {
 //   getUserLogin();
@@ -71,26 +123,4 @@ export function Header() {
 //     : `<div class="header-btn signin">SIGN IN</div>
 // <div class="header-btn signup">SIGN UP</div>`
 // }
-/*`
-    <header class="header">
-      <div class="header-cont">
-        <div class="logo-box">
-          <img class="logo" src="${logo}" alt="logo">
-        </div>
-        <div class="header-btn-cont-left">
-          <div class="header-btn discription">Описание</div>
-          
-          <div class="header-btn about">О нас</div>
-        </div>
-        <div class="header-btn-cont-right">
-          <div class="header-btn">Вход</div>
-          <div class="header-btn">Регистрация</div>
-          <div class="header-btn">RU/EN</div>
-        </div>
-      </div>
-    </header>
-  `;
-  AboutContent();
-  AboutOn();
-}
 */
