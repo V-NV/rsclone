@@ -34,25 +34,25 @@ export function Main(): void {
       <div class="section-title">Courses</div>
         <div class="cards-grid">
           <li class="item" id="html">
-            <div class="card-1 card">
+          <a href="#html"><div class="card-1 card">
               <div class="card-1__img card__img"></div>
               <p class="card-title">html</p>
               <p class="card-sub">11 hours</p>
-            </div>
+            </div></a>
           </li>
           <li class="item" id="css">
-            <div class="card-2 card">
+          <a href="#css"><div class="card-2 card">
               <div class="card-2__img card__img"></div>
               <p class="card-title">css</p>
               <p class="card-sub">8 hours</p>
-            </div>
+            </div></a>
           </li>
           <li class="item" id="js">
-            <div class="card-3 card">
+          <a href="#javascript"><div class="card-3 card">
               <div class="card-3__img card__img"></div>
               <p class="card-title">javascript</p>
               <p class="card-sub">6 hours</p>
-            </div>
+            </div></a>
           </li>
         </div>
     </div>

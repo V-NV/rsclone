@@ -2,7 +2,9 @@ import { AboutPage } from "../About/about";
 import { Main } from "../Main/Main";
 import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";
-
+import { htmlPage } from "../pages/htmlPage";
+import { cssPage } from "../pages/cssPage";
+import { javascriptPage } from "../pages/javascriptPage";
 
 
 enum Page{
@@ -31,6 +33,18 @@ window.addEventListener('hashchange',()=>{
     if(hash == Page.SignUp) {
       SignUp();
     }
+    if(hash == Page.Html) {
+        htmlPage();
+      }
+      if(hash == Page.Css) {
+        cssPage();
+      }
+      if(hash == Page.Js) {
+        javascriptPage();
+      }
+
+
+
   
   })
 }
