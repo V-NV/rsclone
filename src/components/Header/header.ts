@@ -13,12 +13,12 @@ import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
 
-
+ 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
-
+  //window.location.hash = '';
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `

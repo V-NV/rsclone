@@ -16,6 +16,9 @@ export function Lessons(num: number, ide: string): void {
   const poi = ide;
   CurrientIde = poi;
   CurrienNum = num;
+  if(num < 2) {
+  CurrienNum = 2;
+  }
   main.innerHTML = "";
   main.innerHTML += `
     <section class="courses-main-wrap">
@@ -70,9 +73,9 @@ export function Lessons(num: number, ide: string): void {
                     This will be message.
                   </div>
                   <div class="courses-editor-btn-box-bottom">
-                       <div class="editor-btn-bottom btn-prev" id="btn-prev">PREV</div>
+                      <a href="#${ide}/${CurrienNum - 1}" class="a-prev"><div class="editor-btn-bottom btn-prev" id="btn-prev">PREV</div></a>
                        <div class="editor-btn-bottom btn-run">RUN</div>
-                       <button class="editor-btn-bottom btn-next" id="btn-next">NEXT</button> 
+                       <a href="#${ide}/${num+1}" id="a-next"><div class="editor-btn-bottom btn-next" id="btn-next">NEXT</div></a> 
                   </div>
 
            </div>
@@ -90,7 +93,7 @@ export function Lessons(num: number, ide: string): void {
   //checkSolution(num);
   BtnPrev(num);
   Prev_btn_OnOff(num);
-  BtnNext(num);
+  BtnNext(num,ide);
   Next_btn_OnOff(num);
   
 }
@@ -103,7 +106,7 @@ function SetIde(ide: string) {
   if (ide == "css") {
     Tasks = cssTasks;
   }
-  if (ide == "js") {
+  if (ide == "javascript") {
     Tasks = jsTasks;
   }
 }
@@ -123,7 +126,7 @@ function Ide(ide: string) {
   if (ide == "css") {
     IdeCss();
   }
-  if (ide == "js") {
+  if (ide == "javascript") {
     Idejs();
   }
 }
@@ -134,7 +137,7 @@ function CourseName(name: string) {
 
 function LevelName(num: number, ide: string) {
   const LevelNam = document.querySelector(".courses-level-name") as HTMLElement;
-  if (ide == "js") {
+  if (ide == "javascript") {
     LevelNam.textContent = Tasks[num - 1].title.slice(11);
   } else {
     LevelNam.textContent = Tasks[num - 1].title.slice(5);
@@ -163,13 +166,17 @@ Message.textContent = "It`s wrong solution try again";
  })
 }*/
 
-function BtnNext(num: number) {
+function BtnNext(num: number,ide:string) {
   const Next = document.querySelector("#btn-next") as HTMLButtonElement;
+  const Ahref = document.querySelector("#a-next") as HTMLAnchorElement;
   // const Message = document.querySelector(".courses-editor-message") as HTMLElement;
   Next.addEventListener("click", () => {
     if (num < 10) {
       const count: number = num + 1;
       Lessons(count, CurrientIde);
+    }
+    if(num > 9){
+      Ahref.href = `#${ide}/10`
     }
   });
 }

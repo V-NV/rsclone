@@ -51,7 +51,7 @@ window.addEventListener('hashchange',()=>{
             Lessons(i, "css");
          }
          if(hash == `javascript/${i}`) {
-            Lessons(i, "js");
+            Lessons(i, "javascript");
          }
 
 

@@ -40,7 +40,7 @@ export function SignUp(): void {
             
             <button type="submit" class="form-button" id="form-button">   Sign Up</button>
         </form>
-            <p class="signup-signin">Already have an account?<a class="p-link-signin">   Sign In</a></p>
+            <p class="signup-signin">Already have an account? <a href="#signin" class="p-link-signin">   Sign In</a></p>
           
           </div>
        </div>
