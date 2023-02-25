@@ -35,8 +35,8 @@ const cssTasks = [
     taskNum: 4,
     title: "CSS: Tag style",
     task: cssTask04,
-    solution: '<style>p{font-size:20px;}</style><pstyle="font-size:44px;">Styletag</p>',
-    solution2: '<pstyle="font-size:44px;">Styletag</p><style>p{font-size:20px;}</style>',
+    solution: '<p>Styletag</p><style>p{font-size:44px;}</style>',
+    solution2: '<style>p{font-size:44px;}</style><p>Styletag</p>',
   },
   {
     taskNum: 5,
