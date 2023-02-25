@@ -19,7 +19,7 @@ const CourseTemplate = (
   Tasks: { taskNum: number; title: string; task: string }[]
 ) => {
   return `
-    <section class="main-wrap">
+    <section class="main-wrap" id="${courseInfo.tasksTitle.split(' ')[0].toLocaleLowerCase()}">
     <div class="main-cont">
       <div class="home">
       <a href="#"><button><svg class="btnh" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 122.88 112.07" viewBox="0 0 122.88 112.07"><path d="M61.44 0 0 60.18l14.99 7.87L61.04 19.7l46.85 48.36 14.99-7.87L61.44 0zM18.26 69.63 61.5 26.38l43.11 43.25v42.43H73.12V82.09H49.49v29.97H18.26V69.63z"/></svg></button></a>
@@ -84,7 +84,7 @@ const CourseTemplate = (
                 ${Tasks.map((item) => {
                   return `<a href="#${courseInfo.tasksTitle.split(' ')[0].toLocaleLowerCase() + '/' + item.taskNum}"><li id=${item.taskNum}>
                   <button class="task-item">${item.taskNum}. ${item.title}</button>
-                  </li>`;
+                  </li></a>`;
                 })}
             </ul>
             <div class="tasks-sub">
