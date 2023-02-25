@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { IWebStorageUserData, TUserNewPost } from "../../types/api.interface";
+import { IWebStorageUserData, TUserPostSend } from "../../types/api.interface";
 
 export const getUserPost = async () => {
   try {
@@ -16,7 +16,7 @@ export const getUserPost = async () => {
   }
 };
 
-export const setNewUserPost = async (body: TUserNewPost) => {
+export const setNewUserPost = async (body: TUserPostSend) => {
   const user = Cookies.get("user_session");
   if (user) {
     try {
