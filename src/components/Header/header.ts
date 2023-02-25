@@ -18,18 +18,18 @@ import { Root } from "../Routing/root";
 //import { AboutContent,AboutOn } from "./about";
 export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
-  //window.location.hash = '';
+  window.location.hash = '';
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
   <div class="header">
     <div class="header-cont">
-      
+
       <div class="header-btn-cont-left" id="app">
         <div class="logo-box" id="ptn">
             <img class="logo" src="${logo}" alt="logo">
         </div>
-       <a href="/"><div class="header-btn discription">COURSES</div></a>
+       <a href="#"><div class="header-btn discription">COURSES</div></a>
 
        <a href="#about"><div class="header-btn about">ABOUT</div></a>
       </div>

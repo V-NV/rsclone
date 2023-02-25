@@ -6,7 +6,7 @@ import { htmlPage } from "../pages/htmlPage";
 import { cssPage } from "../pages/cssPage";
 import { javascriptPage } from "../pages/javascriptPage";
 import { Lessons } from "../Lessons/lessons";
-
+import { page404 } from "./404";
 
 enum Page{
     Courses = 'courses',
@@ -21,40 +21,51 @@ export function Root() {
 
 window.addEventListener('hashchange',()=>{
     const hash = window.location.hash.slice(1);
-    console.log('hashchange', hash);
-    if(hash == '/') {
+   // console.log('hashchange', hash);
+   let errCount = false;
+    for (let i = 0; i < 10; i += 1) {
+      if(hash == `html/${i}`) {
+        errCount = true;
+         Lessons(i, "html");
+      }
+     else if(hash == `css/${i}`) {
+      errCount = true;
+         Lessons(i, "css");
+      }
+     else if(hash == `javascript/${i}`) {
+      errCount = true;
+         Lessons(i, "javascript");
+      }
+      
+   } 
+    if(hash == '') {
         Main();
       }
-    if(hash == Page.About) {
+    else if(hash == Page.About) {
+      errCount = true;
       AboutPage();
     }
-    if(hash == Page.SignIn) {
+    else if(hash == Page.SignIn) {
+      errCount = true;
       SignIn();
     }
-    if(hash == Page.SignUp) {
+    else if(hash == Page.SignUp) {
+      errCount = true;
       SignUp();
     }
-    if(hash == Page.Html) {
+    else if(hash == Page.Html) {
+      errCount = true;
         htmlPage();
       }
-      if(hash == Page.Css) {
+      else if(hash == Page.Css) {
+        errCount = true;
         cssPage();
       }
-      if(hash == Page.Js) {
+      else if(hash == Page.Js) {
+        errCount = true;
         javascriptPage();
       }
-      for (let i = 0; i < 10; i += 1) {
-         if(hash == `html/${i}`) {
-            Lessons(i, "html");
-         }
-         if(hash == `css/${i}`) {
-            Lessons(i, "css");
-         }
-         if(hash == `javascript/${i}`) {
-            Lessons(i, "javascript");
-         }
-
-
-      }  
-  })
+      else if(errCount == false) {
+        page404();}
+   })
 }
