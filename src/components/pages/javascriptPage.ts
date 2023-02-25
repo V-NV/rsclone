@@ -30,14 +30,14 @@ export const javascriptPage = (): void => {
 };
 function BtnContId() {
   const a = document.querySelector("ul") as HTMLElement;
-  a.id = "js";
+  a.id = "javascript";
 }
 function ChangeLesson() {
   const sjs = Array.from(document.querySelectorAll("li"));
 
   for (const el of sjs) {
     el.addEventListener("click", () => {
-      Lessons(+el.id, "js");
+      Lessons(+el.id, "javascript");
     });
   }
 }
