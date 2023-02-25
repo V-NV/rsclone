@@ -4,7 +4,7 @@ import logo from "../../assets/img/header/logo-black.png";
 import { logoOn } from "../View/logoOn";
 //import { SignUpOn } from "../View/signupOn";
 //import { SignInOn } from "../View/signinOn";
-import { getUserLogin } from "../Api/register-login.api";
+// import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
 import { getLogout } from "../View/logout";
 /*import { AboutPage } from "../About/about";
@@ -55,8 +55,8 @@ export function Header() {
   logoOn();
   //SignUpOn();
   //SignInOn();
-  getLogout();
-  getUserLogin();
+
+
   Root();
       
 }/*
@@ -86,6 +86,9 @@ enum Page{
    
 /*
 
+
+  // getUserLogin();
+}
 
 // const checkLogin = () => {
 //   getUserLogin();

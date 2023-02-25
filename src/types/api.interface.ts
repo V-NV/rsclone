@@ -13,6 +13,8 @@ export interface IUserPost {
   updatedAt: string;
   _id: string;
 }
+
+export type TUserNewPost = Omit<IUserPost, "createdAt" | "updatedAt" | "_id">;
 export interface IWebStorageUserData {
   userPost: IUserPost[] | undefined;
 }

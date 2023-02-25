@@ -14,4 +14,8 @@ export function View(): void {
 
   const Footer = document.createElement("footer");
   Body.insertAdjacentElement("beforeend", Footer);
+
+  const Modal = document.createElement("section");
+  Modal.className = "modal";
+  Body.insertAdjacentElement("beforeend", Modal);
 }

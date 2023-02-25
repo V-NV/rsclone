@@ -1,4 +1,6 @@
-const data = [
+import { TUserNewPost } from "../../types/api.interface";
+
+export const DataTest = [
   {
     imgUrl:
       "https://www.peoples.ru/undertake/internet/pavel_durov/vUTy5XvJS17Ek.jpeg",
@@ -25,7 +27,7 @@ const data = [
   },
 ];
 
-export function ReviewTemplate(): void {
+export function ReviewTemplate(data: TUserNewPost[]): void {
   const reviewContainer = document.querySelector(
     ".review-container"
   ) as HTMLElement;

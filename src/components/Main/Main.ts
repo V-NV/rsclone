@@ -3,7 +3,7 @@ import { cssOn } from "../View/cssOn";
 import { htmlOn } from "../View/htmlOn";
 import { initTheme } from "../View/initTheme";
 import { SignUp } from "../Signup/signup";
-import { ReviewTemplate } from "./ReviewTemplate";
+import { DataTest, ReviewTemplate } from "./ReviewTemplate";
 
 export function Main(): void {
   const main = document.querySelector("main") as HTMLElement;
@@ -28,7 +28,7 @@ export function Main(): void {
         </div>
     </section>
    
-  <section class="courses">
+
 
     <div class="courses-container">
       <div class="section-title">Courses</div>
@@ -56,7 +56,7 @@ export function Main(): void {
           </li>
         </div>
     </div>
-  </section>  
+
 
   <section class="review-container">
   </section>`;
@@ -66,15 +66,14 @@ export function Main(): void {
   htmlOn();
   initTheme();
   TryNow();
-  ReviewTemplate();
+  ReviewTemplate(DataTest);
 }
-function TryNow():void {
-  const BtnTry = document.querySelector('.present-up-button') as HTMLDivElement;
-  BtnTry.addEventListener('click',()=>{
+function TryNow(): void {
+  const BtnTry = document.querySelector(".present-up-button") as HTMLDivElement;
+  BtnTry.addEventListener("click", () => {
     SignUp();
-  })
+  });
 }
-
 
 /*`
   <section class="main-content">
