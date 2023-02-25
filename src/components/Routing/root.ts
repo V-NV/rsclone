@@ -23,7 +23,7 @@ window.addEventListener('hashchange',()=>{
     const hash = window.location.hash.slice(1);
    // console.log('hashchange', hash);
    let errCount = false;
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 1; i <= 10; i += 1) {
       if(hash == `html/${i}`) {
         errCount = true;
          Lessons(i, "html");

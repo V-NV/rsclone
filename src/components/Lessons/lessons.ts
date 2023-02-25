@@ -166,6 +166,7 @@ Message.textContent = "It`s wrong solution try again";
  })
 }*/
 
+
 function BtnNext(num: number,ide:string) {
   const Next = document.querySelector("#btn-next") as HTMLButtonElement;
   const Ahref = document.querySelector("#a-next") as HTMLAnchorElement;
@@ -239,6 +240,6 @@ function ToParentPage():void {
   BtnParent.addEventListener('click',()=>{
     if(BtnParent.textContent == "HTML"){htmlPage();}
     if(BtnParent.textContent == "CSS"){cssPage();}
-    if(BtnParent.textContent == "JS"){javascriptPage();}
+    if(BtnParent.textContent == "JAVASCRIPT"){javascriptPage();}
   })
 }
