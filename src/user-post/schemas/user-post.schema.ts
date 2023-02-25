@@ -11,6 +11,8 @@ export class UserPost {
   title: string;
   @Prop()
   post: string;
+  @Prop()
+  username: string;
 }
 
 export const UserPostSchema = SchemaFactory.createForClass(UserPost);

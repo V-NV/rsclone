@@ -7,4 +7,6 @@ export class UserPostDto {
   title: string;
   @IsString()
   post: string;
+  @IsString()
+  username: string;
 }
