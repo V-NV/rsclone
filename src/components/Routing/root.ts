@@ -8,7 +8,7 @@ import { javascriptPage } from "../pages/javascriptPage";
 import { Lessons } from "../Lessons/lessons";
 import { page404 } from "./404";
 
-enum Page{
+export enum Page{
     Courses = 'courses',
     About = 'about',
     SignIn = 'signin',

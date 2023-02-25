@@ -17,7 +17,7 @@ import { Root } from "../Routing/root";
 //import { AboutContent,AboutOn } from "./about";
 export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
-  window.location.hash = "";
+  //window.location.hash = "";
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
