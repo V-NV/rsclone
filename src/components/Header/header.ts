@@ -6,19 +6,18 @@ import { logoOn } from "../View/logoOn";
 //import { SignInOn } from "../View/signinOn";
 // import { getUserLogin } from "../Api/register-login.api";
 import Cookies from "js-cookie";
-import { getLogout } from "../View/logout";
+// import { getLogout } from "../View/logout";
 /*import { AboutPage } from "../About/about";
 import { Main } from "../Main/Main";
 import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
 
- 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
 export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
-  window.location.hash = '';
+  window.location.hash = "";
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
@@ -56,10 +55,8 @@ export function Header() {
   //SignUpOn();
   //SignInOn();
 
-
   Root();
-      
-}/*
+} /*
 function SetHref(){
   const Cour = document.querySelector('.discription') as HTMLElement;
   const Abou = document.querySelector('.about') as HTMLElement;
@@ -79,11 +76,6 @@ enum Page{
 
 }*/
 
-
-   
-     
-
-   
 /*
 
 
