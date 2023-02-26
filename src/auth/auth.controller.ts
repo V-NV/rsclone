@@ -77,4 +77,15 @@ export class AuthController {
 
     return foundUser ? true : false;
   }
+
+  @Roles('Admin')
+  @UseGuards(RoleGuard)
+  @Post('is-admin')
+  async isAdmin(@Headers('Authorization') authorization: string) {
+    const token = authorization.split(' ')[1];
+    const user = this.jwtService.verify(token);
+    const foundUser = this.authService.findUser(user.user.email);
+
+    return foundUser ? true : false;
+  }
 }
