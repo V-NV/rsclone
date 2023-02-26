@@ -11,6 +11,7 @@ import { javascriptPage } from "../pages/javascriptPage";
 import { Lessons } from "../Lessons/lessons";
 import { page404 } from "../Routing/404";
 import { Page } from "../Routing/root";
+import { FullIde } from "../Fullide/fullide";
 
 window.addEventListener("load", async () => {
   await getUpdateStorage();
@@ -81,6 +82,10 @@ function RootRun() {
         else if(hash == Page.Js) {
           errCount = true;
           javascriptPage();
+        }
+        else if(hash == Page.SB) {
+          errCount = true;
+          FullIde();
         }
         else if(errCount == false) {
           page404();}

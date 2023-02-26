@@ -7,6 +7,7 @@ import { cssPage } from "../pages/cssPage";
 import { javascriptPage } from "../pages/javascriptPage";
 import { Lessons } from "../Lessons/lessons";
 import { page404 } from "./404";
+import { FullIde } from "../Fullide/fullide";
 
 export enum Page{
     Courses = 'courses',
@@ -16,6 +17,7 @@ export enum Page{
     Html = 'html',
     Css = 'css',
     Js = 'javascript',
+    SB = 'sandbox'
 }
 export function Root() {
 
@@ -64,6 +66,10 @@ window.addEventListener('hashchange',()=>{
       else if(hash == Page.Js) {
         errCount = true;
         javascriptPage();
+      }
+      else if(hash == Page.SB) {
+        errCount = true;
+        FullIde();
       }
       else if(errCount == false) {
         page404();}
