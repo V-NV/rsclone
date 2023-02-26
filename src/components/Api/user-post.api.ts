@@ -38,3 +38,37 @@ export const setNewUserPost = async (body: TUserPostSend) => {
     }
   }
 };
+
+export const deleteUserPost = async (id: string) => {
+  const user = Cookies.get("user_session");
+  if (user) {
+    try {
+      const resp = await fetch(`http://localhost:7000/user-post/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user}`,
+        },
+      });
+      return resp.status === 200 ? true : false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+export const isAdmin = async () => {
+  const user = Cookies.get("user_session");
+  if (user) {
+    try {
+      const resp = await fetch(`http://localhost:7000/auth/is-admin`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${user}`,
+        },
+      });
+      return resp.status === 201 ? true : false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};

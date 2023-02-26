@@ -1,5 +1,5 @@
 import { IUserPost } from "../../types/api.interface";
-import { getUserPost } from "../Api/user-post.api";
+import { deleteUserPost, getUserPost } from "../Api/user-post.api";
 import { DataTest } from "../Main/ReviewTemplate";
 import { webStorage } from "../Storage/webStorage";
 
@@ -22,6 +22,7 @@ export const AdminPage = async () => {
   </div>
 </section> `;
   await renderAdminPost();
+  setAdminForm();
 };
 
 export const adminUserPostRender = async (body: IUserPost[]) => {
@@ -58,4 +59,16 @@ const renderAdminPost = async () => {
   webStorage.userPost === undefined
     ? adminUserPostRender(DataTest)
     : adminUserPostRender(webStorage.userPost);
+};
+
+export const setAdminForm = () => {
+  const adminForm = document.querySelector(".form-admin") as HTMLFormElement;
+  const deleteInput = document.getElementById("delete") as HTMLInputElement;
+
+  adminForm.addEventListener("submit", async (e: SubmitEvent) => {
+    e.preventDefault();
+    await deleteUserPost(deleteInput.value);
+    await renderAdminPost();
+    deleteInput.value = "";
+  });
 };

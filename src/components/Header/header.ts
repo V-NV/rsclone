@@ -13,6 +13,8 @@ import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
 import { AdminPage } from "../AdminPage/AdminPage";
+// import { isAdmin } from "../Api/user-post.api";
+import { getLogout } from "../View/logout";
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
@@ -59,13 +61,15 @@ export function Header() {
   //SignInOn();
   getUserRole();
   Root();
+  getLogout();
 }
 
 const getUserRole = () => {
   const userName = document?.querySelector(".username") as HTMLDivElement;
-  userName?.addEventListener("click", async (e) => {
+  userName?.addEventListener("click", async () => {
+    // const admin = await isAdmin();
+    // admin ? await AdminPage() : null;
     await AdminPage();
-    console.log(e.target);
   });
 };
 
