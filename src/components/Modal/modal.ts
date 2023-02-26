@@ -64,6 +64,7 @@ export const setModalListener = () => {
   formModal.addEventListener("submit", async (e: SubmitEvent) => {
     e.preventDefault();
     const status = await setNewUserPost({
+      username: `${Cookies.get("username")}`,
       imgUrl: imgUrl.value,
       title: title.value,
       post: post.value,

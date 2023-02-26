@@ -25,6 +25,7 @@ const config = {
     },
     host: "localhost",
   },
+  cache: false,
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',

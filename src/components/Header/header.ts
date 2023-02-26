@@ -12,6 +12,9 @@ import { Main } from "../Main/Main";
 import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
+import { AdminPage } from "../AdminPage/AdminPage";
+// import { isAdmin } from "../Api/user-post.api";
+import { getLogout } from "../View/logout";
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
@@ -35,7 +38,9 @@ export function Header() {
       <div class="header-btn-cont-right">
       ${
         Cookies.get("username")
-          ? `<div class="header-btn">${Cookies.get("username")}</div>
+          ? ` <a href="#"><div class="header-btn username">${Cookies.get(
+              "username"
+            )}</div></a>
           <div class="header-btn logout">Logout</div>`
           : `<a href="#signin"><div class="header-btn signin">SIGN IN</div></a>
           <a href="#signup"><div class="header-btn signup">SIGN UP</div></a>`
@@ -54,9 +59,21 @@ export function Header() {
   logoOn();
   //SignUpOn();
   //SignInOn();
-
+  getUserRole();
   Root();
-} /*
+  getLogout();
+}
+
+const getUserRole = () => {
+  const userName = document?.querySelector(".username") as HTMLDivElement;
+  userName?.addEventListener("click", async () => {
+    // const admin = await isAdmin();
+    // admin ? await AdminPage() : null;
+    await AdminPage();
+  });
+};
+
+/*
 function SetHref(){
   const Cour = document.querySelector('.discription') as HTMLElement;
   const Abou = document.querySelector('.about') as HTMLElement;
