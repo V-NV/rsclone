@@ -4,9 +4,11 @@ import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
 import { getLogout } from "../View/logout";
 
 export const TEST_URL = "http://localhost:7000";
+export const SERVER_URL =
+  "https://backend-for-rsclone-production.up.railway.app";
 
 export const registerUser = async (body: IRegisterData): Promise<boolean> => {
-  const resp = await fetch(`${TEST_URL}/auth/register`, {
+  const resp = await fetch(`${SERVER_URL}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -20,7 +22,7 @@ export const registerUser = async (body: IRegisterData): Promise<boolean> => {
 };
 
 export const loginUser = async (body: TLoginUser): Promise<IToken> => {
-  const resp = await fetch(`${TEST_URL}/auth/login`, {
+  const resp = await fetch(`${SERVER_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +39,7 @@ export const getUserIsLogin = async () => {
   const user = Cookies.get("user_session");
   if (user) {
     try {
-      const resp = await fetch(`${TEST_URL}/auth/login-user`, {
+      const resp = await fetch(`${SERVER_URL}/auth/login-user`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${user}`,
