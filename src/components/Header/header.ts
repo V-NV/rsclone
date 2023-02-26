@@ -12,6 +12,7 @@ import { Main } from "../Main/Main";
 import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
+import { AdminPage } from "../AdminPage/AdminPage";
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
@@ -35,7 +36,9 @@ export function Header() {
       <div class="header-btn-cont-right">
       ${
         Cookies.get("username")
-          ? `<div class="header-btn">${Cookies.get("username")}</div>
+          ? ` <a href="#"><div class="header-btn username">${Cookies.get(
+              "username"
+            )}</div></a>
           <div class="header-btn logout">Logout</div>`
           : `<a href="#signin"><div class="header-btn signin">SIGN IN</div></a>
           <a href="#signup"><div class="header-btn signup">SIGN UP</div></a>`
@@ -54,9 +57,19 @@ export function Header() {
   logoOn();
   //SignUpOn();
   //SignInOn();
-
+  getUserRole();
   Root();
-} /*
+}
+
+const getUserRole = () => {
+  const userName = document?.querySelector(".username") as HTMLDivElement;
+  userName?.addEventListener("click", async (e) => {
+    await AdminPage();
+    console.log(e.target);
+  });
+};
+
+/*
 function SetHref(){
   const Cour = document.querySelector('.discription') as HTMLElement;
   const Abou = document.querySelector('.about') as HTMLElement;

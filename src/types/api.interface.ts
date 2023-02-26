@@ -6,13 +6,13 @@ export interface IRegisterData {
 
 export type TLoginUser = Omit<IRegisterData, "name">;
 export interface IUserPost {
-  imgUrl: string;
-  title: string;
-  post: string;
-  createdAt: string;
-  updatedAt: string;
-  _id: string;
-  username: string;
+  imgUrl?: string;
+  title?: string;
+  post?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  _id?: string;
+  username?: string;
 }
 
 export type TUserNewPost = Omit<
