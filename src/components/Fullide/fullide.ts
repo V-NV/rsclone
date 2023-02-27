@@ -18,6 +18,10 @@ export function FullIde(): void {
     main.innerHTML = "";
     main.innerHTML += ` 
     <section class="full-ide-wrap">
+      
+     <div class="full-home-cont">
+
+    
     <div class="home-sandbox">
     <a href="#"><button><svg class="btnh" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 122.88 112.07" viewBox="0 0 122.88 112.07"><path d="M61.44 0 0 60.18l14.99 7.87L61.04 19.7l46.85 48.36 14.99-7.87L61.44 0zM18.26 69.63 61.5 26.38l43.11 43.25v42.43H73.12V82.09H49.49v29.97H18.26V69.63z"/></svg></button></a>
 
@@ -26,6 +30,7 @@ export function FullIde(): void {
       <span>SANDBOX</span></button>
            
 </div> 
+</div>
     <div class="full-ide-cont">
 
         
@@ -89,17 +94,25 @@ export function FullIde(): void {
         theme:"dracula"
         });
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
-            const htmlCode = htmlEdit.getValue('');
+            const htmlCode = htmlEdit.getValue() + "<p></p>";
             const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
             const jsCode = "<script>" + jsEditor.getValue() + "</script>";
           
-            const previewWindow = document.querySelector('#preview-window')
-            
+           /* if(jsCode.includes('console.log')) {
+              jsCode.replace("console.log","")
+            }*/
+
+            const previewWindow = document.querySelector('#preview-window');
+           const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
+           ConsClear.innerHTML = "";
+
+
             const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
             let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
            // previewWindow.contentWindow.document;
            if(iWindow) {
-            iWindow.location.href='/'
+             try{
+            iWindow.location.href='/';
             
             iWindow.open();
             
@@ -115,7 +128,66 @@ export function FullIde(): void {
             const XXX = x.document.querySelector("body") as HTMLBodyElement;
             XXX.style.color = "blue";*/
             iWindow.close();
-
+             }
+             catch(e){const ConsoleMsg = document.querySelector(
+              ".console-work"
+            ) as HTMLElement;
+          ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
+             }
+            /************************************************/
+            ConsOut(jsEditor); 
+            Reset(jsEditor,htmlEdit,cssEditor);    
        }  
    })
+}
+const Log = console.log.bind(console);
+
+function ConsOut(jsEditor:CodeMirror.Editor):void {
+  const ConsoleMsg = document.querySelector('.console-work') as HTMLElement;
+  ConsoleMsg.innerHTML = "";
+  const consCode = jsEditor.getValue();
+
+                //const Log = console.log.bind(console);
+            console.log = function () {
+              // eslint-disable-next-line prefer-rest-params
+              const test = [...arguments];
+              //ConsoleMsg.innerHTML += "";
+              test.forEach((element) => {
+              
+                ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
+              });
+             // eslint-disable-next-line prefer-rest-params
+              return Log(...arguments);
+            };
+           try{
+            const test = new Function(consCode);
+            test();
+           }
+           catch(e){/*const Message = document.querySelector(
+            ".courses-editor-message"
+          ) as HTMLElement;*/
+            ConsoleMsg.innerHTML = `<p style="color:red;">error</p>`
+          
+           }
+  
+}
+function Reset(JsEditor:CodeMirror.Editor,htmlEdit:CodeMirror.Editor,cssEditor:CodeMirror.Editor):void {
+  
+const BtnReset = document.querySelector(".full-reset") as HTMLButtonElement;
+const ConsoleW = document.querySelector(".console-work") as HTMLElement;
+const previewWindow = document.querySelector('#preview-window');
+let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
+const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
+SWindow = window.frames[0]
+const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+
+BtnReset.addEventListener("click", () => {
+  JsEditor.setValue("");
+  htmlEdit.setValue("");
+  cssEditor.setValue("");
+  if(iWindow){
+    BWindow.innerHTML = "";
+    }
+  ConsoleW.textContent = "";
+});
 }

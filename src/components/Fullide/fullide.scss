@@ -9,6 +9,44 @@
 }
 
 .full-ide-wrap {
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .full-home-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 1440px;
+    max-width: 100%;
+    height: 100px;
+    background-color: #262626;
+    font-family: "Kanit";
+    
+    gap: 5px;
+    border-radius: 20px;
+  }
+  .full-ide-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1440px;
+    max-width: 100%;
+    height: 1000px;
+    background-color: #FFFBD3;
+    font-family: "Kanit";
+    
+    gap: 5px;
+    border-radius: 20px;
+  }
+  
+  .path-container {
+
   max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -51,6 +89,7 @@
   align-self: start;
 
   & button {
+
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -64,6 +103,31 @@
 
   .pathTitle {
     display: flex;
+
+    align-items: center;
+    font-family: "Kanit";
+    font-weight: 400;
+    font-size: 32px;
+    margin-top: 40px;
+    align-self: start;
+    margin-left: 10px;
+    & button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      svg {
+        width: 50px;
+        height: 50px;
+        fill: var(--color-text);
+        margin: 0 10px 0 0;
+      }
+    }
+  
+    .pathTitle {
+      display: flex;
+      margin: 0 0 0 10px;
+      border: none;
+
     margin: 0 0 0 10px;
     border: none;
     color: var(--color-text);
@@ -72,6 +136,7 @@
     & span {
       display: block;
       transform: translateY(5px);
+
       color: var(--color-text);
     }
   }
@@ -164,6 +229,62 @@
   height: 70px;
 }
 .full-run,
+
+.full-reset{
+    height: 50px;
+    width: 190px;
+    background-color: rgb(133, 60, 19);
+    color: #FFFBD3;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Kanit";
+    font-size: 24px;
+}
+.full-run:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.full-reset:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.full-work{
+    width: 100%;
+    height: 75%;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #FFFBD3;
+    background-color: #282a36;
+    border-radius: 10px;
+}
+.full-console{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.console-header{
+    width: 100%;
+    height: 36px;
+    font-family: "Kanit";
+    text-align: center;
+    font-size: 30px;
+    color: rgb(12, 87, 87);
+   
+}
+.console-work{
+    width:97% ;
+    height: 130px;
+    background-color: #282a36;
+    border-radius: 10px;
+    padding: 15px;
+    color: #FFFBD3;
+    overflow: auto;
+
 .full-reset {
   height: 50px;
   width: 190px;
@@ -205,6 +326,7 @@
   height: 130px;
   background-color: #262626;
   border-radius: 10px;
+
 }
 .courses-lesson-text-box::-webkit-scrollbar {
   width: 18px; /* ширина для вертикального скролла */
