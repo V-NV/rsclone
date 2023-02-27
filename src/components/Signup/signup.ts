@@ -35,9 +35,8 @@ export function SignUp(): void {
                 <label for="password"> Password</label>
                 <input type="text" id="password" placeholder="Enter password" autocomplete="off"/>
                 <small>Error</small>
-              </div>
-            
-            
+              </div>        
+              <small class="error-massage"></small>
             <button type="submit" class="form-button" id="form-button">   Sign Up</button>
         </form>
             <p class="signup-signin">Already have an account? <a href="#signin" class="p-link-signin">   Sign In</a></p>

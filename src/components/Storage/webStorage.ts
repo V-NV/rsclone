@@ -1,5 +1,5 @@
 import { IWebStorageUserData } from "../../types/api.interface";
-import { getUserPost } from "../Api/user-post.api";
+import { getUserPost, isAdmin } from "../Api/user-post.api";
 import { ReviewTemplate, DataTest } from "../Main/ReviewTemplate";
 import { AboutPage } from "../About/about";
 import { Main } from "../Main/Main";
@@ -12,6 +12,7 @@ import { Lessons } from "../Lessons/lessons";
 import { page404 } from "../Routing/404";
 import { Page } from "../Routing/root";
 import { FullIde } from "../Fullide/fullide";
+import { AdminPage } from "../AdminPage/AdminPage";
 
 window.addEventListener("load", async () => {
   await getUpdateStorage();
@@ -29,65 +30,60 @@ export const webStorage: IWebStorageUserData = {
 };
 
 export const getUpdateStorage = async () => {
-  const { userPost } = await getUserPost();
-  webStorage.userPost = userPost;
-  webStorage.userPost === undefined
-    ? ReviewTemplate(DataTest)
-    : ReviewTemplate(webStorage.userPost);
+  try {
+    const { userPost } = await getUserPost();
+    webStorage.userPost = userPost;
+    webStorage.userPost === undefined
+      ? ReviewTemplate(DataTest)
+      : ReviewTemplate(webStorage.userPost);
+  } catch (error) {}
 };
-function RootRun() {
-
+async function RootRun() {
   //window.addEventListener('hashchange',()=>{
-      const hash = window.location.hash.slice(1);
-     // console.log('hashchange', hash);
-     let errCount = false;
-      for (let i = 1; i <= 10; i += 1) {
-        if(hash == `html/${i}`) {
-          errCount = true;
-           Lessons(i, "html");
-        }
-       else if(hash == `css/${i}`) {
-        errCount = true;
-           Lessons(i, "css");
-        }
-       else if(hash == `javascript/${i}`) {
-        errCount = true;
-           Lessons(i, "javascript");
-        }
-        
-     } 
-      if(hash == '') {
-          Main();
-        }
-      else if(hash == Page.About) {
-        errCount = true;
-        AboutPage();
-      }
-      else if(hash == Page.SignIn) {
-        errCount = true;
-        SignIn();
-      }
-      else if(hash == Page.SignUp) {
-        errCount = true;
-        SignUp();
-      }
-      else if(hash == Page.Html) {
-        errCount = true;
-          htmlPage();
-        }
-        else if(hash == Page.Css) {
-          errCount = true;
-          cssPage();
-        }
-        else if(hash == Page.Js) {
-          errCount = true;
-          javascriptPage();
-        }
-        else if(hash == Page.SB) {
-          errCount = true;
-          FullIde();
-        }
-        else if(errCount == false) {
-          page404();}
-     //})
+  const hash = window.location.hash.slice(1);
+  // console.log('hashchange', hash);
+  let errCount = false;
+  for (let i = 1; i <= 10; i += 1) {
+    if (hash == `html/${i}`) {
+      errCount = true;
+      Lessons(i, "html");
+    } else if (hash == `css/${i}`) {
+      errCount = true;
+      Lessons(i, "css");
+    } else if (hash == `javascript/${i}`) {
+      errCount = true;
+      Lessons(i, "javascript");
+    }
   }
+  if (hash == "") {
+    Main();
+  } else if (hash == Page.About) {
+    errCount = true;
+    AboutPage();
+  } else if (hash == Page.SignIn) {
+    errCount = true;
+    SignIn();
+  } else if (hash == Page.SignUp) {
+    errCount = true;
+    SignUp();
+  } else if (hash == Page.Html) {
+    errCount = true;
+    htmlPage();
+  } else if (hash == Page.Css) {
+    errCount = true;
+    cssPage();
+  } else if (hash == Page.Js) {
+    errCount = true;
+    javascriptPage();
+  } else if (hash == Page.SB) {
+    errCount = true;
+    FullIde();
+  } else if (hash == Page.Admin) {
+    errCount = true;
+    const admin = await isAdmin();
+    admin ? AdminPage() : page404();
+  } else if (errCount == false) {
+    page404();
+  }
+  //})
+}
