@@ -98,6 +98,10 @@ export function FullIde(): void {
             const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
             const jsCode = "<script>" + jsEditor.getValue() + "</script>";
           
+           /* if(jsCode.includes('console.log')) {
+              jsCode.replace("console.log","")
+            }*/
+
             const previewWindow = document.querySelector('#preview-window')
            const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
            ConsClear.innerHTML = "";
@@ -131,11 +135,12 @@ export function FullIde(): void {
           ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
              }
             /************************************************/
-ConsOut(jsEditor)
-            
+            ConsOut(jsEditor);     
        }  
    })
 }
+const Log = console.log.bind(console);
+
 function ConsOut(jsEditor:CodeMirror.Editor):void {
   const ConsoleMsg = document.querySelector('.console-work') as HTMLElement;
   ConsoleMsg.innerHTML = "";
@@ -143,7 +148,7 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
 
             
            
-            const Log = console.log.bind(console);
+            //const Log = console.log.bind(console);
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
@@ -162,7 +167,7 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
            catch(e){/*const Message = document.querySelector(
             ".courses-editor-message"
           ) as HTMLElement;*/
-         ConsoleMsg.innerHTML = `<p style="color:red;">error</p>`
+            ConsoleMsg.innerHTML = `<p style="color:red;">error</p>`
           
            }
   
