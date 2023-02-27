@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+import { errorMessage } from "../Api/register-login.api";
 import { setNewUserPost } from "../Api/user-post.api";
 import { getUpdateStorage } from "../Storage/webStorage";
 
@@ -31,6 +32,7 @@ export const Modal = () => {
           <label for="post">Your feedback</label>
           <input type="text" id="post" placeholder="Your feedback" autocomplete="off" size="45"/>
         </div>
+        <small class="error-massage"></small>
         <button type="submit" class="form-button" id="form-button">Post your message!</button>
       </form>
     </div>
@@ -77,10 +79,11 @@ export const setModalListener = () => {
         await getUpdateStorage();
       }, 2000);
     } else {
+      errorMessage("Пользователь не зарегистрирован");
       console.log("Пользователь не зарегистрирован");
       Cookies.remove("user_session");
       Cookies.remove("username");
-      setTimeout(() => location.reload(), 1000);
+      // setTimeout(() => location.reload(), 1000);
     }
   });
 };

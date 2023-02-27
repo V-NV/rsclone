@@ -72,7 +72,7 @@ export const getUserIsLogin = async () => {
   }
 };
 
-const errorMessage = async (error: string) => {
+export const errorMessage = async (error: string) => {
   const message = document.querySelector(".error-massage") as HTMLElement;
   message.innerHTML = `${error}`;
 };
