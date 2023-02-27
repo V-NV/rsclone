@@ -15,6 +15,7 @@ import { Root } from "../Routing/root";
 import { AdminPage } from "../AdminPage/AdminPage";
 // import { isAdmin } from "../Api/user-post.api";
 import { getLogout } from "../View/logout";
+//import { FullIde } from "../Fullide/fullide";
 
 //import logo from "../../assets/img/logo.png";
 //import { AboutContent,AboutOn } from "./about";
@@ -34,6 +35,8 @@ export function Header() {
        <a href="#"><div class="header-btn discription">COURSES</div></a>
 
        <a href="#about"><div class="header-btn about">ABOUT</div></a>
+
+       <a href="#sandbox"><div class="header-btn sandbox">SANDBOX</div></a>
       </div>
       <div class="header-btn-cont-right">
       ${
@@ -62,6 +65,7 @@ export function Header() {
   getUserRole();
   Root();
   getLogout();
+  //FullIde();
 }
 
 const getUserRole = () => {
