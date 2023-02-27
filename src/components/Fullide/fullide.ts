@@ -99,7 +99,8 @@ export function FullIde(): void {
             const jsCode = "<script>" + jsEditor.getValue() + "</script>";
           
             const previewWindow = document.querySelector('#preview-window')
-           
+           const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
+           ConsClear.innerHTML = "";
 
 
             const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
@@ -127,19 +128,26 @@ export function FullIde(): void {
              catch(e){const ConsoleMsg = document.querySelector(
               ".console-work"
             ) as HTMLElement;
-          ConsoleMsg.innerHTML = `<p style="display:none;">Мутотень</p>`
+          ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
              }
             /************************************************/
+ConsOut(jsEditor)
+            
+       }  
+   })
+}
+function ConsOut(jsEditor:CodeMirror.Editor):void {
+  const ConsoleMsg = document.querySelector('.console-work') as HTMLElement;
+  ConsoleMsg.innerHTML = "";
+  const consCode = jsEditor.getValue();
 
-            const consCode = jsEditor.getValue();
-
-            const ConsoleMsg = document.querySelector('.console-work') as HTMLDivElement;
+            
            
             const Log = console.log.bind(console);
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
-              ConsoleMsg.innerHTML += "";
+              //ConsoleMsg.innerHTML += "";
               test.forEach((element) => {
               
                 ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
@@ -157,6 +165,5 @@ export function FullIde(): void {
          ConsoleMsg.innerHTML = `<p style="color:red;">error</p>`
           
            }
-       }  
-   })
+  
 }
