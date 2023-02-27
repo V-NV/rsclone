@@ -21,7 +21,7 @@ import { getLogout } from "../View/logout";
 //import { AboutContent,AboutOn } from "./about";
 export function Header() {
   const Header = document.querySelector("header") as HTMLBodyElement;
-  
+
   Header.className = "header-wrap";
   Header.innerHTML += "";
   Header.innerHTML += `
@@ -49,7 +49,6 @@ export function Header() {
           <a href="#signup"><div class="header-btn signup">SIGN UP</div></a>`
       }
 
-        <div class="header-btn lang">EN</div>
         <div class="header-btn theme"></div>
       </div>
       
