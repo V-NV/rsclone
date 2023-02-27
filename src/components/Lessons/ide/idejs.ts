@@ -68,6 +68,8 @@ import { CurrienNum } from "../lessons";
     
      }
      checkSolution(JsCode);
+     Reset(JsEditor);
+
   });
   
 }
@@ -109,8 +111,25 @@ for(let i = 0; i<=JsCode.length; i++) {
     }
 }
 }
-      
+function Reset(JsEditor:CodeMirror.Editor):void {
   
+      const BtnReset = document.querySelector(".btn-reset") as HTMLButtonElement;
+    const previewWindow = document.querySelector(
+      ".courses-editor-code-result"
+    ) as HTMLElement;
+    const HtmlMessage = document.querySelector(
+      ".courses-editor-message"
+    ) as HTMLElement;
+    BtnReset.addEventListener("click", () => {
+      JsEditor.setValue("");
+      previewWindow.textContent = "";
+      HtmlMessage.textContent = "";
+    });
+}
+
+
+
+
   
     
   

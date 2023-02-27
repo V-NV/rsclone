@@ -102,7 +102,7 @@ export function FullIde(): void {
               jsCode.replace("console.log","")
             }*/
 
-            const previewWindow = document.querySelector('#preview-window')
+            const previewWindow = document.querySelector('#preview-window');
            const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
            ConsClear.innerHTML = "";
 
@@ -112,7 +112,7 @@ export function FullIde(): void {
            // previewWindow.contentWindow.document;
            if(iWindow) {
              try{
-            iWindow.location.href='/'
+            iWindow.location.href='/';
             
             iWindow.open();
             
@@ -135,7 +135,8 @@ export function FullIde(): void {
           ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
              }
             /************************************************/
-            ConsOut(jsEditor);     
+            ConsOut(jsEditor); 
+            Reset(jsEditor,htmlEdit,cssEditor);    
        }  
    })
 }
@@ -146,9 +147,7 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
   ConsoleMsg.innerHTML = "";
   const consCode = jsEditor.getValue();
 
-            
-           
-            //const Log = console.log.bind(console);
+                //const Log = console.log.bind(console);
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
@@ -171,4 +170,24 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
           
            }
   
+}
+function Reset(JsEditor:CodeMirror.Editor,htmlEdit:CodeMirror.Editor,cssEditor:CodeMirror.Editor):void {
+  
+const BtnReset = document.querySelector(".full-reset") as HTMLButtonElement;
+const ConsoleW = document.querySelector(".console-work") as HTMLElement;
+const previewWindow = document.querySelector('#preview-window');
+let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
+const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
+SWindow = window.frames[0]
+const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+
+BtnReset.addEventListener("click", () => {
+  JsEditor.setValue("");
+  htmlEdit.setValue("");
+  cssEditor.setValue("");
+  if(iWindow){
+    BWindow.innerHTML = "";
+    }
+  ConsoleW.textContent = "";
+});
 }
