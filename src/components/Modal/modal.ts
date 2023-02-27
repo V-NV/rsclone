@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { errorMessage } from "../Api/register-login.api";
+import { errorMessage, getUserIsLogin } from "../Api/register-login.api";
 import { setNewUserPost } from "../Api/user-post.api";
 import { getUpdateStorage } from "../Storage/webStorage";
 
@@ -41,12 +41,15 @@ export const Modal = () => {
   setModalListener();
 };
 
-const setModalButton = () => {
+const setModalButton = async () => {
   const modalButton = document.querySelector(".modal-button") as HTMLElement;
   const modalBg = document.querySelector(".modal-bg") as HTMLElement;
   modalBg.addEventListener("click", setModal);
-  modalButton.addEventListener("click", () => {
-    setModal();
+  const login = await getUserIsLogin();
+  login ? modalButton.classList.toggle("active") : null;
+
+  modalButton.addEventListener("click", async () => {
+    login ? setModal() : null;
   });
 };
 const setModal = () => {
