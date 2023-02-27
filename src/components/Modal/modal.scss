@@ -7,6 +7,10 @@
   transition: ease-in-out 0.2s;
 }
 
+.error-massage {
+  color: red;
+}
+
 .modal-form {
   position: fixed;
   transform: translate(-50%, -60%);
@@ -28,7 +32,8 @@
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  background-color: #bf34f1;
+  background-color: gray;
+
   position: fixed;
   right: 50px;
   bottom: 100px;
@@ -38,6 +43,26 @@
 
     width: 60%;
     fill: var(--color-bg);
+  }
+
+  &:hover::after {
+    position: absolute;
+    left: -300%;
+    top: -50%;
+    z-index: 15;
+    background-color: #bf34f1;
+    color: var(--color-text);
+    font-family: "Kanit";
+    content: attr(data-title);
+    font-size: 32px;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  &.active {
+    background-color: #bf34f1;
+    content: none;
   }
 }
 

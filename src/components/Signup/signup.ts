@@ -1,6 +1,5 @@
 import { IRegisterData } from "../../types/api.interface";
 import { registerUser } from "../Api/register-login.api";
-import { Main } from "../Main/Main";
 import {
   checkRequired,
   checkUser,
@@ -35,9 +34,8 @@ export function SignUp(): void {
                 <label for="password"> Password</label>
                 <input type="text" id="password" placeholder="Enter password" autocomplete="off"/>
                 <small>Error</small>
-              </div>
-            
-            
+              </div>        
+              <small class="error-massage"></small>
             <button type="submit" class="form-button" id="form-button">   Sign Up</button>
         </form>
             <p class="signup-signin">Already have an account? <a href="#signin" class="p-link-signin">   Sign In</a></p>
@@ -70,6 +68,10 @@ function FormSignUp(): void {
         (created = await registerUser(body)))
       : console.log("no validate");
 
-    created ? setTimeout(Main, 2000) : null;
+    created
+      ? setTimeout(() => {
+          (window.location.href = "#"), location.reload();
+        }, 2000)
+      : null;
   });
 }
