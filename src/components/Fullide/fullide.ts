@@ -2,6 +2,8 @@ import CodeMirror from "codemirror";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/dracula.css";
 import "codemirror/theme/darcula.css";
+import "codemirror/theme/midnight.css";
+import "codemirror/theme/monokai.css";
 import "codemirror/mode/xml/xml.js";
 import "codemirror/mode/css/css.js";
 import "codemirror/mode/javascript/javascript.js";
@@ -16,7 +18,7 @@ export function FullIde(): void {
     main.innerHTML = "";
     main.innerHTML += ` 
     <section class="full-ide-wrap">
-    <div class="home">
+    <div class="home-sandbox">
     <a href="#"><button><svg class="btnh" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 122.88 112.07" viewBox="0 0 122.88 112.07"><path d="M61.44 0 0 60.18l14.99 7.87L61.04 19.7l46.85 48.36 14.99-7.87L61.44 0zM18.26 69.63 61.5 26.38l43.11 43.25v42.43H73.12V82.09H49.49v29.97H18.26V69.63z"/></svg></button></a>
 
      <button class="pathTitle">
@@ -72,19 +74,19 @@ export function FullIde(): void {
         lineNumbers: true,
         tabSize:4,
         mode:"xml",
-        theme:"darcula"
+        theme:"dracula"
         });
         const cssEditor = CodeMirror((document.querySelector(".css-code") as HTMLDivElement),{
         lineNumbers: true,
         tabSize:4,
         mode:"css",
-        theme:"darcula"
+        theme:"dracula"
         });
         const jsEditor = CodeMirror((document.querySelector(".js-code") as HTMLDivElement),{
         lineNumbers: true,
         tabSize:4,
         mode:"javascript",
-        theme:"darcula"
+        theme:"dracula"
         });
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
             const htmlCode = htmlEdit.getValue('');
