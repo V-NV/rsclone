@@ -30,7 +30,7 @@ export function Header() {
 
       <div class="header-btn-cont-left" id="app">
         <div class="logo-box" id="ptn">
-        <a href="#"><img class="logo" src="${logo}" alt="logo"></a>
+        <a href="#"><img class="logo flare" src="${logo}" alt="logo"></a>
         </div>
        <a href="#"><div class="header-btn discription">COURSES</div></a>
 

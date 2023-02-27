@@ -1,3 +1,7 @@
+import sticker_05 from "./../../assets/img/stickers/sticker_05.gif";
+import sticker_01 from "./../../assets/img/stickers/sticker_01.gif";
+import sticker_02 from "./../../assets/img/stickers/sticker_02.gif";
+
 export function AboutPage(): void {
   const main = document.querySelector("main") as HTMLElement;
   //main.className = "present-main-wrap";
@@ -5,23 +9,25 @@ export function AboutPage(): void {
   main.innerHTML += ` 
     <section class="about-main-wrap">
       <div class="about-main-cont">
-
           <p class="about-title">OUR TEAM</p>
           <div class="team-container">
             <div class="member-container">
               <div class="member-img member_01"></div>
               <h2 class="member-name">Nikolay</h2>
               <span class="member-sub">The Godfather. TypeScript king.</span>
+              <img class="team-stick" src="${sticker_02}" />
             </div>
             <div class="member-container">
               <div class="member-img member_02"></div>
               <h2 class="member-name">Alexey</h2>
               <span class="member-sub">Hardworking. Git specialist.</span>
+              <img class="team-stick" src="${sticker_05}" />
           </div>
           <div class="member-container">
             <div class="member-img member_03"></div>
             <h2 class="member-name">Fedor</h2>
             <span class="member-sub">What is he doing here?</span>
+            <img class="team-stick" src="${sticker_01}" />
         </div>
         </div>
         <div class="about-us-cont">

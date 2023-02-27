@@ -19,7 +19,7 @@ export function Main(): void {
                   <p class="present-up-p">Learn to Programming for Free</p>
                   <p class="present-up-p2">Learn HTML, CSS and JavaScript</p>
               </div>
-              <a href="#signup"><div class="present-up-button">TRY NOW!</div></a>
+              <a href="#signup"><div class="present-up-button">TRY NOW! <span class="flare"></span></div></a>
 
             </div>
             <div class="present-right-up-box">
