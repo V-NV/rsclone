@@ -94,7 +94,7 @@ export function FullIde(): void {
         theme:"dracula"
         });
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
-            const htmlCode = htmlEdit.getValue('');
+            const htmlCode = htmlEdit.getValue() + "<p></p>";
             const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
             const jsCode = "<script>" + jsEditor.getValue() + "</script>";
           
@@ -139,9 +139,10 @@ export function FullIde(): void {
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
+              ConsoleMsg.innerHTML += "";
               test.forEach((element) => {
               
-                ConsoleMsg.innerHTML += `<p>${element}</p>`;
+                ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
               });
              // eslint-disable-next-line prefer-rest-params
               return Log(...arguments);
