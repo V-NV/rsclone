@@ -36,6 +36,11 @@ body {
 .logo {
   width: 100%;
   cursor: pointer;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    transform: rotate(-8deg) scale(1.2);
+  }
 }
 
 .header-btn-cont-left {
