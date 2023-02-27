@@ -61,7 +61,7 @@ function FormSignIn(): void {
 
     created
       ? setTimeout(() => {
-          location.reload();
+          (window.location.href = "#"), location.reload();
         }, 2000)
       : null;
   });
