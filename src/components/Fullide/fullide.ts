@@ -94,19 +94,26 @@ export function FullIde(): void {
             const previewWindow = document.querySelector('#preview-window')
             
             const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
-
+            let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
            // previewWindow.contentWindow.document;
            if(iWindow) {
             iWindow.location.href='/'
+            
             iWindow.open();
+            
             iWindow.write(htmlCode + cssCode + jsCode);
+
+            SWindow = window.frames[0]
+
+            const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+            BWindow.style.color = "fffbd3";
+            BWindow.style.fontSize = "22px";
+            /*let x = (document.querySelector("#preview-window") as HTMLIFrameElement).contentWindow;
+            x = window.frames[0];
+            const XXX = x.document.querySelector("body") as HTMLBodyElement;
+            XXX.style.color = "blue";*/
             iWindow.close();
 
        }  
    })
 }
-/*const x = document.querySelector("iframe").contentWindow;
-//x = window.frames[0];
-
-x.document.querySelector("body").style.backgroundColor = "blue";
-// this would turn the 1st iframe in document blue.*/
