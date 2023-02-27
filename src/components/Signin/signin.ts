@@ -29,8 +29,7 @@ export function SignIn(): void {
                 <input type="text" id="password" placeholder="Enter password" autocomplete="off"/>
                 <small>Error</small>
               </div>
-            
-            
+              <small class="error-massage"></small>
             <button type="submit" class="form-button" id="form-button">   Sign In</button>
         </form>       
           </div>
@@ -60,6 +59,10 @@ function FormSignIn(): void {
         Cookies.set("user_session", created.accessToken))
       : console.log("no validate");
 
-    created ? setTimeout(() => location.reload(), 2000) : null;
+    created
+      ? setTimeout(() => {
+          (window.location.href = "#"), location.reload();
+        }, 2000)
+      : null;
   });
 }

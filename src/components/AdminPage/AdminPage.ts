@@ -3,7 +3,7 @@ import { deleteUserPost, getUserPost } from "../Api/user-post.api";
 import { DataTest } from "../Main/ReviewTemplate";
 import { webStorage } from "../Storage/webStorage";
 
-export const AdminPage = async () => {
+export const AdminPage = () => {
   const main = document.querySelector("main") as HTMLElement;
   main.innerHTML = "";
   main.innerHTML += `<section class="admin_page">
@@ -21,8 +21,12 @@ export const AdminPage = async () => {
     <div class="admin_page-user-post-container"></div>
   </div>
 </section> `;
-  await renderAdminPost();
-  setAdminForm();
+  try {
+    renderAdminPost();
+    setAdminForm();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const adminUserPostRender = async (body: IUserPost[]) => {

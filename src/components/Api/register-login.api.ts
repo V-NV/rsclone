@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { IRegisterData, IToken, TLoginUser } from "../../types/api.interface";
+import { IRegisterData, TLoginUser } from "../../types/api.interface";
 // import { webStorage } from "../Storage/webStorage";
 import { getLogout } from "../View/logout";
 
@@ -8,31 +8,49 @@ export const SERVER_URL =
   "https://backend-for-rsclone-production.up.railway.app";
 
 export const registerUser = async (body: IRegisterData): Promise<boolean> => {
-  const resp = await fetch(`${SERVER_URL}/auth/register`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  resp.status === 400
-    ? await resp.json().then((item) => console.error(item.message))
-    : console.log("Пользователь зарегистрирован");
-  return resp.status === 400 ? false : true;
+  try {
+    const resp = await fetch(`${SERVER_URL}/auth/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    resp.status === 400
+      ? await resp.json().then((item) => {
+          errorMessage(item.message), console.error(item.message);
+        })
+      : await errorMessage("Unknown error");
+    return resp.status === 400 ? false : true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };
 
-export const loginUser = async (body: TLoginUser): Promise<IToken> => {
-  const resp = await fetch(`${SERVER_URL}/auth/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  resp.status === 401
-    ? await resp.json().then((item) => console.error(item.message))
-    : console.log("Use is login");
-  return resp.status === 201 ? { ...(await resp.json()) } : false;
+export const loginUser = async (body: TLoginUser) => {
+  try {
+    const resp = await fetch(`${SERVER_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    resp.status === 400
+      ? await resp.json().then((item) => {
+          errorMessage(item.message), console.error(item.message);
+        })
+      : null;
+    resp.status === 401
+      ? await resp.json().then((item) => {
+          errorMessage(item.message);
+        })
+      : null;
+    return resp.status === 201 ? { ...(await resp.json()) } : false;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getUserIsLogin = async () => {
@@ -52,6 +70,11 @@ export const getUserIsLogin = async () => {
       return false;
     }
   }
+};
+
+export const errorMessage = async (error: string) => {
+  const message = document.querySelector(".error-massage") as HTMLElement;
+  message.innerHTML = `${error}`;
 };
 
 // export const getUserLogin = async () => {

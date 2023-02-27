@@ -13,7 +13,7 @@ import { SignIn } from "../Signin/signin";
 import { SignUp } from "../Signup/signup";*/
 import { Root } from "../Routing/root";
 import { AdminPage } from "../AdminPage/AdminPage";
-// import { isAdmin } from "../Api/user-post.api";
+import { isAdmin } from "../Api/user-post.api";
 import { getLogout } from "../View/logout";
 //import { FullIde } from "../Fullide/fullide";
 
@@ -41,7 +41,7 @@ export function Header() {
       <div class="header-btn-cont-right">
       ${
         Cookies.get("username")
-          ? ` <a href="#"><div class="header-btn username">${Cookies.get(
+          ? `<a href="#admin-page"><div class="header-btn username">${Cookies.get(
               "username"
             )}</div></a>
           <div class="header-btn logout">Logout</div>`
@@ -70,9 +70,9 @@ export function Header() {
 const getUserRole = () => {
   const userName = document?.querySelector(".username") as HTMLDivElement;
   userName?.addEventListener("click", async () => {
-    // const admin = await isAdmin();
-    // admin ? await AdminPage() : null;
-    await AdminPage();
+    const admin = await isAdmin();
+    admin ? AdminPage() : null;
+    // await AdminPage();
   });
 };
 
