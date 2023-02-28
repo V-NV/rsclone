@@ -20,7 +20,7 @@ export const registerUser = async (body: IRegisterData): Promise<boolean> => {
       ? await resp.json().then((item) => {
           errorMessage(item.message), console.error(item.message);
         })
-      : await errorMessage("Unknown error");
+      : console.log("User is registered!");
     return resp.status === 400 ? false : true;
   } catch (error) {
     console.log(error);
