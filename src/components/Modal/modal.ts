@@ -20,17 +20,17 @@ export const Modal = () => {
         <h3>Send us your feedback</h3>
         <div class="form-control">
           <label for="img-url">Link to your photo (URL)</label>
-          <input type="text" id="img-url" placeholder="Link to your photo" autocomplete="off"/>
+          <input type="text" id="img-url" placeholder="Link to your photo" autocomplete="off" minlength="20"/>
         </div>
 
         <div class="form-control">
-          <label for="title">Your name</label>
-          <input type="text" id="title" placeholder="Your name" autocomplete="off"/>
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="Your title" autocomplete="off" minlength="5"/>
         </div>
 
         <div class="form-control">
           <label for="post">Your feedback</label>
-          <input type="text" id="post" placeholder="Your feedback" autocomplete="off" size="45"/>
+          <input type="text" id="post" placeholder="Your feedback" autocomplete="off" size="45" minlength="10"/>
         </div>
         <small class="error-massage"></small>
         <button type="submit" class="form-button" id="form-button">Post your message!</button>
