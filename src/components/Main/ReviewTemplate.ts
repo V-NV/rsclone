@@ -39,7 +39,7 @@ export function ReviewTemplate(data: TUserNewPost[]): void {
     .map((item, index) => {
       if (index % 2 === 0) {
         return `<div class="review-item">
-    <div class="review-img"><img src="${item.imgUrl}" alt=""></div>
+    <div class="review-img back-img"><img src="${item.imgUrl}" alt=""></div>
     <div class="review-text-wrap">
       <p class="review-name">${item.title}</p>
       <p class="review-text">${item.post}</p>

@@ -287,6 +287,13 @@ main {
   color: var(--color-text);
 }
 
+.back-img {
+  background-image: url("./assets/img/Main/images.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @media (max-width: 1599px) {
   .section-title {
     font-size: 3vw;
@@ -346,7 +353,6 @@ main {
   }
 
   .review-img {
-    background-image: url("./assets/img/Main/images.jpg");
     img {
       width: 18.75vw;
       height: 18.75vw;
