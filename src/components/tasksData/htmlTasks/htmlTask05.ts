@@ -1,5 +1,5 @@
 const HtmlTask05 = `
-  <h1>HTML: HTML Attributes</h1>
+  <h1>HTML: Attributes</h1>
   <p>
     Page markup information can have many subtleties and nuances. For example,
     you can specify the type of element, but you can also pass additional

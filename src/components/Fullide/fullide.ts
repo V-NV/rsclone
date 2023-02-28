@@ -9,9 +9,18 @@ import "codemirror/mode/css/css.js";
 import "codemirror/mode/javascript/javascript.js";
 import "codemirror/mode/htmlmixed/htmlmixed.js";
 
-/*
-import "codemirror/addon/lint/lint";
-import "codemirror/addon/lint/javascript-lint";*/
+import "codemirror/addon/hint/javascript-hint";
+import "codemirror/addon/lint/javascript-lint";
+
+import "codemirror/addon/hint/css-hint";
+import "codemirror/addon/lint/css-lint";
+
+//import "codemirror/addon/hint/xml-hint";
+//import "codemirror/addon/lint
+
+import "codemirror/addon/hint/show-hint";
+import "codemirror/addon/hint/show-hint.css";
+
 export function FullIde(): void {
     const main = document.querySelector("main") as HTMLElement;
     //main.className = "present-main-wrap";
@@ -77,18 +86,21 @@ export function FullIde(): void {
 
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
         lineNumbers: true,
+        extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
         mode:"xml",
-        theme:"dracula"
+        theme:"dracula",
         });
         const cssEditor = CodeMirror((document.querySelector(".css-code") as HTMLDivElement),{
         lineNumbers: true,
+        extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
         mode:"css",
         theme:"dracula"
         });
         const jsEditor = CodeMirror((document.querySelector(".js-code") as HTMLDivElement),{
         lineNumbers: true,
+        extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
         mode:"javascript",
         theme:"dracula"

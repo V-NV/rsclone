@@ -41,7 +41,7 @@ const HtmlTasks = [
     },
   {
     taskNum: 5,
-    title: "HTML: HTML Attributes",
+    title: "HTML: Attributes",
     task: HtmlTask05,
     solution: '<ptitle="Mycooltooltip">IlikeHTML!</p>',
     solution2:"",
