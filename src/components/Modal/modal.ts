@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import { errorMessage, getUserIsLogin } from "../Api/register-login.api";
 import { setNewUserPost } from "../Api/user-post.api";
+import { checkValidateForm } from "../Service/auth.login.service";
 import { getUpdateStorage } from "../Storage/webStorage";
 
 export const Modal = () => {
@@ -16,24 +17,27 @@ export const Modal = () => {
   <div class="modal-container">
   <div class="modal-bg"></div>
     <div class="modal-form signin-form-cont">
-      <form class="form form-modal" id="form">
+      <form class="form form-modal" id="form-modal">
         <h3>Send us your feedback</h3>
         <div class="form-control">
           <label for="img-url">Link to your photo (URL)</label>
-          <input type="text" id="img-url" placeholder="Link to your photo" autocomplete="off" minlength="20"/>
+          <input type="text" id="img-url" placeholder="Link to your photo" autocomplete="off"/>
+          <small></small>
         </div>
 
         <div class="form-control">
           <label for="title">Title</label>
-          <input type="text" id="title" placeholder="Your title" autocomplete="off" minlength="5"/>
+          <input type="text" id="title" placeholder="Your title" autocomplete="off"/>
+          <small></small>
         </div>
 
         <div class="form-control">
           <label for="post">Your feedback</label>
-          <input type="text" id="post" placeholder="Your feedback" autocomplete="off" size="45" minlength="10"/>
+          <input type="text" id="post" placeholder="Your feedback" autocomplete="off" size="45"/>
+          <small></small>
         </div>
         <small class="error-massage"></small>
-        <button type="submit" class="form-button" id="form-button">Post your message!</button>
+        <button type="submit" class="form-button" id="form-modal-button">Post your message!</button>
       </form>
     </div>
   </div>`;
@@ -68,25 +72,35 @@ export const setModalListener = () => {
 
   formModal.addEventListener("submit", async (e: SubmitEvent) => {
     e.preventDefault();
-    const status = await setNewUserPost({
-      username: `${Cookies.get("username")}`,
-      imgUrl: imgUrl.value,
-      title: title.value,
-      post: post.value,
-    });
+    const validateImgUrl = checkValidateForm(
+      imgUrl,
+      20,
+      "length min 20 symbols"
+    );
+    const validateTitle = checkValidateForm(title, 5, "length min 5 symbols");
+    const validatePost = checkValidateForm(post, 20, "length min 10 symbols");
 
-    if (status) {
-      setTimeout(async () => {
-        setModal();
-        (imgUrl.value = ""), (title.value = ""), (post.value = "");
-        await getUpdateStorage();
-      }, 2000);
-    } else {
-      errorMessage("Пользователь не зарегистрирован");
-      console.log("Пользователь не зарегистрирован");
-      Cookies.remove("user_session");
-      Cookies.remove("username");
-      // setTimeout(() => location.reload(), 1000);
+    if (validateImgUrl && validateTitle && validatePost) {
+      const status = await setNewUserPost({
+        username: `${Cookies.get("username")}`,
+        imgUrl: imgUrl.value,
+        title: title.value,
+        post: post.value,
+      });
+
+      if (status) {
+        setTimeout(async () => {
+          setModal();
+          (imgUrl.value = ""), (title.value = ""), (post.value = "");
+          await getUpdateStorage();
+        }, 2000);
+      } else {
+        errorMessage("Пользователь не зарегистрирован");
+        console.log("Пользователь не зарегистрирован");
+        Cookies.remove("user_session");
+        Cookies.remove("username");
+        // setTimeout(() => location.reload(), 1000);
+      }
     }
   });
 };

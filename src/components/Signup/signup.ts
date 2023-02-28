@@ -59,7 +59,12 @@ function FormSignUp(): void {
     let created = false;
     e.preventDefault();
     checkRequired([username, email, password]);
-    checkUser(username) && checkEmail(email) && checkPassword(password)
+
+    const validUser = checkUser(username);
+    const validEmail = checkEmail(email);
+    const validPassword = checkPassword(password);
+
+    validUser && validEmail && validPassword
       ? ((body = {
           name: username.value,
           email: email.value,

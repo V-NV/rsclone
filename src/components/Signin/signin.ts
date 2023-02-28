@@ -49,7 +49,11 @@ function FormSignIn(): void {
     let created: IToken = { username: "", accessToken: "", refreshToken: "" };
     e.preventDefault();
     checkRequired([email, password]);
-    checkEmail(email) && checkPassword(password)
+
+    const validEmail = checkEmail(email);
+    const validPassword = checkPassword(password);
+
+    validEmail && validPassword
       ? ((body = {
           email: email.value,
           password: password.value,
@@ -59,7 +63,7 @@ function FormSignIn(): void {
         Cookies.set("user_session", created.accessToken))
       : console.log("no validate");
 
-    created
+    created.accessToken !== ""
       ? setTimeout(() => {
           (window.location.href = "#"), location.reload();
         }, 2000)
