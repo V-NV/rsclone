@@ -17,7 +17,21 @@ export const Validate = (
 };
 
 export function checkEmail(email: HTMLInputElement) {
-  if (eml.test(email.value.toLowerCase())) {
+  const emailDomains = [
+    "@gmail.com",
+    "@yahoo.com",
+    "@hotmail.com",
+    "@yandex.ru",
+    "@mail.ru",
+  ];
+  const domain = email.value.slice(email.value.indexOf("@"));
+  const validEmail = emailDomains.includes(domain);
+  if (!validEmail) {
+    Validate(email, "error", "Invalided email domain");
+    return false;
+  }
+
+  if (eml.test(email.value.toLowerCase()) && validEmail) {
     Validate(email, "success");
     return true;
   } else {
@@ -62,6 +76,20 @@ export function checkUser(username: HTMLInputElement) {
     return true;
   } else {
     Validate(username, "error", "Name length min 3 symbols");
+    return false;
+  }
+}
+
+export function checkValidateForm(
+  html: HTMLInputElement,
+  len: number,
+  message: string
+) {
+  if (html.value.toLowerCase().length >= len) {
+    Validate(html, "success");
+    return true;
+  } else {
+    Validate(html, "error", message);
     return false;
   }
 }
