@@ -35,25 +35,27 @@ export function ReviewTemplate(data: TUserNewPost[]): void {
   reviewContainer.innerHTML = `
   <div class="section-title">Reviews</div>
   <div class="review-items-container">
-  ${data.map((item, index) => {
-    if (index % 2 === 0) {
-      return `<div class="review-item">
-    <div class="review-img"><img src="${item.imgUrl}" alt="reviewer"></div>
+  ${data
+    .map((item, index) => {
+      if (index % 2 === 0) {
+        return `<div class="review-item">
+    <div class="review-img"><img src="${item.imgUrl}" alt=""></div>
     <div class="review-text-wrap">
       <p class="review-name">${item.title}</p>
       <p class="review-text">${item.post}</p>
     </div>
   </div>`;
-    } else {
-      return `<div class="review-item">
+      } else {
+        return `<div class="review-item">
   <div class="review-text-wrap">
     <p class="review-name">${item.title}</p>
     <p class="review-text">${item.post}</p>
   </div>
-  <div class="review-img"><img src="${item.imgUrl}" alt="reviewer"></div>
+  <div class="review-img"><img src="${item.imgUrl}" alt=""></div>
 </div>`;
-    }
-  })}
+      }
+    })
+    .join("")}
   </div>`;
   if (data.length > 3) {
     document

@@ -26,7 +26,7 @@ export function SignIn(): void {
 
               <div class="form-control">
                 <label for="password"> Password</label>
-                <input type="text" id="password" placeholder="Enter password" autocomplete="off"/>
+                <input type="password" id="password" placeholder="Enter password" autocomplete="off"/>
                 <small>Error</small>
               </div>
               <small class="error-massage"></small>
