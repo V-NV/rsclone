@@ -33,6 +33,7 @@
   height: 100px;
   width: 100px;
   background-color: gray;
+  font-size: 32px;
 
   position: fixed;
   right: 50px;
@@ -54,7 +55,7 @@
     color: var(--color-text);
     font-family: "Kanit";
     content: attr(data-title);
-    font-size: 32px;
+
     white-space: nowrap;
     padding: 10px;
     border-radius: 5px;
@@ -98,5 +99,6 @@
   .modal-button {
     width: 50px;
     height: 50px;
+    font-size: 16px;
   }
 }

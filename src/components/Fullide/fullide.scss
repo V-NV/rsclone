@@ -24,7 +24,7 @@
   height: 100px;
   background-color: #262626;
   font-family: "Kanit";
-  
+
   gap: 5px;
   border-radius: 20px;
 }
@@ -37,9 +37,9 @@
   width: 1440px;
   max-width: 100%;
   height: 1000px;
-  background-color: #FFFBD3;
+  background-color: #fffbd3;
   font-family: "Kanit";
-  
+
   gap: 5px;
   border-radius: 20px;
 }
@@ -116,62 +116,55 @@
   border-radius: 20px;
 }
 */
-.full-left{
+.full-left {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   height: 98%;
   width: 39%;
-
 }
-.CodeMirror{
+.CodeMirror {
   font-size: 20px;
   border-radius: 5px;
 }
 .CodeMirror-lines {
   font-size: 22px;
 }
-.editor-header{
+.editor-header {
   width: 100%;
   height: 3.3%;
-  background-color: #FFFBD3;
+  background-color: #fffbd3;
   color: rgb(12, 87, 87);
   font-size: 30px;
   text-align: center;
   line-height: 38px;
-  
 }
 .editor-html,
 .editor-css,
-.editor-js{
+.editor-js {
   width: 98%;
   height: 30%;
   display: flex;
-  
 }
 
 .code-html,
 .code-css,
-.code-js{
+.code-js {
   width: 100%;
   height: 100%;
 }
 
-
-
-
-
-.full-right{
+.full-right {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   height: 100%;
   width: 59%;
 }
-.full-btn-cont{
+.full-btn-cont {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -179,69 +172,65 @@
   max-width: 90%;
   min-width: 65%;
   height: 70px;
-  
 }
 .full-run,
-.full-reset{
+.full-reset {
   height: 50px;
   width: 190px;
   background-color: rgb(133, 60, 19);
-  color: #FFFBD3;
+  color: #fffbd3;
   border-radius: 20px;
   text-align: center;
   line-height: 50px;
   font-family: "Kanit";
   font-size: 24px;
 }
-.full-run:hover{
-cursor: pointer;
-opacity: 0.8;
+.full-run:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
-.full-reset:hover{
-cursor: pointer;
-opacity: 0.8;
+.full-reset:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
-.full-work{
+.full-work {
   width: 100%;
   height: 75%;
   box-sizing: border-box;
   padding: 20px;
-  color: #FFFBD3;
+  color: #fffbd3;
   background-color: #282a36;
   border-radius: 10px;
 }
-.full-console{
+.full-console {
   width: 100%;
   height: 170px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
-.console-header{
+.console-header {
   width: 100%;
   height: 36px;
   font-family: "Kanit";
   text-align: center;
   font-size: 30px;
   color: rgb(12, 87, 87);
- 
 }
-.console-work{
-  width:97% ;
+.console-work {
+  width: 97%;
   height: 130px;
   background-color: #282a36;
   border-radius: 10px;
   padding: 15px;
-  color: #FFFBD3;
+  color: #fffbd3;
   overflow: auto;
 }
 .courses-lesson-text-box::-webkit-scrollbar {
   width: 18px; /* ширина для вертикального скролла */
   height: 0px; /* высота для горизонтального скролла */
-  background-color: #FFFBD3;
-  
+  background-color: #fffbd3;
 }
 /* ползунок скроллбара */
 .courses-lesson-text-box::-webkit-scrollbar-thumb {
