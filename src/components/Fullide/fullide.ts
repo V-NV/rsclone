@@ -179,7 +179,7 @@ else{
            // previewWindow.contentWindow.document;
            if(iWindow) {
              try{
-            iWindow.location.href='/';
+            iWindow.location.reload();
             
             iWindow.open();
             
