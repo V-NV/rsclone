@@ -29,6 +29,7 @@ export function SignIn(): void {
                 <input type="password" id="password" placeholder="Password" autocomplete="off"/>
                 <small>Error</small>
               </div>
+              <small class="error-massage"></small>
             <button type="submit" class="form-button" id="form-button">   Sign In</button>
         </form>       
           </div>
