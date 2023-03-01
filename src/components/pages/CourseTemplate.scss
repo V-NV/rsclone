@@ -185,6 +185,7 @@
   padding: 20px 0 20px 25px;
   border-radius: 10px;
   transition: ease-in-out 0.2s;
+  margin-top: 20px;
 
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   &:hover {
@@ -232,6 +233,7 @@
   }
 
   .task-item {
+    margin-top: 1.25vw;
     width: 41.875vw;
     font-size: 1.5vw;
     padding: 1.25vw 0 1.25vw 1.5625vw;
