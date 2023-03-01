@@ -181,8 +181,13 @@ small {
 }
 
 @media (max-width: 750px) {
+  .signin-form-cont {
+    box-shadow: none;
+  }
+
   .form-button {
     font-size: 16px;
+    box-shadow: none;
   }
 
   .form-control label {
@@ -192,5 +197,6 @@ small {
   .form-control input {
     padding: 1.875vw;
     font-size: 16px;
+    box-shadow: none;
   }
 }

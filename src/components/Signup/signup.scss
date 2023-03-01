@@ -34,7 +34,7 @@
   font-family: "Kanit";
   font-size: 24px;
   font-weight: 400;
-  color: #262626;
+  color: var(--color-bg);
   margin-top: 34px;
   opacity: 0.8;
   text-align: center;
@@ -107,6 +107,7 @@ small {
   .signup-form-cont {
     margin-top: 1.875vw;
     padding: 3.125vw;
+    box-shadow: none;
   }
 
   .signup-main-cont {
@@ -121,6 +122,10 @@ small {
 }
 
 @media (max-width: 750px) {
+  .signup-form-cont {
+    box-shadow: none;
+  }
+
   .signup-signin {
     font-size: 16px;
   }

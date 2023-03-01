@@ -52,7 +52,7 @@ export function Main(): void {
           <a href="#javascript"><div class="card-3 card">
               <div class="card-3__img card__img"></div>
               <p class="card-title">javascript</p>
-              <p class="card-sub">6 hours</p>
+              <p class="card-sub">10 hours</p>
             </div></a>
           </li>
         </div>
