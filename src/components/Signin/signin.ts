@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { IToken, TLoginUser } from "../../types/api.interface";
+// import { IToken, TLoginUser } from "../../types/api.interface";
 import { loginUser } from "../Api/register-login.api";
 // import { Main } from "../Main/Main";
 import {
@@ -45,28 +45,57 @@ function FormSignIn(): void {
   const password = document.getElementById("password") as HTMLInputElement;
 
   form.addEventListener("submit", async function (e: Event) {
-    let body: TLoginUser = { email: "", password: "" };
-    let created: IToken = { username: "", accessToken: "", refreshToken: "" };
+    // let body: TLoginUser = { email: "", password: "" };
+    // let created: IToken = { username: "", accessToken: "", refreshToken: "" };
+    const formButton = document.querySelector(
+      ".form-button"
+    ) as HTMLButtonElement;
+
+    formButton.disabled = true;
+
     e.preventDefault();
     checkRequired([email, password]);
 
     const validEmail = checkEmail(email);
     const validPassword = checkPassword(password);
 
-    validEmail && validPassword
-      ? ((body = {
-          email: email.value,
-          password: password.value,
-        }),
-        (created = await loginUser(body)),
-        Cookies.set("username", created.username),
-        Cookies.set("user_session", created.accessToken))
-      : console.log("no validate");
+    if (validEmail && validPassword) {
+      const created = await loginUser({
+        email: email.value,
+        password: password.value,
+      });
 
-    created.accessToken !== ""
-      ? setTimeout(() => {
+      if (created) {
+        Cookies.set("username", created.username);
+        Cookies.set("user_session", created.accessToken);
+        setTimeout(() => {
           (window.location.href = "#"), location.reload();
-        }, 2000)
-      : null;
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          formButton.disabled = false;
+        }, 1000);
+      }
+    } else {
+      setTimeout(() => {
+        formButton.disabled = false;
+      }, 1000);
+    }
+
+    // validEmail && validPassword
+    //   ? ((body = {
+    //       email: email.value,
+    //       password: password.value,
+    //     }),
+    //     (created = await loginUser(body)),
+    //     Cookies.set("username", created.username),
+    //     Cookies.set("user_session", created.accessToken))
+    //   : (formButton.disabled = false);
+
+    // created.accessToken !== ""
+    //   ? setTimeout(() => {
+    //       (window.location.href = "#"), location.reload();
+    //     }, 2000)
+    //   : null;
   });
 }

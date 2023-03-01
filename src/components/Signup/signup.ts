@@ -1,4 +1,4 @@
-import { IRegisterData } from "../../types/api.interface";
+// import { IRegisterData } from "../../types/api.interface";
 import { registerUser } from "../Api/register-login.api";
 import {
   checkRequired,
@@ -55,28 +55,40 @@ function FormSignUp(): void {
   const password = document.getElementById("password") as HTMLInputElement;
 
   form.addEventListener("submit", async function (e: Event) {
-    let body: IRegisterData = { name: "", email: "", password: "" };
-    let created = false;
+    // let body: IRegisterData = { name: "", email: "", password: "" };
+
     e.preventDefault();
     checkRequired([username, email, password]);
+
+    const formButton = document.querySelector(
+      ".form-button"
+    ) as HTMLButtonElement;
+
+    formButton.disabled = true;
 
     const validUser = checkUser(username);
     const validEmail = checkEmail(email);
     const validPassword = checkPassword(password);
 
-    validUser && validEmail && validPassword
-      ? ((body = {
-          name: username.value,
-          email: email.value,
-          password: password.value,
-        }),
-        (created = await registerUser(body)))
-      : console.log("no validate");
-
-    created
-      ? setTimeout(() => {
+    if (validUser && validEmail && validPassword) {
+      const created = await registerUser({
+        name: username.value,
+        email: email.value,
+        password: password.value,
+      });
+      if (created) {
+        setTimeout(() => {
           (window.location.href = "#"), location.reload();
-        }, 2000)
-      : null;
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          formButton.disabled = false;
+        }, 1000);
+      }
+    } else {
+      setTimeout(() => {
+        formButton.disabled = false;
+      }, 1000);
+    }
   });
 }

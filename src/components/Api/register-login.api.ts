@@ -50,6 +50,7 @@ export const loginUser = async (body: TLoginUser) => {
     return resp.status === 201 ? { ...(await resp.json()) } : false;
   } catch (error) {
     console.log(error);
+    return false;
   }
 };
 
