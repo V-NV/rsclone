@@ -77,8 +77,8 @@ const jsTasks = [
     taskNum: 10,
     title: "JavaScript: Operator precedence",
     task: jsTask10,
-    solution:'(((',
-    solution2:'11',
+    solution:'))',
+    solution2:'49',
   },
 ];
 

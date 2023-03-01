@@ -16,9 +16,12 @@ export function Lessons(num: number, ide: string): void {
   const poi = ide;
   CurrientIde = poi;
   CurrienNum = num;
-  if(num < 2) {
-  CurrienNum = 2;
-  }
+  //CurrienNum = num;
+  //num = this.num
+  /*if(num < 1) {
+  CurrienNum = 2;*/
+  
+
   main.innerHTML = "";
   main.innerHTML += `
     <section class="courses-main-wrap">
@@ -73,9 +76,9 @@ export function Lessons(num: number, ide: string): void {
                     This will be message.
                   </div>
                   <div class="courses-editor-btn-box-bottom">
-                      <a href="#${ide}/${CurrienNum - 1}" class="a-prev"><div class="editor-btn-bottom btn-prev" id="btn-prev">PREV</div></a>
+                      <a href="#${ide}/${num - 1}" class="a-prev"><button class="editor-btn-bottom btn-prev" id="btn-prev">PREV</button></a>
                        <div class="editor-btn-bottom btn-run">RUN</div>
-                       <a href="#${ide}/${num+1}" id="a-next"><div class="editor-btn-bottom btn-next" id="btn-next">NEXT</div></a> 
+                       <a href="#${ide}/${num+1}" id="a-next"><button class="editor-btn-bottom btn-next" id="btn-next">NEXT</button></a> 
                   </div>
 
            </div>
@@ -91,7 +94,7 @@ export function Lessons(num: number, ide: string): void {
   CourseName(ide);
   LevelName(num, ide);
   //checkSolution(num);
-  BtnPrev(num);
+  BtnPrev(num,ide);
   Prev_btn_OnOff(num);
   BtnNext(num,ide);
   Next_btn_OnOff(num);
@@ -201,12 +204,17 @@ function Next_btn_OnOff(num: number) {
   }
 }
 
-function BtnPrev(num: number) {
+function BtnPrev(num: number, ide:string) {
   const Prev = document.querySelector("#btn-prev") as HTMLButtonElement;
+  const Ahref = document.querySelector("#a-next") as HTMLAnchorElement;
   Prev.addEventListener("click", () => {
-    if (num > 1) {
+console.log(num)
+    if (num > 3) {
       const count: number = num - 1;
       Lessons(count, CurrientIde);
+    }
+    else {
+      Ahref.href = `#${ide}/1`
     }
   });
 }
