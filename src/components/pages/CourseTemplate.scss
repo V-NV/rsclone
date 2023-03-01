@@ -168,6 +168,7 @@
 }
 
 .tasks-container {
+  margin-left: 0;
   li {
     list-style: none;
     p {
@@ -205,7 +206,23 @@
 
 @media (max-width: 1599px) {
   .home {
+    font-size: 2vw;
     margin-top: 6.25vw;
+
+    & button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      svg {
+        width: 3.125vw;
+        height: 3.125vw;
+      }
+    }
+  }
+
+  .tasks-title {
+    font-size: 3.25vw;
+    margin: 1.875vw 0;
   }
 
   .text {
@@ -218,10 +235,27 @@
     margin-top: 1.875vw;
   }
 
+  .header {
+    font-size: 2vw;
+  }
+
+  .parag {
+    font-size: 2vw;
+    margin-top: 1vw;
+  }
+
   .course-logo-box {
     min-width: 22.6875vw;
     height: 22.6875vw;
     margin-left: 3.125vw;
+  }
+
+  .stats-item {
+    margin-right: 2.5vw;
+  }
+
+  .button-box {
+    margin-top: 1.5625vw;
   }
 
   .btn {
@@ -242,5 +276,49 @@
   .tasks-sub {
     padding-left: 3.75vw;
     font-size: 2vw;
+  }
+
+  .course {
+    margin-top: 2.6875vw;
+    padding: 3.125vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .gif-cont {
+    box-shadow: none;
+  }
+
+  .home {
+    font-size: 16px;
+    margin-top: 0;
+
+    & button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .tasks-title {
+    font-size: 16px;
+  }
+
+  .stats-item {
+    font-size: 8px;
+  }
+
+  .course {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .course-logo-box {
+    display: none;
   }
 }
