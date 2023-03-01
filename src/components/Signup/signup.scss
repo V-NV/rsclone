@@ -92,23 +92,6 @@
   margin-bottom: 5px;
 }
 
-.form-control input {
-  box-sizing: border-box;
-  border: 2px solid #262626;
-  border-radius: 15px;
-  background-color: #262626;
-  display: block;
-  width: 692px;
-  height: 85px;
-  padding: 8px;
-  font-size: 32px;
-  color: #fffbd3;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-.form-control input:focus::placeholder {
-  visibility: hidden;
-}
-
 .form-control input:focus {
   outline: 0;
   border-color: #777;
@@ -136,28 +119,4 @@ small {
   font-size: 25px;
   margin-left: 20px;
   line-height: 5px;
-}
-
-.form-button {
-  width: 450px;
-  height: 65px;
-  outline: 0;
-  font-family: "Kanit";
-  font-size: 24px;
-  font-weight: 400;
-  border: none;
-  color: #fffbd3;
-  background-color: #914c36;
-  border-radius: 15px;
-  padding: 24px;
-  cursor: pointer;
-  margin-left: 18%;
-  margin-top: 28px;
-  line-height: 20px;
-  transition: 0.7s;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-.form-button:hover {
-  opacity: 0.8;
-  transition: 0.7s;
 }
