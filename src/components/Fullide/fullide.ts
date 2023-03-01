@@ -69,24 +69,79 @@ export function FullIde(): void {
 
         </div> 
         <div class="full-right">
+
+
+
             <div class="full-btn-cont">
                  <div class="full-run">RUN</div>
+                   <div class="rrr">INSTRUCTION</div>
                  <div class="full-reset">RESET</div>
+<pre class="ide-pre">
+ 
+<h3 class="ide-h3">
+Hello, this is a SANDBOX fully functional IDE
+Here you can practice your skills, as well 
+as write any code in <span style="color:#d0cf5f;">HTML CSS</span> and <span style="color:#d0cf5f;">JavaScript</span>
+<span style="color:#10b4ae;">For example:</span> copy the code below into the 
+appropriate editor and click the RUN button
+</h3>
+<h4>
+------------------------------                             
+</h4>
+<h3 class="ide-h3">
+<span style="color:#10b4ae;">PS:</span> For your convenience, there is an   
+auto-suggestion for entering the code, 
+just start typing and press <span style="color:#b36bdb;">"CTRL"</span> and 
+the sandbox will add the code itself or 
+offer options to choose from.
+</h3>
+<pre>
             </div>
+
+
+
             <iframe class="full-work" id="preview-window"></iframe>
+            
             <div class="full-console">
                 <div class="console-header">Console</div>
                 <div class="console-work"></div>
             </div>
-
+           
         </div>
       </div>
     </section>`;
 
+    
+ const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
+ const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
+ //const bbb = document.querySelector('.full-right pre') as HTMLElement;
+ 
+ ExjBtn.addEventListener('click', () => {
+  //console.log('Congr.children[3]');
+ 
+
+
+if(Congr.classList.contains('off')){
+  Congr.classList.remove('off')
+  //Congr.textContent += ""
+}
+else{
+  Congr.classList.add('off')
+}
+})
+
+
+ 
+ 
+
+ 
+ 
+
+ 
 
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
         lineNumbers: true,
-        extraKeys:{"Ctrl":"autocomplete"},
+        //extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
         mode:"xml",
         theme:"dracula",
@@ -140,6 +195,7 @@ export function FullIde(): void {
             const XXX = x.document.querySelector("body") as HTMLBodyElement;
             XXX.style.color = "blue";*/
             iWindow.close();
+            iWindow.location.href='/';
              }
              catch(e){const ConsoleMsg = document.querySelector(
               ".console-work"
@@ -147,8 +203,10 @@ export function FullIde(): void {
           ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
              }
             /************************************************/
+            
             ConsOut(jsEditor); 
-            Reset(jsEditor,htmlEdit,cssEditor);    
+            Reset(jsEditor,htmlEdit,cssEditor);   
+            
        }  
    })
 }
@@ -192,11 +250,13 @@ let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
 const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
 SWindow = window.frames[0]
 const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+//const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
 
 BtnReset.addEventListener("click", () => {
   JsEditor.setValue("");
   htmlEdit.setValue("");
   cssEditor.setValue("");
+  //Congr.textContent = "";
   if(iWindow){
     BWindow.innerHTML = "";
     }

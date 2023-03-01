@@ -7,7 +7,38 @@
   font-family: "Kanit";
   src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
 }
-
+.rrr{
+  display: block;
+  width: 120px;
+  height: 40px;
+  background-color: rgb(50, 148, 11);
+  color: #FFFBD3;
+  line-height: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+.rrr:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+.ide-pre{
+  position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    top: 320px;
+    color: #4ecb37;
+    max-width: 54vw;
+    height: 80%;
+    left: 45vw;
+}
+.ide-h3{
+  font-size: 1.8vw;
+}
+.off{
+  display: none;
+}
 .full-ide-wrap {
   box-sizing: border-box;
   display: flex;
