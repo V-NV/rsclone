@@ -140,6 +140,7 @@ export function FullIde(): void {
             const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
             BWindow.style.color = "fffbd3";
             BWindow.style.fontSize = "22px";
+            BWindow.style.overflowY = "hidden";
             /*let x = (document.querySelector("#preview-window") as HTMLIFrameElement).contentWindow;
             x = window.frames[0];
             const XXX = x.document.querySelector("body") as HTMLBodyElement;
@@ -162,8 +163,23 @@ const Log = console.log.bind(console);
 function ConsOut(jsEditor:CodeMirror.Editor):void {
   const ConsoleMsg = document.querySelector('.console-work') as HTMLElement;
   ConsoleMsg.innerHTML = "";
-  const consCode = jsEditor.getValue();
-
+  //const consCode = jsEditor.getValue();
+  /*----------------------------------------------------------- */
+  const Length = jsEditor.lineCount();
+  const arrLine:string[] = [];
+  let argStr = "";
+  for(let i = 0; i <Length; i += 1) {
+    if(!jsEditor.getLine(i).includes('add')
+      /*jsEditor.getLine(i).includes('console.log(') 
+       jsEditor.getLine(i).includes('let') ||
+       jsEditor.getLine(i).includes('const') ||
+       jsEditor.getLine(i).includes('var')*/
+       ) {
+       arrLine.push(jsEditor.getLine(i))
+    }
+  }
+  argStr = arrLine.join(";");
+  //console.log(argStr)
                 //const Log = console.log.bind(console);
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
@@ -177,13 +193,13 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
               return Log(...arguments);
             };
            try{
-            const test = new Function(consCode);
+            const test = new Function(argStr);
             test();
            }
            catch(e){/*const Message = document.querySelector(
             ".courses-editor-message"
           ) as HTMLElement;*/
-            ConsoleMsg.innerHTML = `<p style="display:none;"></p>`
+            ConsoleMsg.innerHTML = `<p style="color:red;font-size:20px;">err</p>`
           
            }
   
