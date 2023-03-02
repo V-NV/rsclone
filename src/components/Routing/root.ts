@@ -38,8 +38,8 @@ export function Root() {
         errCount = true;
         Lessons(i, "javascript");
       }
-    }
-    if (hash == "") {
+    
+     else if (hash == "") {
       Main();
     } else if (hash == Page.About) {
       errCount = true;
@@ -69,5 +69,9 @@ export function Root() {
     } else if (errCount == false) {
       page404();
     }
+    else if (window.location.hash[0] !== '#'){
+      page404();
+    }
+  }
   });
 }

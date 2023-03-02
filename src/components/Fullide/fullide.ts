@@ -95,7 +95,7 @@ just start typing and press <span style="color:#b36bdb;">"CTRL"</span> and
 the sandbox will add the code itself or 
 offer options to choose from.
 </h3>
-<pre>
+<pre>  
             </div>
 
 
@@ -112,10 +112,10 @@ offer options to choose from.
     </section>`;
 
     
- const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
- const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
+ //const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
+ //const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
  //const bbb = document.querySelector('.full-right pre') as HTMLElement;
- 
+ /*
  ExjBtn.addEventListener('click', () => {
   //console.log('Congr.children[3]');
  
@@ -128,18 +128,15 @@ if(Congr.classList.contains('off')){
 else{
   Congr.classList.add('off')
 }
-})
+})*/
 
 
  
  
-
- 
  
 
- 
 
-    const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
+  const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
         lineNumbers: true,
         //extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
@@ -160,26 +157,31 @@ else{
         mode:"javascript",
         theme:"dracula"
         });
+        
+        
+
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
             const htmlCode = htmlEdit.getValue() + "<p></p>";
             const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
-            const jsCode = "<script>" + jsEditor.getValue() + "</script>";
-          
+            const jsCode = "<script>" + (function (){jsEditor.getValue()})() + "</script>";
+            
+            
            /* if(jsCode.includes('console.log')) {
               jsCode.replace("console.log","")
             }*/
 
-            const previewWindow = document.querySelector('#preview-window');
+            const previewWindow = document.querySelector('#preview-window') as HTMLIFrameElement;
            const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
            ConsClear.innerHTML = "";
 
-
+          //previewWindow.contentDocument?.location.assign("/");
             const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
             let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
-           // previewWindow.contentWindow.document;
+             // previewWindow.contentWindow.document;
            if(iWindow) {
              try{
-            iWindow.location.reload();
+            
+            iWindow.location.href ="/"
             
             iWindow.open();
             
@@ -194,8 +196,9 @@ else{
             x = window.frames[0];
             const XXX = x.document.querySelector("body") as HTMLBodyElement;
             XXX.style.color = "blue";*/
-            iWindow.close();
-            iWindow.location.href='/';
+            iWindow.close();  
+            //iWindow.location.reload();  
+            //iWindow.location.href='/#';
              }
              catch(e){const ConsoleMsg = document.querySelector(
               ".console-work"
@@ -263,3 +266,5 @@ BtnReset.addEventListener("click", () => {
   ConsoleW.textContent = "";
 });
 }
+
+

@@ -54,8 +54,8 @@ async function RootRun() {
       errCount = true;
       Lessons(i, "javascript");
     }
-  }
-  if (hash == "") {
+  
+  else if (hash == "") {
     Main();
   } else if (hash == Page.About) {
     errCount = true;
@@ -85,5 +85,9 @@ async function RootRun() {
   } else if (errCount == false) {
     page404();
   }
-  //})
-}
+  else if (window.location.hash[0] !== '#'){
+    page404();
+  }
+}}
+
+
