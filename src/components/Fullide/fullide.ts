@@ -106,9 +106,14 @@ export function FullIde(): void {
         theme:"dracula"
         });
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
-            const htmlCode = htmlEdit.getValue() + "<p></p>";
-            const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
-            const jsCode = "<script>" + jsEditor.getValue() + "</script>";
+            const Framy = document.querySelector('#preview-window');
+            Framy?.remove();
+            const FramyNew = document.querySelector('.full-console') as HTMLDivElement;
+            FramyNew.insertAdjacentHTML('beforebegin','<iframe class="full-work" id="preview-window"></iframe>');
+          
+          const htmlCode = htmlEdit.getValue() + "<p></p>";
+          const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
+          const jsCode = "<script>" + jsEditor.getValue() + "</script>";
           
            /* if(jsCode.includes('console.log')) {
               jsCode.replace("console.log","")
@@ -178,7 +183,7 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
            catch(e){/*const Message = document.querySelector(
             ".courses-editor-message"
           ) as HTMLElement;*/
-            ConsoleMsg.innerHTML = `<p style="color:red;">error</p>`
+            ConsoleMsg.innerHTML = `<p style="display:none;"></p>`
           
            }
   
