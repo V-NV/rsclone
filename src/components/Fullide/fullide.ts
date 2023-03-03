@@ -71,6 +71,7 @@ export function FullIde(): void {
         <div class="full-right">
             <div class="full-btn-cont">
                  <div class="full-run">RUN</div>
+                 <div class="full-run">RUN</div>
                  <div class="full-reset">RESET</div>
 <pre class="ide-pre">
  
@@ -102,6 +103,22 @@ offer options to choose from.
         </div>
       </div>
     </section>`;
+
+  const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
+  const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
+  //const bbb = document.querySelector('.full-right pre') as HTMLElement;
+ 
+ ExjBtn.addEventListener('click', () => {
+  //console.log('Congr.children[3]');
+ 
+if(Congr.classList.contains('off')){
+  Congr.classList.remove('off')
+  //Congr.textContent += ""
+}
+else{
+  Congr.classList.add('off')
+}
+})
 
 
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
