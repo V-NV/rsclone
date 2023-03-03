@@ -72,6 +72,26 @@ export function FullIde(): void {
             <div class="full-btn-cont">
                  <div class="full-run">RUN</div>
                  <div class="full-reset">RESET</div>
+<pre class="ide-pre">
+ 
+<h3 class="ide-h3">
+Hello, this is a SANDBOX fully functional IDE
+Here you can practice your skills, as well 
+as write any code in <span style="color:#d0cf5f;">HTML CSS</span> and <span style="color:#d0cf5f;">JavaScript</span>
+<span style="color:#10b4ae;">For example:</span> copy the code below into the 
+appropriate editor and click the RUN button
+</h3>
+<h4>
+                 ------------------------------                             
+</h4>
+<h3 class="ide-h3">
+<span style="color:#10b4ae;">PS:</span> For your convenience, there is an   
+auto-suggestion for entering the code, 
+just start typing and press <span style="color:#b36bdb;">"CTRL"</span> and 
+the sandbox will add the code itself or 
+offer options to choose from.
+</h3>
+<pre>                  
             </div>
             <iframe class="full-work" id="preview-window"></iframe>
             <div class="full-console">
