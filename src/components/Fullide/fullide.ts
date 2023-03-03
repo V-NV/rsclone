@@ -71,28 +71,40 @@ export function FullIde(): void {
         <div class="full-right">
             <div class="full-btn-cont">
                  <div class="full-run">RUN</div>
-                 <div class="full-run">RUN</div>
+                 <div class="rrr">Instruction</div>
                  <div class="full-reset">RESET</div>
-<pre class="ide-pre">
+<div class="ide-pre off">
  
 <h3 class="ide-h3">
 Hello, this is a SANDBOX fully functional IDE
 Here you can practice your skills, as well 
 as write any code in <span style="color:#d0cf5f;">HTML CSS</span> and <span style="color:#d0cf5f;">JavaScript</span>
-<span style="color:#10b4ae;">For example:</span> copy the code below into the 
-appropriate editor and click the RUN button
+<span style="color:#10b4ae;">
+<br>
+For example:</span> Click Example button, code adding to editor and click the RUN button.
 </h3>
-<h4>
-                 ------------------------------                             
-</h4>
+<br>
+<br>
+<div class="exampl-btn-cont">
+<button class="btn-example ex1">Example1</button>
+<button class="btn-example ex2">Example2</button>
+<button class="btn-example ex3">Example3</button>
+</div>
+<br>
+<br>
+
+                                           
+
+
+
 <h3 class="ide-h3">
-<span style="color:#10b4ae;">PS:</span> For your convenience, there is an   
+<span style="color:#10b4ae;">Notice:</span> For your convenience, there is an   
 auto-suggestion for entering the code, 
 just start typing and press <span style="color:#b36bdb;">"CTRL"</span> and 
 the sandbox will add the code itself or 
 offer options to choose from.
 </h3>
-<pre>                  
+</div>                  
             </div>
             <iframe class="full-work" id="preview-window"></iframe>
             <div class="full-console">
@@ -119,8 +131,19 @@ else{
   Congr.classList.add('off')
 }
 })
+/**************Examples******************* */
+/*<code>
+                 HTML
 
+&lt;div class="text-box"&gt;
+ &lt;p&gt;Make your best page right Now !&lt;/p&gt;
+ &lt;button class="btn"&gt;Click me&lt;/button&gt;
+&lt;/div&gt;
+                 CSS
+  
+</code>*/
 
+/******************************************* */
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
         lineNumbers: true,
         extraKeys:{"Ctrl":"autocomplete"},
