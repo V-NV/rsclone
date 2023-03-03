@@ -86,9 +86,9 @@ For example:</span> Click Example button, code adding to editor and click the RU
 <br>
 <br>
 <div class="exampl-btn-cont">
-<button class="btn-example ex1">Example1</button>
-<button class="btn-example ex2">Example2</button>
-<button class="btn-example ex3">Example3</button>
+<button class="btn-example ex1" id="1">Example1</button>
+<button class="btn-example ex2" id="2">Example2</button>
+<button class="btn-example ex3" id="3">Example3</button>
 </div>
 <br>
 <br>
@@ -116,32 +116,61 @@ offer options to choose from.
       </div>
     </section>`;
 
-  const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
-  const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
-  //const bbb = document.querySelector('.full-right pre') as HTMLElement;
- 
- ExjBtn.addEventListener('click', () => {
-  //console.log('Congr.children[3]');
- 
-if(Congr.classList.contains('off')){
-  Congr.classList.remove('off')
-  //Congr.textContent += ""
+
+/**************Examples******************* */
+/*interface Ex {
+  html: String,
+  css:String,
+  js:String,
+}*/
+
+const ExampleText = [
+  {html:'html',
+   css:"css",
+   js:"js"
+  },
+  {html:`<div class="text-box">
+ <p>Make your best page right Now !</p>
+ <button class="btn">Click me</button>
+</div>
+<div class="img off"></div>
+`,
+css:`.text-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border:solid 2px red;
+}
+p{
+  color:#4ecb37;
+  text-align:center;
+}
+.img{
+  margin: 20px auto;
+  width:60vw;
+  height:550px;
+  background-position:contain;
+  background:url("https://www.bobross.com/content/bob_ross_img.png");
+}
+button{
+  width:100px;
+  height:40px;
+}
+.off{
+  display:none;
+}`,
+js:`let btn = document.querySelector('.btn');
+const img = document.querySelector('.img');
+btn.addEventListener('click',() => {
+if(img.classList.contains('off')){
+  img.classList.remove('off')
 }
 else{
-  Congr.classList.add('off')
+  img.classList.add('off')
 }
-})
-/**************Examples******************* */
-/*<code>
-                 HTML
-
-&lt;div class="text-box"&gt;
- &lt;p&gt;Make your best page right Now !&lt;/p&gt;
- &lt;button class="btn"&gt;Click me&lt;/button&gt;
-&lt;/div&gt;
-                 CSS
-  
-</code>*/
+})`
+},
+]
 
 /******************************************* */
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
@@ -179,6 +208,8 @@ else{
               jsCode.replace("console.log","")
             }*/
 
+
+
             const previewWindow = document.querySelector('#preview-window');
            const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
            ConsClear.innerHTML = "";
@@ -212,11 +243,52 @@ else{
             ) as HTMLElement;
           ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
              }
+             /***********************************************/
+             
             /************************************************/
             ConsOut(jsEditor); 
             Reset(jsEditor,htmlEdit,cssEditor);    
        }  
    })
+   function instruction() {
+  
+
+    const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
+    const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
+    //const bbb = document.querySelector('.full-right pre') as HTMLElement;
+    
+    ExjBtn.addEventListener('click', () => {
+    //console.log('Congr.children[3]');
+    
+    if(Congr.classList.contains('off')){
+    Congr.classList.remove('off')
+    addExamples();
+    //Congr.textContent += ""
+    }
+    else{
+    Congr.classList.add('off')
+    
+    }
+    
+    })
+    }
+   instruction();//кнопка инструкций on/aff
+/***********************example adding*********************/
+function addExamples() {
+  const btn = Array.from(document.querySelectorAll(".btn-example"));
+  
+ for(const b of btn) {
+   b.addEventListener('click', () => {
+     if(+b.id == 1) {
+       htmlEdit.setValue(ExampleText[+b.id].html);
+       cssEditor.setValue(ExampleText[+b.id].css);
+       jsEditor.setValue(ExampleText[+b.id].js);
+     }
+    })
+   }
+}
+/***********************example adding*********************/
+   
 }
 const Log = console.log.bind(console);
 
