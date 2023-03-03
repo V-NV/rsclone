@@ -287,11 +287,12 @@ function addExamples() {
 /***********************example adding*********************/
    
 }
-const Log = console.log.bind(console);
+//const Log = console.log.bind(console);
+
 
 function ConsOut(jsEditor:CodeMirror.Editor):void {
 
-   /***************************************************************** */
+  
             const Framy = document.querySelector('#console-window');
             Framy?.remove();
             const FramyNew = document.querySelector('.full-console') as HTMLDivElement;
@@ -306,25 +307,33 @@ function ConsOut(jsEditor:CodeMirror.Editor):void {
            // previewWindow.contentWindow.document;
            if(iWindow) {
              try{
+              
             iWindow.location.href='/';
             
-            iWindow.open();
+     iWindow.open();
+            const Log = console.log.bind(console);
             const Length = jsEditor.lineCount();
   const arrLine:string[] = [];
   let argStr = "";
   for(let i = 0; i <Length; i += 1) {
-    if(!(jsEditor.getLine(i).match(/add/g) || jsEditor.getLine(i).match(/ass/g) || jsEditor.getLine(i).match(/uery/g) || jsEditor.getLine(i).match(/else/g))) {
+    if(!(jsEditor.getLine(i).match(/add/g) ||
+         jsEditor.getLine(i).match(/ass/g) || 
+         jsEditor.getLine(i).match(/uery/g) || 
+         jsEditor.getLine(i).match(/else/g) ||
+         jsEditor.getLine(i).match(/ocum/g) ||
+         jsEditor.getLine(i).match(/wri/g) ||
+         jsEditor.getLine(i) == "})")) {
        arrLine.push(jsEditor.getLine(i))
     }
   }
-        argStr = arrLine.join(" ; ");
+        argStr = arrLine.join(" ;; ");
 console.log(argStr)
             console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
               //ConsoleMsg.innerHTML += "";
               test.forEach((element) => {
-                iWindow.write(`<p style="color:#FFFBD3;">${"> " + element}</p>`);
+                iWindow.write(`<p style="color:#FFFBD3;line-height:0px;">${"> " + element}</p>`);
                 //ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
               });
              // eslint-disable-next-line prefer-rest-params
@@ -338,9 +347,7 @@ console.log(argStr)
              console.dir('errrrrr')
            }
 
-            
-
-            SWindow = window.frames[0]
+           SWindow = window.frames[0]
 
             const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
             BWindow.style.color = "fffbd3";
