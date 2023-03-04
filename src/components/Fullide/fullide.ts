@@ -24,8 +24,6 @@ import "codemirror/addon/lint/css-lint";
 import "codemirror/addon/hint/show-hint";
 import "codemirror/addon/hint/show-hint.css";
 
-
-
 export function FullIde(): void {
   const main = document.querySelector("main") as HTMLElement;
   //main.className = "present-main-wrap";
@@ -174,7 +172,6 @@ else{
     },
   ];
 
-  
   /*************************widget************************ */
   //function Widg():void {
 
@@ -185,10 +182,10 @@ else{
       for (let i = 0; i < widgets.length; ++i)
         jsEditor.removeLineWidget(widgets[i]);
       widgets.length = 0;
-      
-      jsEditor.setOption('lint', { options: {'esversion': '8'  }});
-      
-      JSHINT(jsEditor.getValue());
+
+      // jsEditor.setOption('lint', { options: {'esversion': '8'  }});
+
+      JSHINT(jsEditor.getValue(), { esversion: 6 });
       for (let i = 0; i < JSHINT.errors.length; ++i) {
         const err = JSHINT.errors[i];
         if (!err) continue;
@@ -199,7 +196,7 @@ else{
         msg.appendChild(document.createTextNode(err.reason));
         msg.className = "lint-error";
         widgets.push(
-        //  jsEditor.setOption('lint', { options: {'esversion': '8'  }});
+          //  jsEditor.setOption('lint', { options: {'esversion': '8'  }});
           jsEditor.addLineWidget(err.line - 1, msg, {
             coverGutter: false,
             noHScroll: true,
@@ -215,7 +212,6 @@ else{
     if (info.top + info.clientHeight < after)
       jsEditor.scrollTo(null, after - info.clientHeight + 3);
   }
-
 
   const sc = document.getElementById("preview-window");
   let content;
@@ -248,8 +244,8 @@ else{
     document.querySelector(".js-code") as HTMLDivElement,
     {
       lineNumbers: true,
-//      lineWrapping: true,
-      gutters: ['CodeMirror-lint-markers'],
+      //      lineWrapping: true,
+      gutters: ["CodeMirror-lint-markers"],
       extraKeys: { Ctrl: "autocomplete" },
       tabSize: 4,
       mode: "javascript",
@@ -257,7 +253,7 @@ else{
       theme: "dracula",
     }
   );
-  
+
   /* window.editor = CodeMirror(document.getElementById("code"), {
           lineNumbers: true,
           mode: "javascript",
