@@ -1,4 +1,7 @@
 import CodeMirror from "codemirror";
+
+import JSHINT from "jshint/index"
+
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/dracula.css";
 import "codemirror/theme/darcula.css";
@@ -8,6 +11,8 @@ import "codemirror/mode/xml/xml.js";
 import "codemirror/mode/css/css.js";
 import "codemirror/mode/javascript/javascript.js";
 import "codemirror/mode/htmlmixed/htmlmixed.js";
+
+
 
 import "codemirror/addon/hint/javascript-hint";
 import "codemirror/addon/lint/javascript-lint";
@@ -171,6 +176,46 @@ else{
 })`
 },
 ]
+/*************************widget************************ */
+//function Widg():void {
+  
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const widgets:any = []
+function updateHints() {
+  jsEditor.operation(function(){
+    for (let i = 0; i < widgets.length; ++i)
+      jsEditor.removeLineWidget(widgets[i]);
+    widgets.length = 0;
+
+    JSHINT(jsEditor.getValue());
+    for (let i = 0; i < JSHINT.errors.length; ++i) {
+      const err = JSHINT.errors[i];
+      if (!err) continue;
+      const msg = document.createElement("div");
+      const icon = msg.appendChild(document.createElement("span"));
+      icon.innerHTML = "!!";
+      icon.className = "lint-error-icon";
+      msg.appendChild(document.createTextNode(err.reason));
+      msg.className = "lint-error";
+      widgets.push(jsEditor.addLineWidget(err.line - 1, msg, {coverGutter: false, noHScroll: true}));
+    }
+  });
+  const info = jsEditor.getScrollInfo();
+  const after = jsEditor.charCoords({line: jsEditor.getCursor().line + 1, ch: 0}, "local").top;
+  if (info.top + info.clientHeight < after)
+    jsEditor.scrollTo(null, after - info.clientHeight + 3);
+}
+//}
+
+
+
+const sc = document.getElementById("preview-window");
+ let content  
+ if(sc){
+       content = sc.textContent || sc.innerText || sc.innerHTML;
+   }
+  
 
 /******************************************* */
     const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
@@ -192,8 +237,31 @@ else{
         extraKeys:{"Ctrl":"autocomplete"},
         tabSize:4,
         mode:"javascript",
+        value: content,
         theme:"dracula"
+        
+      });
+
+       /* window.editor = CodeMirror(document.getElementById("code"), {
+          lineNumbers: true,
+          mode: "javascript",
+          value: content
+        });*/
+      
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        let waiting:any;
+        jsEditor.on("change", function() {
+          clearTimeout(waiting);
+          waiting = setTimeout(updateHints, 500);
         });
+      
+        setTimeout(updateHints, 100);
+        //Widg();
+
+
+
+
+
         (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
 
           const Cler = document.querySelector('.ide-pre') as HTMLDivElement;
@@ -420,3 +488,4 @@ BtnReset.addEventListener("click", () => {
   ConsoleW.textContent = "";
 });
 }
+
