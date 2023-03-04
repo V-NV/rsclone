@@ -1,6 +1,6 @@
 import CodeMirror from "codemirror";
-
-import JSHINT from "jshint/index"
+import { JSHINT } from "jshint";
+// import { JSHINT } from "jshint/index";
 
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/dracula.css";
@@ -11,8 +11,6 @@ import "codemirror/mode/xml/xml.js";
 import "codemirror/mode/css/css.js";
 import "codemirror/mode/javascript/javascript.js";
 import "codemirror/mode/htmlmixed/htmlmixed.js";
-
-
 
 import "codemirror/addon/hint/javascript-hint";
 import "codemirror/addon/lint/javascript-lint";
@@ -27,10 +25,10 @@ import "codemirror/addon/hint/show-hint";
 import "codemirror/addon/hint/show-hint.css";
 
 export function FullIde(): void {
-    const main = document.querySelector("main") as HTMLElement;
-    //main.className = "present-main-wrap";
-    main.innerHTML = "";
-    main.innerHTML += ` 
+  const main = document.querySelector("main") as HTMLElement;
+  //main.className = "present-main-wrap";
+  main.innerHTML = "";
+  main.innerHTML += ` 
     <section class="full-ide-wrap">
       
      <div class="full-home-cont">
@@ -121,26 +119,23 @@ offer options to choose from.
       </div>
     </section>`;
 
-
-/**************Examples******************* */
-/*interface Ex {
+  /**************Examples******************* */
+  /*interface Ex {
   html: String,
   css:String,
   js:String,
 }*/
 
-const ExampleText = [
-  {html:'html',
-   css:"css",
-   js:"js"
-  },
-  {html:`<div class="text-box">
+  const ExampleText = [
+    { html: "html", css: "css", js: "js" },
+    {
+      html: `<div class="text-box">
  <p>Make your best page right Now !</p>
  <button class="btn">Click me</button>
 </div>
 <div class="img off"></div>
 `,
-css:`.text-box{
+      css: `.text-box{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -164,7 +159,7 @@ button{
 .off{
   display:none;
 }`,
-js:`let btn = document.querySelector('.btn');
+      js: `let btn = document.querySelector('.btn');
 const img = document.querySelector('.img');
 btn.addEventListener('click',() => {
 if(img.classList.contains('off')){
@@ -173,268 +168,284 @@ if(img.classList.contains('off')){
 else{
   img.classList.add('off')
 }
-})`
-},
-]
-/*************************widget************************ */
-//function Widg():void {
-  
+})`,
+    },
+  ];
+  /*************************widget************************ */
+  //function Widg():void {
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const widgets:any = []
-function updateHints() {
-  jsEditor.operation(function(){
-    for (let i = 0; i < widgets.length; ++i)
-      jsEditor.removeLineWidget(widgets[i]);
-    widgets.length = 0;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const widgets: any = [];
+  function updateHints() {
+    jsEditor.operation(function () {
+      for (let i = 0; i < widgets.length; ++i)
+        jsEditor.removeLineWidget(widgets[i]);
+      widgets.length = 0;
 
-    JSHINT(jsEditor.getValue());
-    for (let i = 0; i < JSHINT.errors.length; ++i) {
-      const err = JSHINT.errors[i];
-      if (!err) continue;
-      const msg = document.createElement("div");
-      const icon = msg.appendChild(document.createElement("span"));
-      icon.innerHTML = "!!";
-      icon.className = "lint-error-icon";
-      msg.appendChild(document.createTextNode(err.reason));
-      msg.className = "lint-error";
-      widgets.push(jsEditor.addLineWidget(err.line - 1, msg, {coverGutter: false, noHScroll: true}));
+      JSHINT(jsEditor.getValue());
+      for (let i = 0; i < JSHINT.errors.length; ++i) {
+        const err = JSHINT.errors[i];
+        if (!err) continue;
+        const msg = document.createElement("div");
+        const icon = msg.appendChild(document.createElement("span"));
+        icon.innerHTML = "!!";
+        icon.className = "lint-error-icon";
+        msg.appendChild(document.createTextNode(err.reason));
+        msg.className = "lint-error";
+        widgets.push(
+          jsEditor.addLineWidget(err.line - 1, msg, {
+            coverGutter: false,
+            noHScroll: true,
+          })
+        );
+      }
+    });
+    const info = jsEditor.getScrollInfo();
+    const after = jsEditor.charCoords(
+      { line: jsEditor.getCursor().line + 1, ch: 0 },
+      "local"
+    ).top;
+    if (info.top + info.clientHeight < after)
+      jsEditor.scrollTo(null, after - info.clientHeight + 3);
+  }
+  //}
+
+  const sc = document.getElementById("preview-window");
+  let content;
+  if (sc) {
+    content = sc.textContent || sc.innerText || sc.innerHTML;
+  }
+
+  /******************************************* */
+  const htmlEdit = CodeMirror(
+    document.querySelector(".html-code") as HTMLDivElement,
+    {
+      lineNumbers: true,
+      extraKeys: { Ctrl: "autocomplete" },
+      tabSize: 4,
+      mode: "xml",
+      theme: "dracula",
     }
-  });
-  const info = jsEditor.getScrollInfo();
-  const after = jsEditor.charCoords({line: jsEditor.getCursor().line + 1, ch: 0}, "local").top;
-  if (info.top + info.clientHeight < after)
-    jsEditor.scrollTo(null, after - info.clientHeight + 3);
-}
-//}
+  );
+  const cssEditor = CodeMirror(
+    document.querySelector(".css-code") as HTMLDivElement,
+    {
+      lineNumbers: true,
+      extraKeys: { Ctrl: "autocomplete" },
+      tabSize: 4,
+      mode: "css",
+      theme: "dracula",
+    }
+  );
+  const jsEditor = CodeMirror(
+    document.querySelector(".js-code") as HTMLDivElement,
+    {
+      lineNumbers: true,
+      extraKeys: { Ctrl: "autocomplete" },
+      tabSize: 4,
+      mode: "javascript",
+      value: content,
+      theme: "dracula",
+    }
+  );
 
-
-
-const sc = document.getElementById("preview-window");
- let content  
- if(sc){
-       content = sc.textContent || sc.innerText || sc.innerHTML;
-   }
-  
-
-/******************************************* */
-    const htmlEdit = CodeMirror((document.querySelector(".html-code") as HTMLDivElement),{
-        lineNumbers: true,
-        extraKeys:{"Ctrl":"autocomplete"},
-        tabSize:4,
-        mode:"xml",
-        theme:"dracula",
-        });
-        const cssEditor = CodeMirror((document.querySelector(".css-code") as HTMLDivElement),{
-        lineNumbers: true,
-        extraKeys:{"Ctrl":"autocomplete"},
-        tabSize:4,
-        mode:"css",
-        theme:"dracula"
-        });
-        const jsEditor = CodeMirror((document.querySelector(".js-code") as HTMLDivElement),{
-        lineNumbers: true,
-        extraKeys:{"Ctrl":"autocomplete"},
-        tabSize:4,
-        mode:"javascript",
-        value: content,
-        theme:"dracula"
-        
-      });
-
-       /* window.editor = CodeMirror(document.getElementById("code"), {
+  /* window.editor = CodeMirror(document.getElementById("code"), {
           lineNumbers: true,
           mode: "javascript",
           value: content
         });*/
-      
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let waiting:any;
-        jsEditor.on("change", function() {
-          clearTimeout(waiting);
-          waiting = setTimeout(updateHints, 500);
-        });
-      
-        setTimeout(updateHints, 100);
-        //Widg();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let waiting: any;
+  jsEditor.on("change", function () {
+    clearTimeout(waiting);
+    waiting = setTimeout(updateHints, 500);
+  });
 
+  setTimeout(updateHints, 100);
+  //Widg();
 
+  (document.querySelector(".full-run") as HTMLButtonElement).addEventListener(
+    "click",
+    () => {
+      const Cler = document.querySelector(".ide-pre") as HTMLDivElement;
+      if (!Cler.classList.contains("off")) {
+        Cler.classList.add("off");
+      }
 
+      const Framy = document.querySelector("#preview-window");
+      Framy?.remove();
+      const FramyNew = document.querySelector(
+        ".full-console"
+      ) as HTMLDivElement;
+      FramyNew.insertAdjacentHTML(
+        "beforebegin",
+        '<iframe class="full-work" id="preview-window"></iframe>'
+      );
 
-        (document.querySelector('.full-run') as HTMLButtonElement).addEventListener('click',()=>{
+      const htmlCode = htmlEdit.getValue() + "<p></p>";
+      const cssCode = "<style>" + cssEditor.getValue() + "</style>";
+      const jsCode = "<script>" + jsEditor.getValue() + "</script>";
 
-          const Cler = document.querySelector('.ide-pre') as HTMLDivElement;
-          if(!Cler.classList.contains('off')){
-              Cler.classList.add('off')
-          }
+      const previewWindow = document.querySelector("#preview-window");
+      const ConsClear = document.querySelector(
+        ".console-work"
+      ) as HTMLDivElement;
+      ConsClear.innerHTML = "";
 
-            const Framy = document.querySelector('#preview-window');
-            Framy?.remove();
-            const FramyNew = document.querySelector('.full-console') as HTMLDivElement;
-            FramyNew.insertAdjacentHTML('beforebegin','<iframe class="full-work" id="preview-window"></iframe>');
-          
-          const htmlCode = htmlEdit.getValue() + "<p></p>";
-          const cssCode = "<style>"  + cssEditor.getValue() + "</style>";
-          const jsCode = "<script>" + jsEditor.getValue() + "</script>";
-          
-           const previewWindow = document.querySelector('#preview-window');
-           const ConsClear = document.querySelector('.console-work') as HTMLDivElement;
-           ConsClear.innerHTML = "";
+      const iWindow = (<HTMLIFrameElement>previewWindow).contentWindow
+        ?.document;
+      let SWindow = (<HTMLIFrameElement>previewWindow).contentWindow;
+      // previewWindow.contentWindow.document;
+      if (iWindow) {
+        try {
+          iWindow.location.href = "/";
 
+          iWindow.open();
 
-            const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
-            let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
-           // previewWindow.contentWindow.document;
-           if(iWindow) {
-             try{
-            iWindow.location.href='/';
-            
-            iWindow.open();
-            
-            iWindow.write(htmlCode + cssCode + jsCode);
+          iWindow.write(htmlCode + cssCode + jsCode);
 
-            SWindow = window.frames[0]
+          SWindow = window.frames[0];
 
-            const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
-            BWindow.style.color = "fffbd3";
-            BWindow.style.fontSize = "22px";
-            BWindow.style.overflowY = "hidden";
-            /*let x = (document.querySelector("#preview-window") as HTMLIFrameElement).contentWindow;
+          const BWindow = SWindow.document.querySelector(
+            "body"
+          ) as HTMLBodyElement;
+          BWindow.style.color = "fffbd3";
+          BWindow.style.fontSize = "22px";
+          BWindow.style.overflowY = "hidden";
+          /*let x = (document.querySelector("#preview-window") as HTMLIFrameElement).contentWindow;
             x = window.frames[0];
             const XXX = x.document.querySelector("body") as HTMLBodyElement;
             XXX.style.color = "blue";*/
-            iWindow.close();
-             }
-             catch(e){const ConsoleMsg = document.querySelector(
-              ".console-work"
-            ) as HTMLElement;
-          ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
-             }
-         
-            ConsOut(jsEditor); 
-            Reset(jsEditor,htmlEdit,cssEditor);    
-       }  
-   })
-   function instruction() {
-  
-    const Congr = document.querySelector('.ide-pre') as HTMLDivElement;
-    const ExjBtn = document.querySelector('.rrr') as HTMLButtonElement;
+          iWindow.close();
+        } catch (e) {
+          const ConsoleMsg = document.querySelector(
+            ".console-work"
+          ) as HTMLElement;
+          ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`;
+        }
+
+        ConsOut(jsEditor);
+        Reset(jsEditor, htmlEdit, cssEditor);
+      }
+    }
+  );
+  function instruction() {
+    const Congr = document.querySelector(".ide-pre") as HTMLDivElement;
+    const ExjBtn = document.querySelector(".rrr") as HTMLButtonElement;
     //const bbb = document.querySelector('.full-right pre') as HTMLElement;
-    
-    ExjBtn.addEventListener('click', () => {
-    //console.log('Congr.children[3]');
-    
-    if(Congr.classList.contains('off')){
-    Congr.classList.remove('off')
-    addExamples();
-    //Congr.textContent += ""
+
+    ExjBtn.addEventListener("click", () => {
+      //console.log('Congr.children[3]');
+
+      if (Congr.classList.contains("off")) {
+        Congr.classList.remove("off");
+        addExamples();
+        //Congr.textContent += ""
+      } else {
+        Congr.classList.add("off");
+      }
+    });
+  }
+  instruction(); //кнопка инструкций on/aff
+  /***********************example adding*********************/
+  function addExamples() {
+    const btn = Array.from(document.querySelectorAll(".btn-example"));
+
+    for (const b of btn) {
+      b.addEventListener("click", () => {
+        // if(+b.id == 1) {
+        htmlEdit.setValue(ExampleText[+b.id].html);
+        cssEditor.setValue(ExampleText[+b.id].css);
+        jsEditor.setValue(ExampleText[+b.id].js);
+        //}
+      });
     }
-    else{
-    Congr.classList.add('off')
-    
-    }
-    
-    })
-    }
-   instruction();//кнопка инструкций on/aff
-/***********************example adding*********************/
-function addExamples() {
-  const btn = Array.from(document.querySelectorAll(".btn-example"));
-  
- for(const b of btn) {
-   b.addEventListener('click', () => {
-    // if(+b.id == 1) {
-       htmlEdit.setValue(ExampleText[+b.id].html);
-       cssEditor.setValue(ExampleText[+b.id].css);
-       jsEditor.setValue(ExampleText[+b.id].js);
-     //}
-    })
-   }
-}
-/***********************example adding*********************/
-   
+  }
+  /***********************example adding*********************/
 }
 //const Log = console.log.bind(console);
 
+function ConsOut(jsEditor: CodeMirror.Editor): void {
+  const Framy = document.querySelector("#console-window");
+  Framy?.remove();
+  const FramyNew = document.querySelector(".full-console") as HTMLDivElement;
+  FramyNew.insertAdjacentHTML(
+    "beforeend",
+    '<iframe class="console-work" id="console-window"></iframe>'
+  );
 
-function ConsOut(jsEditor:CodeMirror.Editor):void {
+  //const jsCode = "<script>" + jsEditor.getValue() + "</script>";
 
-  
-            const Framy = document.querySelector('#console-window');
-            Framy?.remove();
-            const FramyNew = document.querySelector('.full-console') as HTMLDivElement;
-            FramyNew.insertAdjacentHTML('beforeend','<iframe class="console-work" id="console-window"></iframe>');
-          
-            //const jsCode = "<script>" + jsEditor.getValue() + "</script>";
-          
-            const previewWindow = document.querySelector('#console-window');
-          
-            const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
-            let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
-           // previewWindow.contentWindow.document;
-           if(iWindow) {
-             try{
-              
-            iWindow.location.href='/';
-            
-     iWindow.open();
-            const Log = console.log.bind(console);
-            const Length = jsEditor.lineCount();
-  const arrLine:string[] = [];
-  let argStr = "";
-  for(let i = 0; i <Length; i += 1) {
-    if(!(jsEditor.getLine(i).match(/add/g) ||
-         jsEditor.getLine(i).match(/ass/g) || 
-         jsEditor.getLine(i).match(/uery/g) || 
-         jsEditor.getLine(i).match(/else/g) ||
-         jsEditor.getLine(i).match(/ocum/g) ||
-         jsEditor.getLine(i).match(/wri/g) ||
-         jsEditor.getLine(i) == "})")) {
-       arrLine.push(jsEditor.getLine(i))
+  const previewWindow = document.querySelector("#console-window");
+
+  const iWindow = (<HTMLIFrameElement>previewWindow).contentWindow?.document;
+  let SWindow = (<HTMLIFrameElement>previewWindow).contentWindow;
+  // previewWindow.contentWindow.document;
+  if (iWindow) {
+    try {
+      iWindow.location.href = "/";
+
+      iWindow.open();
+      const Log = console.log.bind(console);
+      const Length = jsEditor.lineCount();
+      const arrLine: string[] = [];
+      let argStr = "";
+      for (let i = 0; i < Length; i += 1) {
+        if (
+          !(
+            jsEditor.getLine(i).match(/add/g) ||
+            jsEditor.getLine(i).match(/ass/g) ||
+            jsEditor.getLine(i).match(/uery/g) ||
+            jsEditor.getLine(i).match(/else/g) ||
+            jsEditor.getLine(i).match(/ocum/g) ||
+            jsEditor.getLine(i).match(/wri/g) ||
+            jsEditor.getLine(i) == "})"
+          )
+        ) {
+          arrLine.push(jsEditor.getLine(i));
+        }
+      }
+      argStr = arrLine.join(" ;; ");
+      console.log(argStr);
+      console.log = function () {
+        // eslint-disable-next-line prefer-rest-params
+        const test = [...arguments];
+        //ConsoleMsg.innerHTML += "";
+        test.forEach((element) => {
+          iWindow.write(
+            `<p style="color:#FFFBD3;line-height:0px;">${"> " + element}</p>`
+          );
+          //ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
+        });
+        // eslint-disable-next-line prefer-rest-params
+        return Log(...arguments);
+      };
+      try {
+        const test = new Function(argStr);
+        test();
+      } catch (e) {
+        console.dir("errrrrr");
+      }
+
+      SWindow = window.frames[0];
+
+      const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+      BWindow.style.color = "fffbd3";
+      BWindow.style.fontSize = "22px";
+
+      iWindow.close();
+    } catch (e) {
+      const ConsoleMsg = document.querySelector(".console-work") as HTMLElement;
+      ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`;
     }
   }
-        argStr = arrLine.join(" ;; ");
-console.log(argStr)
-            console.log = function () {
-              // eslint-disable-next-line prefer-rest-params
-              const test = [...arguments];
-              //ConsoleMsg.innerHTML += "";
-              test.forEach((element) => {
-                iWindow.write(`<p style="color:#FFFBD3;line-height:0px;">${"> " + element}</p>`);
-                //ConsoleMsg.innerHTML += `<p>${"> " + element}</p>`;
-              });
-             // eslint-disable-next-line prefer-rest-params
-              return Log(...arguments);
-            };
-           try{
-            const test = new Function(argStr);
-            test();
-           }
-           catch(e){
-             console.dir('errrrrr')
-           }
-
-           SWindow = window.frames[0]
-
-            const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
-            BWindow.style.color = "fffbd3";
-            BWindow.style.fontSize = "22px";
-          
-            iWindow.close();
-             }
-             catch(e){const ConsoleMsg = document.querySelector(
-              ".console-work"
-            ) as HTMLElement;
-          ConsoleMsg.innerHTML = `<p style="display:none;">ErrMsg</p>`
-             }
-            }
-   /***************************************************************** */
+  /***************************************************************** */
 
   //const ConsoleMsg = document.querySelector('.console-work') as HTMLElement;
- // ConsoleMsg.innerHTML = "";
+  // ConsoleMsg.innerHTML = "";
   //const consCode = jsEditor.getValue();
-    /*----------------------------------------------------------- */
+  /*----------------------------------------------------------- */
   /*const Length = jsEditor.lineCount();
   const arrLine:string[] = [];
   let argStr = "";
@@ -446,8 +457,8 @@ console.log(argStr)
   //argStr = arrLine.join(";");
   */
   //console.log(argStr)
-                //const Log = console.log.bind(console);
- /*           console.log = function () {
+  //const Log = console.log.bind(console);
+  /*           console.log = function () {
               // eslint-disable-next-line prefer-rest-params
               const test = [...arguments];
               //ConsoleMsg.innerHTML += "";
@@ -465,27 +476,28 @@ console.log(argStr)
            catch(e){
              ConsoleMsg.innerHTML = `<p style="color:red;font-size:20px;">err</p>`
            }*/
-  
 }
 
-function Reset(JsEditor:CodeMirror.Editor,htmlEdit:CodeMirror.Editor,cssEditor:CodeMirror.Editor):void {
-  
-const BtnReset = document.querySelector(".full-reset") as HTMLButtonElement;
-const ConsoleW = document.querySelector(".console-work") as HTMLElement;
-const previewWindow = document.querySelector('#preview-window');
-let SWindow = (<HTMLIFrameElement> previewWindow).contentWindow;
-const iWindow = (<HTMLIFrameElement> previewWindow).contentWindow?.document;
-SWindow = window.frames[0]
-const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
+function Reset(
+  JsEditor: CodeMirror.Editor,
+  htmlEdit: CodeMirror.Editor,
+  cssEditor: CodeMirror.Editor
+): void {
+  const BtnReset = document.querySelector(".full-reset") as HTMLButtonElement;
+  const ConsoleW = document.querySelector(".console-work") as HTMLElement;
+  const previewWindow = document.querySelector("#preview-window");
+  let SWindow = (<HTMLIFrameElement>previewWindow).contentWindow;
+  const iWindow = (<HTMLIFrameElement>previewWindow).contentWindow?.document;
+  SWindow = window.frames[0];
+  const BWindow = SWindow.document.querySelector("body") as HTMLBodyElement;
 
-BtnReset.addEventListener("click", () => {
-  JsEditor.setValue("");
-  htmlEdit.setValue("");
-  cssEditor.setValue("");
-  if(iWindow){
-    BWindow.innerHTML = "";
+  BtnReset.addEventListener("click", () => {
+    JsEditor.setValue("");
+    htmlEdit.setValue("");
+    cssEditor.setValue("");
+    if (iWindow) {
+      BWindow.innerHTML = "";
     }
-  ConsoleW.textContent = "";
-});
+    ConsoleW.textContent = "";
+  });
 }
-
