@@ -18,18 +18,23 @@ p{
   text-align:center;
 }
 .img{
-  margin: 20px auto;
-  width:60vw;
-  height:550px;
-  background-position:contain;
-  background:url("https://www.bobross.com/content/bob_ross_img.png");
-}
+    margin: 10px auto;
+    width:67%;
+    height:550px;
+    background:url("https://www.bobross.com/content/bob_ross_img.png");
+    bacground-repeat:no-repeat;
+    background-size:cover;
+  }
 button{
   width:100px;
   height:40px;
 }
 .off{
   display:none;
+}
+  @media screen and (max-width: 380px) {
+    .img:width:100%;
+    }
 }`,
       js: `let btn = document.querySelector('.btn');
 const img = document.querySelector('.img');
