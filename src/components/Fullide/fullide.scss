@@ -7,47 +7,46 @@
   font-family: "Kanit";
   src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
 }
-.CodeMirror-hint{
+.CodeMirror-hint {
   font-size: 20px;
-
 }
 .CodeMirror {
   border: 1px solid black;
 }
 .lint-error {
-  font-family: arial; 
-  font-size: 70%; 
+  font-family: arial;
+  font-size: 70%;
   /*background: #ffa; */
-  color: #e9acac; 
-  padding: 2px 5px 3px; 
+  color: #e9acac;
+  padding: 2px 5px 3px;
 }
 .lint-error-icon {
-  color: #e57575;; 
-  /*background-color: red;*/ 
-  font-weight: bold; 
-  border-radius: 50%; 
-  padding: 0 3px; 
+  color: #e57575;
+  /*background-color: red;*/
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0 3px;
   margin-right: 7px;
 }
-.rrr{
+.rrr {
   display: block;
-  width: 120px;
-  height: 40px;
+  padding: 5px 30px;
+  margin: 0px 5px;
   background-color: rgb(50, 148, 11);
-  color: #FFFBD3;
-  line-height: 40px;
-  border-radius: 10px;
+  color: #fffbd3;
+  border-radius: 20px;
   text-align: center;
-}
-.rrr:hover{
-  opacity: 0.8;
+  font-size: 32px;
   cursor: pointer;
+  text-transform: uppercase;
 }
-.ide-pre{
+.rrr:hover {
+  opacity: 0.8;
+}
+.ide-pre {
   position: absolute;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   top: 345px;
   color: #4ecb37;
@@ -55,30 +54,30 @@
   height: 80%;
   left: 42.7vw;
 }
-.ide-h3{
-  font-size: 1.8vw;
-  width:93%;
+.ide-h3 {
+  font-size: 32px;
+  max-width: 900px;
 }
-.off{
+.off {
   display: none;
 }
-.example-btn-cont{
+.example-btn-cont {
   max-width: 80%;
   height: 60px;
   display: flex;
   justify-content: center;
 }
-.btn-example{
+.btn-example {
   width: 125px;
   height: 50px;
   background-color: #be2ea3;
-  color: #FFFBD3;
+  color: #fffbd3;
   border-radius: 5px;
   font-size: 21px;
 }
-.btn-example:hover{
+.btn-example:hover {
   cursor: pointer;
-  opacity: .8;
+  opacity: 0.8;
 }
 .full-ide-wrap {
   box-sizing: border-box;
@@ -96,7 +95,7 @@
   height: 100px;
   background-color: #262626;
   font-family: "Kanit";
-  
+
   gap: 5px;
   border-radius: 20px;
 }
@@ -267,8 +266,7 @@
 }
 .full-run,
 .full-reset {
-  height: 50px;
-  width: 190px;
+  padding: 0 60px;
   background-color: rgb(133, 60, 19);
   color: #fffbd3;
   border-radius: 20px;
