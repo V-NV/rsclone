@@ -46,7 +46,7 @@ export function FullIde(): void {
 </div>
     <div class="full-ide-cont">
 
-        
+
 
         <div class="full-left">
           
@@ -153,7 +153,7 @@ offer options to choose from.
         msg.appendChild(document.createTextNode(err.reason));
         msg.className = "lint-error";
         widgets.push(
-    //  jsEditor.setOption('lint', { options: {'esversion': '8'  }});
+  //  jsEditor.setOption('lint', { options: {'esversion': '8'  }});
           jsEditor.addLineWidget(err.line - 1, msg, {
             coverGutter: false,
             noHScroll: true,
