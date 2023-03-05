@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section>Homo coderus</section>
+        <section>
+          <ul>
+            <li>Team Lead: v-nv</li>
+            <li>fedormalinin</li>
+            <li>AlexGorSer</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>Выбор идеи для проекта</section>
+        <section>
+          <ul>
+            <li>Сайт для обучения основам</li>
+            <li>Игры 2D: Battle City или Mortal Kombat</li>
+            <li>Новостной сайт</li>
+            <li>RSS - форум</li>
+            <li>Сайт хостинг для видео</li>
+            <li>Сайт для поиска вакансий</li>
+            <li>Messenger</li>
+          </ul>
+        </section>
+        <section>Сайт для обучения основам</section>
+        <section>
+          <p>Название проекта:</p>
+          <p>Обучающий сайт по HTML CSS ... (название временное)</p>
+        </section>
+        <section>
+          <p>Прототип для сайта</p><img src="./assets/codebasics.jpg" alt="">
+        </section>
+      </section>
+      <section>
+        <section>Выбор технологий для проекта:</section>
+        <section>
+          <p>Frontend</p>
+          <ul>
+            <li>Сборщик Webpack</li>
+            <li>Vanilla JS/TS</li>
+            <li>Предпроцессор SCSS</li>
+            <li>Prettier</li>
+            <li>Eslint</li>
+            <li>CodeMirror</li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>CodeMirror</li>
+            <li>JSHint</li>
+          </ul>
+        </section>
+        <section>
+          <p>Back-end</p>
+          <ul>
+            <li>Nest.js</li>
+            <li>bcryptjs</li>
+            <li>jwt</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>Распределения ролей</section>
+        <section>
+          <p>Frontend</p>
+          <ul>
+            <li>v-nv</li>
+            <li>fedormalinin</li>
+          </ul>
+        </section>
+        <section>
+          <p>Back-end</p>
+          <p>AlexGorSer</p>
+        </section>
+      </section>
+      <section>
+        <section>Методология разработки</section>
+        <section>Kanban
+          <img src="./assets/Новый точечный рисунок.jpg" alt="">
+        </section>
+        <section>
+          Модель ветвления Git-flow
+          <img src="./assets/02 Feature branches.svg" alt="">
+        </section>
+      </section>
+      <section>
+        <section>Проблемы во время разработки</section>
+        <section>Отсутствие опыта работы в команде</section>
+        <section>Слабое знание системы контроля версии Git и Github</section>
+      </section>
+      <section>
+        <section>Дизайн от v-nv</section>
+        <section><img width="80%" height="80%" src="./assets/image.png" alt=""></section>
+        <section>Дизайн от fedormalinin</section>
+        <section><img width="50%" height="50%" src="./assets/Main.jpg" alt=""></section>
+        <section>Дизайн от AlexGorSer</section>
+        <section><img src="./assets/alex.jpg" alt=""></section>
+        <section>Выбрали от AlexGorSer(нет)</section>
+      </section>
+      <section>
+        <section>Первые наброски функционала</section>
+        <section>Текстовые тесты</section>
+        <section>Мини игры</section>
+        <section>Полноценная IDE</section>
+        <section>В последствии разработки заменили всё на IDE с выбором из 10 заданий по HTML, CSS и JS</section>
+        <section><img src="./assets/HTML.jpg" alt=""></section>
+        <section><img src="./assets/js.jpg" alt=""></section>
+      </section>
+      <section>
+        <section>Функционал</section>
+        <section>Регистрация и Авторизация</section>
+        <section>IDE для проверки заданий</section>
+        <section>Reviews для отзывов пользователей</section>
+        <section>Модерация постов пользователей</section>
+        <section>Полноценное рабочие IDE sandbox с примерами кода</section>
+      </section>
+      <section>Демонстрация работы приложения</section>
+      <section>
+        <section>Спасибо за внимание!</section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
