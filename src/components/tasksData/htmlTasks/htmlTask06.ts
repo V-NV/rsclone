@@ -21,7 +21,7 @@ const HtmlTask06 = `
   Paragraphs are created using the paired <code>&lt;p&gt;</code> tag with a
   small amount of text in the body. For example:
 </p>
-
+<br>
 <pre><code>&lt;p&gt;First paragraph&lt;/p&gt;
   &lt;p&gt;Second paragraph&lt;/p&gt;
   </code></pre>
@@ -32,8 +32,10 @@ const HtmlTask06 = `
   <p>First paragraph</p>
   <p>Second paragraph</p>
 </div>
+<br>
 <h2>Instructions</h2>
-<p>Wrap the phrase <em>Hello, World</em> in a paragraph tag</p>
+<br>
+<p>Wrap the phrase <em style="color:#3497ee;">Hello, World</em> in a paragraph tag</p>
 `;
 
 export default HtmlTask06;

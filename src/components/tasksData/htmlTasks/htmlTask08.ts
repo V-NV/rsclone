@@ -87,8 +87,12 @@ const HtmlTask08 = `
   &lt;h2&gt;Chapter 2&lt;/h2&gt;
   </code></pre>
 <h2>Instructions</h2>
-Add a first and second level header with the following text <br />
-The best book on earth<br />Chapter 1
+<br>
+Add a first and second level header with the following text 
+<br/>
+<em style="color:#3497ee;">The best book on earth</em>
+<br/>
+<em style="color:#3497ee;">Chapter 1<em>
 `;
 
 export default HtmlTask08;

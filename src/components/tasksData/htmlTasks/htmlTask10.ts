@@ -63,14 +63,16 @@ const HtmlTask10 = `
     closing of tags. In the case of an error, the browser will try to correct
     the error itself, but it may not be correct.
   </p>
+  <br>
   <h2>Instructions</h2>
+  </br>
   <p>Create the markup for the list:</p>
 
   <div>
-    <ol>
+    <ol style="color:#349755;">
       <li>
         The JavaScript profession
-        <ul>
+        <ul style="color:#3497ee;">
           <li>Frontend</li>
           <li>Backend</li>
         </ul>

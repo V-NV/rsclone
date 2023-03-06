@@ -15,9 +15,9 @@ const HtmlTask04 = `
   </p>
 
   <pre><code>&lt;ul&gt;
-    &lt;li&gt;The first item in the list&lt;/li&gt;
-    &lt;li&gt;The second item in the list&lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;li&gt;The first item in the list&lt;/li&gt;
+  &lt;li&gt;The second item in the list&lt;/li&gt;
+&lt;/ul&gt;
   </code></pre>
 
   <div">
@@ -42,6 +42,7 @@ const HtmlTask04 = `
 <pre><code>|──ul
   | |──li
   | |──li
+|──ul  
   </code></pre>
 
 <hr />
@@ -65,9 +66,10 @@ const HtmlTask04 = `
 
 <pre><code>&lt;p&gt;Paragraph
     &lt;p&gt;And here&#39;s another paragraph
-     within a paragraph&lt;/p&gt;.
+       within a paragraph
+    &lt;/p&gt;
     This is not a happy home for the paragraph.
-  &lt;/p&gt;
+&lt;/p&gt;
   </code></pre>
 
 <p>
@@ -80,8 +82,8 @@ const HtmlTask04 = `
 <p>
   Create 2 listed elements with following text:
   <ul>
-    <li>The first element in the list</li>
-    <li>The second element in the list</li>
+    <li><em style="color:#3497ee;">The first element in the list</em></li>
+    <li><em style="color:#3497ee;">The second element in the list</em></li>
   </ul>
 </p>
 `;

@@ -64,12 +64,12 @@ job.
   <br>
   <h2>Instructions</h2>
   <br>
-  <p>Format this text</p>
+  <p>Format this text:</p>
   <div>
   <br>
-    <p>It is very interesting.</p>
+  <p><em style="color:#3497ee;">It is very interesting.</em></p>
   <br>
-    <p>And so far it's simple enough.</p>
+  <p><em style="color:#3497ee;">And so far it's simple enough.</em></p>
   </div>
   <br>
   <p>Each sentence must be inside a separate tag</p>

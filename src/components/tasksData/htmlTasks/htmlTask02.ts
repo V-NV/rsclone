@@ -83,7 +83,7 @@ const HtmlTask02 = `
 <br />
 <p>
   Wrap the phrase
-  <em>The quick brown fox jumps over the lazy dog</em>
+  <em style="color:#3497ee;">The quick brown fox jumps over the lazy dog</em>
   into the <code>&lt;p&gt;</code> tag and paste in the editor.
 </p>
 `;
