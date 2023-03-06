@@ -113,7 +113,7 @@
   font-family: "Kanit";
   font-size: calc(14px + 0.8vw);
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-text)!important;
   box-sizing: border-box;
   text-align: justify;
   padding: 4%;
