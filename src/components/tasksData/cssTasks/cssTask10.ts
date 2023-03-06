@@ -44,7 +44,7 @@ const cssTask10 = `
    .btn-reset {
        color: red;
       }
-      &lt;/style&gt;
+&lt;/style&gt;
 </code>
 </pre>
 

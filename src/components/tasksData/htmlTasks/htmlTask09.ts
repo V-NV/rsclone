@@ -91,13 +91,13 @@ const HtmlTask09 = `
 
   <p>To-do list for the day</p>
 
-  <div>
-    <ol>
-      <li>Buy food</li>
-      <li>Go to Alex</li>
-      <li>Cook dinner</li>
-    </ol>
-  </div>
+<div>
+<ol>
+   <li>Buy food</li>
+   <li>Go to Alex</li>
+   <li>Cook dinner</li>
+</ol>
+</div>
 
   <p>in HTML markup looks like this:</p>
 
@@ -105,10 +105,11 @@ const HtmlTask09 = `
     &lt;li&gt;Buy food&lt;/li&gt;
     &lt;li&gt;Go to Alex&lt;/li&gt;
     &lt;li&gt;Cook dinner&lt;/li&gt;
-  &lt;/ol&gt;
-  </code></pre>
+&lt;/ol&gt;
+</code>
+</pre>
   <h2>Instructions</h2>
-  <p>Create a numbered list of 5 items with text: Buy food, Go to Alex, Cook dinner, Ride bicycle, Play football</p>
+  <p>Create a numbered list of 5 items with text:<em style="color:#3497ee;"> Buy food, Go to Alex, Cook dinner, Ride bicycle, Play football</em></p>
   `;
 
 export default HtmlTask09;

@@ -7,10 +7,10 @@ const HtmlTask05 = `
   </p>
 
   <div>
-    <p title="Tooltip. Here you can specify additional information.">
-      Mouse over this line of text. It's better to do this from a computer
-    </p>
-  </div>
+<p title="Tooltip. Here you can specify additional information.">
+  Mouse over this line of text. It's better to do this from a computer
+</p>
+</div>
 
   <p>
     When you mouse over an element, a small window will appear saying
@@ -35,11 +35,14 @@ const HtmlTask05 = `
 
   <p>Here&#39;s the example text from above, but with the markup:</p>
 
-  <pre><code>&lt;p title=&quot;Tooltip.Here you 
-  can specify additional information&quot;&gt;
-  Mouse over this line of text. 
-  It&#39;s better to do it from a computer.&lt;/p&gt;
-  </code></pre>
+  <pre>
+  <code>&lt;p title=&quot;Tooltip.Here you 
+    can specify additional information&quot;&gt;
+    Mouse over this line of text. 
+    It&#39;s better to do it from a computer.
+  &lt;/p&gt;
+  </code>
+  </pre>
 
   <p>
     The <code>title</code> attribute can be used on any page element, not just
@@ -60,10 +63,13 @@ const HtmlTask05 = `
     page.
   </p>
 
-  <pre><code>&lt;p class=&quot;lead&quot;&gt;Lead class paragraph&lt;/p&gt;
+  <pre>
+  <code>&lt;p class=&quot;lead&quot;&gt;Lead class paragraph&lt;/p&gt;
   &lt;p class=&quot;mega-paragraph&quot;&gt;
-  Mega-paragraph class paragraph&lt;/p&gt;
-  </code></pre>
+    Mega-paragraph class paragraph
+  &lt;/p&gt;
+  </code>
+  </pre>
 
   <p>
     One tag can have several attributes at once. They&#39;re written
@@ -72,7 +78,8 @@ const HtmlTask05 = `
 
   <pre><code>&lt;p class=&quot;text-center&quot; title=&quot;This element
   has multiple attributes&quot;&gt;Paragraph with
-  multiple attributes&lt;/p&gt;
+  multiple attributes
+&lt;/p&gt;
   </code></pre>
 
   <p>
@@ -84,7 +91,7 @@ const HtmlTask05 = `
   </p>
   <h2>Instructions</h2>
   <p>
-    Create a paragraph with text "I like HTML!" and a tooltip "My cool tooltip".
+    Create a paragraph with text <em style="color:#3497ee;">"I like HTML!"</em> and a tooltip <em style="color:#b8812c;">"My cool tooltip"</em>.
   </p>
   `;
 export default HtmlTask05;

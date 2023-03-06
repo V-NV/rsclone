@@ -16,9 +16,9 @@ const HtmlTask07 = `
   quickly find those parts on a page? In HTML markup, you can use
   <strong>bold</strong> and <em>italics</em> for this purpose.
 </p>
-<br />
+<br/>
 <h2>Bold lettering</h2>
-<br />
+<br/>
 
 <p>
   To bold the text, one of the two paired tags is used:
@@ -112,7 +112,7 @@ const HtmlTask07 = `
 <br />
 <p>Add the phrase to the editor:</p>
 <div>
-  <span class="do-it">Homo coderus - programming courses</span>
+  <span class="do-it"><em style="color:#3497ee;">Homo coderus - programming courses</em></span>
 </div>
 <p>
   in which make the word &quot;courses&quot; bold (physical markup) and

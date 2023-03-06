@@ -28,7 +28,7 @@ const cssTask08 = `
   }
   
   .text-dark {
-    color: #333;
+    color: #395;
   }
 &lt;/style&gt;
 </code>
@@ -39,7 +39,7 @@ const cssTask08 = `
   <pre><code>{
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #498;
   }
   </code></pre>
   

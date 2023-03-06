@@ -15,13 +15,17 @@ const cssTask06 = `
 &lt;/p&gt;
 </code>
 </pre>
-  <pre><code>.paragraph {
-    color: #b3b3b3;
-<pre style="color:#b3b3b3;">/*
+
+<pre style="color:#b3b3b3;">&lt;!--
   The color property sets the color of the text.
   In this case, it is color gray 
-*/</pre>
-  }
+--&gt;</pre>
+<pre><code>
+&lt;style&gt;
+  .paragraph {
+    color: #b3b3b3;
+ }
+ &lt;/style&gt;
 </code>
 </pre>
   
