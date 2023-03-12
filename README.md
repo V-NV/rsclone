@@ -1,4 +1,4 @@
-Project RS Clone 
+Project RS Clone !
 
 # Обучаюющий сайт HTML CSS JavaScript
 
