@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+
+.footer-black-wrap {
+  display: flex;
+  justify-content: center;
+  height: 279px;
+  margin-top: 50px;
+}
+
+.footer-cont {
+  width: 100%;
+  max-height: 191px;
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: start;
+  background-color: var(--color-text);
+  padding: 0 15px;
+}
+.footer-up {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: "Kanit";
+  font-size: 32px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-top: 48px;
+  width: 100%;
+}
+.git-name-cont {
+  display: flex;
+}
+.git-name-box {
+  display: flex;
+  margin-left: 14px;
+}
+.git-name-box2 {
+  display: flex;
+  margin-left: 24px;
+}
+.git-name-box3 {
+  display: flex;
+  margin-left: 16px;
+}
+
+.git-logo {
+  & svg {
+    width: 29px;
+    height: 28px;
+    fill: var(--color-bg);
+    transform: translateY(5px);
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.git-name1,
+.git-name2,
+.git-name3 {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.rss-logo {
+  & svg {
+    width: 176px;
+    fill: var(--color-bg);
+  }
+}
+
+.footer-year {
+  text-align: center;
+  color: var(--color-bg);
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+.a-footer {
+  display: flex;
+  text-decoration: none;
+  color: var(--color-bg);
+  transition: ease-in-out 0.2s;
+}
+.a-footer:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-bg);
+  opacity: 0.5;
+}
+a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
+
+@media (max-width: 1599px) {
+  .footer-black-wrap {
+    height: 17.4375vw;
+    margin-top: 3.125vw;
+  }
+
+  .footer-cont {
+    max-height: 11.9375vw;
+    margin-bottom: 3.125vw;
+  }
+
+  .footer-content {
+    margin-top: 3vw;
+  }
+
+  .footer-up {
+    font-size: 2vw;
+  }
+
+  .git-logo {
+    & svg {
+      width: 1.8125vw;
+      height: 1.75vw;
+    }
+  }
+
+  .rss-logo {
+    & svg {
+      width: 11vw;
+    }
+  }
+
+  .git-name-box {
+    margin-left: 0.875vw;
+  }
+  .git-name-box2 {
+    margin-left: 1.5vw;
+  }
+  .git-name-box3 {
+    margin-left: 1vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .git-logo {
+    display: none;
+  }
+}

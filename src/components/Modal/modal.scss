@@ -1,0 +1,104 @@
+.modal-container {
+  display: none;
+  height: 100%;
+  margin: 0 auto;
+  top: 0px;
+  z-index: 1;
+  transition: ease-in-out 0.2s;
+}
+
+.error-massage {
+  color: red;
+}
+
+.modal-form {
+  position: fixed;
+  transform: translate(-50%, -60%);
+  z-index: 3;
+}
+
+.modal-active {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+}
+
+.modal-button {
+  z-index: 5;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: gray;
+  font-size: 32px;
+
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);
+  & svg {
+    transform: translate(35%, 55%);
+
+    width: 60%;
+    fill: var(--color-bg);
+  }
+
+  &:hover::after {
+    position: absolute;
+    left: -300%;
+    top: -50%;
+    z-index: 15;
+    background-color: #bf34f1;
+    color: var(--color-text);
+    font-family: "Kanit";
+    content: attr(data-title);
+
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  &.active {
+    background-color: #bf34f1;
+    content: none;
+  }
+}
+
+.modal-bg {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+
+  &.active {
+    display: block;
+  }
+}
+
+.form-modal {
+  & h3 {
+    cursor: default;
+    text-align: center;
+    font-size: 32px;
+    color: #262626;
+    font-family: Kanit;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .modal-button {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+}

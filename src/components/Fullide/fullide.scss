@@ -1,0 +1,494 @@
+@font-face {
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+.CodeMirror-hint {
+  font-size: 20px;
+}
+.CodeMirror {
+  border: 1px solid black;
+}
+.lint-error {
+  font-family: arial;
+  font-size: 70%;
+  /*background: #ffa; */
+  color: #e9acac;
+  padding: 2px 5px 3px;
+}
+.lint-error-icon {
+  color: #e57575;
+  /*background-color: red;*/
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0 3px;
+  margin-right: 7px;
+}
+.rrr {
+  display: block;
+  padding: 5px 30px;
+  margin: 0px 5px;
+  background-color: rgb(50, 148, 11);
+  color: #fffbd3;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 2vw;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.rrr:hover {
+  opacity: 0.8;
+}
+.ide-pre {
+  position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 345px;
+    color: #4ecb37;
+    width: 52%;
+    max-width: 850px;
+    height: 80%;
+    left: 42.5vw;
+    padding: 20px;
+}
+.ide-h3 {
+  font-size: 32px;
+  max-width: 900px;
+}
+.off {
+  display: none;
+}
+.example-btn-cont {
+  max-width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.btn-example {
+  width: 125px;
+  height: 50px;
+  background-color: #be2ea3;
+  color: #fffbd3;
+  border-radius: 5px;
+  font-size: 21px;
+}
+.btn-example:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.full-ide-wrap {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.full-home-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 1440px;
+  max-width: 100%;
+  height: 100px;
+  background-color: var(--color-bg);
+  font-family: "Kanit";
+
+  gap: 5px;
+  border-radius: 20px;
+}
+.full-ide-wrap {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.full-home-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 1440px;
+  max-width: 100%;
+  height: 100px;
+  background-color: var(--color-bg);
+  font-family: "Kanit";
+
+  gap: 5px;
+  border-radius: 20px;
+}
+.full-ide-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 1440px;
+  max-width: 100%;
+  height: 1000px;
+  background-color: #fffbd3;
+  font-family: "Kanit";
+
+  gap: 5px;
+  border-radius: 20px;
+}
+
+.path-container {
+  background-color: transparent;
+  border: none;
+  display: inline;
+  cursor: pointer;
+}
+
+.home-sandbox {
+  display: flex;
+  align-items: center;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 40px;
+  align-self: start;
+  margin-left: 10px;
+  & button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: var(--color-text);
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .pathTitle {
+    display: flex;
+    margin: 0 0 0 10px;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+
+    & span {
+      display: block;
+      transform: translateY(5px);
+      color: var(--color-text);
+    }
+  }
+}
+/*
+.full-ide-wrap{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #262626;
+  width: 1600px;
+  max-width: 99%;
+  height: 1100px;
+  margin: 0 auto;
+  margin-top: 100px;
+  
+}
+.full-ide-cont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 1440px;
+  max-width: 100%;
+  height: 1000px;
+  background-color: #FFFBD3;
+  font-family: "Kanit";
+  
+  gap: 5px;
+  border-radius: 20px;
+}
+*/
+.full-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 98%;
+  width: 39%;
+}
+.CodeMirror {
+  font-size: 20px;
+  border-radius: 5px;
+}
+.CodeMirror-lines {
+  font-size: 22px;
+}
+.editor-header {
+  width: 100%;
+  height: 3.3%;
+  background-color: #fffbd3;
+  color: rgb(12, 87, 87);
+  font-size: 30px;
+  text-align: center;
+  line-height: 38px;
+}
+.editor-html,
+.editor-css,
+.editor-js {
+  width: 98%;
+  height: 30%;
+  display: flex;
+}
+
+.code-html,
+.code-css,
+.code-js {
+  width: 100%;
+  height: 100%;
+}
+
+.full-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  width: 59%;
+}
+.full-btn-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  min-width: 65%;
+  height: 70px;
+}
+.full-run,
+.full-reset {
+  padding: 0 60px;
+  background-color: rgb(133, 60, 19);
+  color: #fffbd3;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 50px;
+  font-family: "Kanit";
+  font-size: 24px;
+}
+.full-run:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.full-reset:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.full-work {
+  width: 100%;
+  height: 75%;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #fffbd3;
+  background-color: #282a36;
+  border-radius: 10px;
+}
+.full-console {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.console-header {
+  width: 100%;
+  height: 36px;
+  font-family: "Kanit";
+  text-align: center;
+  font-size: 30px;
+  color: rgb(12, 87, 87);
+}
+.console-work {
+  width: 97%;
+  height: 130px;
+  background-color: #282a36;
+  border-radius: 10px;
+  padding: 15px;
+  color: #fffbd3;
+  overflow: auto;
+}
+.courses-lesson-text-box::-webkit-scrollbar {
+  width: 18px; /* ширина для вертикального скролла */
+  height: 0px; /* высота для горизонтального скролла */
+  background-color: #fffbd3;
+}
+/* ползунок скроллбара */
+.courses-lesson-text-box::-webkit-scrollbar-thumb {
+  background-color: #262626;
+  border-radius: 5em;
+  box-shadow: inset 1px 1px 5px #f3faf7;
+}
+
+.courses-lesson-text-box::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(2, 2, 2, 0.6);
+}
+@media screen and (max-width: 1079px) {
+.full-home-cont{
+  max-width: 100%;
+  height: 100%;
+}
+.full-ide-cont{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  background-color: #fffbd3;
+  gap: 5px;
+  border-radius: 20px;
+}
+.full-right{
+  height: 960px;
+  width: 100%;
+}
+.full-work{
+  width: 98%;
+  height: 700px;
+}
+.full-left{
+  height: 1028px;
+  width: 100%;
+}
+.ide-pre {
+  top: 297px;
+  width: 80%;
+  height: 95%;
+  left: 12vw;
+}
+.rrr{
+  font-size: 3vw;
+}
+.ide-pre{
+  top:297px;
+  width:76%;
+  height:82%;
+
+}
+}
+@media screen and (max-width: 739px) {
+.ide-h3{
+  font-size: 4.3vw;
+}
+
+
+}
+@media screen and (max-width: 625px) {
+.full-btn-cont{
+  justify-content: space-around;
+  max-width: 100%;
+  min-width: none;
+}
+.exampl-btn-cont{
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+}
+.full-run,.full-reset{
+  width: 25vw;
+  padding: 0px;
+}
+.rrr{
+  width: auto;
+  height: 42px;
+  line-height: 31px;
+} 
+.ide-pre{
+  height: 98%;
+  top:242px;
+}
+.ide-h3{
+  font-size: 5vw;
+}
+.img{
+  width: 100%;
+}
+}
+@media screen and (max-width: 540px) {
+.ide-h3{
+  font-size: 5.24vw;
+}
+.example-btn-cont{
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+
+}
+}
+@media screen and (max-width: 500px) {
+  .ide-h3{
+    font-size: 5.44vw;
+  }
+  .example-btn-cont{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+  
+  }
+  .full-ide-cont{
+    max-width: 106%;
+  }
+  }
+  
+    @media screen and (max-width: 452px) {
+      .ide-pre{
+        top: 228px;
+      }
+      .ide-h3{
+        font-size: 5.54vw;
+      }
+     }
+     @media screen and (max-width: 430px) {
+      .ide-h3{
+        font-size: 5.84vw;
+      }
+      .example-btn-cont{
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        gap: 0px;
+      
+      }
+      }
+      @media screen and (max-width: 430px) {
+        .ide-h3{
+          font-size: 6.04vw;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        .ide-h3{
+          font-size: 6.1vw;
+        }
+      }
+      @media screen and (max-width: 380px) {
+        .ide-h3{
+          font-size: 6.45vw;
+          text-align: justify;
+        }
+        .exampl-btn-cont{
+          display: none;
+        }
+      }
+      @media screen and (max-width: 360px) {
+        .ide-h3{
+          font-size: 6.65vw;
+        }
+      }

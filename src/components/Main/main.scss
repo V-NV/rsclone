@@ -1,0 +1,377 @@
+@font-face {
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+
+main {
+  padding: 0 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.present-main-wrap {
+  margin: 50px 0;
+}
+
+.present-main-cont {
+  margin: 0 auto;
+}
+
+.present-up-block {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1114px;
+  background-color: var(--color-text);
+  margin-top: 57px;
+  border-radius: 16px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.present-left-up-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.present-up-p-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.present-up-p {
+  font-family: Kanit;
+  font-size: 28px;
+}
+.present-up-p2 {
+  font-family: Kanit;
+  font-size: 36px;
+}
+.present-up-button {
+  width: 408px;
+  height: 82px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-radius: 40px;
+  text-align: center;
+  font-family: Kanit;
+  font-size: 48px;
+  line-height: 80px;
+  margin-top: 78px;
+  margin-left: 57px;
+  transition: 0.2s;
+
+  position: relative;
+  overflow-x: hidden;
+
+  .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation;
+    left: -150%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05)
+    );
+    animation: flareAnimation 2s infinite linear;
+  }
+
+  @keyframes flareAnimation {
+    0% {
+      left: -150%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+}
+
+.present-up-button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.present-right-up-box {
+  width: 100%;
+  background-image: url("./assets/img/Main/intro-img.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.light {
+    background-image: url("./assets/img/Main/intro-img-light.png");
+  }
+}
+
+/*-**---------------------------------------------*/
+
+.section-title {
+  font-family: Holtwood;
+  font-size: 48px;
+  max-width: 282px;
+  color: var(--color-text);
+  text-transform: uppercase;
+
+  margin: 35px 0;
+}
+
+.courses-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  width: 33.3333%;
+  text-align: center;
+  color: var(--color-bg);
+  font-family: "Kanit";
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 45px;
+}
+
+.card-title {
+  font-size: 52px;
+  color: #fffbd3;
+}
+
+.card-sub {
+  font-size: 32px;
+  padding-bottom: 20px;
+  color: #fffbd3;
+}
+
+.card {
+  background-color: #793691;
+  transition: ease-in-out 0.2s;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+}
+
+.card__img {
+  padding-top: 50%;
+  padding-bottom: 30%;
+  background-color: var(--color-text);
+}
+
+.card-1__img {
+  background-image: url(./assets/img/html/html-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.card-2__img {
+  background-image: url(./assets/img/css/css-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.card-3__img {
+  background-image: url(./assets/img/js/js-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.review-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.review-items-container_scrollbar {
+  max-height: 950px;
+  overflow-y: scroll;
+  padding: 25px;
+}
+
+.review-items-container::-webkit-scrollbar {
+  width: 18px;
+  height: 0px;
+  background-color: var(--color-text);
+  border-radius: 15px;
+}
+
+.review-items-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg);
+  border: 5px solid var(--color-text);
+  border-radius: 5em;
+  // box-shadow: inset 1px 1px 5px #f3faf7;
+}
+
+.review-items-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(48, 48, 48, 0.6);
+}
+
+.review-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-img {
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+
+  animation: reviewAnimation 2s infinite linear;
+
+  @keyframes reviewAnimation {
+    0% {
+      box-shadow: #793691 0 0 0px;
+    }
+    50% {
+      box-shadow: #793691 0 0 25px;
+    }
+    100% {
+      box-shadow: #793691 0 0 0px;
+    }
+  }
+}
+
+.review-text-wrap {
+  height: auto;
+  margin: 10px 30px 0 30px;
+}
+
+.review-name {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--color-text);
+}
+
+.review-text {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+
+  color: var(--color-text);
+}
+
+.back-img {
+  background-image: url("./assets/img/Main/images.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 1599px) {
+  .section-title {
+    font-size: 3vw;
+    max-width: 17.625vw;
+
+    margin: 2.1875vw 0;
+  }
+
+  .courses__title {
+    font-size: 3vw;
+  }
+
+  .present-up-block {
+    padding: 2.5vw;
+  }
+
+  .present-main-wrap {
+    margin: 3.125vw 0;
+  }
+
+  .present-up-p {
+    font-size: 1.75vw;
+  }
+  .present-up-p2 {
+    font-size: 2.25vw;
+  }
+
+  .present-up-button {
+    width: 25.5vw;
+    height: 5.125vw;
+    font-size: 3vw;
+    line-height: 5vw;
+    margin-top: 4.875vw;
+    margin-left: 3.5625vw;
+  }
+
+  .card-title {
+    font-size: 3.25vw;
+  }
+
+  .item {
+    padding: 0 2.8125vw;
+  }
+
+  .card-sub {
+    font-size: 2vw;
+    padding-bottom: 1.25vw;
+  }
+
+  .review-items-container {
+    max-height: 40.625vw;
+    overflow-y: scroll;
+  }
+
+  .review-name {
+    font-size: 3vw;
+  }
+
+  .review-img {
+    img {
+      width: 18.75vw;
+      height: 18.75vw;
+    }
+    width: 18.75vw;
+    height: 18.75vw;
+  }
+
+  .review-text {
+    font-size: 2vw;
+  }
+
+  .review-text-wrap {
+    height: auto;
+    margin: 0.625vw 1.875vw 0 1.875vw;
+  }
+
+  .review-items-container_scrollbar {
+    max-height: 59.375vw;
+    overflow-y: scroll;
+  }
+}

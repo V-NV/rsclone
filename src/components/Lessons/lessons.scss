@@ -1,0 +1,342 @@
+@font-face {
+  font-family: "Holtwood";
+  src: url("./assets/fonts/Holtwood/HoltwoodOneSC-Regular.ttf");
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit/Kanit-Regular.ttf");
+}
+.courses-main-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 1600px;
+  max-width: 100%;
+  height: 1300px;
+  margin: 0 auto;
+  margin-top: -2px;
+}
+.courses-main-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  max-width: 100%;
+  height: 1290px;
+
+  font-family: "Kanit";
+}
+
+.courses-home {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--color-text);
+
+  margin-top: 50px;
+}
+
+.path {
+  vertical-align: baseline;
+  display: flex;
+  align-items: center;
+
+  .home-icon {
+    transform: translateY(-5px);
+  }
+}
+
+.pathItem {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  & svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--color-text);
+    // transform: translateY(15px);
+    margin: 0 10px;
+  }
+}
+
+.courses-work-container {
+  width: 99%;
+  max-width: 1440px;
+  height: 872px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-top: 30px;
+}
+.courses-lesson-cont {
+  max-width: 100%;
+  width: 623px;
+  height: 872px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background-color: var(--color-text);
+}
+.courses-btn-lesson-up {
+  width: 152px;
+  height: 46px;
+  background-color: var(--color-bg);
+  border-radius: 15px;
+  color: var(--color-text);
+  font-family: "Kanit";
+  font-size: 32px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.courses-btn-lesson-up:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.courses-lesson-text-box {
+  width: 92%;
+  max-width: 100%;
+  height: 768px;
+  border-radius: 5px;
+  overflow-y: auto;
+  margin-top: 20px;
+  font-family: "Kanit";
+  font-size: calc(14px + 0.8vw);
+  background-color: var(--color-bg);
+  color: var(--color-text)!important;
+  box-sizing: border-box;
+  text-align: justify;
+  padding: 4%;
+}
+
+/*    LEFT----------RIGHT**********/
+
+.courses-editor-cont {
+  max-width: 100%;
+  width: 777px;
+  height: 872px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background-color: var(--color-text);
+}
+.courses-editor-button-box {
+  width: 320px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.courses-btn-editor-up {
+  width: 152px;
+  height: 46px;
+  background-color: #262626;
+  border-radius: 15px;
+  color: var(--color-text);
+  font-family: "Kanit";
+  font-size: 32px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.courses-btn-editor-up:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.btn-reset {
+  width: 215px;
+  height: 52px;
+  background-color: #914c36;
+  color: #fffbd3;
+  text-align: center;
+  line-height: 49px;
+  border-radius: 15px;
+}
+.courses-editor-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 92%;
+  max-width: 100%;
+  height: 768px;
+  font-family: "Kanit";
+  font-size: 30px;
+  color: #fffbd3;
+  background-color: #262626;
+  border-radius: 5px;
+  overflow-y: auto;
+  margin-top: 36px;
+  box-sizing: border-box;
+  padding: 1%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.courses-editor-code-cont {
+  border: solid 1px #f3faf7;
+  width: 100%;
+  height: 304px;
+}
+.courses-editor-code-result {
+  border: solid 1px #f3faf7;
+  width: 100%;
+  height: 265px;
+  padding: 15px;
+  padding-left: 40px;
+  overflow-y: auto;
+}
+.courses-editor-message {
+  border: solid 1px #f3faf7;
+  width: 100%;
+  height: 90px;
+  padding: 25px;
+}
+.courses-editor-btn-box-bottom {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Kanit";
+  font-size: 24px;
+  gap: 3px;
+}
+.editor-btn-bottom {
+  width: 215px;
+  height: 52px;
+  background-color: #914c36;
+  color: #fffbd3;
+  text-align: center;
+  line-height: 49px;
+  border-radius: 15px;
+}
+.editor-btn-bottom:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.courses-lesson-text-box::-webkit-scrollbar {
+  width: 18px; /* ширина для вертикального скролла */
+  height: 0px; /* высота для горизонтального скролла */
+  background-color: #fffbd3;
+}
+/* ползунок скроллбара */
+.courses-lesson-text-box::-webkit-scrollbar-thumb {
+  background-color: rgb(94, 94, 94, 0.6);
+  border-radius: 5em;
+  box-shadow: inset 1px 1px 5px #fffbd3;
+}
+
+.courses-lesson-text-box::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(48, 48, 48, 0.6);
+}
+/*************************IDE*********************************/
+.editor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.editor .code {
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #888;
+}
+.editor .code > div {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #888;
+}
+.preview {
+  width: 500px;
+  height: 100%;
+}
+.preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.codeMirror {
+  height: auto;
+}
+#preview-window {
+  color: #fffbd3;
+}
+.CodeMirror {
+  height: 390px;
+}
+/**********************text-lesson************************/
+pre {
+  font-size: 20px;
+  color: yellowgreen;
+}
+ul {
+  margin-left: 30px;
+}
+code {
+  font-size: 20px;
+  color: #69db35;
+  font-weight: 900;
+}
+.do-it {
+  color: pink;
+}
+.html-code {
+  font-size: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .courses-main-wrap {
+    height: 2050px;
+  }
+  .courses-main-cont {
+    height: 2030px;
+  }
+  .courses-work-container {
+    height: 2000px;
+    flex-direction: column;
+    column-gap: 20px;
+    justify-content: flex-start;
+  }
+  .courses-lesson-cont {
+    max-width: 100%;
+    width: 800px;
+  }
+  .courses-lesson-text-box {
+    font-size: 16px;
+  }
+  .courses-editor-cont {
+    max-width: 100%;
+    width: 800px;
+  }
+}
+@media screen and (max-width: 500px) {
+   .courses-home{
+    width: 106%;
+    font-size: 4vw;
+   }
+   .pathItem svg {
+    width: 35px;
+    height: 35px;
+   }
+   .editor-btn-bottom{
+    width: 31vw;
+   }
+   .courses-editor-message{
+    height: auto;
+   }
+   .courses-work-container{
+    width: 106%;
+   }
+}
