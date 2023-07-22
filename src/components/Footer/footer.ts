@@ -47,7 +47,7 @@ export async function Footer() {
                </a>
              </div>
              <a class="a-footer" href="https://github.com/V-NV/rsclone/pull/55" target="_blank">
-               <div class="footer-year">© 2023, Homo coderus, Inc</div>
+               <div class="footer-year">© 2023, Clone, Inc</div>
              </a>
     </section> 
     `;

@@ -49,8 +49,8 @@ const cssTasks = [
     taskNum: 6,
     title: "CSS: Classes",
     task: cssTask06,
-    solution: '<pclass="paragraph">Colorparagraph</p><style>.paragraph{color:#a1b2c3;</style>',
-    solution2: '<style>.paragraph{color:#a1b2c3;</style><pclass="paragraph">Colorparagraph</p>',
+    solution: '<pclass="paragraph">Colorparagraph</p><style>.paragraph{color:#a1b2c3;}</style>',
+    solution2: '<style>.paragraph{color:#a1b2c3;}</style><pclass="paragraph">Colorparagraph</p>',
   },
   {
     taskNum: 7,
