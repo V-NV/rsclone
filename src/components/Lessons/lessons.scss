@@ -323,10 +323,20 @@ code {
 }
 @media screen and (max-width: 500px) {
    .courses-home{
+    width: 106%;
     font-size: 5vw;
    }
    .pathItem svg {
     width: 35px;
     height: 35px;
+   }
+   .editor-btn-bottom{
+    width: 31vw;
+   }
+   .courses-editor-message{
+    height: auto;
+   }
+   .courses-work-container{
+    width: 106%;
    }
 }
